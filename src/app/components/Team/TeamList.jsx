@@ -14,9 +14,10 @@ export default function TeamList() {
     <Swiper
       slidesPerView={4}
       spaceBetween={20}
-      cssMode={true}
       navigation={true}
-      pagination={true}
+      pagination={{
+        clickable: true,
+      }}
       mousewheel={true}
       keyboard={true}
       modules={[Keyboard, Pagination, Navigation, Mousewheel]}
