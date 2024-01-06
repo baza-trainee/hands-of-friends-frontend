@@ -7,3 +7,10 @@
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
+.pseudo:after {
+  content: "";
+  display: block;
+  width: 22.5rem;
+  height: 0.06rem;
+  background-color: #020617;
+}
