@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { dataTeam } from "../../[lang]/team/data/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { Navigation, Pagination, Keyboard, Mousewheel } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,17 +14,14 @@ export default function TeamList() {
     <Swiper
       slidesPerView={4}
       spaceBetween={20}
-      keyboard={{
-        enabled: true,
-      }}
-      pagination={{
-        clickable: true,
-      }}
+      cssMode={true}
       navigation={true}
-      modules={[Keyboard, Pagination, Navigation]}
-      centeredSlides={true}
+      pagination={true}
+      mousewheel={true}
+      keyboard={true}
+      modules={[Keyboard, Pagination, Navigation, Mousewheel]}
       loop={true}
-      className="swiper pb-[3.03rem] font-body font-normal leading-normal text-[#020617]"
+      className="swiper font-body font-normal leading-normal text-[#020617]"
     >
       {dataTeam.map((item, index) => (
         <SwiperSlide
@@ -36,8 +34,12 @@ export default function TeamList() {
             height={290}
             className="bg-slate-500 mb-3"
           />
-          <h3 className="text-2xl tracking-[0.008rem] mb-2">{item.name}</h3>
-          <p className="text-lg tracking-[0.002rem]">{item.position}</p>
+          <h3 className="mb-2 font-body text-2xl leading-normal tracking-[0.008rem] font-normal">
+            {item.name}
+          </h3>
+          <p className="font-body text-lg leading-normal tracking-[0.002rem] font-normal">
+            {item.position}
+          </p>
         </SwiperSlide>
       ))}
     </Swiper>
