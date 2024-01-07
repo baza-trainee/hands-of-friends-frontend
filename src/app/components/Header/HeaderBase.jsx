@@ -1,41 +1,43 @@
 'use client';
 
 import { FaBars, FaPlus } from 'react-icons/fa6';
+
 import { CiGlobe } from 'react-icons/ci';
 import Link from 'next/link';
-import logo from '../../assets/logo.png';
-import { useState } from 'react';
+import { Trans } from 'react-i18next/TransWithoutContext';
+import { languages } from '../../i18n/settings';
+import logo from '../../../assets/logo.png';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
-const variants = {
-	open: { opacity: 1, y: 0 },
-	closed: { opacity: 0, y: '-100%' },
-};
+export default function HeaderBase({ t, lng }) {
+	const variants = {
+		open: { opacity: 1, y: 0 },
+		closed: { opacity: 0, y: '-100%' },
+	};
 
-export const links = [
-	{
-		id: 1,
-		url: '/en/aboutUs',
-		text: 'About',
-	},
-	{
-		id: 2,
-		url: '/en/projects',
-		text: 'Projects',
-	},
-	{
-		id: 3,
-		url: '/en//tenders',
-		text: 'Tenders',
-	},
-	{
-		id: 4,
-		url: '/en/team',
-		text: 'Team',
-	},
-];
-
-export default function Header() {
+	const links = [
+		{
+			id: 1,
+			url: '/en/aboutUs',
+			text: 'About',
+		},
+		{
+			id: 2,
+			url: '/en/projects',
+			text: 'Projects',
+		},
+		{
+			id: 3,
+			url: '/en//tenders',
+			text: 'Tenders',
+		},
+		{
+			id: 4,
+			url: '/en/team',
+			text: 'Team',
+		},
+	];
 	const [menuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -43,7 +45,7 @@ export default function Header() {
 		<header className='bg-lightBlue'>
 			<div className='flex py-4 mx-auto max-w-7xl w-[90vw] relative lg:flex-row flex-col gap-4 lg:items-center lg:justify-between'>
 				<div className='flex items-center lg:justify-center'>
-					<Link href='/'>
+					<Link href='/en'>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src={logo.src} alt='logo' className='' />
 					</Link>
@@ -73,6 +75,8 @@ export default function Header() {
 					rel='noopener noreferrer'
 					className='hidden p-4 text-xl text-white duration-300 border-2 rounded cursor-pointer lg:self-center bg-violet border-violet hover:bg-white hover:text-violet lg:block'
 				>
+					{/* {t('support')} */}
+					{/* {t('robot')} */}
 					Support the fund
 				</a>
 				<motion.nav
