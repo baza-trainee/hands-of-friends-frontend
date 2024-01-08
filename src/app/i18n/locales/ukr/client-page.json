@@ -1,0 +1,7 @@
+{
+    "title": "Сторінка клієнта",
+    "counter_one": "один вибрано",
+    "counter_other": "{{count}} вибрано",
+    "counter_zero": "не вибрано",
+    "back-to-home": "Додому"
+}
