@@ -3,17 +3,19 @@
 @tailwind utilities;
 
 :root {
-	--foreground-rgb: 255, 255, 255;
-	--background-start-rgb: 255, 255, 255;
-	--background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 .pseudo:after {
-	content: '';
-	display: block;
-	width: 22.5rem;
-	height: 0.06rem;
-	background-color: #020617;
+  content: "";
+  display: block;
+  width: 22.5rem;
+  height: 0.06rem;
+  background-color: #020617;
 }
+
+/* Styles for Slider*/
 
 body .swiper {
   padding-left: 1.25rem;
