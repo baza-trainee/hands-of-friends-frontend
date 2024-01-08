@@ -13,8 +13,8 @@ export default function About() {
         </p>
       </blockquote>
       <div className="flex gap-5 mb-10">
-        <img src={Img.src} alt="Our-team" />
-        <img src={Img2.src} alt="Our-team" />
+        <img src={Img} alt="Our-team" />
+        <img src={Img2} alt="Our-team" />
       </div>
       <Title className="mb-15" titleName="Про нас" />
       <h2 className="text-2xl mb-8">
