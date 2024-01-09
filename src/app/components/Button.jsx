@@ -5,7 +5,7 @@ const Button = ({ onClick, children, className }) => {
     <button
       onClick={onClick}
       className={clsx(
-        "bg-purple text-white text-20 border-2 border-transparent hover:bg-transparent hover:border-2 hover:border-solid hover:border-purple hover:text-purple p-4 rounded",
+        "py-4 font-body text-white text-xl leading-8 font-normal  tracking-[0.003em] rounded-md border-transparent hover:bg-transparent  hover:border-solid ",
         className
       )}
     >

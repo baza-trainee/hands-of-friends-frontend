@@ -8,8 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["ptSans", "sans-serif"],
-        // heading: ['bloggerSans', 'sans-serif'],
+        ptSans: ["ptSans", "sans-serif"],
       },
       colors: {
         deepBlue: "#2563EB",

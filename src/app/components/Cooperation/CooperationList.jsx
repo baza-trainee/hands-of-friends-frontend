@@ -9,7 +9,7 @@ export default function CooperationList() {
           key={index}
           className="flex flex-col items-center p-12 min-w-[22.5rem] bg-[#E0F2FE]"
         >
-          <h3 className="mb-6 font-body not-italic text-3xl leading-normal font-bold text-deepBlue">
+          <h3 className="mb-6 font-body font-bold text-3xl leading-[3rem] tracking-[0.16px] text-deepBlue">
             {item.subtitle}
           </h3>
           <p className="grow mb-8 text-lg leading-6 italic font-light text-center">
@@ -17,7 +17,7 @@ export default function CooperationList() {
           </p>
           <Button
             type="button"
-            className="py-4 px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+            className=" px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
           >
             {item.btnText}
           </Button>
