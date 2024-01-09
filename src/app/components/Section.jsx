@@ -1,3 +1,3 @@
 export default function Section(props) {
-  return <section className="font-body pt-[8.25rem]" {...props} />;
+  return <section className="font-body py-[8.25rem]" {...props} />;
 }
