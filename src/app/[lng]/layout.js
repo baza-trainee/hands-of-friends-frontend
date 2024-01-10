@@ -33,9 +33,9 @@ export default async function RootLayout({ children, params: { lng } }) {
 		<html lang={lng} dir={dir(lng)}>
 			<head />
 			<body className={ptSans.className}>
-				<Header />
+				<Header lng={lng}/>
 				<main className='mx-auto max-w-7xl'>{children}</main>
-				<Footer lng={lng} />
+				<Footer lng={lng}/>
 			</body>
 		</html>
 	);
