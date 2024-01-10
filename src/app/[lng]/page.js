@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useTranslation } from "../i18n";
 import TeamSection from "../components/Team/TeamSection";
+import TendersSection from "../components/Tenders/TendersSection";
 import CooperationSection from "../components/Cooperation/CooperationSection";
 import About from "../components/About";
 
@@ -14,6 +15,7 @@ export default async function Page({ params: { lng } }) {
       <br />
       <Link href={`/${lng}/client-page`}>{t("to-client-page")}</Link>
       <About />
+      <TendersSection/>
       <TeamSection />
       <CooperationSection />
     </>
