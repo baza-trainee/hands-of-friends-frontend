@@ -13,7 +13,7 @@ export default async function Page({ params: { lng } }) {
       <Link href={`/${lng}/aboutUs`}>{t("to-about-page")}</Link>
       <br />
       <Link href={`/${lng}/client-page`}>{t("to-client-page")}</Link>
-	  <About/>
+      <About />
       <TeamSection />
       <CooperationSection />
     </>
