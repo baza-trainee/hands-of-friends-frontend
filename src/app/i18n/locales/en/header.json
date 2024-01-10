@@ -1,10 +1,10 @@
 {
+	"home": "Home",
 	"about": "About Us",
 	"projects": "Projects",
 	"tenders": "Tenders",
-	"team": "Team",
+	"contacts": "Contacts",
 	"ua": "UA",
 	"en": "EN",
-	"support": "Support the fund",
-	"robot": "Robot"
+	"support": "Support the fund"
 }

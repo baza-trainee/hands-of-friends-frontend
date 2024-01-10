@@ -29,14 +29,14 @@ export const metadata = {
 export default async function RootLayout({ children, params: { lng } }) {
   const { t } = await useTranslation(lng);
 
-  return (
-    <html lang={lng} dir={dir(lng)}>
-      <head />
-      <body className={ptSans.className}>
-        <Header />
-        <main className="mx-auto max-w-7xl">{children}</main>
-        <Footer lng={lng} />
-      </body>
-    </html>
-  );
+	return (
+		<html lang={lng} dir={dir(lng)}>
+			<head />
+			<body className={ptSans.className}>
+				<Header lng={lng}/>
+				<main className='mx-auto max-w-7xl'>{children}</main>
+				<Footer lng={lng}/>
+			</body>
+		</html>
+	);
 }
