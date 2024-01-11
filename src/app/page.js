@@ -1,7 +1,9 @@
+import FeedbackFormSection from "./components/FeedbackForm/FeedbackFormSection"
+
 export default function Home() {
   return (
-    <main className="">
-      <div>Home</div>
+    <main className="bg-[#EAEAEA] min-h-screen">
+      <FeedbackFormSection/>
     </main>
   )
 }
