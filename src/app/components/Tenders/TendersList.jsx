@@ -1,7 +1,10 @@
+"use client";
 import Button from "../Button";
 import { dataTenders } from "./data";
+import { useRouter } from "next/navigation";
 
 export default function TenderList() {
+  const router = useRouter();
     return (
         <>
       <ul className="flex gap-5 not-italic leading-normal">
@@ -21,7 +24,7 @@ export default function TenderList() {
           </li>
         ))}
       </ul>
-          <Button
+          <Button onClick={() => router.push("/tenders")}
        type="button"
     className="block px-0  mx-auto mt-8 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
     >Дізнатись більше</Button>
