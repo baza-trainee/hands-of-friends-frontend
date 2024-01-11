@@ -9,15 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "accept-language": "^3.0.18",
+    "clsx": "^2.1.0",
+    "framer-motion": "^10.17.9",
+    "i18next": "^23.7.16",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "i18next-resources-to-backend": "^1.2.0",
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-cookie": "^7.0.1",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.0",
+    "react-icons": "^4.12.0",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.3.0"
   }
 }
