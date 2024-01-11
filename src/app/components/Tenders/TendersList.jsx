@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "../Button";
 import { dataTenders } from "./data";
 
@@ -22,10 +23,12 @@ export default function TenderList() {
         ))}
       </ul>
       <div className="flex justify-center">
-      <Button
-       type="button"
-    className="px-0 mt-8 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
-    >Дізнатись більше</Button>
+      <Link href="/tenders">
+        <Button
+         type="button"
+      className="px-0 mt-8 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+      >Дізнатись більше</Button>
+      </Link>
     </div>
       </div>
     );
