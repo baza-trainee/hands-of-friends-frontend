@@ -35,12 +35,8 @@ export default function TeamList() {
             height={290}
             className="bg-slate-500 mb-3"
           />
-          <h3 className="mb-2 font-body text-2xl leading-normal tracking-[0.008rem] font-normal">
-            {item.name}
-          </h3>
-          <p className="font-body text-lg leading-normal tracking-[0.002rem] font-normal">
-            {item.position}
-          </p>
+          <h3 className="mb-2 text-2xl">{item.name}</h3>
+          <p className="text-lg">{item.position}</p>
         </SwiperSlide>
       ))}
     </Swiper>
