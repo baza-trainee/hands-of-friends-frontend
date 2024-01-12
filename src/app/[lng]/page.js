@@ -3,6 +3,7 @@ import { useTranslation } from "../i18n";
 import TeamSection from "../components/Team/TeamSection";
 import TendersSection from "../components/Tenders/TendersSection";
 import CooperationSection from "../components/Cooperation/CooperationSection";
+import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection";
 import About from "../components/About";
 
 export default async function Page({ params: { lng } }) {
@@ -18,6 +19,7 @@ export default async function Page({ params: { lng } }) {
       <TendersSection/>
       <TeamSection />
       <CooperationSection />
+      <FeedbackFormSection/>
     </>
   );
 }
