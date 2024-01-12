@@ -15,7 +15,7 @@ export default function FeedbackFormLayout() {
               Ім'я
             </label>
             <input
-              className="w-full h-9 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border "
+              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border "
               type="text"
               autoComplete="off"
               id="name"
@@ -29,7 +29,7 @@ export default function FeedbackFormLayout() {
               Електронна пошта
             </label>
             <input
-              className="w-full h-9 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
+              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
               type="text"
               autoComplete="off"
               id="gmail"
@@ -43,7 +43,7 @@ export default function FeedbackFormLayout() {
               Контактний телефон
             </label>
             <input
-              className="w-full h-9 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
+              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
               type="text"
               autoComplete="off"
               id="phone"
@@ -57,7 +57,7 @@ export default function FeedbackFormLayout() {
               Ваше повідомлення
             </label>
             <textarea
-              className="w-[28.4rem] rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none"
+              className="w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 border-[#D1D5DB] hover:border-[#4B5563] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none"
               id="message"
               name="message"
               rows="4"
