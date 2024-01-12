@@ -19,7 +19,8 @@ module.exports = {
         gray: "#A1A1AA",
         violet: "#4C1D95",
         whiteFont: "#F8FAFC",
-        green: "#22C55E"
+        green: "#22C55E",
+        lightGray:"#4B5563"
       },
     },
     screens: {
