@@ -69,3 +69,8 @@ body .swiper .swiper-button-next {
   font-size: inherit;
   color: #020617;
 }
+.bg-image-tenders {
+  background-image: url('../../assets/tenders-bg.jpg');
+  background-size: cover;
+  
+}
