@@ -1,5 +1,5 @@
 import img from "../../assets/hand-holds-smartphone.png";
-import Button from "../Button";
+import Action from "../Action";
 
 export default function FeedbackFormLayout() {
   return (
@@ -65,12 +65,12 @@ export default function FeedbackFormLayout() {
               required
             ></textarea>
           </div>
-          <Button
+          <Action
             type="button"
             className="mb-6 min-w-[12.38rem]  bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
           >
             Надіслати
-          </Button>
+          </Action>
         </form>
       </div>
 
