@@ -3,11 +3,12 @@
 
 import { dataTeam } from "./data/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard, Mousewheel } from "swiper/modules";
+import { Navigation, Pagination, Keyboard } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import TeamItem from "./TeamItems";
 
 export default function TeamList() {
   return (
@@ -18,7 +19,6 @@ export default function TeamList() {
       pagination={{
         clickable: true,
       }}
-      mousewheel={true}
       keyboard={true}
       modules={[Keyboard, Pagination, Navigation, Mousewheel]}
       loop={true}
@@ -26,17 +26,10 @@ export default function TeamList() {
     >
       {dataTeam.map((item, index) => (
         <SwiperSlide
-          key={index}
           className="flex flex-col items-center w-[15.19rem] border border-[#D1D5DB] cursor-pointer"
+          key={index}
         >
-          <img
-            alt={item.alt}
-            width={265}
-            height={290}
-            className="bg-slate-500 mb-3"
-          />
-          <h3 className="mb-2 text-2xl">{item.name}</h3>
-          <p className="text-lg">{item.position}</p>
+          <TeamItem data={item} />
         </SwiperSlide>
       ))}
     </Swiper>

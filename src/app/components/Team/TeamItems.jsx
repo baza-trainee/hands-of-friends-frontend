@@ -1,7 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-comment-textnodes */
+
 export default function TeamItem({ data }) {
-  // eslint-disable-next-line @next/next/no-img-element
-  <li>
-    <img alt={data.alt} width={16.56} height={18.13} className="" />;
-    <h3 className="">{data.name}</h3>;<p className="">{data.position}</p>;
-  </li>;
+  return (
+    <>
+      <img
+        alt={data.alt}
+        width={265}
+        height={290}
+        className="bg-slate-500 mb-3"
+      />
+      <h3 className="mb-2 text-2xl">{data.name}</h3>
+      <p className="text-lg">{data.position}</p>
+    </>
+  );
 }
