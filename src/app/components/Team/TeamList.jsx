@@ -20,7 +20,7 @@ export default function TeamList() {
         clickable: true,
       }}
       keyboard={true}
-      modules={[Keyboard, Pagination, Navigation, Mousewheel]}
+      modules={[Keyboard, Pagination, Navigation]}
       loop={true}
       className="swiper font-body font-normal leading-normal text-[#020617]"
     >
