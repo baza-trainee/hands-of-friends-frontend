@@ -3,7 +3,7 @@ import Img2 from "../../assets/aboutUs2.png";
 import Title from "./Title";
 import Section from "./Section";
 import Container from "./Container";
-import Button from "./Button";
+import Action from "./Action";
 
 export default function About() {
   return (
@@ -44,14 +44,13 @@ export default function About() {
             зазначеними категоріями громадян.
           </p>
         </div>
-        <Button
+        <Action
           type="button"
           className=" px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
         >
           Дізнатись більше
-        </Button>
+        </Action>
       </Container>
     </Section>
   );
 }
-

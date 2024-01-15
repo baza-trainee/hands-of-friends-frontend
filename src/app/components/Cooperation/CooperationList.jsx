@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Action from "../Action";
 import { dataCooperation } from "./data";
 
 export default function CooperationList() {
@@ -15,12 +15,14 @@ export default function CooperationList() {
           <p className="grow mb-8 text-lg italic font-light text-center">
             {item.text}
           </p>
-          <Button
-            type="button"
-            className=" px-0 min-w-[12.38rem]  bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
+          <Action
+            href={"https://docs.google.com/forms/u/0/"}
+            rel="noopener noreferrer"
+            target="_blank"
+            className=" px-0 min-w-[12.38rem]  bg-deepBlue text-center hover:text-deepBlue  hover:border-deepBlue"
           >
             {item.btnText}
-          </Button>
+          </Action>
         </li>
       ))}
     </ul>
