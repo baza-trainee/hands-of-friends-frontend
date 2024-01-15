@@ -1,5 +1,4 @@
-// import Button from "../Button";
-
+import Button from "../Button";
 import { dataProjects } from "./data";
 
 export default function ProjectList() {
@@ -32,9 +31,9 @@ export default function ProjectList() {
        </li>   
          ))}
         </ul>
-        {/* <Button
+        <Button
            type="button"
         className="block px-0 mx-auto mt-8 min-w-[13.63rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
-        >Завантажити більше</Button> */}
+        >Завантажити більше</Button>
         </>
     )}
