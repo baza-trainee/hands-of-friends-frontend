@@ -1,5 +1,7 @@
+// import Button from "../Button";
+
 import { dataProjects } from "./data";
-import Button from "../Button";
+
 export default function ProjectList() {
     return (
         <>
@@ -11,8 +13,8 @@ export default function ProjectList() {
          className="flex flex-col min-w-[22.5rem]"
        >
         
-        {/* <div className="flex justify-between font-body text-lg"> */}
-        <h3 className="font-body text-2xl mb-1">{item.name}</h3>
+        {/* <div className="flex justify-between text-lg font-body"> */}
+        <h3 className="mb-1 text-2xl font-body">{item.name}</h3>
         <span className={`font-bold text-lg ${
             item.type === 'Активний'
             ? 'text-green'
@@ -23,16 +25,16 @@ export default function ProjectList() {
         </span>
 {/* 
         </div> */}
-         <p className="font-body mt-6 text-left leading-6 text-lg text-black font-medium">
+         <p className="mt-6 text-lg font-medium leading-6 text-left text-black font-body">
            {item.description}
          </p>
        
        </li>   
          ))}
         </ul>
-        <Button
+        {/* <Button
            type="button"
         className="block px-0 mx-auto mt-8 min-w-[13.63rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
-        >Завантажити більше</Button>
+        >Завантажити більше</Button> */}
         </>
     )}

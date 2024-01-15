@@ -1,23 +1,31 @@
 'use client';
 
 import { FaBars, FaPlus } from 'react-icons/fa6';
+
 import { CiGlobe } from 'react-icons/ci';
 import Link from 'next/link';
 import { Trans } from 'react-i18next/TransWithoutContext';
 import { languages } from '../../i18n/settings';
 import logo from '../../../assets/logo.png';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useTranslation } from '../../i18n/client';
 
-export default function HeaderBase({ lng }) {
+export default function Header({ lng }) {
 	const variants = {
 		open: { opacity: 1, y: 0 },
 		closed: { opacity: 0, y: '-100%' },
 	};
+	
 	const [menuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => setMenuOpen(!menuOpen);
+	
 	const { t } = useTranslation(lng, 'header');
+	const pathname = usePathname();
+	const pathParts = pathname.split('/');
+	const pathWithoutLanguage =
+		pathParts.length > 2 ? pathParts[pathParts.length - 1] : '';
 
 	const links = [
 		{
@@ -71,8 +79,8 @@ export default function HeaderBase({ lng }) {
 				<Trans i18nKey='languageSwitcher' t={t}>
 					<div className='items-center hidden gap-2 duration-300 lg:flex lg:justify-center'>
 						<CiGlobe size={30} />
-						<span className='uppercase'>
-							{{ lng }}
+						<span className='uppercase cursor-default'>
+						{{ lng }}
 						</span>
 						|
 						<span className='uppercase cursor-pointer hover:text-violet text-gray'>
@@ -82,7 +90,11 @@ export default function HeaderBase({ lng }) {
 									return (
 										<span key={l}>
 											{index > 0 && ' or '}
-											<Link href={`/${l}`}>{l}</Link>
+											<Link
+												href={`/${l}/${pathWithoutLanguage}`}
+											>
+												{l}
+											</Link>
 										</span>
 									);
 								})}
@@ -110,6 +122,7 @@ export default function HeaderBase({ lng }) {
 										<li key={link.id}>
 											<Link
 												href={link.url}
+												onClick={toggleMenu}
 												className='text-xl text-black duration-300 hover:text-violet hover:pl-4 lg:hover:pl-0'
 											>
 												{link.text}
@@ -122,7 +135,7 @@ export default function HeaderBase({ lng }) {
 								<div className='flex items-center gap-2 duration-300 cursor-pointer lg:justify-center'>
 									<CiGlobe size={30} />
 									<span className='uppercase hover:text-violet'>
-										{{ lng }}
+										{ { lng } }
 									</span>
 									|
 									<span className='uppercase hover:text-violet text-gray'>
