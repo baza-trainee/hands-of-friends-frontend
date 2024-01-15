@@ -5,7 +5,7 @@ import TendersSection from "../components/Tenders/TendersSection";
 import CooperationSection from "../components/Cooperation/CooperationSection";
 import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection";
 import About from "../components/About";
-
+import ProjectSection from "../components/Projects/ProjectSection";
 export default async function Page({ params: { lng } }) {
   const { t } = await useTranslation(lng);
 
@@ -16,6 +16,7 @@ export default async function Page({ params: { lng } }) {
       <br />
       <Link href={`/${lng}/client-page`}>{t("to-client-page")}</Link>
       <About />
+      <ProjectSection/>
       <TendersSection/>
       <TeamSection />
       <CooperationSection />
