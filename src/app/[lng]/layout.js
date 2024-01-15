@@ -1,5 +1,5 @@
 import "../components/globals.css";
-
+import "/node_modules/video-react/dist/video-react.css"
 import { Footer } from "../components/Footer";
 import Header from "../components/Header/HeaderBase";
 import { PT_Sans } from "next/font/google";
