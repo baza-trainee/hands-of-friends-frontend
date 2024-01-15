@@ -1,4 +1,13 @@
 {
-    "languageSwitcher": "Switch from <1>{{lng}}</1> to: ",
-    "robot": "Robot"
+	"home": "Home",
+	"about": "About Us",
+	"projects": "Projects",
+	"tenders": "Tenders",
+    "news": "News",
+	"contacts": "Contacts",
+	"terms": "Terms of use of the site",
+	"policy": "Privacy policy",
+	"report": "Report",
+    "status": "Status",
+    "rights": "Developed by Baza Trainee Ukraine 2024 (©) All rights reserved"
 }

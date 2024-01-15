@@ -1,7 +1,8 @@
 import "../components/globals.css";
 import "/node_modules/video-react/dist/video-react.css"
-import { Footer } from "../components/Footer";
-import Header from "../components/Header/HeaderBase";
+
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 import { PT_Sans } from "next/font/google";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
