@@ -7,6 +7,9 @@
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
+* {
+  transition: all 0.2s ease; }
+
 .pseudo:after {
   content: "";
   display: block;
@@ -73,4 +76,24 @@ body .swiper .swiper-button-next {
   background-image: url('../../assets/tenders-bg.jpg');
   background-size: cover;
   
+}
+/* .cld-video-player .vjs-big-play-button:before{
+  display: none !important;
+} */
+/* .vjs-control vjs-cloudinary-button vjs-button{
+  display: none !important;
+} */
+.cld-video-player .vjs-big-play-button{
+  width: 2.5em !important;
+  background: transparent;
+}
+
+.vjs-big-play-button {
+  background: transparent !important;
+}
+
+.vjs-big-play-button::before{
+  position: absolute !important;
+  transform: translate(-0%, -50%) !important;
+  background: url('../../assets/play.svg') !important;
 }

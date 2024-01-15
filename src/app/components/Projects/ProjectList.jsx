@@ -1,5 +1,6 @@
-import { dataProjects } from "./data";
 import Action from "../Action";
+import { dataProjects } from "./data";
+
 export default function ProjectList() {
   return (
     <>
