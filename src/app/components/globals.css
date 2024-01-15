@@ -87,3 +87,13 @@ body .swiper .swiper-button-next {
   width: 2.5em !important;
   background: transparent;
 }
+
+.vjs-big-play-button {
+  background: transparent !important;
+}
+
+.vjs-big-play-button::before{
+  position: absolute !important;
+  transform: translate(-0%, -50%) !important;
+  background: url('../../assets/play.svg') !important;
+}
