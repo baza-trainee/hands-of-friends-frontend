@@ -77,7 +77,13 @@ body .swiper .swiper-button-next {
   background-size: cover;
   
 }
-.video-react .video-react-big-play-button.big-play-button-hide{
-  display: flex !important;
-  
+/* .cld-video-player .vjs-big-play-button:before{
+  display: none !important;
+} */
+/* .vjs-control vjs-cloudinary-button vjs-button{
+  display: none !important;
+} */
+.cld-video-player .vjs-big-play-button{
+  width: 2.5em !important;
+  background: transparent;
 }
