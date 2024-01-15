@@ -1,4 +1,5 @@
 import "../components/globals.css";
+import "/node_modules/video-react/dist/video-react.css"
 
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
