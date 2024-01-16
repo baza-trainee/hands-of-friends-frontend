@@ -93,7 +93,7 @@ body .swiper .swiper-button-next {
 }
 
 .vjs-big-play-button::before{
-  position: absolute !important;
+  /* position: absolute !important;
   transform: translate(-0%, -50%) !important;
-  background: url('../../assets/play.svg') !important;
+  background: url('../../assets/play.svg') !important; */
 }
