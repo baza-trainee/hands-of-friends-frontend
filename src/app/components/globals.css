@@ -8,7 +8,8 @@
   --background-end-rgb: 255, 255, 255;
 }
 * {
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+}
 
 .pseudo:after {
   content: "";
@@ -21,14 +22,16 @@
 /* Styles for Slider*/
 
 body .swiper {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-bottom: 3.03rem;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+  padding-bottom: 3rem;
 }
 .swiper .swiper-slide {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 1rem;
-  width: 15.19rem;
+  width: 16.56rem;
 }
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
@@ -45,6 +48,7 @@ body .swiper {
   width: 0.75rem;
   height: 0.75rem;
   background-color: #d1d5db;
+  margin: 0;
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
@@ -62,9 +66,11 @@ body .swiper {
 }
 body .swiper .swiper-button-prev {
   left: -1.06rem;
+  top: 11.64rem;
 }
 body .swiper .swiper-button-next {
   right: -1.06rem;
+  top: 11.64rem;
 }
 
 .swiper .swiper-button-prev::after,
@@ -73,9 +79,8 @@ body .swiper .swiper-button-next {
   color: #020617;
 }
 .bg-image-tenders {
-  background-image: url('../../assets/tenders-bg.jpg');
+  background-image: url("../../assets/tenders-bg.jpg");
   background-size: cover;
-  
 }
 /* .cld-video-player .vjs-big-play-button:before{
   display: none !important;
@@ -83,7 +88,7 @@ body .swiper .swiper-button-next {
 /* .vjs-control vjs-cloudinary-button vjs-button{
   display: none !important;
 } */
-.cld-video-player .vjs-big-play-button{
+.cld-video-player .vjs-big-play-button {
   width: 2.5em !important;
   background: transparent;
 }
@@ -92,8 +97,8 @@ body .swiper .swiper-button-next {
   background: transparent !important;
 }
 
-.vjs-big-play-button::before{
+.vjs-big-play-button::before {
   position: absolute !important;
   transform: translate(-0%, -50%) !important;
-  background: url('../../assets/play.svg') !important;
+  background: url("../../assets/play.svg") !important;
 }
