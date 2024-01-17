@@ -5,13 +5,14 @@ export default function TeamItem({ data }) {
   return (
     <>
       <img
-        alt={data.alt}
+        src={data.image}
+        alt={`Photo of ${data.full_name}`}
         width={265}
         height={290}
-        className="bg-slate-500 mb-3"
+        className="mb-3 h-[290px] object-cover "
       />
-      <h3 className="mb-2 text-2xl">{data.name}</h3>
-      <p className="text-lg">{data.position}</p>
+      <h3 className="mb-2 text-2xl capitalize ">{data.full_name}</h3>
+      <p className="text-lg capitalize">{data.position}</p>
     </>
   );
 }
