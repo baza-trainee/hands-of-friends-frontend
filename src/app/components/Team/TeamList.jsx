@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 async function getTeam() {
   try {
     const response = await axios.get(
-      "https://hands-of-friends-backend.onrender.com/api/content_management/teams/"
+      "https://hands-of-friends-backend.onrender.com/api/content_management/team/"
     );
     return response.data;
   } catch (error) {
