@@ -33,4 +33,9 @@ module.exports = {
 		},
 	},
 	plugins: [],
+	styles:{
+		".transition":{
+			transition: 'all 0.2s ease-in-out',
+		}
+	}
 }
