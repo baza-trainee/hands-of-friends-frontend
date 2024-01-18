@@ -1,3 +1,5 @@
 export default function Section(props) {
-  return <section className="font-body pt-[8.25rem]" {...props} />;
+  const sectionClass = 'font-body mt-36 ' + props.marginBottom
+  console.log(props)
+  return <section className={sectionClass} {...props}  />;
 }

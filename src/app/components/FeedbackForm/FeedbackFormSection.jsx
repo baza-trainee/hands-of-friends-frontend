@@ -7,7 +7,7 @@ import FeedbackFormLayout from "./FeedbackFormLayout";
 
 export default function FeedbackFormSection() {
   return (
-    <Section>
+    <Section marginBottom="mb-[21.5rem]">
       <Container>
         <Title titleName="Форма зворотнього зв'язку"/>
         <FeedbackFormLayout/>
