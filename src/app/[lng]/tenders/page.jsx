@@ -1,27 +1,27 @@
-'use client'
-import { useState } from 'react'
-import Container from '@/app/components/Container'
-import Section from '@/app/components/Section'
-import { dataTenders } from '@/app/components/Tenders/data'
-import Link from 'next/link'
-import BreadCrumbs from '@/app/components/BreadCrumbs'
+"use client";
+import { useState } from "react";
+import Container from "@/app/components/Container";
+import Section from "@/app/components/Section";
+import { dataTenders } from "@/app/components/Tenders/data";
+import Link from "next/link";
+import BreadCrumbs from "@/app/components/BreadCrumbs";
 
 export default function TendersPage() {
-	const [activeTab, setActiveTab] = useState('all')
+  const [activeTab, setActiveTab] = useState("all");
 
-	const handleTabClick = tab => {
-		setActiveTab(tab)
-	}
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
-	const filteredTenders = dataTenders.filter(item => {
-		if (activeTab === 'all') {
-			return true
-		} else if (activeTab === 'active') {
-			return item.active
-		}
-		return false
-	})
-
+  const filteredTenders = dataTenders.filter((item) => {
+    if (activeTab === "all") {
+      return true;
+    } else if (activeTab === "active") {
+      return item.active;
+    }
+    return false;
+  });
+  
 	return (
 		<>
 			<div className='bg-image-tenders min-h-[620px]'>
