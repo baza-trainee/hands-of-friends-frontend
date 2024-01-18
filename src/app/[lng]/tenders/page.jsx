@@ -53,7 +53,7 @@ export default function TendersPage() {
 				</Container>
 			</div>
 			<Container>
-				<Section>
+				<Section marginTop="mt-20" marginBottom="mb-[8.25rem]">
 					<ul className='flex gap-5 max-w-[360px] not-italic leading-normal'>
 						{filteredTenders.map(item => (
 							<li
