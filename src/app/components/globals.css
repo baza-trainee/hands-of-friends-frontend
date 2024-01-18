@@ -7,9 +7,6 @@
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
-* {
-  transition: all 0.2s ease;
-}
 
 .pseudo:after {
   content: "";
