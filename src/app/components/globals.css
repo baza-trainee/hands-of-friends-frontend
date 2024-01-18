@@ -29,9 +29,11 @@ body .swiper {
 .swiper .swiper-slide {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 1rem;
   width: 16.56rem;
+  height: auto;
+  overflow: hidden;
 }
 .swiper-pagination-fraction,
 .swiper-pagination-custom,

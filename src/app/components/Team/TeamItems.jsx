@@ -11,8 +11,12 @@ export default function TeamItem({ data }) {
         height={290}
         className="mb-3 h-[290px] object-cover "
       />
-      <h3 className="mb-2 text-2xl capitalize ">{data.full_name}</h3>
-      <p className="text-lg capitalize">{data.position}</p>
+      <h3 className="grow break-words mb-2 w-[243px] text-2xl text-center capitalize ">
+        {data.full_name}
+      </h3>
+      <p className="text-lg w-[243px] text-center capitalize">
+        {data.position}
+      </p>
     </>
   );
 }

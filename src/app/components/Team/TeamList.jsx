@@ -11,10 +11,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-async function getTeam() {
+async function getTeam(headers) {
   try {
     const response = await axios.get(
-      "https://hands-of-friends-backend.onrender.com/api/content_management/team/"
+      "https://hands-of-friends-backend.onrender.com/api/content_management/team/",
+      { headers }
     );
     return response.data;
   } catch (error) {
@@ -28,7 +29,7 @@ export default function TeamList() {
 
   useEffect(() => {
     async function fetchData() {
-      const teamPromise = getTeam();
+      const teamPromise = getTeam({ "Accept-Language": "uk" });
 
       const [teamData] = await Promise.all([teamPromise]);
       setData(teamData);
@@ -63,10 +64,7 @@ export default function TeamList() {
               </SwiperSlide>
             ))
         : data.map((item, index) => (
-            <SwiperSlide
-              className="flex flex-col items-center cursor-pointer"
-              key={index}
-            >
+            <SwiperSlide className="flex flex-col items-center " key={index}>
               <TeamItem data={item} />
             </SwiperSlide>
           ))}
