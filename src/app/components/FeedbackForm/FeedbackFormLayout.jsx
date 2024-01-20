@@ -6,7 +6,6 @@ import img from "../../assets/hand-holds-smartphone.png";
 import Action from "../Action";
 
 const FeedbackFormLayout = () => {
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -64,7 +63,10 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
+
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.name && formik.errors.name ? 'border-[red]' : 'border-[#D1D5DB]'}`} // якщо фокус на формі та помилка, встановити червоний
+
+            
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
