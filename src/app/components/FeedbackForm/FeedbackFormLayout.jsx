@@ -5,9 +5,7 @@ import * as Yup from "yup";
 import img from "../../assets/hand-holds-smartphone.png";
 import Action from "../Action";
 
-
 const FeedbackFormLayout = () => {
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -63,30 +61,28 @@ const FeedbackFormLayout = () => {
             <label className="text-lg" htmlFor="name">
               Ім'я
             </label>
-            {formik.touched.name && formik.errors.name ? (
-              <div>{formik.errors.name}</div>
-            ) : null}
-            <input  
+
+            <input
               className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border placeholder-shown: b"
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
               id="name"
               name="name"
-
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
             />
+            {formik.touched.name && formik.errors.name ? (
+              <div className="color text-red">{formik.errors.name}</div>
+            ) : null}
           </div>
 
           <div className="w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="email">
               Електронна пошта
             </label>
-            {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
-            ) : null}
+
             <input
               className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
               type="text"
@@ -98,15 +94,16 @@ const FeedbackFormLayout = () => {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
+            {formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null}
           </div>
 
           <div className="w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="phoneNumber">
               Контактний телефон
             </label>
-            {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-              <div>{formik.errors.phoneNumber}</div>
-            ) : null}
+
             <input
               className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
               type="text"
@@ -118,17 +115,18 @@ const FeedbackFormLayout = () => {
               onBlur={formik.handleBlur}
               value={formik.values.phoneNumber}
             />
+            {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+              <div>{formik.errors.phoneNumber}</div>
+            ) : null}
           </div>
 
           <div className="w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="message">
               Ваше повідомлення
             </label>
-            {formik.touched.message && formik.errors.message ? (
-              <div>{formik.errors.message}</div>
-            ) : null}
+
             <textarea
-              className="w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 mb-36 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none"
+              className="w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none"
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
@@ -137,6 +135,9 @@ const FeedbackFormLayout = () => {
               onBlur={formik.handleBlur}
               value={formik.values.message}
             ></textarea>
+            {formik.touched.message && formik.errors.message ? (
+              <div>{formik.errors.message}</div>
+            ) : null}
           </div>
           <Action
             type="button"
