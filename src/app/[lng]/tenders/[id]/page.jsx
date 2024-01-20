@@ -1,46 +1,32 @@
-"use client";
-import BreadCrumbs from "@/app/components/BreadCrumbs";
-import Container from "@/app/components/Container";
+import BreadCrumbs from '@/app/components/BreadCrumbs'
+import Container from '@/app/components/Container'
 
-import { useState, useEffect } from "react";
-import axios from "axios";
+const getData = async id => {
+	const res = await fetch(
+		`https://hands-of-friends-backend.onrender.com/api/content_management/tenders/${id}`
+	)
 
-async function getData() {
-  try {
-    const response = await axios.get(
-      `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/${id}`
-    );
-    return response.data.results;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
+	if (!res.ok) {
+		throw new Error('Something went wrong')
+	}
+
+	return res.json()
 }
+export default async function Page({ params }) {
+	const { id } = params
+	const data = await getData(id)
 
-export default function Page({ params }) {
-  const [data, setData] = useState([]);
+	return (
+		<>
+			<Container>
+				<BreadCrumbs href='/tenders' className='my-12 ' text='Тендери' />
 
-  useEffect(() => {
-    async function fetchData() {
-      const tenderPromise = getData();
-
-      const [tenderData] = await Promise.all([tenderPromise]);
-      setData(tenderData);
-    }
-    fetchData();
-  }, []);
-  console.log("data", data);
-
-  return (
-    <>
-      <Container>
-        <BreadCrumbs href="/tenders" className="my-12 " text="Тендери" />
-
-        <div className="max-w-[835px] text-lg">
-          <p>{params.id}</p>
-          <p>{data.title}</p>
-        </div>
-      </Container>
-    </>
-  );
+				<div className='max-w-[835px] text-lg'>
+					<p>{data.date}</p>
+					<p>{data.title}</p>
+					<p>{data.description}</p>
+				</div>
+			</Container>
+		</>
+	)
 }
