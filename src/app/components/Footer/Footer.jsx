@@ -61,7 +61,7 @@ export default function Footer({ lng }) {
 	];
 
 	return (
-		<footer className='mx-auto bg-lightBlue mt-80'>
+		<footer className='mx-auto bg-lightBlue'>
 			<div className='py-8 mx-auto w-[90vw] max-w-7xl'>
 				<div className='flex flex-row items-center justify-between mb-8 gap-7'>
 					<div className='flex items-center justify-center'>
