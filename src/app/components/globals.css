@@ -3,83 +3,84 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 255, 255, 255;
+	--background-end-rgb: 255, 255, 255;
 }
 
 .pseudo:after {
-  content: "";
-  display: block;
-  width: 22.5rem;
-  height: 0.06rem;
-  background-color: #020617;
+	content: '';
+	display: block;
+	width: 22.5rem;
+	height: 0.06rem;
+	background-color: #020617;
 }
 
 /* Styles for Slider*/
 
 body .swiper {
-  padding-left: 2.75rem;
-  padding-right: 2.75rem;
-  padding-bottom: 3rem;
+	padding-left: 2.75rem;
+	padding-right: 2.75rem;
+	padding-bottom: 3rem;
 }
 .swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 1rem;
-  width: 16.56rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 1rem;
+	width: 16.56rem;
 }
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 1.25rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 1.25rem;
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-  .swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #d1d5db;
-  margin: 0;
+	.swiper-pagination-bullet {
+	width: 0.75rem;
+	height: 0.75rem;
+	background-color: #d1d5db;
+	margin: 0;
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 2rem;
-  height: 0.75rem;
-  background-color: #60a5fa;
-  border-radius: 0.62rem;
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	width: 2rem;
+	height: 0.75rem;
+	background-color: #60a5fa;
+	border-radius: 0.62rem;
 }
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  width: 2.75rem;
-  height: 2.75rem;
-  color: #020617;
+	width: 2.75rem;
+	height: 2.75rem;
+	color: #020617;
 }
 body .swiper .swiper-button-prev {
-  left: -1.06rem;
-  top: 11.64rem;
+	left: -1.06rem;
+	top: 11.64rem;
 }
 body .swiper .swiper-button-next {
-  right: -1.06rem;
-  top: 11.64rem;
+	right: -1.06rem;
+	top: 11.64rem;
 }
 
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
-  font-size: inherit;
-  color: #020617;
+	font-size: inherit;
+	color: #020617;
 }
 .bg-image-tenders {
-  background-image: url("../../assets/tenders-bg.jpg");
-  background-size: cover;
+	background-image: url('../../assets/bg.png');
+	background-size: cover;
 }
+
 /* .cld-video-player .vjs-big-play-button:before{
   display: none !important;
 } */
@@ -87,16 +88,16 @@ body .swiper .swiper-button-next {
   display: none !important;
 } */
 .cld-video-player .vjs-big-play-button {
-  width: 2.5em !important;
-  background: transparent;
+	width: 2.5em !important;
+	background: transparent;
 }
 
 .vjs-big-play-button {
-  background: transparent !important;
+	background: transparent !important;
 }
 
 .vjs-big-play-button::before {
-  position: absolute !important;
-  transform: translate(-0%, -50%) !important;
-  background: url("../../assets/play.svg") !important;
+	position: absolute !important;
+	transform: translate(-0%, -50%) !important;
+	background: url('../../assets/play.svg') !important;
 }
