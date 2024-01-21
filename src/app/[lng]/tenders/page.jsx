@@ -98,7 +98,7 @@ export default function TendersPage() {
 														<span className='text-black'>{item.date}</span>
 													</p>
 													<p className='font-sans mt-6 text-left text-2xl text-black font-medium'>
-														{item.description
+														{item.title
 															.split(' ')
 															.slice(0, 20)
 															.map((word, index) => (

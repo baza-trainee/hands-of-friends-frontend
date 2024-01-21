@@ -1,6 +1,7 @@
 import BreadCrumbs from '@/app/components/BreadCrumbs'
 import Container from '@/app/components/Container'
 
+
 const getData = async id => {
 	const res = await fetch(
 		`https://hands-of-friends-backend.onrender.com/api/content_management/tenders/${id}`
@@ -21,10 +22,10 @@ export default async function Page({ params }) {
 			<Container>
 				<BreadCrumbs href='/tenders' className='my-12 ' text='Тендери' />
 
-				<div className='max-w-[835px] text-lg'>
-					<p>{data.date}</p>
-					<p>{data.title}</p>
-					<p>{data.description}</p>
+				<div className='max-w-[835px] text-lg mb-40'>
+					<p className='mb-6'>{data.date}</p>
+					<h2 className='text-3xl	font-bold	mb-10'>{data.title}</h2>
+					<div>{data.description}</div>
 				</div>
 			</Container>
 		</>
