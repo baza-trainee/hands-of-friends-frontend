@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import img from "../../assets/hand-holds-smartphone.png";
@@ -63,7 +63,10 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border placeholder-shown: b"
+
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.name && formik.errors.name ? 'border-[red]' : 'border-[#D1D5DB]'}`} // якщо фокус на формі та помилка, встановити червоний
+
+            
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
@@ -74,7 +77,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.name}
             />
             {formik.touched.name && formik.errors.name ? (
-              <div className="color text-red">{formik.errors.name}</div>
+              <div className="text-[red]">{formik.errors.name}</div>
             ) : null}
           </div>
 
@@ -84,7 +87,7 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.email && formik.errors.email ? 'border-[red]' : 'border-[#D1D5DB]'}`}
               type="text"
               autoComplete="off"
               // placeholder="example@gmail.com"
@@ -95,7 +98,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <div>{formik.errors.email}</div>
+              <div className="text-[red]">{formik.errors.email}</div>
             ) : null}
           </div>
 
@@ -105,7 +108,7 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-              className="w-full h-10 rounded-[0.3rem] mt-2 px-2 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border"
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.phoneNumber && formik.errors.phoneNumber ? 'border-[red]' : 'border-[#D1D5DB]'}`}
               type="text"
               autoComplete="off"
               // placeholder="+38 000 000 0000"
@@ -116,7 +119,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.phoneNumber}
             />
             {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-              <div>{formik.errors.phoneNumber}</div>
+              <div className="text-[red]">{formik.errors.phoneNumber}</div>
             ) : null}
           </div>
 
@@ -126,17 +129,18 @@ const FeedbackFormLayout = () => {
             </label>
 
             <textarea
-              className="w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 border-[#D1D5DB] focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none"
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none ${formik.touched.phoneNumber && formik.errors.phoneNumber ? 'border-[red]' : 'border-[#D1D5DB]'}`}
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
               rows="4"
               onChange={formik.handleChange}
+              onMouseEnter={formik.touched.message && formik.errors.message}
               onBlur={formik.handleBlur}
               value={formik.values.message}
             ></textarea>
             {formik.touched.message && formik.errors.message ? (
-              <div>{formik.errors.message}</div>
+              <div className="text-[red]">{formik.errors.message}</div>
             ) : null}
           </div>
           <Action
