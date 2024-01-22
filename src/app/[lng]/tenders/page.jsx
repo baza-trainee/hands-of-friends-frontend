@@ -48,15 +48,19 @@ export default function TendersPage() {
 		<>
 			<div className='bg-image-tenders min-h-[620px]'>
 				<Container>
-					<BreadCrumbs className='pt-11 mb-[319px]' href='/' text='Назад' />
+					<BreadCrumbs
+						className='pt-11 mb-[319px] z-10'
+						href='/'
+						text='Назад'
+					/>
 					<h2 className='text-3xl	text-white font-bold mb-16'>Тендери</h2>
 					<div className='flex space-x-4 gap-8'>
 						<button
 							onClick={() => handleTabClick('all')}
 							className={`focus:outline-none w-[180px] text-start text-2xl pb-2 ${
 								activeTab === 'all'
-									? ' text-white border-b-2'
-									: 'bg-gray-300 text-fontGray border-b-2  border-transparent'
+									? ' text-white z-10 border-b-2'
+									: 'bg-gray-300 text-fontGray border-b-2 hover:text-white transition border-transparent'
 							}`}
 						>
 							Усі
@@ -66,7 +70,7 @@ export default function TendersPage() {
 							className={`focus:outline-none w-[180px] text-start text-2xl pb-2 ${
 								activeTab === 'active'
 									? ' text-white border-b-2'
-									: 'bg-gray-300 text-fontGray border-transparent '
+									: 'bg-gray-300 text-fontGray border-b-2 hover:text-white transition border-transparent '
 							}`}
 						>
 							Активні

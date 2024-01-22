@@ -25,7 +25,8 @@ export default async function Page({ params }) {
 				<div className='max-w-[835px] text-lg mb-40'>
 					<p className='mb-6'>{data.date}</p>
 					<h2 className='text-3xl	font-bold	mb-10'>{data.title}</h2>
-					<div>{data.description}</div>
+					{/* <div className='text-lg'>{ReactHtmlParser(data.description)}</div> */}
+					<div dangerouslySetInnerHTML={{ __html: data.description }} />
 				</div>
 			</Container>
 		</>
