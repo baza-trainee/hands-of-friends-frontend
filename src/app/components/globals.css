@@ -7,9 +7,6 @@
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
-* {
-  transition: all 0.2s ease;
-}
 
 .pseudo:after {
   content: "";
@@ -85,6 +82,7 @@ body .swiper .swiper-button-next {
   background-image: url("../../assets/tenders-bg.jpg");
   background-size: cover;
 }
+
 /* .cld-video-player .vjs-big-play-button:before{
   display: none !important;
 } */
