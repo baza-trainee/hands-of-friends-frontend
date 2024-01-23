@@ -38,7 +38,7 @@ const FeedbackFormLayout = () => {
         .matches(/^\+380\d{9}$/, "Введіть дійсний номер телефону"),
 
       message: Yup.string()
-        .required("Введіть коментар")
+        .required("Введіть номер телефону")
         .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/)
         .max(300, "Просимо скоротити ваше повідомлення до 300 знаків"),
     }),
@@ -63,10 +63,14 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-
-              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.name && formik.errors.name ? 'border-[red]' : 'border-[#D1D5DB]'}`} // якщо фокус на формі та помилка, встановити червоний
-
-            
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
+              ${
+                formik.values.name === "" && !formik.errors.name
+                  ? "border-fontGray focus:border-vividBlue"
+                  : formik.errors.name
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
@@ -87,7 +91,14 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.email && formik.errors.email ? 'border-[red]' : 'border-[#D1D5DB]'}`}
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
+              ${
+                formik.values.email === "" && !formik.errors.email
+                  ? "border-fontGray focus:border-vividBlue"
+                  : formik.errors.email
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="example@gmail.com"
@@ -108,7 +119,14 @@ const FeedbackFormLayout = () => {
             </label>
 
             <input
-              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border ${formik.touched.phoneNumber && formik.errors.phoneNumber ? 'border-[red]' : 'border-[#D1D5DB]'}`}
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
+              ${
+                formik.values.phoneNumber === "" && !formik.errors.phoneNumber
+                  ? "border-fontGray focus:border-vividBlue"
+                  : formik.errors.phoneNumber
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="+38 000 000 0000"
@@ -127,15 +145,20 @@ const FeedbackFormLayout = () => {
             <label className="text-lg" htmlFor="message">
               Ваше повідомлення
             </label>
-
+            {/* w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 */}
             <textarea
-              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent border resize-none ${formik.touched.phoneNumber && formik.errors.phoneNumber ? 'border-[red]' : 'border-[#D1D5DB]'}`}
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${
+                formik.values.message === "" && !formik.errors.message
+                  ? "border-fontGray focus:border-vividBlue"
+                  : formik.errors.message
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
               rows="4"
               onChange={formik.handleChange}
-              onMouseEnter={formik.touched.message && formik.errors.message}
               onBlur={formik.handleBlur}
               value={formik.values.message}
             ></textarea>
