@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Action from "../Action";
 // import { dataProjects } from "./data";
 import axios from "axios";
+import Skeleton from "./Skeleton";
 
 async function getProjects() {
   try {
@@ -18,9 +19,12 @@ async function getProjects() {
 
 export default function ProjectList() {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
+  let skeleton = [... new Array(3)].map((_, i) => (<Skeleton key={i} />));
 
   useEffect(() => {
     async function fetchData() {
+      setIsLoading(true);
       const projectPromise = getProjects();
 
       const [projectData] = await Promise.all([projectPromise]);
@@ -28,12 +32,14 @@ export default function ProjectList() {
       console.log(projectData);
     }
     fetchData();
+    setIsLoading(false);
   }, []);
 
   return (
     <>
       <ul className="flex gap-5 not-italic leading-normal">
-        {data.map((item) => (
+        { isLoading? skeleton : 
+        data.map((item) => (
           <li key={item.id} className="flex flex-col min-w-[22.5rem]">
           <img
         src={item.image}
