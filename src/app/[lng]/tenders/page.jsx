@@ -1,151 +1,25 @@
 "use client";
 import { useState, useEffect } from "react";
-import Container from "@/app/components/Container";
-import Section from "@/app/components/Section";
-import Link from "next/link";
-import BreadCrumbs from "@/app/components/BreadCrumbs";
-import axios from "axios";
-import ReactPaginate from "react-paginate";
 
-async function getData(page = 1) {
-  try {
-    const response = await axios.get(
-      `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/?page=${page}`
-    );
-    return response.data;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-}
+import TendersPagination from "@/app/components/Tenders/TendersPagination";
 
-export default function TendersPage() {
-  const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  console.log("111", totalPages);
+function getData() {
+  const [tenders, setTenders] = useState([]);
+
   useEffect(() => {
-    async function fetchData() {
-      const tendersPromise = getData();
-
-		 const [tendersData] = await Promise.all([tendersPromise]);
-		console.log("Total Pages:", tendersData.total_pages);
-    	console.log("Current Page:", currentPage);
-      setData(tendersData.results);
-      setTotalPages(tendersData.total_pages);
-    }
-    fetchData();
-  }, [currentPage]);
-	
-  const handlePageClick = (selectedPage) => {
-    setCurrentPage(selectedPage + 1);
-  };
-
-  const [activeTab, setActiveTab] = useState("all");
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-  const filteredTenders = data.filter((item) => {
-    if (activeTab === "all") {
-      return true;
-    } else if (activeTab === "active") {
-      return item.is_active;
-    }
-    return false;
-  });
-  console.log("filteredTenders:", filteredTenders);
-
+    fetch(
+      `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setTenders(data.results);
+      });
+  }, []);
+console.log("tenders", data.results);
   return (
-    <>
-      <div className="bg-image-tenders min-h-[620px]">
-        <Container>
-          <BreadCrumbs
-            className="pt-11 mb-[319px] z-10"
-            href="/"
-            text="Назад"
-            textColor="white"
-          />
-          <h2 className="text-3xl	text-white font-bold mb-16">Тендери</h2>
-          <div className="flex space-x-4 gap-8">
-            <button
-              onClick={() => handleTabClick("all")}
-              className={`focus:outline-none w-[180px] text-start text-2xl pb-2 ${
-                activeTab === "all"
-                  ? " text-white z-10 border-b-2"
-                  : "bg-gray-300 text-fontGray border-b-2 hover:text-white transition border-transparent"
-              }`}
-            >
-              Усі
-            </button>
-            <button
-              onClick={() => handleTabClick("active")}
-              className={`focus:outline-none w-[180px] text-start text-2xl pb-2 ${
-                activeTab === "active"
-                  ? " text-white border-b-2"
-                  : "bg-gray-300 text-fontGray border-b-2 hover:text-white transition border-transparent "
-              }`}
-            >
-              Активні
-            </button>
-          </div>
-        </Container>
-      </div>
-      <Container>
-        <Section marginTop="mt-20" marginBottom="mb-[8.25rem]">
-          <ul className="grid lg:grid-cols-3 gap-5 min-w-[360px] not-italic leading-normal">
-            {Array.isArray(filteredTenders)
-              ? filteredTenders.map((item) => (
-                  <Link key={item.id} href={`/tenders/${item.id}`}>
-                    <li
-                      className="flex flex-col flex-wrap p-6 min-w-[22.5rem] min-h-[297px] bg-[#E0F2FE]"
-                      style={{ cursor: "pointer" }}
-                    >
-                      {activeTab === "all" ||
-                      (activeTab === "active" && item.is_active) ? (
-                        <>
-                          <p className="flex justify-between font-body text-lg">
-                            <span
-                              className={`font-bold ${
-                                item.is_active ? "text-green" : "text-lightGray"
-                              }`}
-                            >
-                              {item.is_active ? "Активний" : "Архівний"}
-                            </span>
-                            <span className="text-black">{item.date}</span>
-                          </p>
-                          <p className="font-sans mt-6 text-left text-2xl text-black font-medium">
-                            {item.title
-                              .split(" ")
-                              .slice(0, 20)
-                              .map((word, index) => (
-                                <span key={index}>{word.trim()} </span>
-                              ))}
-                            {item.description.split(" ").length > 20 && "..."}{" "}
-                          </p>
-                        </>
-                      ) : null}
-                    </li>
-                  </Link>
-                ))
-              : null}
-          </ul>
-          <div className="paginate">
-            <ReactPaginate
-              previousLabel={"Попередня"}
-              nextLabel={"Наступна"}
-              breakLabel={"..."}
-              breakClassName={"break-me"}
-              pageCount={totalPages}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={10}
-              onPageChange={handlePageClick}
-              containerClassName={"pagination"}
-              subContainerClassName={"pages pagination"}
-              activeClassName={"active"}
-            />
-          </div>
-        </Section>
-      </Container>
-    </>
+    <div>
+      <TendersPagination data={tenders} />
+    </div>
   );
 }
+export default getData;
