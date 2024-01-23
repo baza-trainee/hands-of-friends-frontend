@@ -5,12 +5,13 @@ import Container from "../Container";
 import Section from "../Section";
 import BreadCrumbs from "../BreadCrumbs";
 
+
 export default function TendersPagination(props) {
   const { data } = props;
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 9;
+  const itemsPerPage = 3;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -104,10 +105,16 @@ export default function TendersPagination(props) {
         </Container>
       )}
       <ReactPaginate
+        activeClassName="active-btn"
+        containerClassName="pagination"
+        activeLinkClassName="active-link"
+        disabledClassName="disabled"
+        nextClassName="next"
+        pageClassName="pageClass"
         breakLabel="..."
-        nextLabel="->"
+        nextLabel=""
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
         pageCount={pageCount}
         previousLabel="<-"
         renderOnZeroPageCount={null}
