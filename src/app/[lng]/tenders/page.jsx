@@ -15,7 +15,7 @@ function getData() {
         setTenders(data.results);
       });
   }, []);
-console.log("tenders", data.results);
+
   return (
     <div>
       <TendersPagination data={tenders} />
