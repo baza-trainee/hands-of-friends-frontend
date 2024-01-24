@@ -142,8 +142,8 @@ a.active-link {
   justify-content: center;
   color: white;
 }
-
-.next {
+.next a {
+  display: block;
   border: #4c1d95 1px solid;
   border-radius: 50%;
   width: 36px;
@@ -155,17 +155,27 @@ a.active-link {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.next.disabled {
-  border: #9ca3af 1px solid;
+.previous a {
+  display: block;
+  border: #4c1d95 1px solid;
   border-radius: 50%;
-  background-image: url(../../assets/arrow-dis.svg);
-}
-.previous.disabled {
   width: 36px;
   height: 36px;
-  background-image: url(../../assets/arrow-dis.svg);
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../assets/arrow-right.svg);
   transform: rotate(180deg);
+  background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+.previous.disabled a {
+  display: block;
   border: #9ca3af 1px solid;
-  border-radius: 50%;
+  background-image: url(../../assets/arrow-dis.svg);
+}
+.next.disabled a {
+  display: block;
+  border: #9ca3af 1px solid;
+  background-image: url(../../assets/arrow-dis.svg);
 }

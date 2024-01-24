@@ -10,7 +10,7 @@ const TendersPagination = (props) => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 2;
+  const itemsPerPage = 4;
   const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
