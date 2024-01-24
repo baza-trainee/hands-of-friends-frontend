@@ -19,16 +19,28 @@
 /* Styles for Slider*/
 
 body .swiper {
-  padding-left: 2.75rem;
-  padding-right: 2.75rem;
+  padding-left: 2.13rem;
+  padding-right: 2.13rem;
   padding-bottom: 3rem;
+
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
 }
+
 .swiper .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
   width: 16.56rem;
+  height: auto;
+  overflow: hidden;
 }
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
@@ -58,16 +70,19 @@ body .swiper {
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  width: 2.75rem;
-  height: 2.75rem;
+  @media screen and (max-width: 1279.98px) {
+    display: none;
+  }
+  width: 1.5rem;
+  height: 1.5rem;
   color: #020617;
 }
 body .swiper .swiper-button-prev {
-  left: -1.06rem;
+  left: -0.38rem;
   top: 11.64rem;
 }
 body .swiper .swiper-button-next {
-  right: -1.06rem;
+  right: -0.38rem;
   top: 11.64rem;
 }
 
@@ -77,7 +92,7 @@ body .swiper .swiper-button-next {
   color: #020617;
 }
 .bg-image-tenders {
-  background-image: url("../../assets/bg.png");
+  background-image: url("../../assets/tenders-bg.jpg");
   background-size: cover;
 }
 
@@ -100,51 +115,4 @@ body .swiper .swiper-button-next {
   position: absolute !important;
   transform: translate(-0%, -50%) !important;
   background: url("../../assets/play.svg") !important;
-}
-.pagination {
-  margin-top: 88px;
-  margin-bottom: 132px;
-  display: flex;
-  gap: 25px;
-  justify-content: end;
-  color: white;
-}
-.active-btn {
-  background-color: #4c1d95;
-  border-radius: 50%;
-}
-.active-link {
-  display: flex;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-.disabled {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9ca3af;
-  border-color: #9ca3af;
-}
-.next {
-  display: flex;
-  color: #4c1d95;
-  border: #4c1d95 1px solid;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  background-image: url(../../assets/arrow-right.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.pageClass {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4c1d95;
 }
