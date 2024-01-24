@@ -94,7 +94,6 @@ body .swiper .swiper-button-next {
 .bg-image-tenders {
   background-image: url("../../assets/tender-bg.png");
   background-repeat: no-repeat;
- 
 }
 /* Styles for Hero video*/
 .cld-video-player .vjs-big-play-button {
@@ -116,7 +115,7 @@ body .swiper .swiper-button-next {
   margin-top: 88px;
   margin-bottom: 132px;
   display: flex;
-  gap: 25px;
+  gap: 16px;
   justify-content: end;
   color: white;
 }
@@ -124,7 +123,18 @@ body .swiper .swiper-button-next {
   background-color: #4c1d95;
   border-radius: 50%;
 }
-.active-link {
+
+.pageClass a {
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c1d95;
+  width: 36px;
+  height: 36px;
+}
+a.active-link {
   display: flex;
   width: 36px;
   height: 36px;
@@ -132,16 +142,8 @@ body .swiper .swiper-button-next {
   justify-content: center;
   color: white;
 }
-.disabled {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #9ca3af;
-  border-color: #9ca3af;
-}
+
 .next {
-  display: flex;
-  color: #4c1d95;
   border: #4c1d95 1px solid;
   border-radius: 50%;
   width: 36px;
@@ -153,9 +155,17 @@ body .swiper .swiper-button-next {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.pageClass {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4c1d95;
+.next.disabled {
+  border: #9ca3af 1px solid;
+  border-radius: 50%;
+  background-image: url(../../assets/arrow-dis.svg);
+}
+.previous.disabled {
+  width: 36px;
+  height: 36px;
+  background-image: url(../../assets/arrow-dis.svg);
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  border: #9ca3af 1px solid;
+  border-radius: 50%;
 }

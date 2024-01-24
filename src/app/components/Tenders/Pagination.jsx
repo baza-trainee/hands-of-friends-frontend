@@ -6,16 +6,15 @@ const Pagination = ({ handlePageClick, pageCount }) => (
     containerClassName="pagination"
     activeLinkClassName="active-link"
     disabledClassName="disabled"
-    nextClassName="next"
     pageClassName="pageClass"
+    pageRangeDisplayed={3}
+    marginPagesDisplayed={1}
     breakLabel="..."
     nextLabel=""
     onPageChange={handlePageClick}
-    pageRangeDisplayed={3}
     pageCount={pageCount}
-    previousLabel="<-"
+    previousLabel=""
     renderOnZeroPageCount={null}
   />
 );
-
 export default Pagination;
