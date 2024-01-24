@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import TendersPagination from "@/app/components/Tenders/TendersPagination";
 
-function getData() {
+function TendersData() {
   const [tenders, setTenders] = useState([]);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ function getData() {
     </div>
   );
 }
-export default getData;
+export default TendersData;
