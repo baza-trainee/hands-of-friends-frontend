@@ -3,7 +3,7 @@ import Container from "../Container";
 import BreadCrumbs from "../BreadCrumbs";
 
 const TendersHeader = ({ handleTabClick, activeTab }) => (
-  <div className="bg-image-tenders min-h-[620px]">
+  <div className="bg-image-tenders bg-center min-h-[620px]">
     <Container>
       <BreadCrumbs
         className="pt-11 mb-[319px] z-10"

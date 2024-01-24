@@ -92,16 +92,11 @@ body .swiper .swiper-button-next {
   color: #020617;
 }
 .bg-image-tenders {
-  background-image: url("../../assets/tenders-bg.jpg");
-  background-size: cover;
+  background-image: url("../../assets/tender-bg.png");
+  background-repeat: no-repeat;
+ 
 }
-
-/* .cld-video-player .vjs-big-play-button:before{
-  display: none !important;
-} */
-/* .vjs-control vjs-cloudinary-button vjs-button{
-  display: none !important;
-} */
+/* Styles for Hero video*/
 .cld-video-player .vjs-big-play-button {
   width: 2.5em !important;
   background: transparent;
@@ -116,6 +111,7 @@ body .swiper .swiper-button-next {
   transform: translate(-0%, -50%) !important;
   background: url("../../assets/play.svg") !important;
 }
+/* Styles for Pagination*/
 .pagination {
   margin-top: 88px;
   margin-bottom: 132px;
@@ -127,7 +123,6 @@ body .swiper .swiper-button-next {
 .active-btn {
   background-color: #4c1d95;
   border-radius: 50%;
-  
 }
 .active-link {
   display: flex;
