@@ -1,29 +1,47 @@
-import BreadCrumbs from "@/app/components/BreadCrumbs";
+'use client';
+
+import { useEffect, useState } from "react";
 import Container from "@/app/components/Container";
+import BreadCrumbs from "@/app/components/BreadCrumbs";
+import getFetchedData from "@/app/helpers/helperAPI";
 
-const getData = async (id) => {
-  const res = await fetch(
-    `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/${id}`,
-    { cache: "no-store" }
-  );
+// const getData = async (id) => {
+//   const res = await fetch(
+//     `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/${id}`,
+//     { cache: "no-store" }
+//   );
 
-  if (!res.ok) {
-    throw new Error("Something went wrong");
-  }
+//   if (!res.ok) {
+//     throw new Error("Something went wrong");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
-const ulClass = "list-disc px-5 py-6";
-const olClass = "list-decimal px-5 py-6";
-
-export default async function Page({ params }) {
+export default function Page({ params }) {
   const { id } = params;
-  const data = await getData(id);
+  const [data, setData] = useState({});
+  const [formattedDescription, setFormattedDescription] = useState();
+  const ulClass = "list-disc px-5 py-6";
+  const olClass = "list-decimal px-5 py-6";
 
-  const formattedDescription = data.description
-    .replace(/<ul/g, `<ul class="${ulClass}"`)
-    .replace(/<ol/g, `<ol class="${olClass}"`);
+  useEffect(() => {
+    async function fetchData(id) {
+      const tenderPromise = await getFetchedData(`tenders/${id}`, { "Accept-Language": "uk" });
+
+      const desc = tenderPromise.description
+        .replace(/<ul/g, `<ul class="${ulClass}"`)
+        .replace(/<ol/g, `<ol class="${olClass}"`);
+
+      setFormattedDescription(desc);
+      setData(tenderPromise);
+    }
+    fetchData(id);
+  }, [])
+
+  // const formattedDescription = data.description
+  // .replace(/<ul/g, `<ul class="${ulClass}"`)
+  // .replace(/<ol/g, `<ol class="${olClass}"`);
 
   return (
     <>
