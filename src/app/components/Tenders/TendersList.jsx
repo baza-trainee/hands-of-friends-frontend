@@ -2,22 +2,23 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import axios from "axios";
+import getFetchedData from "@/app/helpers/helperAPI";
 import Skeleton from "./Skeleton";
 
 // import { dataTenders } from "./data";
 
-async function getTenders() {
-  try {
-    const response = await axios.get(
-      "https://hands-of-friends-backend.onrender.com/api/content_management/tenders/"
-    );
-    return response.data;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-}
+// async function getTenders() {
+//   try {
+//     const response = await axios.get(
+//       "https://hands-of-friends-backend.onrender.com/api/content_management/tenders/"
+//     );
+//     return response.data;
+//   } catch (error) {
+//     console.log(error);
+//     return [];
+//   }
+// }
+
 export default function TenderList() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
@@ -26,7 +27,7 @@ export default function TenderList() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const tenderPromise = getTenders();
+      const tenderPromise = getFetchedData('tenders/', { "Accept-Language": "uk" });
 
       const [tenderData] = await Promise.all([tenderPromise]);
       setData(tenderData.slice(0, 3));

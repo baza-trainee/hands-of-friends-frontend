@@ -1,24 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import axios from "axios";
-
+import getFetchedData from "@/app/helpers/helperAPI";
 import Skeleton from "./Skeleton";
 import Action from "../Action";
 
 // import { dataProjects } from "./data";
 
-async function getProjects() {
-  try {
-    const response = await axios.get(
-      "https://hands-of-friends-backend.onrender.com/api/content_management/projects/?limit=3"
-    );
-    return response.data;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-}
+// async function getProjects() {
+//   try {
+//     const response = await axios.get(
+//       "https://hands-of-friends-backend.onrender.com/api/content_management/projects/?limit=3"
+//     );
+//     return response.data;
+//   } catch (error) {
+//     console.log(error);
+//     return [];
+//   }
+// }
 
 export default function ProjectList() {
   const [data, setData] = useState([]);
@@ -28,9 +27,10 @@ export default function ProjectList() {
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const projectPromise = getProjects();
 
+      const projectPromise = getFetchedData('projects/?limit=3', { "Accept-Language": "uk" });
       const [projectData] = await Promise.all([projectPromise]);
+
       setData(projectData.results);
       // console.log(projectData);
     }
