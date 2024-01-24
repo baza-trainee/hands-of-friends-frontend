@@ -116,3 +116,51 @@ body .swiper .swiper-button-next {
   transform: translate(-0%, -50%) !important;
   background: url("../../assets/play.svg") !important;
 }
+.pagination {
+  margin-top: 88px;
+  margin-bottom: 132px;
+  display: flex;
+  gap: 25px;
+  justify-content: end;
+  color: white;
+}
+.active-btn {
+  background-color: #4c1d95;
+  border-radius: 50%;
+  
+}
+.active-link {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  border-color: #9ca3af;
+}
+.next {
+  display: flex;
+  color: #4c1d95;
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../assets/arrow-right.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.pageClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c1d95;
+}

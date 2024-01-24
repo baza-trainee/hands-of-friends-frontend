@@ -8,7 +8,8 @@ function getData() {
 
   useEffect(() => {
     fetch(
-      `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/`
+      `https://hands-of-friends-backend.onrender.com/api/content_management/tenders/`,
+      { cache: "no-store" }
     )
       .then((response) => response.json())
       .then((data) => {

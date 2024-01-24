@@ -4,6 +4,7 @@ import 'next-cloudinary/dist/cld-video-player.css'
 
 import { useState } from 'react'
 import { Hourglass } from 'react-loader-spinner'
+import Container from './Container'
 
 export default function Hero() {
 	const [videoLoaded, setVideoLoaded] = useState(false)
@@ -26,13 +27,15 @@ export default function Hero() {
 						/>
 					</div>
 				)}
-				<CldVideoPlayer
-					poster='https://res.cloudinary.com/dgkkn62i5/image/upload/v1705565089/hero_mvqyzh.jpg'
-					width='1440'
-					height='869'
-					src='1_hnfjx5'
-					onDataLoad={handleVideoLoaded}
-				/>
+				<div className=''>
+					<CldVideoPlayer
+						poster='https://res.cloudinary.com/dgkkn62i5/image/upload/v1705565089/hero_mvqyzh.jpg'
+						width='1440'
+						height='869'
+						src='1_hnfjx5'
+						onDataLoad={handleVideoLoaded}
+					/>
+				</div>
 				<div className='flex justify-center'>
 					<h2 className='absolute bottom-24 text-white text-4xl w-[799px]'>
 						БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти з
