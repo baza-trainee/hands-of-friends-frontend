@@ -8,7 +8,6 @@ export default function ProjectSection() {
           <Container>
             <Title titleName="Проєкти" />
             <ProjectList />
-      
           </Container>
         </Section>
       );

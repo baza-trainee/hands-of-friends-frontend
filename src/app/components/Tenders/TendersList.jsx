@@ -28,7 +28,7 @@ export default function TenderList() {
 
       const [tenderData] = await Promise.all([tenderPromise]);
       setData(tenderData.slice(0,3));
-      console.log(tenderData);
+      // console.log(tenderData);
     }
     fetchData();
     setIsLoading(false);

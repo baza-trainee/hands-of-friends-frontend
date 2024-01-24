@@ -1,10 +1,12 @@
 "use client";
-import { CldVideoPlayer } from "next-cloudinary";
-import "next-cloudinary/dist/cld-video-player.css";
 
 import { useState } from "react";
 import { Hourglass } from "react-loader-spinner";
+import { CldVideoPlayer } from "next-cloudinary";
+
 import Container from "./Container";
+
+import "next-cloudinary/dist/cld-video-player.css";
 
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -50,9 +52,9 @@ export default function Hero() {
           height="650"
           src="https://www.youtube.com/embed/UYXcryt21m8?rel=0"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </Container>
     </>

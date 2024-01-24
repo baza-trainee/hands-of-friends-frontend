@@ -17,10 +17,10 @@ export default function Header({ lng }) {
 		open: { opacity: 1, y: 0 },
 		closed: { opacity: 0, y: '-100%' },
 	};
-	
+
 	const [menuOpen, setMenuOpen] = useState(false);
 	const toggleMenu = () => setMenuOpen(!menuOpen);
-	
+
 	const { t } = useTranslation(lng, 'header');
 	const pathname = usePathname();
 	const pathParts = pathname.split('/');
@@ -80,11 +80,34 @@ export default function Header({ lng }) {
 					<div className='items-center hidden gap-2 duration-300 lg:flex lg:justify-center'>
 						<CiGlobe size={30} />
 						<span className='uppercase cursor-default'>
-						{{ lng }}
+							{/* {{ lng }} */}
+							{languages
+								.filter((activeLng) => lng !== activeLng)
+								.map((activeLng) => {
+									return (
+										<span key={activeLng}>
+											<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+												EN
+											</Link>
+										</span>
+									);
+								})}
 						</span>
 						|
 						<span className='uppercase cursor-pointer hover:text-violet text-gray'>
 							{languages
+								.filter((activeLng) => lng !== activeLng)
+								.map((activeLng) => {
+									return (
+										<span key={activeLng}>
+											<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+												UA
+											</Link>
+										</span>
+									);
+								})}
+
+							{/* {languages
 								.filter((l) => lng !== l)
 								.map((l, index) => {
 									return (
@@ -97,7 +120,7 @@ export default function Header({ lng }) {
 											</Link>
 										</span>
 									);
-								})}
+								})} */}
 						</span>
 					</div>
 				</Trans>
@@ -135,7 +158,7 @@ export default function Header({ lng }) {
 								<div className='flex items-center gap-2 duration-300 cursor-pointer lg:justify-center'>
 									<CiGlobe size={30} />
 									<span className='uppercase hover:text-violet'>
-										{ { lng } }
+										{{ lng }}
 									</span>
 									|
 									<span className='uppercase hover:text-violet text-gray'>
@@ -166,9 +189,8 @@ export default function Header({ lng }) {
 					)}
 				</motion.nav>
 				<div
-					className={`cursor-pointer duration-300 absolute right-0 top-10 lg:hidden ${
-						menuOpen ? 'transform rotate-45 scale-125' : ''
-					}`}
+					className={`cursor-pointer duration-300 absolute right-0 top-10 lg:hidden ${menuOpen ? 'transform rotate-45 scale-125' : ''
+						}`}
 					onClick={toggleMenu}
 				>
 					{menuOpen ? (
