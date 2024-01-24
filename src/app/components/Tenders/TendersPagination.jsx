@@ -5,7 +5,6 @@ import Container from "../Container";
 import Section from "../Section";
 import BreadCrumbs from "../BreadCrumbs";
 
-
 export default function TendersPagination(props) {
   const { data } = props;
   const [currentItems, setCurrentItems] = useState(null);

@@ -102,8 +102,8 @@ body .swiper .swiper-button-next {
   background: url("../../assets/play.svg") !important;
 }
 .pagination {
-	margin-top: 88px;
-	margin-bottom: 132px;
+  margin-top: 88px;
+  margin-bottom: 132px;
   display: flex;
   gap: 25px;
   justify-content: end;
@@ -112,7 +112,6 @@ body .swiper .swiper-button-next {
 .active-btn {
   background-color: #4c1d95;
   border-radius: 50%;
-  
 }
 .active-link {
   display: flex;
@@ -120,7 +119,7 @@ body .swiper .swiper-button-next {
   height: 36px;
   align-items: center;
   justify-content: center;
-	color: white;
+  color: white;
 }
 .disabled {
   display: flex;
