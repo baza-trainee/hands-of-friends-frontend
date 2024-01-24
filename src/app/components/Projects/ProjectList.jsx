@@ -29,7 +29,7 @@ export default function ProjectList() {
 
       const [projectData] = await Promise.all([projectPromise]);
       setData(projectData.results);
-      // console.log(projectData);
+      console.log(projectData);
     }
     fetchData();
     setIsLoading(false);
@@ -55,8 +55,7 @@ export default function ProjectList() {
               >
                 {item.is_active ? "Активний" : "Архівний"}
               </span>
-              {/* 
-        </div> */}
+
               <p className="mt-6 text-lg font-medium leading-6 text-left text-black font-body">
                 {item.description}
               </p>

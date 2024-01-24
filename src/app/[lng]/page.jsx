@@ -1,29 +1,21 @@
-import Link from "next/link";
-import { useTranslation } from "../i18n";
-import TeamSection from "../components/Team/TeamSection";
-import TendersSection from "../components/Tenders/TendersSection";
-import CooperationSection from "../components/Cooperation/CooperationSection";
-import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection";
+import Hero from "../components/Hero";
 import About from "../components/About";
 import ProjectSection from "../components/Projects/ProjectSection";
-import Hero from "../components/Hero";
+import TendersSection from "../components/Tenders/TendersSection";
+import TeamSection from "../components/Team/TeamSection";
+import CooperationSection from "../components/Cooperation/CooperationSection";
+import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection";
 
-export default async function Page({ params: { lng } }) {
-  const { t } = await useTranslation(lng);
-
+export default async function Page() {
   return (
     <>
-      {/* <h1>{t("title")}</h1>
-      <Link href={`/${lng}/aboutUs`}>{t("to-about-page")}</Link>
-      <br />
-      <Link href={`/${lng}/client-page`}>{t("to-client-page")}</Link> */}
-      <Hero/>
+      <Hero />
       <About />
-      <ProjectSection/>
-      <TendersSection/>
+      <ProjectSection />
+      <TendersSection />
       <TeamSection />
       <CooperationSection />
-      <FeedbackFormSection/>
+      <FeedbackFormSection />
     </>
   );
 }
