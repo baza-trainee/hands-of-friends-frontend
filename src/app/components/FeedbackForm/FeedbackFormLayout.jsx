@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import Image from 'next/image'
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import img from "../../assets/hand-holds-smartphone.png";
@@ -14,17 +14,19 @@ const FeedbackFormLayout = () => {
       message: "",
     },
 
+
+
     validationSchema: Yup.object({
       name: Yup.string()
         .required("Введіть ім'я")
         .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, "Некоректне ім’я")
         .min(2, "Ім’я повинно мати не менше 2 знаків")
-        .max(50, "Ім’я повинно бути не більше 30 знаків"),
+        .max(50, "Ім’я повинно бути не більше 50 знаків"),
 
-      email: Yup.string()
+        email: Yup.string()
         .required("Введіть email")
         .matches(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+          /^[a-zA-Z0-9._%+-]+.{1,}@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/,
           "Введіть дійсний email"
         )
         .test(
@@ -32,19 +34,22 @@ const FeedbackFormLayout = () => {
           "Домени .ru і .by не допускаються",
           (value) => !/(.ru|.by)$/.test(value.split("@")[1])
         ),
+      
+      
 
       phoneNumber: Yup.string()
         .required("Введіть номер телефону")
         .matches(/^\+380\d{9}$/, "Введіть дійсний номер телефону"),
 
       message: Yup.string()
-        .required("Введіть номер телефону")
+        .required("Введіть повідомлення")
         .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/)
         .max(300, "Просимо скоротити ваше повідомлення до 300 знаків"),
     }),
 
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, {resetForm}) => {
+      console.log(JSON.stringify(values, null, 2));
+      resetForm()
     },
   });
 
@@ -69,7 +74,7 @@ const FeedbackFormLayout = () => {
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.name
                   ? "border-[red]"
-                  : "border-deepBlue"
+                  :"border-deepBlue"
               }`}
               type="text"
               autoComplete="off"
@@ -176,7 +181,12 @@ const FeedbackFormLayout = () => {
       </div>
 
       <div>
-        <img src={img.src} />
+      <Image 
+        src={img}
+        width={740}
+        height={490}
+        alt="hand-holds-smartphone"
+        />
       </div>
     </>
   );
