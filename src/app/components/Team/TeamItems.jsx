@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-no-comment-textnodes */
-
+import Image from "next/image";
 import { splitName } from "./helpers";
 
 export default function TeamItem({ data }) {
@@ -8,10 +6,10 @@ export default function TeamItem({ data }) {
 
   return (
     <>
-      <img
+      <Image
         src={data.image}
-        alt={`Photo of ${data.full_name}`}
-        width={265}
+        alt={`${data.full_name} team member`}
+        width={243}
         height={290}
         className="mb-3 h-[290px] object-cover "
       />
