@@ -1,5 +1,5 @@
-import Container from "../Container";
 import Section from "../Section";
+import Container from "../Container";
 import Title from "../Title";
 import TeamList from "./TeamList";
 

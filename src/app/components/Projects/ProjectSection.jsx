@@ -1,7 +1,8 @@
-import Title from "../Title";
-import ProjectList from "./ProjectList";
 import Section from "../Section";
 import Container from "../Container";
+import Title from "../Title";
+import ProjectList from "./ProjectList";
+
 export default function ProjectSection() {
     return (
         <Section>
@@ -11,4 +12,4 @@ export default function ProjectSection() {
           </Container>
         </Section>
       );
-}
+};

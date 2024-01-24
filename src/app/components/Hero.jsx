@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Hourglass } from "react-loader-spinner";
 import { CldVideoPlayer } from "next-cloudinary";
-
 import Container from "./Container";
 
 import "next-cloudinary/dist/cld-video-player.css";

@@ -1,16 +1,16 @@
 'use client';
 
-import { FaBars, FaPlus } from 'react-icons/fa6';
-
-import { CiGlobe } from 'react-icons/ci';
+import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Trans } from 'react-i18next/TransWithoutContext';
-import { languages } from '../../i18n/settings';
-import logo from '../../../assets/logo.png';
-import { motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 import { useTranslation } from '../../i18n/client';
+import { languages } from '../../i18n/settings';
+
+import { FaBars, FaPlus } from 'react-icons/fa6';
+import { CiGlobe } from 'react-icons/ci';
+import { motion } from 'framer-motion';
+import logo from '../../../../public/img/logo.png';
 
 export default function Header({ lng }) {
 	const variants = {

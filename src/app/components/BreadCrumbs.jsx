@@ -1,9 +1,10 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
-import ArrowWhite from "@/assets/arrow-white.svg";
-import ArrowBlue from "@/assets/arrow-blue.svg";
-import ArrowPurple from "@/assets/arrow-purple.svg";
+import ArrowWhite from "../../../public/img/arrow-white.svg";
+import ArrowBlue from "../../../public/img/arrow-blue.svg";
+import ArrowPurple from "../../../public/img/arrow-purple.svg";
 
 export default function BreadCrumbs({
   href,
