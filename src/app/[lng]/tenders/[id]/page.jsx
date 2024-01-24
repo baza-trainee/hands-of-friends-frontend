@@ -33,6 +33,7 @@ export default async function Page({ params }) {
           className="my-12 text-deepBlue "
           text="Тендери"
           svgColor="blue"
+          hoverColor="purple"
         />
 
         <div className="max-w-[835px] text-lg mb-40">
