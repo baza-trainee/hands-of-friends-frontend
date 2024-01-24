@@ -13,7 +13,7 @@ function getData() {
     )
       .then((response) => response.json())
       .then((data) => {
-        setTenders(data.results);
+        setTenders(data);
       });
   }, []);
 

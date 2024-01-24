@@ -10,9 +10,9 @@ const TendersPagination = (props) => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 4;
+  const itemsPerPage = 9;
   const [activeTab, setActiveTab] = useState("all");
-
+console.log(data)
   useEffect(() => {
     const filteredData = data.filter((tender) => {
       if (activeTab === "all") {
