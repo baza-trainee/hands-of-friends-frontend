@@ -6,11 +6,11 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 import TeamItem from "./TeamItems";
+import Skeleton from "./Skeleton";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Skeleton from "./Skeleton";
 
 async function getTeam(headers) {
   try {

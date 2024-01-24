@@ -1,10 +1,12 @@
-import Img from "../../assets/aboutUs1.png";
-import Imgn from "../../assets/aboutUs2.png";
-import Title from "./Title";
+import Image from "next/image";
+
 import Section from "./Section";
 import Container from "./Container";
+import Title from "./Title";
 import Action from "./Action";
-import Image from "next/image";
+
+import Img from "../../../public/img/about-us1.png";
+import Imgn from "../../../public/img/about-us2.png";
 
 export default function About() {
   return (

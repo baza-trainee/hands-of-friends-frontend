@@ -1,10 +1,10 @@
 'use client';
 
-import { FaFacebook, FaYoutube } from 'react-icons/fa6';
-
 import Link from 'next/link';
-import logo from '../../../assets/logo.png';
 import { useTranslation } from '../../i18n/client';
+
+import { FaFacebook, FaYoutube } from 'react-icons/fa6';
+import logo from '../../../../public/img/logo.png';
 
 export default function Footer({ lng }) {
 	const { t } = useTranslation(lng, 'footer');

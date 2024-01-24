@@ -3,8 +3,6 @@ import Container from "../Container";
 import Title from "../Title";
 import FeedbackFormLayout from "./FeedbackFormLayout";
 
-
-
 export default function FeedbackFormSection() {
   return (
     <Section marginbottom="mb-[22rem]">

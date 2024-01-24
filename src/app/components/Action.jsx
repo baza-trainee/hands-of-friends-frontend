@@ -1,10 +1,10 @@
-import clsx from "clsx";
 import Link from "next/link";
+import clsx from "clsx";
 
-const Action = ({ onClick, children, className, href, rel, target }) => {
+export default function Action({ onClick, children, className, href, rel, target }) {
   const Action = href ? Link : "button";
-
   const additionalProps = Action === Link ? { href, rel, target } : { onClick };
+
   return (
     <Action
       className={clsx(
@@ -17,5 +17,3 @@ const Action = ({ onClick, children, className, href, rel, target }) => {
     </Action>
   );
 };
-
-export default Action;

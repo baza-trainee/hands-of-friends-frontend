@@ -1,11 +1,13 @@
 "use client";
+
 import Image from 'next/image'
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
-import img from "../../assets/hand-holds-smartphone.png";
 import Action from "../Action";
 
-const FeedbackFormLayout = () => {
+import img from "../../../../public/img/hand-holds-smartphone.png";
+
+export default function FeedbackFormLayout() {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -14,8 +16,6 @@ const FeedbackFormLayout = () => {
       message: "",
     },
 
-
-
     validationSchema: Yup.object({
       name: Yup.string()
         .required("Введіть ім'я")
@@ -23,7 +23,7 @@ const FeedbackFormLayout = () => {
         .min(2, "Ім’я повинно мати не менше 2 знаків")
         .max(50, "Ім’я повинно бути не більше 50 знаків"),
 
-        email: Yup.string()
+      email: Yup.string()
         .required("Введіть email")
         .matches(
           /^[a-zA-Z0-9._%+-]+.{1,}@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/,
@@ -34,8 +34,6 @@ const FeedbackFormLayout = () => {
           "Домени .ru і .by не допускаються",
           (value) => !/(.ru|.by)$/.test(value.split("@")[1])
         ),
-      
-      
 
       phoneNumber: Yup.string()
         .required("Введіть номер телефону")
@@ -47,7 +45,7 @@ const FeedbackFormLayout = () => {
         .max(300, "Просимо скоротити ваше повідомлення до 300 знаків"),
     }),
 
-    onSubmit: (values, {resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       console.log(JSON.stringify(values, null, 2));
       resetForm()
     },
@@ -69,13 +67,12 @@ const FeedbackFormLayout = () => {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${
-                formik.values.name === "" && !formik.errors.name
+              ${formik.values.name === "" && !formik.errors.name
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.name
-                  ? "border-[red]"
-                  :"border-deepBlue"
-              }`}
+                    ? "border-[red]"
+                    : "border-deepBlue"
+                }`}
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
@@ -97,13 +94,12 @@ const FeedbackFormLayout = () => {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${
-                formik.values.email === "" && !formik.errors.email
+              ${formik.values.email === "" && !formik.errors.email
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.email
-                  ? "border-[red]"
-                  : "border-deepBlue"
-              }`}
+                    ? "border-[red]"
+                    : "border-deepBlue"
+                }`}
               type="text"
               autoComplete="off"
               // placeholder="example@gmail.com"
@@ -125,13 +121,12 @@ const FeedbackFormLayout = () => {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${
-                formik.values.phoneNumber === "" && !formik.errors.phoneNumber
+              ${formik.values.phoneNumber === "" && !formik.errors.phoneNumber
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.phoneNumber
-                  ? "border-[red]"
-                  : "border-deepBlue"
-              }`}
+                    ? "border-[red]"
+                    : "border-deepBlue"
+                }`}
               type="text"
               autoComplete="off"
               // placeholder="+38 000 000 0000"
@@ -152,13 +147,12 @@ const FeedbackFormLayout = () => {
             </label>
             {/* w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 */}
             <textarea
-              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${
-                formik.values.message === "" && !formik.errors.message
-                  ? "border-fontGray focus:border-vividBlue"
-                  : formik.errors.message
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${formik.values.message === "" && !formik.errors.message
+                ? "border-fontGray focus:border-vividBlue"
+                : formik.errors.message
                   ? "border-[red]"
                   : "border-deepBlue"
-              }`}
+                }`}
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
@@ -181,15 +175,13 @@ const FeedbackFormLayout = () => {
       </div>
 
       <div>
-      <Image 
-        src={img}
-        width={740}
-        height={490}
-        alt="hand-holds-smartphone"
+        <Image
+          src={img}
+          width={740}
+          height={490}
+          alt="hand-holds-smartphone"
         />
       </div>
     </>
   );
 };
-
-export default FeedbackFormLayout;

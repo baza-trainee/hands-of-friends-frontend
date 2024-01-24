@@ -1,9 +1,12 @@
 "use client";
+
 import { useState, useEffect } from "react";
-import Action from "../Action";
-// import { dataProjects } from "./data";
 import axios from "axios";
+
 import Skeleton from "./Skeleton";
+import Action from "../Action";
+
+// import { dataProjects } from "./data";
 
 async function getProjects() {
   try {
@@ -29,7 +32,7 @@ export default function ProjectList() {
 
       const [projectData] = await Promise.all([projectPromise]);
       setData(projectData.results);
-      console.log(projectData);
+      // console.log(projectData);
     }
     fetchData();
     setIsLoading(false);
