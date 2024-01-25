@@ -4,8 +4,6 @@ import { useState } from "react";
 import Section from "./Section";
 import Play from "/hands-of-friends-frontend/public/img/play.svg";
 
-import "next-cloudinary/dist/cld-video-player.css";
-
 export default function Hero() {
   const [isVideoPlaying, setVideoPlaying] = useState(false);
   const handleVideoPlay = () => {

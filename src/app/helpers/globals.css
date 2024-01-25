@@ -102,23 +102,6 @@ body .swiper .swiper-button-next {
   background-repeat: no-repeat;
 }
 
-/* Styles for Hero video*/
-.cld-video-player .vjs-big-play-button {
-  width: 2.5em !important;
-  background: transparent;
-}
-
-.vjs-big-play-button {
-  background: transparent !important;
-}
-
-.vjs-big-play-button::before {
-  position: absolute !important;
-  transform: translate(-0%, -50%) !important;
-  background: url("../../../public/img/play.svg") !important;
-  background-repeat: no-repeat !important;
-}
-
 /* Styles for Pagination*/
 .pagination {
   margin-top: 88px;
