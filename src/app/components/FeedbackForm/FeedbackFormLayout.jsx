@@ -7,7 +7,6 @@ import Action from "../Action";
 
 import img from "../../../../public/img/hand-holds-smartphone.png";
 
-
 const FeedbackFormLayout = () => {
   const formik = useFormik({
     initialValues: {
@@ -61,20 +60,24 @@ const FeedbackFormLayout = () => {
           method="post"
           onSubmit={formik.handleSubmit}
         >
-          <div className="w-[28.4rem] mb-6 mt-6">
+          <div className="relative w-[28.4rem] mb-6 mt-6">
             <label className="text-lg" htmlFor="name">
               Ім'я
             </label>
 
             <input
-              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
+              className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border  
+          
               ${
-                formik.values.name === "" && !formik.errors.name
-                  ? "border-fontGray focus:border-vividBlue"
-                  : formik.errors.name
-                  ? "border-[red]"
-                  : "border-deepBlue"
-              }`}
+                formik.touched.name
+                  ? formik.errors.name
+                    ? "border-[red] "
+                    : formik.values.name
+                    ? "border-deepBlue"
+                    : "border-fontGray focus:border-vividBlue"
+                  : "border-fontGray"
+              }
+              `}
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
@@ -85,7 +88,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.name}
             />
             <div
-              className={`text-[red] transition duration-300 ${
+              className={`absolute top-[100%] text-[red] transition duration-300 ${
                 formik.touched.name && formik.errors.name
                   ? "" // translate opacity-1
                   : "opacity-0 translate-y-[-0.625rem]"
@@ -95,7 +98,7 @@ const FeedbackFormLayout = () => {
             </div>
           </div>
 
-          <div className="w-[28.4rem] mb-6">
+          <div className="relative w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="email">
               Електронна пошта
             </label>
@@ -103,11 +106,13 @@ const FeedbackFormLayout = () => {
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
               ${
-                formik.values.email === "" && !formik.errors.email
-                  ? "border-fontGray focus:border-vividBlue"
-                  : formik.errors.email
-                  ? "border-[red]"
-                  : "border-deepBlue"
+                formik.touched.email
+                  ? formik.errors.email
+                    ? "border-[red] "
+                    : formik.values.email
+                    ? "border-deepBlue"
+                    : "border-fontGray focus:border-vividBlue"
+                  : "border-fontGray"
               }`}
               type="text"
               autoComplete="off"
@@ -120,7 +125,7 @@ const FeedbackFormLayout = () => {
             />
 
             <div
-              className={`text-[red] transition duration-300 ${
+              className={`absolute text-[red] transition duration-300 ${
                 formik.touched.email && formik.errors.email
                   ? "" // translate opacity-1
                   : "opacity-0 translate-y-[-0.625rem]"
@@ -130,7 +135,7 @@ const FeedbackFormLayout = () => {
             </div>
           </div>
 
-          <div className="w-[28.4rem] mb-6">
+          <div className="relative w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="phoneNumber">
               Контактний телефон
             </label>
@@ -138,11 +143,13 @@ const FeedbackFormLayout = () => {
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
               ${
-                formik.values.phoneNumber === "" && !formik.errors.phoneNumber
-                  ? "border-fontGray focus:border-vividBlue"
-                  : formik.errors.phoneNumber
-                  ? "border-[red]"
-                  : "border-deepBlue"
+                formik.touched.phoneNumber
+                  ? formik.errors.phoneNumber
+                    ? "border-[red] "
+                    : formik.values.phoneNumber
+                    ? "border-deepBlue"
+                    : "border-fontGray focus:border-vividBlue"
+                  : "border-fontGray"
               }`}
               type="text"
               autoComplete="off"
@@ -154,7 +161,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.phoneNumber}
             />
             <div
-              className={`text-[red] transition duration-300 ${
+              className={`absolute text-[red] transition duration-300 ${
                 formik.touched.phoneNumber && formik.errors.phoneNumber
                   ? "" // translate opacity-1
                   : "opacity-0 translate-y-[-0.625rem]"
@@ -164,19 +171,22 @@ const FeedbackFormLayout = () => {
             </div>
           </div>
 
-          <div className="w-[28.4rem] mb-6">
+          <div className="relative w-[28.4rem] mb-6">
             <label className="text-lg" htmlFor="message">
               Ваше повідомлення
             </label>
             {/* w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 */}
             <textarea
-              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${
-                formik.values.message === "" && !formik.errors.message
-                  ? "border-fontGray focus:border-vividBlue"
-                  : formik.errors.message
-                  ? "border-[red]"
-                  : "border-deepBlue"
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none block focus:ring-1 focus:ring-transparent border resize-none ${
+                formik.touched.message
+                  ? formik.errors.message
+                    ? "border-[red] "
+                    : formik.values.message
+                    ? "border-deepBlue"
+                    : "border-fontGray focus:border-vividBlue"
+                  : "border-fontGray"
               }`}
+              
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
@@ -186,7 +196,7 @@ const FeedbackFormLayout = () => {
               value={formik.values.message}
             ></textarea>
             <div
-              className={`text-[red] transition duration-300 ${
+              className={`absolute text-[red] transition duration-300 ${
                 formik.touched.message && formik.errors.message
                   ? "" // translate opacity-1
                   : "opacity-0 translate-y-[-0.625rem]"
@@ -197,7 +207,7 @@ const FeedbackFormLayout = () => {
           </div>
           <Action
             type="button"
-            className="mb-6 min-w-[12.38rem]  bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
+            className="mb-6 min-w-[12.38rem] mt-4 bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
           >
             Надіслати
           </Action>
