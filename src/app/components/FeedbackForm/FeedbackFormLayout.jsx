@@ -1,13 +1,14 @@
 "use client";
 
-import Image from 'next/image'
+import Image from "next/image";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import * as Yup from "yup";
 import Action from "../Action";
 
 import img from "../../../../public/img/hand-holds-smartphone.png";
 
-export default function FeedbackFormLayout() {
+
+const FeedbackFormLayout = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -47,7 +48,7 @@ export default function FeedbackFormLayout() {
 
     onSubmit: (values, { resetForm }) => {
       console.log(JSON.stringify(values, null, 2));
-      resetForm()
+      resetForm();
     },
   });
 
@@ -67,12 +68,13 @@ export default function FeedbackFormLayout() {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${formik.values.name === "" && !formik.errors.name
+              ${
+                formik.values.name === "" && !formik.errors.name
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.name
-                    ? "border-[red]"
-                    : "border-deepBlue"
-                }`}
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="Ольга"
@@ -82,9 +84,15 @@ export default function FeedbackFormLayout() {
               onBlur={formik.handleBlur}
               value={formik.values.name}
             />
-            {formik.touched.name && formik.errors.name ? (
-              <div className="text-[red]">{formik.errors.name}</div>
-            ) : null}
+            <div
+              className={`text-[red] transition duration-300 ${
+                formik.touched.name && formik.errors.name
+                  ? "" // translate opacity-1
+                  : "opacity-0 translate-y-[-0.625rem]"
+              }`}
+            >
+              {formik.errors.name}
+            </div>
           </div>
 
           <div className="w-[28.4rem] mb-6">
@@ -94,12 +102,13 @@ export default function FeedbackFormLayout() {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${formik.values.email === "" && !formik.errors.email
+              ${
+                formik.values.email === "" && !formik.errors.email
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.email
-                    ? "border-[red]"
-                    : "border-deepBlue"
-                }`}
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="example@gmail.com"
@@ -109,9 +118,16 @@ export default function FeedbackFormLayout() {
               onBlur={formik.handleBlur}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-[red]">{formik.errors.email}</div>
-            ) : null}
+
+            <div
+              className={`text-[red] transition duration-300 ${
+                formik.touched.email && formik.errors.email
+                  ? "" // translate opacity-1
+                  : "opacity-0 translate-y-[-0.625rem]"
+              }`}
+            >
+              {formik.errors.email}
+            </div>
           </div>
 
           <div className="w-[28.4rem] mb-6">
@@ -121,12 +137,13 @@ export default function FeedbackFormLayout() {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${formik.values.phoneNumber === "" && !formik.errors.phoneNumber
+              ${
+                formik.values.phoneNumber === "" && !formik.errors.phoneNumber
                   ? "border-fontGray focus:border-vividBlue"
                   : formik.errors.phoneNumber
-                    ? "border-[red]"
-                    : "border-deepBlue"
-                }`}
+                  ? "border-[red]"
+                  : "border-deepBlue"
+              }`}
               type="text"
               autoComplete="off"
               // placeholder="+38 000 000 0000"
@@ -136,9 +153,15 @@ export default function FeedbackFormLayout() {
               onBlur={formik.handleBlur}
               value={formik.values.phoneNumber}
             />
-            {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-              <div className="text-[red]">{formik.errors.phoneNumber}</div>
-            ) : null}
+            <div
+              className={`text-[red] transition duration-300 ${
+                formik.touched.phoneNumber && formik.errors.phoneNumber
+                  ? "" // translate opacity-1
+                  : "opacity-0 translate-y-[-0.625rem]"
+              }`}
+            >
+              {formik.errors.phoneNumber}
+            </div>
           </div>
 
           <div className="w-[28.4rem] mb-6">
@@ -147,12 +170,13 @@ export default function FeedbackFormLayout() {
             </label>
             {/* w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 */}
             <textarea
-              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${formik.values.message === "" && !formik.errors.message
-                ? "border-fontGray focus:border-vividBlue"
-                : formik.errors.message
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none focus:ring-1 focus:ring-transparent border resize-none ${
+                formik.values.message === "" && !formik.errors.message
+                  ? "border-fontGray focus:border-vividBlue"
+                  : formik.errors.message
                   ? "border-[red]"
                   : "border-deepBlue"
-                }`}
+              }`}
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
@@ -161,9 +185,15 @@ export default function FeedbackFormLayout() {
               onBlur={formik.handleBlur}
               value={formik.values.message}
             ></textarea>
-            {formik.touched.message && formik.errors.message ? (
-              <div className="text-[red]">{formik.errors.message}</div>
-            ) : null}
+            <div
+              className={`text-[red] transition duration-300 ${
+                formik.touched.message && formik.errors.message
+                  ? "" // translate opacity-1
+                  : "opacity-0 translate-y-[-0.625rem]"
+              }`}
+            >
+              {formik.errors.message}
+            </div>
           </div>
           <Action
             type="button"
@@ -175,13 +205,10 @@ export default function FeedbackFormLayout() {
       </div>
 
       <div>
-        <Image
-          src={img}
-          width={740}
-          height={490}
-          alt="hand-holds-smartphone"
-        />
+        <Image src={img} width={740} height={490} alt="hand-holds-smartphone" />
       </div>
     </>
   );
 };
+
+export default FeedbackFormLayout;
