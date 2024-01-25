@@ -44,7 +44,7 @@ export default function TenderList() {
           data.map((item) => (
             <li
               key={item.id}
-              className="flex flex-col p-6 min-w-[22.5rem] bg-[#E0F2FE]"
+              className="flex flex-col p-9 min-w-[22.5rem] bg-[#E0F2FE]"
             >
               <Link href={`/tenders/${item.id}`}>
                 <div className="flex justify-between font-body text-lg">
@@ -55,7 +55,7 @@ export default function TenderList() {
                   </span>
                   <span className="text-black">{item.date}</span>
                 </div>
-                <p className="font-sans mt-6 text-left leading-6 text-2xl text-black font-medium">
+                <p className="font-sans mt-6 text-left text-2xl text-black font-medium">
                   {item.title}
                 </p>
               </Link>
