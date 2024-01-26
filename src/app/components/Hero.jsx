@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
 
-import Section from "./Section";
-import Play from "/hands-of-friends-frontend/public/img/play.svg";
 import Image from "next/image";
+
+import Section from "./Section";
+
+import Img from "../../../public/img/play-icon.svg";
 
 export default function Hero() {
   const [isVideoPlaying, setVideoPlaying] = useState(false);
@@ -36,7 +38,7 @@ export default function Hero() {
                   className="play-icon absolute inset-0 flex items-center justify-center "
                   style={{ pointerEvents: "none" }}
                 >
-                  <Image src={Play} width={128} height={171} alt="Play" />
+                  <Image src={Img} width={128} height={171} alt="Play" />
                 </div>
               )}
             </div>
