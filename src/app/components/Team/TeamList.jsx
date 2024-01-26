@@ -1,14 +1,16 @@
 "use client";
 
+import { useHttp } from "@/app/hooks/useHttp";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
+
 import TeamItem from "./TeamItems";
 import Skeleton from "./Skeleton";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useHttp } from "@/app/hooks/useHttp";
 
 export default function TeamList() {
   const [data, setData] = useHttp("team/");

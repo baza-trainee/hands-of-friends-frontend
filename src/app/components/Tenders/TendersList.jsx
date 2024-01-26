@@ -21,24 +21,31 @@ import { useHttp } from "@/app/hooks/useHttp";
 // }
 
 export default function TenderList() {
-  // const [data, setData] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  //TODO
+  //Для прикладу як можна використати хук, але тоді треба змінити
+  // логіку як ви робите setData(tenderData.slice(0, 3));
+
+  // const [data, setData, isLoading] = useHttp("tenders/");
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   let skeleton = [...new Array(3)].map((_, i) => (
     <Skeleton key={i} className="bg-zinc-200" />
   ));
-  const [data, setData, isLoading] = useHttp("tenders/");
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     setIsLoading(true);
-  //     const tenderPromise = getFetchedData('tenders/', { "Accept-Language": "uk" });
 
-  //     const [tenderData] = await Promise.all([tenderPromise]);
-  //     setData(tenderData.slice(0, 3));
-  //     // console.log(tenderData);
-  //   }
-  //   fetchData();
-  //   setIsLoading(false);
-  // }, []);
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      const tenderPromise = getFetchedData("tenders/", {
+        "Accept-Language": "uk",
+      });
+
+      const [tenderData] = await Promise.all([tenderPromise]);
+      setData(tenderData.slice(0, 3));
+      // console.log(tenderData);
+    }
+    fetchData();
+    setIsLoading(false);
+  }, []);
 
   return (
     <>
