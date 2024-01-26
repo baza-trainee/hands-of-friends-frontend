@@ -8,6 +8,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 .pseudo:after {
   content: "";
   display: block;
