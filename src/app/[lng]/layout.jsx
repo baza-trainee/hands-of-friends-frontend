@@ -1,7 +1,6 @@
 import { PT_Sans } from "next/font/google";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
-import { useTranslation } from "../i18n/";
 
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
