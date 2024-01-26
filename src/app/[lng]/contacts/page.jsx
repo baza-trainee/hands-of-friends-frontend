@@ -1,5 +1,8 @@
 'use client';
 
+import { useTranslation } from '../../i18n/client';
+import Link from 'next/link';
+
 import {
 	FaFacebook,
 	FaLocationDot,
@@ -8,9 +11,6 @@ import {
 	FaYoutube,
 	FaArrowLeftLong,
 } from 'react-icons/fa6';
-
-import { useTranslation } from '../../i18n/client';
-import Link from 'next/link';
 
 export default function Contacts({ params: { lng } }) {
 	const { t } = useTranslation(lng, 'contacts');
