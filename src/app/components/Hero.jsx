@@ -1,61 +1,73 @@
 "use client";
-
 import { useState } from "react";
-import { Hourglass } from "react-loader-spinner";
-import { CldVideoPlayer } from "next-cloudinary";
-import Container from "./Container";
 
-import "next-cloudinary/dist/cld-video-player.css";
+import Image from "next/image";
+
+import Section from "./Section";
+
+import Img from "../../../public/img/play-icon.svg";
 
 export default function Hero() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const handleVideoLoaded = () => {
-    setVideoLoaded(true);
+  const [isVideoPlaying, setVideoPlaying] = useState(false);
+  const handleVideoPlay = () => {
+    setVideoPlaying(true);
   };
+
+  const handleVideoPause = () => {
+    setVideoPlaying(false);
+  };
+
   return (
     <>
-      <Container>
+      <Section className="mt-0 max-w-[1440px] mx-auto">
         <div className="relative mb-20">
-          {!videoLoaded && (
-            <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
-              <Hourglass
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="hourglass-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                colors={["#306cce", "#72a1ed"]}
-              />
+          <div className="video-container relative">
+            <div className="video-container relative mt-0 max-w-[1440px] mx-auto">
+              <video
+                width="100%"
+                height="100%"
+                src="https://res.cloudinary.com/dgkkn62i5/video/upload/v1706166292/test_video.mp4"
+                controls
+                poster="https://res.cloudinary.com/dgkkn62i5/image/upload/v1706174676/111_wlvg1h.png"
+                onPlay={handleVideoPlay}
+                onPause={handleVideoPause}
+              ></video>
+
+              {!isVideoPlaying && (
+                <div
+                  className="play-icon absolute inset-0 flex items-center justify-center "
+                  style={{ pointerEvents: "none" }}
+                >
+                  <Image src={Img} width={128} height={171} alt="Play" />
+                </div>
+              )}
             </div>
-          )}
-          <div className="">
-            <CldVideoPlayer
-              poster="https://res.cloudinary.com/dgkkn62i5/image/upload/v1705565089/hero_mvqyzh.jpg"
-              width="1440"
-              height="869"
-              src="1_hnfjx5"
-              onDataLoad={handleVideoLoaded}
-            />
-          </div>
-          <div className="flex justify-center">
-            <h2 className="absolute bottom-24 text-white text-4xl w-[799px]">
-              БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти з
-              надання благодійної допомоги
-            </h2>
+            <div className="flex justify-center">
+              <h2 className="absolute bottom-24 text-white text-4xl w-[799px]">
+                БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти
+                з надання благодійної допомоги
+              </h2>
+            </div>
           </div>
         </div>
+      </Section>
 
+      <div className="max-w-[1440px] mx-auto relative">
         <iframe
-          width="1280"
-          height="650"
+          width="1440"
+          height="869"
           src="https://www.youtube.com/embed/UYXcryt21m8?rel=0"
           title="YouTube video player"
-          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-      </Container>
+        <div className="flex justify-center">
+          <h2 className="absolute bottom-24 text-white text-4xl w-[799px]">
+            БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти з
+            надання благодійної допомоги
+          </h2>
+        </div>
+      </div>
     </>
   );
 }
