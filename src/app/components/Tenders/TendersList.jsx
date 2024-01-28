@@ -29,7 +29,7 @@ export default function TenderList() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   let skeleton = [...new Array(3)].map((_, i) => (
-    <Skeleton key={i} className="bg-zinc-200" />
+    <Skeleton id={i + 1} key={i} className="bg-zinc-200" />
   ));
 
   useEffect(() => {

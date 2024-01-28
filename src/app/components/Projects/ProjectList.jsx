@@ -26,7 +26,7 @@ export default function ProjectList() {
   const [page, setPage] = useState(1);
   const [lastPage, setLastPage] = useState();
   const [isLoading, setIsLoading] = useState(true)
-  let skeleton = [... new Array(3)].map((_, i) => (<Skeleton key={i} />));
+  let skeleton = [... new Array(3)].map((_, i) => (<Skeleton id={i + 1} key={i} />));
 
   useEffect(() => {
     async function fetchData() {

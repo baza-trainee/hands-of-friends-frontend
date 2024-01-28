@@ -45,7 +45,7 @@ export default function TeamList() {
                 className="flex flex-col items-center cursor-pointer"
                 key={index}
               >
-                <Skeleton />
+                <Skeleton id={index + 1}/>
               </SwiperSlide>
             ))
         : data.map((item, index) => (
