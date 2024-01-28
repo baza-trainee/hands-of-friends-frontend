@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.3.4",
     "accept-language": "^3.0.18",
     "axios": "^1.6.5",
     "clsx": "^2.1.0",
@@ -29,6 +30,7 @@
     "react-icons": "^4.12.0",
     "react-loader-spinner": "^6.1.6",
     "react-paginate": "^8.2.0",
+    "react-pdf": "^7.7.0",
     "react-player": "^2.14.1",
     "redux": "^5.0.1",
     "swiper": "^11.0.5",
@@ -39,6 +41,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.0.4",
+    "file-loader": "^6.2.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.3.0"
   }
