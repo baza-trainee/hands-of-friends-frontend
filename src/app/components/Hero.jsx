@@ -8,14 +8,18 @@ import Img from '../../../public/img/play-icon.svg'
 
 export default function Hero() {
 	const [isVideoPlaying, setVideoPlaying] = useState(false)
+	const [isVideoPaused, setVideoPaused] = useState(false)
+	const [isSeeking, setSeeking] = useState(false) 
 	const videoRef = useRef(null)
 
 	const handleVideoPlay = () => {
 		setVideoPlaying(true)
+		setVideoPaused(false)
 	}
 
 	const handleVideoPause = () => {
 		setVideoPlaying(false)
+		setVideoPaused(true)
 	}
 
 	const handlePlayClick = () => {
@@ -23,6 +27,18 @@ export default function Hero() {
 			setVideoPlaying(true)
 			videoRef.current.play()
 		}
+	}
+
+	const handleVideoSeeked = () => {
+		if (isSeeking && isVideoPaused) {
+			setVideoPlaying(true)
+			setSeeking(false) 
+			videoRef.current.play()
+		}
+	}
+
+	const handleVideoSeeking = () => {
+		setSeeking(true) 
 	}
 
 	return (
@@ -40,12 +56,14 @@ export default function Hero() {
 								preload='auto'
 								onPlay={handleVideoPlay}
 								onPause={handleVideoPause}
+								onSeeked={handleVideoSeeked}
+								onSeeking={handleVideoSeeking}
 								autoPlay={isVideoPlaying}
 								muted={isVideoPlaying}
 								controls={isVideoPlaying}
 							></video>
 						</div>
-						{!isVideoPlaying && (
+						{(isVideoPaused || !isVideoPlaying) && !isSeeking && (
 							<div
 								className='play-icon absolute inset-0 flex items-center justify-center'
 								onClick={handlePlayClick}
