@@ -1,14 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Title from "../Title";
-import TenderList from "./TendersList";
 import Section from "../Section";
 import Container from "../Container";
+import Title from "../Title";
+import TenderList from "./TendersList";
 import Action from "../Action";
 
 export default function TendersSection() {
   const router = useRouter();
+  
   return (
     <Section>
       <Container>

@@ -1,9 +1,12 @@
-import Img from "../../assets/aboutUs1.png";
-import Img2 from "../../assets/aboutUs2.png";
-import Title from "./Title";
+import Image from "next/image";
+
 import Section from "./Section";
 import Container from "./Container";
+import Title from "./Title";
 import Action from "./Action";
+
+import Img from "../../../public/img/about-us1.png";
+import Imgn from "../../../public/img/about-us2.png";
 
 export default function About() {
   return (
@@ -16,8 +19,18 @@ export default function About() {
           </p>
         </blockquote>
         <div className="flex gap-5 mb-10">
-          <img src={Img.src} alt="Our-team" />
-          <img src={Img2.src} alt="Our-team" />
+          <Image
+            src={Img}
+            width={645}
+            height={372}
+            alt="Picture of the our team"
+          />
+          <Image
+            src={Imgn}
+            width={455}
+            height={372}
+            alt="Picture of the our team"
+          />
         </div>
         <Title className="mb-15" titleName="Про нас" />
         <h2 className="text-2xl mb-8">
