@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <>
-      <iframe
+      <embed
         src={"/ua/docs/Privacy policy.pdf" + "#toolbar=0"}
         type="application/pdf"
         className="w-full h-screen border-none"
