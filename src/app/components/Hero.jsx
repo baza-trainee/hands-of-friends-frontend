@@ -1,15 +1,14 @@
 'use client'
 import { useState, useRef } from 'react'
 
-import Image from 'next/image'
-
 import Section from './Section'
-import Img from '../../../public/img/play-icon.svg'
+
+import Img from '../../../public/img/play.svg'
 
 export default function Hero() {
 	const [isVideoPlaying, setVideoPlaying] = useState(false)
 	const [isVideoPaused, setVideoPaused] = useState(false)
-	const [isSeeking, setSeeking] = useState(false) 
+	const [isSeeking, setSeeking] = useState(false)
 	const videoRef = useRef(null)
 
 	const handleVideoPlay = () => {
@@ -32,13 +31,13 @@ export default function Hero() {
 	const handleVideoSeeked = () => {
 		if (isSeeking && isVideoPaused) {
 			setVideoPlaying(true)
-			setSeeking(false) 
+			setSeeking(false)
 			videoRef.current.play()
 		}
 	}
 
 	const handleVideoSeeking = () => {
-		setSeeking(true) 
+		setSeeking(true)
 	}
 
 	return (
@@ -68,7 +67,7 @@ export default function Hero() {
 								className='play-icon absolute inset-0 flex items-center justify-center'
 								onClick={handlePlayClick}
 							>
-								<Image src={Img} width={128} height={171} alt='Play' />
+								<Img alt="Play button"/>
 							</div>
 						)}
 					</div>
