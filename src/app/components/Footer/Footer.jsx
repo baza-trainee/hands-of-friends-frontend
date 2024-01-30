@@ -46,12 +46,12 @@ export default function Footer({ lng }) {
   const docs = [
     {
       id: 1,
-      url: "/Terms",
+      url: "/ua/docs/Terms.pdf",
       text: t("terms"),
     },
     {
       id: 2,
-      url: "/Privacy-policy",
+      url: "/ua/docs/Privacy policy.pdf",
       text: t("policy"),
     },
     {
@@ -118,7 +118,7 @@ export default function Footer({ lng }) {
                   <li key={doc.id}>
                     <a
                       href={doc.url}
-                      target="blank"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-base text-black underline transition hover:text-violet"
                     >
