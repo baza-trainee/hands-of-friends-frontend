@@ -6,11 +6,11 @@ import Link from "next/link";
 import { Trans } from "react-i18next/TransWithoutContext";
 
 import { languages } from "../../i18n/settings";
+import { useTranslation } from "@/app/i18n/client";
+import { motion } from "framer-motion";
 
 import { FaBars, FaPlus, FaGlobe } from "react-icons/fa6";
-import { motion } from "framer-motion";
-import logo from "../../../../public/img/logo.svg";
-import { useTranslation } from "@/app/i18n/client";
+import LogoIcon from "../../../../public/img/logo.svg";
 // import { useTranslation } from "@/app/i18n/clientLAST";
 
 export default function Header({ lng }) {
@@ -65,7 +65,7 @@ export default function Header({ lng }) {
     <header className="bg-lightBlue">
       <div className="flex py-4 mx-auto max-w-[1200px] w-[90vw] relative lg:flex-row flex-col lg:gap-4 lg:items-center lg:justify-between gap-0">
         <div className="items-center hidden lg:flex lg:justify-center">
-          <Image src={logo} alt="logo" />
+          <LogoIcon alt="Hands of Friends logo" />
         </div>
         <div className="items-center hidden md:justify-center lg:flex">
           <ul className="flex flex-col justify-between gap-4 lg:gap-14 lg:flex-row">
@@ -157,9 +157,8 @@ export default function Header({ lng }) {
         </Trans>
         <div className="flex items-center justify-between w-full gap-5 px-4 py-4 lg:hidden">
           <div
-            className={`cursor-pointer transition lg:hidden ${
-              menuOpen ? "transform rotate-45 scale-125" : ""
-            }`}
+            className={`cursor-pointer transition lg:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
+              }`}
             onClick={toggleMenu}
           >
             {menuOpen ? (
@@ -169,7 +168,7 @@ export default function Header({ lng }) {
             )}
           </div>
           <div className="flex items-center">
-            <Image src={logo} alt="logo" width={28} height={28} />
+            <LogoIcon alt="Hands of Friends logo" width={28} height={28} />
           </div>
           <Trans i18nKey="languageSwitcher" t={t}>
             <div className="flex items-center justify-end flex-1 gap-2 transition">

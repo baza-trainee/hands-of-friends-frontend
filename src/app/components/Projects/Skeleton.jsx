@@ -1,7 +1,7 @@
 import React from "react";
 import ContentLoader from "react-content-loader";
 
-export default function Skeleton(props) {
+export default function Skeleton({id}) {
   return (
     <ContentLoader
       speed={2}
@@ -10,7 +10,7 @@ export default function Skeleton(props) {
       viewBox="0 0 360 860"
       backgroundColor="#afaaaa"
       foregroundColor="#eee2e2"
-      {...props}
+      uniqueKey={id}
     >
       <rect x="258" y="41" rx="0" ry="0" width="1" height="0" />
       <rect x="239" y="31" rx="0" ry="0" width="2" height="0" />

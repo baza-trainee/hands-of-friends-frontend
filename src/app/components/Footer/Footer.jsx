@@ -5,8 +5,7 @@ import { useTranslation } from "../../i18n/client";
 // import { useTranslation } from "@/app/i18n/clientLAST";
 
 import { FaFacebook, FaYoutube } from "react-icons/fa6";
-import logo from "../../../../public/img/logo.svg";
-import Image from "next/image";
+import LogoIcon from "../../../../public/img/logo.svg";
 
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng, "footer");
@@ -52,7 +51,7 @@ export default function Footer({ lng }) {
     },
     {
       id: 2,
-      url: "/Privacy-policy",
+      url: "/privacy-policy",
       text: t("policy"),
     },
     {
@@ -73,7 +72,7 @@ export default function Footer({ lng }) {
         <div className="flex flex-col items-center justify-between lg:flex-row gap-7">
           <div className="flex flex-col gap-8">
             <div className="flex items-center justify-center">
-              <Image src={logo} alt="logo" />
+            <LogoIcon alt="Hands of Friends logo" />
             </div>
             <div className="flex items-center justify-center gap-6">
               <div className="flex items-center">
