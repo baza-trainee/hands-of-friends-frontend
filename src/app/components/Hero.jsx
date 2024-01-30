@@ -67,7 +67,7 @@ export default function Hero() {
 								className='play-icon absolute inset-0 flex items-center justify-center'
 								onClick={handlePlayClick}
 							>
-								<Img />
+								<Img alt="Play button"/>
 							</div>
 						)}
 					</div>
