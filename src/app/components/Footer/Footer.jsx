@@ -51,7 +51,7 @@ export default function Footer({ lng }) {
     },
     {
       id: 2,
-      url: "/Privacy-policy",
+      url: "/privacy-policy",
       text: t("policy"),
     },
     {
