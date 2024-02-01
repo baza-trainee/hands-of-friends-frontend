@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 
 import "../helpers/globals.css";
 import "/node_modules/video-react/dist/video-react.css";
+import CookiesPanel from "../components/CookiesPanel";
 
 export const metadata = {
   title: "Hands of Friends",
@@ -35,6 +36,7 @@ export default async function RootLayout({ children, params: { lng } }) {
         <Header lng={lng} />
         <main className="mx-auto">{children}</main>
         <Footer lng={lng} />
+        <CookiesPanel/>
       </body>
     </html>
   );
