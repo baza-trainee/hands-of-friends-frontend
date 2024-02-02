@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 import Action from "../Action";
-
 import img from "../../../../public/img/hand-holds-smartphone.png";
+import axios from "axios";
 
 const FeedbackFormLayout = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
-      phoneNumber: "",
+      phone_number: "",
       message: "",
     },
 
@@ -35,19 +35,32 @@ const FeedbackFormLayout = () => {
           (value) => !/(.ru|.by)$/.test(value.split("@")[1])
         ),
 
-      phoneNumber: Yup.string()
+      phone_number: Yup.string()
         .required("Введіть номер телефону")
         .matches(/^\+380\d{9}$/, "Введіть дійсний номер телефону"),
 
       message: Yup.string()
         .required("Введіть повідомлення")
-        .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/)
         .max(300, "Просимо скоротити ваше повідомлення до 300 знаків"),
     }),
 
-    onSubmit: (values, { resetForm }) => {
-      console.log(JSON.stringify(values, null, 2));
-      resetForm();
+    onSubmit: (values, { resetForm, setSubmitting }) => {
+      let data = JSON.stringify(values, null, 2);
+      axios.post('https://hands-of-friends-backend.onrender.com/api/feedback/', data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        })
+        .finally(() => {
+          setSubmitting(false);
+          resetForm();
+        });
     },
   });
 
@@ -68,15 +81,14 @@ const FeedbackFormLayout = () => {
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border  
           
-              ${
-                formik.touched.name
+              ${formik.touched.name
                   ? formik.errors.name
                     ? "border-[red] "
                     : formik.values.name
-                    ? "border-deepBlue"
-                    : "border-fontGray focus:border-vividBlue"
+                      ? "border-deepBlue"
+                      : "border-fontGray focus:border-vividBlue"
                   : "border-fontGray"
-              }
+                }
               `}
               type="text"
               autoComplete="off"
@@ -88,11 +100,10 @@ const FeedbackFormLayout = () => {
               value={formik.values.name}
             />
             <div
-              className={`absolute top-[100%] text-[red] transition duration-300 ${
-                formik.touched.name && formik.errors.name
-                  ? "" // translate opacity-1
-                  : "opacity-0 translate-y-[-0.625rem]"
-              }`}
+              className={`absolute top-[100%] text-[red] transition duration-300 ${formik.touched.name && formik.errors.name
+                ? "" // translate opacity-1
+                : "opacity-0 translate-y-[-0.625rem]"
+                }`}
             >
               {formik.errors.name}
             </div>
@@ -105,15 +116,14 @@ const FeedbackFormLayout = () => {
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${
-                formik.touched.email
+              ${formik.touched.email
                   ? formik.errors.email
                     ? "border-[red] "
                     : formik.values.email
-                    ? "border-deepBlue"
-                    : "border-fontGray focus:border-vividBlue"
+                      ? "border-deepBlue"
+                      : "border-fontGray focus:border-vividBlue"
                   : "border-fontGray"
-              }`}
+                }`}
               type="text"
               autoComplete="off"
               // placeholder="example@gmail.com"
@@ -125,49 +135,46 @@ const FeedbackFormLayout = () => {
             />
 
             <div
-              className={`absolute text-[red] transition duration-300 ${
-                formik.touched.email && formik.errors.email
-                  ? "" // translate opacity-1
-                  : "opacity-0 translate-y-[-0.625rem]"
-              }`}
+              className={`absolute text-[red] transition duration-300 ${formik.touched.email && formik.errors.email
+                ? "" // translate opacity-1
+                : "opacity-0 translate-y-[-0.625rem]"
+                }`}
             >
               {formik.errors.email}
             </div>
           </div>
 
           <div className="relative w-[28.4rem] mb-6">
-            <label className="text-lg" htmlFor="phoneNumber">
+            <label className="text-lg" htmlFor="phone_number">
               Контактний телефон
             </label>
 
             <input
               className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border
-              ${
-                formik.touched.phoneNumber
-                  ? formik.errors.phoneNumber
+              ${formik.touched.phone_number
+                  ? formik.errors.phone_number
                     ? "border-[red] "
-                    : formik.values.phoneNumber
-                    ? "border-deepBlue"
-                    : "border-fontGray focus:border-vividBlue"
+                    : formik.values.phone_number
+                      ? "border-deepBlue"
+                      : "border-fontGray focus:border-vividBlue"
                   : "border-fontGray"
-              }`}
+                }`}
               type="text"
               autoComplete="off"
               // placeholder="+38 000 000 0000"
-              id="phoneNumber"
-              name="phoneNumber"
+              id="phone_number"
+              name="phone_number"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.phoneNumber}
+              value={formik.values.phone_number}
             />
             <div
-              className={`absolute text-[red] transition duration-300 ${
-                formik.touched.phoneNumber && formik.errors.phoneNumber
-                  ? "" // translate opacity-1
-                  : "opacity-0 translate-y-[-0.625rem]"
-              }`}
+              className={`absolute text-[red] transition duration-300 ${formik.touched.phone_number && formik.errors.phone_number
+                ? "" // translate opacity-1
+                : "opacity-0 translate-y-[-0.625rem]"
+                }`}
             >
-              {formik.errors.phoneNumber}
+              {formik.errors.phone_number}
             </div>
           </div>
 
@@ -177,16 +184,15 @@ const FeedbackFormLayout = () => {
             </label>
             {/* w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 */}
             <textarea
-              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none block focus:ring-1 focus:ring-transparent border resize-none ${
-                formik.touched.message
-                  ? formik.errors.message
-                    ? "border-[red] "
-                    : formik.values.message
+              className={`w-[28.4rem] rounded-[0.3rem] h-32 mt-2 px-2 py-1 outline-none block focus:ring-1 focus:ring-transparent border resize-none ${formik.touched.message
+                ? formik.errors.message
+                  ? "border-[red] "
+                  : formik.values.message
                     ? "border-deepBlue"
                     : "border-fontGray focus:border-vividBlue"
-                  : "border-fontGray"
-              }`}
-              
+                : "border-fontGray"
+                }`}
+
               id="message"
               name="message"
               // placeholder="Ваше повідомлення..."
@@ -196,17 +202,16 @@ const FeedbackFormLayout = () => {
               value={formik.values.message}
             ></textarea>
             <div
-              className={`absolute text-[red] transition duration-300 ${
-                formik.touched.message && formik.errors.message
-                  ? "" // translate opacity-1
-                  : "opacity-0 translate-y-[-0.625rem]"
-              }`}
+              className={`absolute text-[red] transition duration-300 ${formik.touched.message && formik.errors.message
+                ? "" // translate opacity-1
+                : "opacity-0 translate-y-[-0.625rem]"
+                }`}
             >
               {formik.errors.message}
             </div>
           </div>
           <Action
-            type="button"
+            type="submit"
             className="mb-6 min-w-[12.38rem] mt-4 bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
           >
             Надіслати
