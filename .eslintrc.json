@@ -1,5 +1,11 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react", "react-hooks"],
   "rules": { "react/no-unescaped-entities": 0 }
-  // "no-undef": "error" 
+  // "no-undef": "error"
 }
