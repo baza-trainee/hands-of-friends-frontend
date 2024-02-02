@@ -160,8 +160,24 @@ a.active-link {
 .next:not(.disabled) a:hover {
   background-color: #4c1d95;
 }
-.previous:not(.disabled) a:hover {
-  background-color: #4c1d95;
+.next:not(.disabled) a:hover {
+  path {
+    fill: #ffffff;
+  }
+}
+.next.disabled {
+  pointer-events: none;
+}
+.previous.disabled {
+  pointer-events: none;
+}
+
+li.previous:not(.disabled):hover {
+  border-radius: 50%;
+  background-color: #4c1d95 !important;
+  path {
+    fill: #ffffff;
+  }
 }
 
 .previous.disabled a,
@@ -169,19 +185,10 @@ a.active-link {
   border-color: #d1d5db;
 }
 
-.previous.disabled a,
+.previous.disabled a svg,
 .next.disabled a svg {
   path {
-    fill: #d1d5db;
-  }
-  circle {
-    stroke: #dbd3d1;
-  }
-}
-.previous.disabled a,
-.next.disabled a:hover svg {
-  path {
-    fill: #ffffff;
+    fill: #dbd6d1;
   }
   circle {
     stroke: #dbd3d1;
@@ -191,7 +198,4 @@ a.active-link {
   display: flex;
   align-items: flex-end;
   color: #4c1d95;
-}
-.previous.disabled {
-  border-color: #d1d5db !important;
 }
