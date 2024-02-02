@@ -43,7 +43,7 @@ const CookiesPanel = () => {
               <Action
                 type="button"
                 onClick={acceptCookies}
-                className="text-[black] min-w-[208px] mx-auto  bg-white border-solid border-[#2563EB] hover:underline decoration-solid"
+                className="text-[#020617] min-w-[208px] mx-auto bg-white border-[#2563EB] hover:underline decoration-solid"
               >
                 Прийняти обов’язкові
               </Action>
