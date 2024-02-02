@@ -1,13 +1,13 @@
-import Section from "../Section";
 import Container from "../Container";
-import Title from "../Title";
 import FeedbackFormLayout from "./FeedbackFormLayout";
+import Section from "../Section";
+import Title from "../Title";
 
 export default function FeedbackFormSection() {
   return (
     <Section marginbottom="mb-[22rem]">
       <Container>
-        <Title titleName="Форма зворотнього зв'язку"/>
+        <Title titleName="Форма зворотного зв'язку"/>
         <FeedbackFormLayout/>
       </Container>
     </Section>

@@ -36,7 +36,7 @@ export default function About() {
         <h2 className="text-2xl mb-8">
           Міжнародний благодійний фонд "Руки друзів"
         </h2>
-        <div className="text-lg ">
+        <div className="text-lg max-w-[792px] ">
           <p className="mb-4">
             Міжнародний благодійний фонд «Руки друзів» діє за посередництвом
             юридичних осіб (соціальні служби, управління освіти, медичні

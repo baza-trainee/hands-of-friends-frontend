@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import Container from "@/app/components/Container";
@@ -27,7 +27,9 @@ export default function Page({ params }) {
 
   useEffect(() => {
     async function fetchData(id) {
-      const tenderPromise = await getFetchedData(`tenders/${id}`, { "Accept-Language": "uk" });
+      const tenderPromise = await getFetchedData(`tenders/${id}`, {
+        "Accept-Language": "uk",
+      });
 
       const desc = tenderPromise.description
         .replace(/<ul/g, `<ul class="${ulClass}"`)
@@ -37,22 +39,11 @@ export default function Page({ params }) {
       setData(tenderPromise);
     }
     fetchData(id);
-  }, [])
-
-  // const formattedDescription = data.description
-  // .replace(/<ul/g, `<ul class="${ulClass}"`)
-  // .replace(/<ol/g, `<ol class="${olClass}"`);
-
+  }, []);
   return (
     <>
       <Container>
-        <BreadCrumbs
-          href="/tenders"
-          className="my-12 text-deepBlue "
-          text="Тендери"
-          svgColor="blue"
-          hoverColor="purple"
-        />
+        <BreadCrumbs className="my-12" href="/tenders" text="Тендери" textColor="blue" />
 
         <div className="max-w-[835px] text-lg mb-40">
           <p className="mb-6">{data.date}</p>

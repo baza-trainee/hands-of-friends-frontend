@@ -1,61 +1,78 @@
-"use client";
+'use client'
+import { useState, useRef } from 'react'
 
-import { useState } from "react";
-import { Hourglass } from "react-loader-spinner";
-import { CldVideoPlayer } from "next-cloudinary";
-import Container from "./Container";
+import Section from './Section'
 
-import "next-cloudinary/dist/cld-video-player.css";
+import Img from '../../../public/img/play.svg'
 
 export default function Hero() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const handleVideoLoaded = () => {
-    setVideoLoaded(true);
-  };
-  return (
-    <>
-      <Container>
-        <div className="relative mb-20">
-          {!videoLoaded && (
-            <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white">
-              <Hourglass
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="hourglass-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                colors={["#306cce", "#72a1ed"]}
-              />
-            </div>
-          )}
-          <div className="">
-            <CldVideoPlayer
-              poster="https://res.cloudinary.com/dgkkn62i5/image/upload/v1705565089/hero_mvqyzh.jpg"
-              width="1440"
-              height="869"
-              src="1_hnfjx5"
-              onDataLoad={handleVideoLoaded}
-            />
-          </div>
-          <div className="flex justify-center">
-            <h2 className="absolute bottom-24 text-white text-4xl w-[799px]">
-              БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти з
-              надання благодійної допомоги
-            </h2>
-          </div>
-        </div>
+	const [isVideoPlaying, setVideoPlaying] = useState(false)
+	const [isVideoPaused, setVideoPaused] = useState(false)
+	const [isSeeking, setSeeking] = useState(false)
+	const videoRef = useRef(null)
 
-        <iframe
-          width="1280"
-          height="650"
-          src="https://www.youtube.com/embed/UYXcryt21m8?rel=0"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
-      </Container>
-    </>
-  );
+	const handleVideoPlay = () => {
+		setVideoPlaying(true)
+		setVideoPaused(false)
+	}
+
+	const handleVideoPause = () => {
+		setVideoPlaying(false)
+		setVideoPaused(true)
+	}
+
+	const handlePlayClick = () => {
+		if (videoRef.current) {
+			setVideoPlaying(true)
+			videoRef.current.play()
+		}
+	}
+
+	const handleVideoSeeked = () => {
+		if (isSeeking && isVideoPaused) {
+			setVideoPlaying(true)
+			setSeeking(false)
+			videoRef.current.play()
+		}
+	}
+
+	const handleVideoSeeking = () => {
+		setSeeking(true)
+	}
+
+	return (
+		<>
+			<Section className='mt-0 max-w-[1440px] mx-auto'>
+				<div className='relative mb-20'>
+					<div className='video-container relative'>
+						<div className='video-container relative mt-0 max-w-[1440px] mx-auto'>
+							<video
+								ref={videoRef}
+								width='100%'
+								height='100%'
+								src='https://res.cloudinary.com/dgkkn62i5/video/upload/v1706166292/test_video.mp4'
+								poster='https://res.cloudinary.com/dgkkn62i5/image/upload/v1706174676/111_wlvg1h.png'
+								preload='auto'
+								onPlay={handleVideoPlay}
+								onPause={handleVideoPause}
+								onSeeked={handleVideoSeeked}
+								onSeeking={handleVideoSeeking}
+								autoPlay={isVideoPlaying}
+								muted={isVideoPlaying}
+								controls={isVideoPlaying}
+							></video>
+						</div>
+						{(isVideoPaused || !isVideoPlaying) && !isSeeking && (
+							<div
+								className='play-icon absolute inset-0 flex items-center justify-center'
+								onClick={handlePlayClick}
+							>
+								<Img alt="Play button"/>
+							</div>
+						)}
+					</div>
+				</div>
+			</Section>
+		</>
+	)
 }

@@ -7,7 +7,7 @@ export default function TenderList({ handleTabClick, activeTab }) {
     <div className="bg-image-tenders bg-center min-h-[620px]">
       <Container>
         <BreadCrumbs
-          className="pt-11 mb-[319px] z-10"
+          className="mb-[319px] z-10"
           href="/"
           text="Назад"
           textColor="white"
