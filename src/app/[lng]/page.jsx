@@ -1,3 +1,4 @@
+import React from 'react';
 import About from '../components/About';
 import CooperationSection from '../components/Cooperation/CooperationSection';
 import FeedbackFormSection from '../components/FeedbackForm/FeedbackFormSection';

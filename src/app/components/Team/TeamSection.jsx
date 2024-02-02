@@ -1,3 +1,4 @@
+import React from 'react';
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";

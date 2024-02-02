@@ -1,3 +1,4 @@
+import React from 'react';
 import { PT_Sans } from "next/font/google";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";

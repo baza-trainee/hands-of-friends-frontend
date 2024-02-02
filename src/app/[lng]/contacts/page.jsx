@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { useTranslation } from '../../i18n/client';
 import Link from 'next/link';
 

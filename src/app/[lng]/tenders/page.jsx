@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import getFetchedData from "@/app/helpers/helperAPI";
 import TendersPagination from "@/app/components/Tenders/TendersPagination";
 

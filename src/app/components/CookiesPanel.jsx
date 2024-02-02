@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
 import Cookies from "js-cookie";
 import Action from "./Action";
-import Link from "next/link";
 import Container from "./Container";
 
 const CookiesPanel = () => {
