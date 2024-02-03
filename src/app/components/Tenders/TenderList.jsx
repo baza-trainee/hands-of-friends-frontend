@@ -1,6 +1,7 @@
 // TenderList.js
 import Link from "next/link";
 
+
 export default function TenderList({ currentItems, activeTab }) {
   return (
     <ul className="grid lg:grid-cols-3 gap-5 min-w-[360px] not-italic leading-normal">
@@ -19,7 +20,7 @@ export default function TenderList({ currentItems, activeTab }) {
                   >
                     {tender.is_active ? "Активний" : "Архівний"}
                   </span>
-                  <span className="text-black">{tender.date}</span>
+                  <span className="text-black text-lg ">{tender.end_date}</span>
                 </p>
                 <p className="font-sans mt-6 text-left text-2xl text-black font-medium">
                   {tender.title

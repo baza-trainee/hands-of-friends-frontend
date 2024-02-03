@@ -4,6 +4,7 @@ import Container from "../Container";
 import TenderList from "./TenderList";
 import Pagination from "../../components/Tenders/Pagination";
 import TendersHeader from "./TendersHeader";
+import Skeleton from "./Skeleton";
 
 export default function TendersPagination({ data }) {
   const [currentItems, setCurrentItems] = useState(null);
@@ -12,9 +13,12 @@ export default function TendersPagination({ data }) {
   const [activeTab, setActiveTab] = useState("all");
   const itemsPerPage = 9;
   const endOffset = itemOffset + itemsPerPage;
+  const [isLoading, setIsLoading] = useState(true)
+  let skeleton = [... new Array(9)].map((_, i) => (<Skeleton key={i} className="bg-zinc-200" />));
 
   // console.log(data)
   useEffect(() => {
+    setIsLoading(true);
     const filteredData = data.filter((tender) => {
       if (activeTab === "all") {
         return true;
@@ -26,11 +30,13 @@ export default function TendersPagination({ data }) {
 
     setCurrentItems(filteredData.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(filteredData.length / itemsPerPage));
+    setIsLoading(false);
   }, [itemOffset, itemsPerPage, data, activeTab]);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
+    
   };
 
   const handleTabClick = (tab) => {
@@ -40,17 +46,26 @@ export default function TendersPagination({ data }) {
   return (
     <>
       <TendersHeader handleTabClick={handleTabClick} activeTab={activeTab} />
-      {currentItems && (
+      
         <Container>
+      
           <Section>
-            <TenderList currentItems={currentItems} activeTab={activeTab} />
+          {isLoading ? 
+        <ul className="grid lg:grid-cols-3 gap-5 min-w-[360px] mb-40">
+        {skeleton}
+        </ul>:
+        <>
+          <TenderList currentItems={currentItems} activeTab={activeTab} />
             <Pagination
               handlePageClick={handlePageClick}
               pageCount={pageCount}
             />
+            </>
+          }
           </Section>
+        
         </Container>
-      )}
+     
     </>
   );
 };

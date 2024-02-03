@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
-import TenderList from "./TendersList";
+import TendersList from "./TendersShortList";
 import Action from "../Action";
 
 export default function TendersSection() {
@@ -14,7 +14,7 @@ export default function TendersSection() {
     <Section>
       <Container>
         <Title titleName="Тендери" />
-        <TenderList />
+        <TendersList />
         <Action
           onClick={() => router.push("/tenders")}
           type="button"
