@@ -6,6 +6,9 @@
     "plugin:react-hooks/recommended"
   ],
   "plugins": ["react", "react-hooks"],
-  "rules": { "react/no-unescaped-entities": 0 }
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": 0
+  }
   // "no-undef": "error"
 }
