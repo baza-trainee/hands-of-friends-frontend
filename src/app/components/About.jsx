@@ -22,8 +22,8 @@ export default function About() {
         <div className="flex gap-5 mb-10">
           <Image
             src={Img}
-            width={645}
-            height={372}
+            width="100%"
+            height="auto"
             alt="Picture of the our team"
           />
           <Image

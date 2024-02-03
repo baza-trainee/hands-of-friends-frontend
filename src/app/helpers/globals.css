@@ -16,9 +16,20 @@ body {
 .pseudo:after {
   content: "";
   display: block;
-  width: 22.5rem;
+  width: 18rem;
   height: 0.06rem;
   background-color: #020617;
+
+  @media screen and (min-width: 420px) {
+    width: 15rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 20.88rem;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 22.5rem;
+  }
 }
 
 /* Styles for Slider*/
