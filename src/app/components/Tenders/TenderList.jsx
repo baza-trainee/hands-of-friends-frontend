@@ -19,7 +19,7 @@ export default function TenderList({ currentItems, activeTab }) {
                   >
                     {tender.is_active ? "Активний" : "Архівний"}
                   </span>
-                  <span className="text-black">{tender.date}</span>
+                  <span className="text-black">{tender.end_date}</span>
                 </p>
                 <p className="font-sans mt-6 text-left text-2xl text-black font-medium">
                   {tender.title
