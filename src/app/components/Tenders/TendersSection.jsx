@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
-import TenderList from "./TendersList";
+import TenderList from "./TendersShortList";
 import Action from "../Action";
 
 export default function TendersSection() {
