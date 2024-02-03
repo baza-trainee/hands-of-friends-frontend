@@ -1,7 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { useFormik } from "formik";
+import React from 'react';
+import Image from 'next/image'
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
+
 import * as Yup from "yup";
 import Action from "../Action";
 import img from "../../../../public/img/hand-holds-smartphone.png";
@@ -369,3 +371,4 @@ export default FeedbackFormLayout;
 // };
 
 // export default FeedbackFormLayout;
+

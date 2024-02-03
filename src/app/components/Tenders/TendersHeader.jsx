@@ -1,4 +1,4 @@
-// Header.js
+import React from 'react';
 import Container from "../Container";
 import BreadCrumbs from "../BreadCrumbs";
 
@@ -36,4 +36,4 @@ export default function TenderList({ handleTabClick, activeTab }) {
       </Container>
     </div>
   )
-};
+}

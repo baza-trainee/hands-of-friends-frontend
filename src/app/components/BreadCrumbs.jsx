@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
+import React, { useState } from "react";
 import Link from "next/link";
 
 export default function BreadCrumbs({ href, text, textColor, className }) {
@@ -18,9 +17,8 @@ export default function BreadCrumbs({ href, text, textColor, className }) {
         <p
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
-          className={`flex justify-centre items-center mt-[57px] gap-2 text-xl ${
-            textColor === "white" ? "text-white" : "deepBlue"
-          } transition ${className}`}
+          className={`flex justify-centre items-center mt-[57px] gap-2 text-xl ${textColor === "white" ? "text-white" : "deepBlue"
+            } transition ${className}`}
           style={{
             color: isHovered
               ? textColor === "white"

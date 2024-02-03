@@ -1,9 +1,12 @@
-'use client'
-import { useEffect, useState } from 'react'
-import Cookies from 'js-cookie'
-import Action from './Action'
-import Link from 'next/link'
-import Container from './Container'
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
+import Cookies from "js-cookie";
+import Action from "./Action";
+import Container from "./Container";
+
 
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false)

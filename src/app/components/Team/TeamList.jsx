@@ -1,10 +1,11 @@
 "use client";
 
-import { useHttp } from "@/app/hooks/useHttp";
+import React from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 
+import { useHttp } from "@/app/hooks/useHttp";
 import TeamItem from "./TeamItems";
 import Skeleton from "./Skeleton";
 

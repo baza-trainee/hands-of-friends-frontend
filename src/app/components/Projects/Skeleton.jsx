@@ -22,4 +22,4 @@ export default function Skeleton({id}) {
       <rect x="0" y="472" rx="0" ry="0" width="200" height="36" />
     </ContentLoader>
   )
-};
+}

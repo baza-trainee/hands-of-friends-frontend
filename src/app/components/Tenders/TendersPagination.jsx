@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 import Section from "../Section";
 import Container from "../Container";
 import TenderList from "./TenderList";
@@ -53,4 +55,4 @@ export default function TendersPagination({ data }) {
       )}
     </>
   );
-};
+}

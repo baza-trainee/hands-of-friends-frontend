@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactPaginate from "react-paginate";
 
 import Right from "../../../../public/img/arrow-right.svg";
