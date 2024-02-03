@@ -17,4 +17,4 @@ export default function Action({ onClick, children, className, href, rel, target
       {children}
     </Action>
   );
-};
+}

@@ -36,4 +36,4 @@ export default function TenderList({ handleTabClick, activeTab }) {
       </Container>
     </div>
   )
-};
+}

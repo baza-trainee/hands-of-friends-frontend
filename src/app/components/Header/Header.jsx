@@ -224,7 +224,7 @@ export default function Header({ lng }) {
         >
           {menuOpen && (
             <div className="flex flex-col gap-8 px-4 py-4 lg:flex-row lg:justify-between">
-              <div class="bg-deepBlue h-[1px] w-full"></div>
+              <div className="bg-deepBlue h-[1px] w-full"></div>
               <div className="flex items-center md:justify-center">
                 <ul className="flex flex-col justify-between gap-6 lg:gap-14 lg:flex-row">
                   {links.map((link) => (

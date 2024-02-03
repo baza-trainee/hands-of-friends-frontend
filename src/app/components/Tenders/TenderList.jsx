@@ -37,4 +37,4 @@ export default function TenderList({ currentItems, activeTab }) {
       ))}
     </ul>
   )
-};
+}
