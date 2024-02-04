@@ -1,12 +1,11 @@
-"use client";
+'use client'
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-import Cookies from "js-cookie";
-import Action from "./Action";
-import Container from "./Container";
-
+import Cookies from 'js-cookie'
+import Action from './Action'
+import Container from './Container'
 
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false)
@@ -46,7 +45,7 @@ const CookiesPanel = () => {
 							<Action
 								type='button'
 								onClick={acceptCookies}
-								className='text-[#020617] min-w-[208px] mx-auto bg-white border-deepBlue hover:underline decoration-solid'
+								className='textBlack min-w-[208px] mx-auto bg-white border-deepBlue hover:underline decoration-solid'
 							>
 								Прийняти обов’язкові
 							</Action>

@@ -11,14 +11,14 @@ import TendersSection from '../components/Tenders/TendersSection';
 export default async function Page() {
 	return (
 		<>
-			<Hero />
+			{/* <Hero /> */}
 			<About />
-			<ProjectSection />
+			{/* <ProjectSection />
 			<TendersSection />
 			<TeamSection />
 			<CooperationSection />
 			<News />
-			<FeedbackFormSection />
+			<FeedbackFormSection /> */}
 		</>
 	);
 }
