@@ -20,7 +20,7 @@ export default function About() {
 		<Section>
 			<Container>
 				<blockquote>
-					<p className='text-xs italic mb-8 font-bold sm:text-sm md:text-2xl'>
+					<p className='text-xs italic mb-8 font-bold sm:text-sm md:text-2xl lg:text-center xl:text-left'>
 						“Щодня наша команда зливається в один оркестр.<br></br> Головне –
 						чути ритм кожного!”
 					</p>
@@ -65,9 +65,10 @@ export default function About() {
 				<div className='hidden md:flex flex-col	gap-5 mb-10 xl:flex-row	'>
 					<Image
 						src={Img}
-						width={698}
+						width='auto'
 						height={398}
 						alt='Picture of the our team'
+						className='md:h-[449px] w-[688px] lg:mx-auto xl:w-[645px] 2xl:w-[690px]'
 					/>
 
 					<Image
@@ -75,6 +76,7 @@ export default function About() {
 						width='auto'
 						height={581}
 						alt='Picture of the our team'
+						className='md:h-[449px] w-[688px] lg:mx-auto xl:w-[455px] 2xl:w-[486px]'
 					/>
 				</div>
 

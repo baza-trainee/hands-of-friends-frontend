@@ -68,9 +68,17 @@ export default function Hero() {
 								className='play-icon absolute inset-0 flex items-center justify-center'
 								onClick={handlePlayClick}
 							>
-								<Img alt="Play button"/>
+								<div className='w-[128px]'>
+									<Img className='' alt='Play button' />
+								</div>
 							</div>
 						)}
+					</div>
+					<div className='flex justify-center'>
+						<h2 className='absolute xs:text-xl bottom-24 text-white xl:text-4xl w-[1066px] 2xl:text-5xl italic max-w-[]'>
+							БО "Міжнародний благодійний фонд "Руки друзів" реалізує проєкти з
+							надання благодійної допомоги
+						</h2>
 					</div>
 				</div>
 			</Section>

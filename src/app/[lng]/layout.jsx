@@ -37,7 +37,7 @@ export default async function RootLayout({ children, params: { lng } }) {
 				<Header lng={lng} />
 				<main className='mx-auto'>{children}</main>
 				<Footer lng={lng} />
-				{/* <CookiesPanel/> */}
+				<CookiesPanel/>
 			</body>
 		</html>
 	)

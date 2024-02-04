@@ -49,7 +49,10 @@ body .swiper {
 		padding-right: 3.75rem;
 	}
 }
-
+img,
+video {
+	max-width: none;
+}
 .swiper .swiper-slide {
 	display: flex;
 	justify-content: center;

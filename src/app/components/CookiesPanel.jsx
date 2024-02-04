@@ -7,6 +7,8 @@ import Cookies from 'js-cookie'
 import Action from './Action'
 import Container from './Container'
 
+import { twMerge } from 'tailwind-merge'
+
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false)
 
@@ -45,7 +47,8 @@ const CookiesPanel = () => {
 							<Action
 								type='button'
 								onClick={acceptCookies}
-								className='textBlack min-w-[208px] mx-auto bg-white border-deepBlue hover:underline decoration-solid'
+								textColor='black'
+								className='min-w-[208px] mx-auto bg-white border-deepBlue hover:underline decoration-solid'
 							>
 								Прийняти обов’язкові
 							</Action>
