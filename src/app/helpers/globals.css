@@ -212,7 +212,10 @@ li.previous:not(.disabled):hover {
 }
 
 .height-minus {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     min-height: calc(100vh - 322px);
+  }
+  @media screen and (min-width: 768px) {
+    min-height: calc(100vh - 307px);
   }
 }

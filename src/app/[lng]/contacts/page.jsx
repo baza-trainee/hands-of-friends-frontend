@@ -24,7 +24,7 @@ export default function Contacts({ params: { lng } }) {
 			>
 				<FaArrowLeftLong className='text-base md:text-2xl'/> {t('back')}
 			</Link>
-			<h1 className='mt-8 mb-6 text-2xl font-bold xl:mb-8 xl:mt-12 md:mb-8 md:mt-8 md:text-3xl'>{t('title')}</h1>
+			<h1 className='mt-8 mb-6 text-2xl font-bold xl:mb-8 xl:mt-12 md:mb-8 md:mt-12 md:text-3xl'>{t('title')}</h1>
 			<div className='flex flex-col gap-4 md:gap-6'>
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaPhone className='text-base md:text-2xl'/>
