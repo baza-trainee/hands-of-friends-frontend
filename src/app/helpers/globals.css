@@ -210,3 +210,9 @@ li.previous:not(.disabled):hover {
   align-items: flex-end;
   color: #4c1d95;
 }
+
+.height-minus {
+  @media screen and (min-width: 1440px) {
+    min-height: calc(100vh - 322px);
+  }
+}
