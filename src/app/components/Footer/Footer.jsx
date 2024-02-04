@@ -4,14 +4,9 @@ import { FaFacebook, FaYoutube } from "react-icons/fa6";
 
 import Link from "next/link";
 import LogoIcon from "../../../../public/img/logo.svg";
-import React from 'react';
 import { useTranslation } from "../../i18n/client";
 
 // import { useTranslation } from "@/app/i18n/clientLAST";
-
-
-
-
 export default function Footer({ lng }) {
 	const { t } = useTranslation(lng, "footer");
 
@@ -118,7 +113,6 @@ export default function Footer({ lng }) {
 							</ul>
 						</div>
 						<div className="flex items-center lg:justify-center">
-							{/* <ul className="flex flex-col flex-wrap items-center justify-center lg:flex-row gap-7 lg:justify-between lg:gap-14"> */}
 							<ul className="flex flex-col flex-wrap items-center justify-center md:flex-row xl:gap-x-20 md:gap-y-7 md:justify-between md:gap-14 md:gap-x-5 gap-y-4">
 								{docs.map((doc) => (
 									<li key={doc.id}>
