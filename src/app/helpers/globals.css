@@ -49,6 +49,22 @@ body .swiper {
     padding-right: 3.75rem;
   }
 }
+body .wrapperTeam .swiper {
+  padding-left: 2.13rem;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+  }
+}
+body .wrapperDonor .swiper {
+  margin-bottom: 4rem;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 7rem;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 9rem;
+  }
+}
 img,
 video {
   max-width: none;
@@ -70,23 +86,35 @@ video {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    gap: 1.25rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #d1d5db;
   margin: 0;
+  @media screen and (min-width: 768px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 2rem;
-  height: 0.75rem;
+  width: 1.5rem;
+  height: 0.5rem;
   background-color: #60a5fa;
   border-radius: 0.62rem;
+
+  @media screen and (min-width: 768px) {
+    width: 2rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper .swiper-button-prev,
@@ -100,16 +128,15 @@ video {
   color: #020617;
 }
 
-body .swiper .swiper-button-prev {
+body .wrapperTeam .swiper .swiper-button-prev {
   left: -0.38rem;
   top: 11.64rem;
 }
 
-body .swiper .swiper-button-next {
+body .wrapperTeam .swiper .swiper-button-next {
   right: -0.38rem;
   top: 11.64rem;
 }
-
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
   font-size: inherit;
@@ -221,5 +248,17 @@ li.previous:not(.disabled):hover {
 .height-minus {
   @media screen and (min-width: 1280px) {
     min-height: calc(100vh - 322px);
+  }
+}
+/* Styles for hiden Section title */
+
+.titleNoPseudo {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+  &::after {
+    display: none;
   }
 }
