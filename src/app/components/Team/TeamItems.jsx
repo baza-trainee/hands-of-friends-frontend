@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Image from "next/image";
 import { splitName } from "./helpers";
 
@@ -14,7 +14,7 @@ export default function TeamItem({ data }) {
         height={290}
         className="mb-3 h-[290px] object-cover "
       />
-      <h3 className="mb-2 w-[219px] text-2xl text-center capitalize ">
+      <h3 className="w-[219px] text-2xl text-center capitalize ">
         {name.firstName}
       </h3>
       <h3 className=" mb-2 w-[219px] text-2xl text-center capitalize  overflow-hidden truncate hover:overflow-visible hover:whitespace-normal grow break-words">

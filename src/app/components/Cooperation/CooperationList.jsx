@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
 import Action from "../Action";
 import { dataCooperation } from "./data";
 
 export default function CooperationList() {
   return (
     <ul
-      className="flex flex-col justify-center items-center gap-5 font-body  text-black
-      sm:gap-8
-      md:flex-row md:flex-wrap md:gap-5"
+      className="flex flex-col justify-center items-center gap-5 mb-8 font-body  text-black
+      sm:gap-8 sm:mb-10
+      md:flex-row md:flex-wrap md:gap-5 md:mb-16
+      xl:mb-20"
     >
       {dataCooperation.map((item, index) => (
         <li
@@ -36,7 +37,7 @@ export default function CooperationList() {
             href={"https://docs.google.com/forms/u/0/"}
             rel="noopener noreferrer"
             target="_blank"
-            className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 hover:text-deepBlue  hover:border-deepBlue"
+            className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {item.btnText}
           </Action>
