@@ -3,16 +3,16 @@
 import React from "react";
 import Title from "../../Title";
 import UniversalSlider from "../../ UniversalSlider";
-import DonorItem from "./DonorItem";
+import PartnerItem from "./PartnerItem";
 
-const Donors = () => {
+const PartnerWrapper = ({ title }) => {
   return (
     <>
-      <Title titleName="Донори" className="titleNoPseudo" />
-      <div className="wrapperDonor">
+      <Title titleName={title} className="titleNoPseudo" />
+      <div className="wrapperDonor relative">
         <UniversalSlider
           endpoint="partners/"
-          ItemComponent={DonorItem}
+          ItemComponent={PartnerItem}
           swiperSettings={{
             breakpoints: {
               320: { slidesPerView: 3.2, spaceBetween: 8 },
@@ -27,4 +27,4 @@ const Donors = () => {
   );
 };
 
-export default Donors;
+export default PartnerWrapper;

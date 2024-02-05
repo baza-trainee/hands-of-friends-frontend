@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-export default function DonorItem({ data }) {
+export default function PartnerItem({ data }) {
   return (
     <li className=" bg-[#E0F2FE]">
       <Image

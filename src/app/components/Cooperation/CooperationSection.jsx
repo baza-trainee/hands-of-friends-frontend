@@ -3,7 +3,7 @@ import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
 import CooperationList from "./CooperationList";
-import Donors from "./Donors/Donors";
+import { Partners } from "./Partners/Partners";
 
 export default function CooperationSection() {
   return (
@@ -11,7 +11,7 @@ export default function CooperationSection() {
       <Container>
         <Title titleName="Співпраця" />
         <CooperationList />
-        <Donors />
+        <Partners />
       </Container>
     </Section>
   );
