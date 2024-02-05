@@ -35,11 +35,13 @@ body {
 /* Styles for Slider*/
 
 body .swiper {
-  padding-left: 2.13rem;
-  padding-right: 2.13rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 
+  @media screen and (min-width: 768px) {
+    padding-bottom: 2.5rem;
+  }
   @media screen and (min-width: 1280px) {
+    padding-bottom: 3rem;
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
@@ -47,6 +49,22 @@ body .swiper {
   @media screen and (min-width: 1440px) {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
+  }
+}
+body .wrapperTeam .swiper {
+  padding-left: 2.13rem;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+  }
+}
+body .wrapperDonor .swiper {
+  margin-bottom: 4rem;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 7rem;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 9rem;
   }
 }
 
@@ -67,23 +85,35 @@ body .swiper {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    gap: 1.25rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
   background-color: #d1d5db;
   margin: 0;
+  @media screen and (min-width: 768px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 2rem;
-  height: 0.75rem;
+  width: 1.5rem;
+  height: 0.5rem;
   background-color: #60a5fa;
   border-radius: 0.62rem;
+
+  @media screen and (min-width: 768px) {
+    width: 2rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper .swiper-button-prev,
@@ -209,4 +239,17 @@ li.previous:not(.disabled):hover {
   display: flex;
   align-items: flex-end;
   color: #4c1d95;
+}
+
+/* Styles for hiden Section title */
+
+.titleNoPseudo {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+  &::after {
+    display: none;
+  }
 }
