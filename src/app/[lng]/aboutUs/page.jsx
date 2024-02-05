@@ -10,7 +10,7 @@ function Page() {
 
   return (
     <div>
-      <div className="bg-image-tenders bg-center min-h-[620px]">
+      <div className="bg-image-about bg-center min-h-[620px]">
         <Container>
           <BreadCrumbs
             className="mb-[319px] z-10"

@@ -120,6 +120,10 @@ body .swiper .swiper-button-next {
 	background-image: url('../../../public/img/tender-bg.png');
 	background-repeat: no-repeat;
 }
+.bg-image-about {
+	background-image: url('../../../public/img/about-bg.png');
+	background-repeat: no-repeat;
+}
 .about.swiper {
 	padding-left: 0;
 	padding-right: 0;
