@@ -1,64 +1,64 @@
 'use client';
 
-import React from 'react';
-import { useTranslation } from '../../i18n/client';
-import Link from 'next/link';
-
 import {
+	FaArrowLeftLong,
+	FaEnvelope,
 	FaFacebook,
 	FaLocationDot,
-	FaPhone ,
-	FaEnvelope ,
+	FaPhone,
 	FaYoutube,
-	FaArrowLeftLong,
 } from 'react-icons/fa6';
+
+import Link from 'next/link';
+import React from 'react';
+import { useTranslation } from '../../i18n/client';
 
 export default function Contacts({ params: { lng } }) {
 	const { t } = useTranslation(lng, 'contacts');
 
 	return (
-		<section className='pt-12 pb-40 w-[90vw] mx-auto lg:w-full max-w-[1200px]'>
+		<section className='xl:py-12 max-w-screen-2xl 2xl:px-[120px] height-minus xl:px-20 md:px-10 p-4 pb-12 mx-auto md:pt-8'>
 			<Link
 				href={`/${lng}`}
-				className='flex items-center gap-2 text-xl text-deepBlue hover:text-violet'
+				className='flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet md:text-lg'
 			>
-				<FaArrowLeftLong size={24} /> {t('back')}
+				<FaArrowLeftLong className='text-base md:text-2xl'/> {t('back')}
 			</Link>
-			<h1 className='my-12 text-3xl font-bold'>{t('title')}</h1>
-			<div className='flex flex-col gap-6'>
+			<h1 className='mt-8 mb-6 text-2xl font-bold xl:mb-8 xl:mt-12 md:mb-8 md:mt-12 md:text-3xl'>{t('title')}</h1>
+			<div className='flex flex-col gap-4 md:gap-6'>
 				<div className='flex items-center gap-4 text-lightGray'>
-					<FaPhone size={24}  />
-					<p className='text-lg text-black'>+380 50 821 4978</p>
+					<FaPhone className='text-base md:text-2xl'/>
+					<p className='text-sm text-black md:text-lg'>+380 50 821 4978</p>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
-					<FaEnvelope size={24}  />
-					<p className='text-lg text-black'>fond.hands@gmail.com</p>
+					<FaEnvelope className='text-base md:text-2xl'/>
+					<p className='text-sm text-black md:text-lg'>fond.hands@gmail.com</p>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
-					<FaYoutube size={24} />
+					<FaYoutube className='text-base md:text-2xl'/>
 					<a
 						href='https://www.youtube.com/@go2frg'
 						target='_blank'
 						rel='noopener noreferrer'
-						className='text-lg text-black hover:text-violet'
+						className='text-sm text-black md:text-lg hover:text-violet'
 					>
 						https://www.youtube.com/@go2frg
 					</a>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
-					<FaFacebook size={24} />
+					<FaFacebook className='text-base md:text-2xl'/>
 					<a
 						href='https://www.facebook.com/FriendsHands'
 						target='_blank'
 						rel='noopener noreferrer'
-						className='text-lg text-black hover:text-violet'
+						className='text-sm text-black md:text-lg hover:text-violet'
 					>
 						https://www.facebook.com/FriendsHands
 					</a>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
-					<FaLocationDot size={24} />
-					<p className='text-lg text-black'>{t('address')}</p>
+					<FaLocationDot className='text-base md:text-2xl'/>
+					<p className='text-sm text-black md:text-lg'>{t('address')}</p>
 				</div>
 			</div>
 		</section>

@@ -1,280 +1,236 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { FaBars, FaGlobe, FaPlus } from "react-icons/fa6";
+
+import Bars from "../../../../public/img/bars.svg";
+import { HiPlus } from "react-icons/hi2";
 import Link from "next/link";
-import { Trans } from "react-i18next/TransWithoutContext";
-
-import { languages } from "../../i18n/settings";
-import { useTranslation } from "@/app/i18n/client";
-import { motion } from "framer-motion";
-
-import { FaBars, FaPlus, FaGlobe } from "react-icons/fa6";
 import LogoIcon from "../../../../public/img/logo.svg";
+import LogoIconTablet from "../../../../public/img/logo-tablet.svg";
+import { Trans } from "react-i18next/TransWithoutContext";
+import { languages } from "../../i18n/settings";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { useState } from 'react';
+import { useTranslation } from "@/app/i18n/client";
+
 // import { useTranslation } from "@/app/i18n/clientLAST";
 
 export default function Header({ lng }) {
-  const variants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: "-100%" },
-  };
+	const variants = {
+		open: { opacity: 1, y: 0 },
+		closed: { opacity: 0, y: "-100%" },
+	};
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+	const [menuOpen, setMenuOpen] = useState(false);
+	const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const { t } = useTranslation(lng, "header");
-  const pathname = usePathname();
-  const pathParts = pathname.split("/");
-  const pathWithoutLanguage =
-    pathParts.length > 2 ? pathParts[pathParts.length - 1] : "";
+	const { t } = useTranslation(lng, "header");
+	const pathname = usePathname();
+	const pathParts = pathname.split("/");
+	const pathWithoutLanguage =
+		pathParts.length > 2 ? pathParts[pathParts.length - 1] : "";
 
-  const links = [
-    {
-      id: 1,
-      url: `/${lng}`,
-      text: t("home"),
-    },
-    {
-      id: 2,
-      url: `/${lng}/aboutUs`,
-      text: t("about"),
-    },
-    {
-      id: 3,
-      url: `/${lng}/projects`,
-      text: t("projects"),
-    },
-    {
-      id: 4,
-      url: `/${lng}/tenders`,
-      text: t("tenders"),
-    },
-    {
-      id: 5,
-      url: `/${lng}/#news`,
-      text: t("news"),
-    },
-    {
-      id: 6,
-      url: `/${lng}/contacts`,
-      text: t("contacts"),
-    },
-  ];
+	const links = [
+		{
+			id: 1,
+			url: `/${lng}`,
+			text: t("home"),
+		},
+		{
+			id: 2,
+			url: `/${lng}/aboutUs`,
+			text: t("about"),
+		},
+		{
+			id: 3,
+			url: `/${lng}/projects`,
+			text: t("projects"),
+		},
+		{
+			id: 4,
+			url: `/${lng}/tenders`,
+			text: t("tenders"),
+		},
+		{
+			id: 5,
+			url: `/${lng}/#news`,
+			text: t("news"),
+		},
+		{
+			id: 6,
+			url: `/${lng}/contacts`,
+			text: t("contacts"),
+		},
+	];
 
-  return (
-    <header className="bg-lightBlue">
-      <div className="flex py-4 mx-auto max-w-[1200px] w-[90vw] relative lg:flex-row flex-col lg:gap-4 lg:items-center lg:justify-between gap-0">
-        <div className="items-center hidden lg:flex lg:justify-center">
-          <LogoIcon alt="Hands of Friends logo" />
-        </div>
-        <div className="items-center hidden md:justify-center lg:flex">
-          <ul className="flex flex-col justify-between gap-4 lg:gap-14 lg:flex-row">
-            {links.map((link) => (
-              <li key={link.id}>
-                <Link
-                  href={link.url}
-                  className="text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0"
-                >
-                  {link.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <a
-          href="https://www.monobank.ua/?lang=uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer lg:self-center bg-violet border-violet hover:bg-white hover:text-violet lg:block"
-        >
-          {t("support")}
-        </a>
-        <Trans i18nKey="languageSwitcher" t={t}>
-          <div className="items-center hidden gap-2 transition lg:flex lg:justify-center">
-            <FaGlobe size={24} className="text-deepBlue" />
-            <span
-              className={
-                lng === "en"
-                  ? "text-deepBlue uppercase pointer-events-none"
-                  : "text-gray uppercase"
-              }
-            >
-              {/* switch languages without changes */}
-              {languages
-                .filter((activeLng) => lng !== activeLng)
-                .map((activeLng) => {
-                  return (
-                    <span key={activeLng}>
-                      <Link href={`/${activeLng}/${pathWithoutLanguage}`}>
-                        EN
-                      </Link>
-                    </span>
-                  );
-                })}
-            </span>
-            |
-            <span
-              className={
-                lng === "ua"
-                  ? "text-deepBlue uppercase pointer-events-none"
-                  : "text-gray uppercase"
-              }
-            >
-              {languages
-                .filter((activeLng) => lng !== activeLng)
-                .map((activeLng) => {
-                  return (
-                    <span key={activeLng}>
-                      <Link href={`/${activeLng}/${pathWithoutLanguage}`}>
-                        UA
-                      </Link>
-                    </span>
-                  );
-                })}
-              {/* switch languages with changes */}
-              {/* <span className='uppercase cursor-default text-deepBlue'>
-								{{ lng }}{' '}
-							</span>
-							|{' '}
-							<span className='uppercase cursor-pointer text-gray'>
+	return (
+		<header className="bg-lightBlue">
+			<div className="flex py-4 mx-auto max-w-screen-2xl 2xl:px-[120px] xl:px-20 md:px-10 px-4 relative xl:flex-row flex-col xl:gap-4 xl:items-center xl:justify-between gap-0">
+				<div className="items-center hidden xl:flex xl:justify-center">
+					<LogoIcon alt="Hands of Friends logo" />
+				</div>
+				<div className="items-center hidden md:justify-center xl:flex">
+					<ul className="flex flex-col justify-between gap-4 xl:gap-14 xl:flex-row">
+						{links.map((link) => (
+							<li key={link.id}>
+								<Link
+									href={link.url}
+									className="text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0"
+								>
+									{link.text}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+				<a
+					href="https://www.monobank.ua/?lang=uk"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer xl:self-center bg-violet border-violet hover:bg-white hover:text-violet xl:block"
+				>
+					{t("support")}
+				</a>
+				<Trans i18nKey="languageSwitcher" t={t}>
+					<div className="items-center hidden gap-2 transition xl:flex xl:justify-center">
+						<FaGlobe size={24} className="text-deepBlue" />
+						<span
+							className={
+								lng === "en"
+									? "text-deepBlue uppercase pointer-events-none"
+									: "text-gray uppercase"
+							}
+						>
+							{languages
+								.filter((activeLng) => lng !== activeLng)
+								.map((activeLng) => {
+									return (
+										<span key={activeLng}>
+											<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+												EN
+											</Link>
+										</span>
+									);
+								})}
+						</span>
+						|
+						<span
+							className={
+								lng === "ua"
+									? "text-deepBlue uppercase pointer-events-none"
+									: "text-gray uppercase"
+							}
+						>
+							{languages
+								.filter((activeLng) => lng !== activeLng)
+								.map((activeLng) => {
+									return (
+										<span key={activeLng}>
+											<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+												UA
+											</Link>
+										</span>
+									);
+								})}
+						</span>
+					</div>
+				</Trans>
+				<div className="flex items-center justify-between w-full gap-5 px-4 py-4 xl:hidden">
+					<div
+						className={`cursor-pointer transition xl:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
+							}`}
+						onClick={toggleMenu}
+					>
+						{menuOpen ? (
+							<HiPlus size={28} className="fill-slate-900" />
+						) : (
+							<Bars />
+						)}
+					</div>
+					<div className="flex items-center">
+						<LogoIconTablet alt="Hands of Friends logo" />
+					</div>
+					<Trans i18nKey="languageSwitcher" t={t}>
+						<div className="flex items-center justify-end flex-1 gap-2 transition">
+							<FaGlobe size={24} className="text-deepBlue" />
+							<span
+								className={
+									lng === "en"
+										? "text-deepBlue uppercase pointer-events-none text-sm md:text-lg"
+										: "text-gray uppercase text-sm md:text-lg"
+								}
+							>
 								{languages
-									.filter((l) => lng !== l)
-									.map((l, index) => {
+									.filter((activeLng) => lng !== activeLng)
+									.map((activeLng) => {
 										return (
-											<span key={l}>
-												{index > 0 && ' or '}
-												<Link
-													href={`/${l}/${pathWithoutLanguage}`}
-												>
-													{l}
+											<span key={activeLng}>
+												<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+													EN
 												</Link>
 											</span>
 										);
 									})}
-							</span> */}
-            </span>
-          </div>
-        </Trans>
-        <div className="flex items-center justify-between w-full gap-5 px-4 py-4 lg:hidden">
-          <div
-            className={`cursor-pointer transition lg:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
-              }`}
-            onClick={toggleMenu}
-          >
-            {menuOpen ? (
-              <FaPlus size={20} className="fill-slate-900" />
-            ) : (
-              <FaBars size={20} className="fill-slate-900" />
-            )}
-          </div>
-          <div className="flex items-center">
-            <LogoIcon alt="Hands of Friends logo" width={28} height={28} />
-          </div>
-          <Trans i18nKey="languageSwitcher" t={t}>
-            <div className="flex items-center justify-end flex-1 gap-2 transition">
-              <FaGlobe size={24} className="text-deepBlue" />
-              <span
-                className={
-                  lng === "en"
-                    ? "text-deepBlue uppercase pointer-events-none text-xs"
-                    : "text-gray uppercase text-xs"
-                }
-              >
-                {/* switch languages without changes */}
-                {languages
-                  .filter((activeLng) => lng !== activeLng)
-                  .map((activeLng) => {
-                    return (
-                      <span key={activeLng}>
-                        <Link href={`/${activeLng}/${pathWithoutLanguage}`}>
-                          EN
-                        </Link>
-                      </span>
-                    );
-                  })}
-              </span>
-              |
-              <span
-                className={
-                  lng === "ua"
-                    ? "text-deepBlue uppercase pointer-events-none text-xs"
-                    : "text-gray uppercase text-xs"
-                }
-              >
-                {languages
-                  .filter((activeLng) => lng !== activeLng)
-                  .map((activeLng) => {
-                    return (
-                      <span key={activeLng}>
-                        <Link href={`/${activeLng}/${pathWithoutLanguage}`}>
-                          UA
-                        </Link>
-                      </span>
-                    );
-                  })}
-              </span>
-            </div>
-          </Trans>
-        </div>
-        <motion.nav
-          animate={menuOpen ? "open" : "closed"}
-          variants={variants}
-          className="lg:hidden"
-        >
-          {menuOpen && (
-            <div className="flex flex-col gap-8 px-4 py-4 lg:flex-row lg:justify-between">
-              <div className="bg-deepBlue h-[1px] w-full"></div>
-              <div className="flex items-center md:justify-center">
-                <ul className="flex flex-col justify-between gap-6 lg:gap-14 lg:flex-row">
-                  {links.map((link) => (
-                    <li key={link.id}>
-                      <Link
-                        href={link.url}
-                        onClick={toggleMenu}
-                        className="text-sm text-black duration-300 hover:text-violet hover:pl-4 lg:hover:pl-0"
-                      >
-                        {link.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* <Trans i18nKey='languageSwitcher' t={t}>
-								<div className='flex items-center gap-2 transition cursor-pointer lg:justify-center'>
-									<FaGlobe size={24} />
-									<span className='uppercase hover:text-violet'>
-										{{ lng }}
-									</span>
-									|
-									<span className='uppercase hover:text-violet text-gray'>
-										{languages
-											.filter((l) => lng !== l)
-											.map((l, index) => {
-												return (
-													<span key={l}>
-														{index > 0 && ' or '}
-														<Link href={`/${l}`}>
-															{l}
-														</Link>
-													</span>
-												);
-											})}
-									</span>
-								</div>
-							</Trans> */}
-              <a
-                href="https://www.monobank.ua/?lang=uk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm text-white transition border-2 rounded cursor-pointer border-violet lg:self-center bg-violet hover:bg-white hover:text-violet w-36"
-              >
-                {t("support")}
-              </a>
-            </div>
-          )}
-        </motion.nav>
-      </div>
-    </header>
-  );
+							</span>
+							|
+							<span
+								className={
+									lng === "ua"
+										? "text-deepBlue uppercase pointer-events-none text-sm md:text-lg"
+										: "text-gray uppercase text-sm md:text-lg"
+								}
+							>
+								{languages
+									.filter((activeLng) => lng !== activeLng)
+									.map((activeLng) => {
+										return (
+											<span key={activeLng}>
+												<Link href={`/${activeLng}/${pathWithoutLanguage}`}>
+													UA
+												</Link>
+											</span>
+										);
+									})}
+							</span>
+						</div>
+					</Trans>
+				</div>
+				<motion.nav
+					animate={menuOpen ? "open" : "closed"}
+					variants={variants}
+					className="xl:hidden"
+				>
+					{menuOpen && (
+						<div className="flex flex-col gap-8 px-4 py-4 xl:flex-row xl:justify-between">
+							<div className="bg-deepBlue h-[1px] w-full"></div>
+							<div className="flex items-center xl:justify-center">
+								<ul className="flex flex-col justify-between gap-6 xl:gap-14 xl:flex-row">
+									{links.map((link) => (
+										<li key={link.id}>
+											<Link
+												href={link.url}
+												onClick={toggleMenu}
+												className="text-sm text-black duration-300 hover:text-violet hover:pl-4 xl:hover:pl-0"
+											>
+												{link.text}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
+							<a
+								href="https://www.monobank.ua/?lang=uk"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="px-4 py-2 text-sm text-white transition border-2 rounded cursor-pointer border-violet xl:self-center bg-violet hover:bg-white hover:text-violet w-36"
+							>
+								{t("support")}
+							</a>
+						</div>
+					)}
+				</motion.nav>
+			</div>
+		</header>
+	);
 }

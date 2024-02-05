@@ -35,13 +35,11 @@ body {
 /* Styles for Slider*/
 
 body .swiper {
-  padding-bottom: 1.5rem;
+  padding-left: 2.13rem;
+  padding-right: 2.13rem;
+  padding-bottom: 3rem;
 
-  @media screen and (min-width: 768px) {
-    padding-bottom: 2.5rem;
-  }
   @media screen and (min-width: 1280px) {
-    padding-bottom: 3rem;
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
@@ -51,23 +49,10 @@ body .swiper {
     padding-right: 3.75rem;
   }
 }
-body .wrapperTeam .swiper {
-  padding-left: 2.13rem;
-
-  @media screen and (min-width: 768px) {
-    padding-left: 0;
-  }
+img,
+video {
+  max-width: none;
 }
-body .wrapperDonor .swiper {
-  margin-bottom: 4rem;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 7rem;
-  }
-  @media screen and (min-width: 1280px) {
-    margin-bottom: 9rem;
-  }
-}
-
 .swiper .swiper-slide {
   display: flex;
   justify-content: center;
@@ -85,35 +70,23 @@ body .wrapperDonor .swiper {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 1rem;
-  @media screen and (min-width: 768px) {
-    gap: 1.25rem;
-  }
+  gap: 1.25rem;
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
   background-color: #d1d5db;
   margin: 0;
-  @media screen and (min-width: 768px) {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
   .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 1.5rem;
-  height: 0.5rem;
+  width: 2rem;
+  height: 0.75rem;
   background-color: #60a5fa;
   border-radius: 0.62rem;
-
-  @media screen and (min-width: 768px) {
-    width: 2rem;
-    height: 0.75rem;
-  }
 }
 
 .swiper .swiper-button-prev,
@@ -147,7 +120,11 @@ body .swiper .swiper-button-next {
   background-image: url("../../../public/img/tender-bg.png");
   background-repeat: no-repeat;
 }
-
+.about.swiper {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 30px;
+}
 /* Styles for Pagination*/
 .pagination {
   margin-top: 88px;
@@ -241,15 +218,8 @@ li.previous:not(.disabled):hover {
   color: #4c1d95;
 }
 
-/* Styles for hiden Section title */
-
-.titleNoPseudo {
-  display: none;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-  &::after {
-    display: none;
+.height-minus {
+  @media screen and (min-width: 1280px) {
+    min-height: calc(100vh - 322px);
   }
 }

@@ -40,5 +40,8 @@ module.exports = {
     ".transition": {
       transition: "all 0.2s ease-in-out",
     },
+    ".textBlack": {
+      color:"black",
+    }
   },
 };
