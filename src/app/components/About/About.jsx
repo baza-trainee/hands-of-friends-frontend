@@ -8,8 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import Img from "../../../../public/img/about-us1.png";
-import Imgn from "../../../../public/img/about-us2.png";
+import Team from "../../../../public/img/about-us1.png";
+import Office from "../../../../public/img/about-us2.png";
 
 import Section from "../Section";
 import Container from "../Container";
@@ -43,7 +43,7 @@ export default function About() {
             <SwiperSlide>
               <div className="">
                 <Image
-                  src={Img}
+                  src={Team}
                   width={288}
                   height={167}
                   alt="Picture of the our team"
@@ -53,7 +53,7 @@ export default function About() {
             <SwiperSlide>
               <div>
                 <Image
-                  src={Imgn}
+                  src={Office}
                   width="100%"
                   height={167}
                   alt="Picture of the our team"
@@ -65,7 +65,7 @@ export default function About() {
 
         <div className="hidden md:flex flex-col	gap-5 mb-10 xl:flex-row	">
           <Image
-            src={Img}
+            src={Team}
             width="auto"
             height={398}
             alt="Picture of the our team"
@@ -73,7 +73,7 @@ export default function About() {
           />
 
           <Image
-            src={Imgn}
+            src={Office}
             width="auto"
             height={581}
             alt="Picture of the our team"

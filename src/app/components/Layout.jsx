@@ -6,7 +6,9 @@ import Footer from "./Footer/Footer";
 
 const Layout = ({ children, lng }) => {
   const pathname = usePathname();
-  const isTest = pathname.split("/").includes("privacy-policy");
+  const isTest =
+    pathname.includes("privacy-policy") || pathname.includes("Terms");
+
 
   return (
     <>

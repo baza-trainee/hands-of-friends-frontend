@@ -91,6 +91,10 @@ video {
   overflow: hidden;
 }
 
+.about .swiper-slide {
+  padding-bottom: 2rem;
+}
+
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -169,8 +173,8 @@ video {
   background-repeat: no-repeat;
 }
 .bg-image-about {
-	background-image: url('../../../public/img/about-bg.png');
-	background-repeat: no-repeat;
+  background-image: url("../../../public/img/about-bg.png");
+  background-repeat: no-repeat;
 }
 .about.swiper {
   padding-left: 0;
