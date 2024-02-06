@@ -20,7 +20,7 @@ export default function TendersSection() {
         <Action
           onClick={() => router.push("/tenders")}
           type="button"
-          className="block px-0 mx-auto mt-8 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+          className=" block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue "
         >
           Дізнатись більше
         </Action>
