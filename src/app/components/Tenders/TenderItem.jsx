@@ -7,12 +7,13 @@ export default function TenderItem({ tender, href }) {
       <li
         className="flex flex-col flex-wrap min-w-[18rem] min-h-[248px] p-4 bg-[#E0F2FE]
         sm:p-6 sm:min-w-[388px]
-        xl:p-6 xl:min-w-[360px] xl:min-h-[297px]
+        md:min-w-[334px] md:min-h-[279px]
+        xl:min-w-[360px] xl:min-h-[297px]
         2xl:p-9 2xl:min-w-[24rem] 2xl:min-h-[321px]"
         style={{ cursor: "pointer" }}
       >
         <p className="flex justify-between font-body text-base
-        xl:text-lg">
+        md:text-lg">
           <span
             className={`font-bold ${
               tender.is_active ? "text-green" : "text-lightGray"
@@ -21,7 +22,7 @@ export default function TenderItem({ tender, href }) {
             {tender.is_active ? "Активний" : "Архівний"}
           </span>
           <span className="text-black text-base
-        xl:text-lg">{tender.end_date}</span>
+        md:text-lg">{tender.end_date}</span>
         </p>
         <p className="font-sans mt-6 text-left text-lg text-black font-medium
         sm:text-xl
