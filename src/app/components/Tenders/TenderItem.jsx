@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-export default function TenderItem({ data }) {
+export default function TenderItem({ data, href}) {
   return (
-    <Link href={`/tenders/${data.id}`}>
+    <Link href={`tenders/${data.id}`}>
       <li
         className="flex flex-col flex-wrap min-w-[18rem] min-h-[248px] p-4 bg-[#E0F2FE]
         sm:p-6 sm:min-w-[388px]

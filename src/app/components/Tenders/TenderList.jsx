@@ -16,13 +16,13 @@ export default function TenderList({ currentItems, activeTab, isLoading }) {
       {isLoading
         ? skeletonItems
         : currentItems.map(
-            (tender) =>
+            (data) =>
               (activeTab === "all" ||
                 (activeTab === "active" && tender.is_active)) && (
                 <TenderItem
-                  key={tender.id}
-                  tender={tender}
-                  href={`/tenders/${tender.id}`}
+                  key={data.id}
+                  data={data}
+                  
                 />
               )
           )}
