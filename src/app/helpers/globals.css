@@ -35,7 +35,8 @@ body {
 /* Styles for Slider*/
 
 .wrapperTeam .swiper,
-.wrapperDonor .swiper {
+.wrapperDonor .swiper,
+.wrapperTender .swiper {
   padding-bottom: 1.5rem;
 
   @media screen and (min-width: 768px) {
@@ -75,7 +76,12 @@ body .wrapperTeam .swiper {
     padding-right: 4rem;
   }
 }
-
+.wrapperTender .swiper {
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+}
 img,
 video {
   max-width: none;

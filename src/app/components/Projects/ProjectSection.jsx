@@ -1,15 +1,27 @@
+"use client";
 import React from 'react';
+import { useRouter } from "next/navigation";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
-import ProjectList from "./ProjectList";
+import Action from '../Action';
+// import ProjectList from "./ProjectList";
+import ProjectSwiperList from './ProjectSwiper';
 
 export default function ProjectSection() {
+  const router = useRouter();
     return (
         <Section>
           <Container>
             <Title titleName="Проєкти" />
-            <ProjectList />
+            <ProjectSwiperList />
+            <Action
+          onClick={() => router.push("/projects")}
+          type="button"
+          className=" block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-10 xl:mt-8"
+        >
+         Більше проєктів
+        </Action>
           </Container>
         </Section>
       );
