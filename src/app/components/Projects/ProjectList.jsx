@@ -4,22 +4,12 @@ import React, { useState, useEffect } from "react";
 import getFetchedData from "@/app/helpers/helperAPI";
 
 import Skeleton from "./Skeleton";
-import Image from "next/image";
+// import Image from "next/image";
 import Action from "../Action";
+import ProjectItem from "./ProjectItem";
+// import ProjectSlider from "./Swiper";
 
-// import { dataProjects } from "./data";
 
-// async function getProjects() {
-//   try {
-//     const response = await axios.get(
-//       "https://hands-of-friends-backend.onrender.com/api/content_management/projects/?limit=3"
-//     );
-//     return response.data;
-//   } catch (error) {
-//     console.log(error);
-//     return [];
-//   }
-// }
 
 export default function ProjectList() {
   const [data, setData] = useState([]);
@@ -38,7 +28,7 @@ export default function ProjectList() {
       const result=projectData.results;
       setData([...data, ...result]);
       // console.log(data);
-      // console.log(projectData);
+      console.log(projectData);
       setLastPage(lastPage);
 
     }
@@ -49,42 +39,33 @@ export default function ProjectList() {
 
   return (
     <>
-      <ul className="max-w-[1200px] grid grid-cols-3 gap-6 not-italic leading-normal">
+ 
+      <ul className="xs:hidden
+      xl:grid xl:grid-cols-3 xl:max-w-[1120px] xl:gap:5
+      2xl:max-w-[1200px] gap-6 not-italic leading-normal">
         { isLoading? skeleton : 
         data.map((item) => (
-          <li key={item.id} className="flex flex-col min-w-[22.5rem] mb-8">
-          <Image
-        src={item.image}
-        alt= "Photo of the project"
-        width={384}
-        height={426}
-        className="mb-3 h-[426px] object-cover"
-        />
-            <h3 className="mb-1 mt-6 text-2xl font-body">{item.title}</h3>
-            <span
-              className={`font-bold text-lg ${
-                item.is_active ? "text-green" : "text-lightGray"
-              }`}
-            >
-              {item.is_active ? "Активний" : "Архівний"}
-            </span>
-        
-            <p className="mt-6 w-[22.5rem] text-lg font-medium leading-6 text-left text-black font-body">
-              {item.description}
-            </p>
-          </li>
-        ))}
+          
+         <ProjectItem
+         key={item.id}
+         item={item}
+          href={`/projects/${item.id}`}/>
+        ))
+        }
       </ul> 
      { lastPage?
       <Action  onClick={() => setPage(page=>(page+1))}
      
         type="button"
-        className="block px-0 mx-auto min-w-[13.63rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+        className="xs:hidden
+        xl:block px-0 mx-auto min-w-[13.63rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
       >
         Завантажити більше
       </Action> :
       <></>
+      
 }
+
     </>
   );
 }
