@@ -41,7 +41,7 @@ const UniversalSlider = ({
                 >
                   <UniversalSkeleton
                     id={`skeleton-${index}`}
-                    type={endpoint === "team/" ? "team" : "donor"}
+                    type={endpoint === "team/" ? "team" : "donor" }
                   />
                 </SwiperSlide>
               ))
