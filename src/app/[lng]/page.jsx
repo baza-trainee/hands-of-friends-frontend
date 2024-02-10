@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
-import About from "../components/About";
+import About from "../components/About/About";
 import ProjectSection from "../components/Projects/ProjectSection";
 import TendersSection from "../components/Tenders/TendersSection";
 import TeamSection from "../components/Team/TeamSection";

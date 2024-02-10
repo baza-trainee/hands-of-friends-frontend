@@ -29,8 +29,9 @@ export default function TendersList() {
     <>
       <ul className="min-w-[18rem] grid gap-6 not-italic leading-normal 
        sm:min-w-[388px]
-       xl:min-w-[1120px] xl:lg:grid-cols-3 xl:gap-6
-       2xl:min-w-[1200px] 2xl:lg:grid-cols-3 2xl:gap-5">
+       md:grid-cols-2 md:justify-between md:min-w-[688px] md:gap-5 
+       xl:grid xl:min-w-[1120px] xl:grid-cols-3 xl:gap-6
+       2xl:min-w-[1200px] 2xl:gap-5">
         {isLoading
           ? skeleton
           : data.map((tender) => (

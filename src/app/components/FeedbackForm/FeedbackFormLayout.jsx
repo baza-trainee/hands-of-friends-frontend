@@ -68,10 +68,10 @@ const FeedbackFormLayout = () => {
   });
 
   return (
-    <>
-    <div className="relative">
+    <div className='container relative grid'>
       <form
-        className="absolute top-20 right-0 flex w-[31.4rem] flex-col items-center bg-white shadow-md z-10"
+        className="md:justify-self-end justify-self-center flex md:mt-20 mt-[60%] 2xl:p-9  xl:p-6 xs:py-6 xs:px-4  2xl:w-[527px]  xl:w-[503px]  md:w-[334px]  sm:w-[340px] xs:w-[268px]
+        flex-col items-center bg-white shadow-md z-10"
         action="/submit_form"
         method="post"
         onSubmit={formik.handleSubmit}
@@ -122,24 +122,21 @@ const FeedbackFormLayout = () => {
 
         <Action
           type="submit"
-          className="mb-6 min-w-[12.38rem] mt-4 bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
+          className="min-w-[12.38rem]  bg-deepBlue  hover:text-deepBlue  hover:border-deepBlue"
         >
           Надіслати
         </Action>
       </form>
-    </div>
-
-    <div>
-      <Image src={img} width={740} height={490} alt="hand-holds-smartphone" />
-    </div>
-  </>
+      <Image src={img} alt="hand-holds-smartphone" 
+      className='ol absolute md:max-w-[75%] max-w-[calc(100%+32px)] md:mx-0 -mx-4  xs:pr-auto xs:pl-auto xs:m-inline-auto   '/>
+  </div>
   );
 };
 
 export default FeedbackFormLayout;
 
 
-
+// max width 852px 2xl:w-[852px]   xl:w-[740px]   md:w-[511px]   sm:w-[420px]   xs:w-[320px]
 
 // "use client";
 
@@ -312,14 +309,14 @@ export default FeedbackFormLayout;
 //               onBlur={formik.handleBlur}
 //               value={formik.values.phone_number}
 //             />
-//             <div
-//               className={`absolute text-[red] transition duration-300 ${formik.touched.phone_number && formik.errors.phone_number
-//                 ? "" // translate opacity-1
-//                 : "opacity-0 translate-y-[-0.625rem]"
-//                 }`}
-//             >
-//               {formik.errors.phone_number}
-//             </div>
+            // <div
+            //   className={`absolute text-[red] transition duration-300 ${formik.touched.phone_number && formik.errors.phone_number
+            //     ? "" // translate opacity-1
+            //     : "opacity-0 translate-y-[-0.625rem]"
+            //     }`}
+            // >
+            //   {formik.errors.phone_number}
+            // </div>
 //           </div>
 
 //           <div className="relative w-[28.4rem] mb-6">
