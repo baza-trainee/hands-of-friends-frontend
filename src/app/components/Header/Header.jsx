@@ -136,7 +136,7 @@ export default function Header({ lng }) {
 						</span>
 					</div>
 				</Trans>
-				<div className="flex items-center justify-between w-full gap-5 px-4 py-[22px] xl:hidden">
+				<div className="flex items-center justify-between w-full gap-5 p-4 sm:py-5 md:py-[22px] xl:hidden">
 					<div
 						className={`cursor-pointer transition xl:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
 							}`}

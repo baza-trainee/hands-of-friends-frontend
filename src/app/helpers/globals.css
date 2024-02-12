@@ -13,6 +13,24 @@ body {
   scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body>main {
+  flex: 1 1 auto;
+}
+
+body>* {
+  min-width: 0;
+}
+
+main {
+  
+}
+
 .pseudo:after {
   content: "";
   display: block;
@@ -27,6 +45,7 @@ body {
   @media screen and (min-width: 768px) {
     width: 20.88rem;
   }
+
   @media screen and (min-width: 1440px) {
     width: 22.5rem;
   }
@@ -42,6 +61,7 @@ body {
   @media screen and (min-width: 768px) {
     padding-bottom: 2.5rem;
   }
+
   @media screen and (min-width: 1280px) {
     padding-bottom: 3rem;
   }
@@ -53,35 +73,43 @@ body .wrapperTeam .swiper {
   @media screen and (min-width: 768px) {
     padding-left: 0;
   }
+
   @media screen and (min-width: 1280px) {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
+
   @media screen and (min-width: 1440px) {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
   }
 }
+
 .wrapperDonor .swiper {
   margin-bottom: 4rem;
+
   @media screen and (min-width: 420px) {
     margin-bottom: 4.5rem;
   }
+
   @media screen and (min-width: 768px) {
     margin-bottom: 4rem;
   }
+
   @media screen and (min-width: 1280px) {
     margin-bottom: 5rem;
     padding-left: 4rem;
     padding-right: 4rem;
   }
 }
+
 .wrapperTender .swiper {
   @media screen and (min-width: 1280px) {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
 }
+
 img,
 video {
   max-width: none;
@@ -103,31 +131,31 @@ video {
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   gap: 1rem;
+
   @media screen and (min-width: 768px) {
     gap: 1.25rem;
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-  .swiper-pagination-bullet {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #d1d5db;
   margin: 0;
+
   @media screen and (min-width: 768px) {
     width: 0.75rem;
     height: 0.75rem;
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 1.5rem;
   height: 0.5rem;
   background-color: #60a5fa;
@@ -160,14 +188,17 @@ video {
   right: -0.9rem;
   top: 11.64rem;
 }
+
 .wrapperDonor .swiper .swiper-button-prev {
   left: 0;
   top: 4rem;
 }
+
 .wrapperDonor .swiper .swiper-button-next {
   right: -0.9rem;
   top: 4rem;
 }
+
 .HeroSlider .swiper .swiper-button-prev {
   left: 0;
   top: 11.64rem;
@@ -182,6 +213,7 @@ video {
   background-image: url(../../../public/img/arrow.png);
   background-repeat: no-repeat;
   transform: rotate(180deg);
+
   @media screen and (max-width: 1279.98px) {
     display: block;
   }
@@ -199,6 +231,7 @@ video {
     display: block;
   }
 }
+
 .swiper-pagination-horizontal {
   top: 10;
 }
@@ -207,9 +240,10 @@ video {
 .swiper .swiper-button-next::after {
   display: none;
 }
+
 .HeroSlider .swiper-pagination-fraction,
 .HeroSlider .swiper-pagination-custom,
-.HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
+.HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
 }
@@ -218,15 +252,18 @@ video {
   background-image: url("../../../public/img/tender-bg.png");
   background-repeat: no-repeat;
 }
+
 .bg-image-about {
   background-image: url("../../../public/img/about-bg.png");
   background-repeat: no-repeat;
 }
+
 .about.swiper {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 30px;
 }
+
 /* Styles for Pagination*/
 .pagination {
   margin-top: 88px;
@@ -277,17 +314,21 @@ a.active-link {
   justify-content: center;
   cursor: pointer;
 }
+
 .next:not(.disabled) a:hover {
   background-color: #4c1d95;
 }
+
 .next:not(.disabled) a:hover {
   path {
     fill: #ffffff;
   }
 }
+
 .next.disabled {
   pointer-events: none;
 }
+
 .previous.disabled {
   pointer-events: none;
 }
@@ -295,6 +336,7 @@ a.active-link {
 li.previous:not(.disabled):hover {
   border-radius: 50%;
   background-color: #4c1d95 !important;
+
   path {
     fill: #ffffff;
   }
@@ -310,10 +352,12 @@ li.previous:not(.disabled):hover {
   path {
     fill: #dbd6d1;
   }
+
   circle {
     stroke: #dbd3d1;
   }
 }
+
 .break {
   display: flex;
   align-items: flex-end;
@@ -325,6 +369,7 @@ li.previous:not(.disabled):hover {
     min-height: calc(100vh - 322px);
   }
 }
+
 /* Styles for hiden Section title */
 
 .titleNoPseudo {
@@ -333,11 +378,12 @@ li.previous:not(.disabled):hover {
   @media (min-width: 768px) {
     display: block;
   }
+
   &::after {
     display: none;
   }
 }
 
 a.active {
-	color: #60a5fa;
+  color: #60a5fa;
 }
