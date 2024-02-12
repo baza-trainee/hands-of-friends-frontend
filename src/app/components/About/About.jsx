@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { useRouter } from "next/navigation";
+
 import Team from "../../../../public/img/about-us1.png";
 import Office from "../../../../public/img/about-us2.png";
 
@@ -17,6 +19,7 @@ import Title from "../Title";
 import Action from "../Action";
 
 export default function About() {
+  const router = useRouter();
   return (
     <Section>
       <Container>
@@ -69,15 +72,14 @@ export default function About() {
             width="auto"
             height={398}
             alt="Picture of the our team"
-            className="md:h-[449px] w-[688px] lg:mx-auto xl:w-[645px] 2xl:w-[690px]"
+            className="md:h-[361px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[690px]"
           />
-
           <Image
-            src={Office}
+            src={Team}
             width="auto"
-            height={581}
+            height={398}
             alt="Picture of the our team"
-            className="md:h-[449px] w-[688px] lg:mx-auto xl:w-[455px] 2xl:w-[486px]"
+            className="md:h-[361px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[690px]"
           />
         </div>
 
@@ -85,7 +87,7 @@ export default function About() {
         <h2 className="text-xl mb-8 md:text-2xl">
           Міжнародний благодійний фонд "Руки друзів"
         </h2>
-        <div className="text-base max-w-[792px] md:text-lg ">
+        <div className="text-base max-w-[740px] md:text-lg ">
           <p className="mb-4">
             Міжнародний благодійний фонд «Руки друзів» діє за посередництвом
             юридичних осіб (соціальні служби, управління освіти, медичні
@@ -107,6 +109,7 @@ export default function About() {
           </p>
         </div>
         <Action
+          onClick={() => router.push("/aboutUs")}
           type="button"
           className=" px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
         >

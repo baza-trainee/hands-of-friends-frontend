@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 :root {
-	--foreground-rgb: 255, 255, 255;
-	--background-start-rgb: 255, 255, 255;
-	--background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
 html,
 body {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .pseudo:after {
-	content: '';
-	display: block;
-	width: 18rem;
-	height: 0.06rem;
-	background-color: #020617;
+  content: "";
+  display: block;
+  width: 18rem;
+  height: 0.06rem;
+  background-color: #020617;
 
-	@media screen and (min-width: 420px) {
-		width: 15rem;
-	}
+  @media screen and (min-width: 420px) {
+    width: 15rem;
+  }
 
-	@media screen and (min-width: 768px) {
-		width: 20.88rem;
-	}
-	@media screen and (min-width: 1440px) {
-		width: 22.5rem;
-	}
+  @media screen and (min-width: 768px) {
+    width: 20.88rem;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 22.5rem;
+  }
 }
 
 /* Styles for Slider*/
@@ -39,42 +39,42 @@ body {
 .wrapperTender .swiper {
   padding-bottom: 1.5rem;
 
-	@media screen and (min-width: 768px) {
-		padding-bottom: 2.5rem;
-	}
-	@media screen and (min-width: 1280px) {
-		padding-bottom: 3rem;
-	}
+  @media screen and (min-width: 768px) {
+    padding-bottom: 2.5rem;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 3rem;
+  }
 }
 
 body .wrapperTeam .swiper {
-	padding-left: 2.13rem;
+  padding-left: 2.13rem;
 
-	@media screen and (min-width: 768px) {
-		padding-left: 0;
-	}
-	@media screen and (min-width: 1280px) {
-		padding-left: 2.75rem;
-		padding-right: 2.75rem;
-	}
-	@media screen and (min-width: 1440px) {
-		padding-left: 3.75rem;
-		padding-right: 3.75rem;
-	}
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+  }
 }
 .wrapperDonor .swiper {
-	margin-bottom: 4rem;
-	@media screen and (min-width: 420px) {
-		margin-bottom: 4.5rem;
-	}
-	@media screen and (min-width: 768px) {
-		margin-bottom: 4rem;
-	}
-	@media screen and (min-width: 1280px) {
-		margin-bottom: 5rem;
-		padding-left: 4rem;
-		padding-right: 4rem;
-	}
+  margin-bottom: 4rem;
+  @media screen and (min-width: 420px) {
+    margin-bottom: 4.5rem;
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 .wrapperTender .swiper {
   @media screen and (min-width: 1280px) {
@@ -84,257 +84,258 @@ body .wrapperTeam .swiper {
 }
 img,
 video {
-	max-width: none;
+  max-width: none;
 }
 
 .swiper .swiper-slide {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 1rem;
-	width: 16.56rem;
-	height: auto;
-	overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  width: 16.56rem;
+  height: auto;
+  overflow: hidden;
 }
 
 .about .swiper-slide {
-	padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	gap: 1rem;
-	@media screen and (min-width: 768px) {
-		gap: 1.25rem;
-	}
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    gap: 1.25rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-	.swiper-pagination-bullet {
-	width: 0.5rem;
-	height: 0.5rem;
-	background-color: #d1d5db;
-	margin: 0;
-	@media screen and (min-width: 768px) {
-		width: 0.75rem;
-		height: 0.75rem;
-	}
+  .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #d1d5db;
+  margin: 0;
+  @media screen and (min-width: 768px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-	.swiper-pagination-bullet.swiper-pagination-bullet-active {
-	width: 1.5rem;
-	height: 0.5rem;
-	background-color: #60a5fa;
-	border-radius: 0.62rem;
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 1.5rem;
+  height: 0.5rem;
+  background-color: #60a5fa;
+  border-radius: 0.62rem;
 
-	@media screen and (min-width: 768px) {
-		width: 2rem;
-		height: 0.75rem;
-	}
+  @media screen and (min-width: 768px) {
+    width: 2rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-	display: block;
-	width: 1.5rem;
-	height: 1.5rem;
-	color: #020617;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #020617;
 
-	@media screen and (max-width: 1279.98px) {
-		display: none;
-	}
+  @media screen and (max-width: 1279.98px) {
+    display: none;
+  }
 }
 
 .wrapperTeam .swiper .swiper-button-prev {
-	left: 0;
-	top: 11.64rem;
+  left: 0;
+  top: 11.64rem;
 }
 
 .wrapperTeam .swiper .swiper-button-next {
-	right: -0.9rem;
-	top: 11.64rem;
+  right: -0.9rem;
+  top: 11.64rem;
 }
 .wrapperDonor .swiper .swiper-button-prev {
-	left: 0;
-	top: 4rem;
+  left: 0;
+  top: 4rem;
 }
 .wrapperDonor .swiper .swiper-button-next {
-	right: -0.9rem;
-	top: 4rem;
+  right: -0.9rem;
+  top: 4rem;
 }
 .HeroSlider .swiper .swiper-button-prev {
-	left: 0;
-	top: 11.64rem;
+  left: 0;
+  top: 11.64rem;
 }
 
 .HeroSlider .swiper .swiper-button-next {
-	width: 33px;
-	height: 26px;
-	right: 80px;
-	top: 350px;
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	transform: rotate(180deg);
-	@media screen and (max-width: 1279.98px) {
-		display: block;
-	}
+  width: 33px;
+  height: 26px;
+  right: 80px;
+  top: 350px;
+  position: absolute;
+  background-image: url(../../../public/img/arrow.png);
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
 }
 
 .HeroSlider .swiper .swiper-button-prev {
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	width: 33px;
-	height: 26px;
-	left: 80px;
-	top: 350px;
+  background-image: url(../../../public/img/arrow.png);
+  background-repeat: no-repeat;
+  width: 33px;
+  height: 26px;
+  left: 80px;
+  top: 350px;
 
-	@media screen and (max-width: 1279.98px) {
-		display: block;
-	}
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
 }
 .swiper-pagination-horizontal {
-	top: 10;
+  top: 10;
 }
 
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
-	display: none;
+  display: none;
 }
 .HeroSlider .swiper-pagination-fraction,
 .HeroSlider .swiper-pagination-custom,
 .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
-	bottom: 40px;
+  bottom: 40px;
 }
 
 .bg-image-tenders {
-	background-image: url('../../../public/img/tender-bg.png');
-	background-repeat: no-repeat;
+  background-image: url("../../../public/img/tender-bg.png");
+  background-repeat: no-repeat;
 }
 .bg-image-about {
-	background-image: url('../../../public/img/about-bg.png');
-	background-repeat: no-repeat;
+  background-image: url("../../../public/img/about-bg.png");
+  background-repeat: no-repeat;
 }
 .about.swiper {
-	padding-left: 0;
-	padding-right: 0;
-	margin-bottom: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 30px;
 }
 /* Styles for Pagination*/
 .pagination {
-	margin-top: 88px;
-	margin-bottom: 132px;
-	display: flex;
-	gap: 16px;
-	justify-content: flex-end;
-	color: white;
+  margin-top: 88px;
+  margin-bottom: 132px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  color: white;
 }
 
 .active-btn {
-	background-color: #4c1d95;
-	border-radius: 50%;
+  background-color: #4c1d95;
+  border-radius: 50%;
 }
 
 .pageClass a {
-	border: #4c1d95 1px solid;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #4c1d95;
-	width: 36px;
-	height: 36px;
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c1d95;
+  width: 36px;
+  height: 36px;
 }
 
 .pageClass a:hover {
-	color: white;
-	background-color: #4c1d95;
+  color: white;
+  background-color: #4c1d95;
 }
 
 a.active-link {
-	display: flex;
-	width: 36px;
-	height: 36px;
-	align-items: center;
-	justify-content: center;
-	color: white;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .next a {
-	display: flex;
-	border: #4c1d95 1px solid;
-	border-radius: 50%;
-	width: 36px;
-	height: 36px;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+  display: flex;
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .next:not(.disabled) a:hover {
-	background-color: #4c1d95;
+  background-color: #4c1d95;
 }
 .next:not(.disabled) a:hover {
-	path {
-		fill: #ffffff;
-	}
+  path {
+    fill: #ffffff;
+  }
 }
 .next.disabled {
-	pointer-events: none;
+  pointer-events: none;
 }
 .previous.disabled {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 li.previous:not(.disabled):hover {
-	border-radius: 50%;
-	background-color: #4c1d95 !important;
-	path {
-		fill: #ffffff;
-	}
+  border-radius: 50%;
+  background-color: #4c1d95 !important;
+  path {
+    fill: #ffffff;
+  }
 }
 
 .previous.disabled a,
 .next.disabled a {
-	border-color: #d1d5db;
+  border-color: #d1d5db;
 }
 
 .previous.disabled a svg,
 .next.disabled a svg {
-	path {
-		fill: #dbd6d1;
-	}
-	circle {
-		stroke: #dbd3d1;
-	}
+  path {
+    fill: #dbd6d1;
+  }
+  circle {
+    stroke: #dbd3d1;
+  }
 }
 .break {
-	display: flex;
-	align-items: flex-end;
-	color: #4c1d95;
+  display: flex;
+  align-items: flex-end;
+  color: #4c1d95;
 }
 
 .height-minus {
-	@media screen and (min-width: 1280px) {
-		min-height: calc(100vh - 322px);
-	}
+  @media screen and (min-width: 1280px) {
+    min-height: calc(100vh - 322px);
+  }
 }
 /* Styles for hiden Section title */
 
 .titleNoPseudo {
-	display: none;
+  display: none;
 
-	@media (min-width: 768px) {
-		display: block;
-	}
-	&::after {
-		display: none;
-	}
+  @media (min-width: 768px) {
+    display: block;
+  }
+  &::after {
+    display: none;
+  }
 }
 
 a.active {
