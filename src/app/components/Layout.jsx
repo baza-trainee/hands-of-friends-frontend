@@ -17,7 +17,7 @@ const Layout = ({ children, lng }) => {
           <Header lng={lng} />
         </header>
       )}
-      <main>{children}</main>
+      <main className='overflow-x-hidden mt-[78px] sm:mt-[86px] md:mt-[90px] xl:mt-[109px]'>{children}</main>
       {!isTest && (
         <footer>
           <Footer lng={lng} />
