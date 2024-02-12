@@ -336,3 +336,7 @@ li.previous:not(.disabled):hover {
 		display: none;
 	}
 }
+
+a.active {
+	color: #60a5fa;
+}
