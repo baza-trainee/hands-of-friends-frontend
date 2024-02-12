@@ -65,8 +65,8 @@ export default function Header({ lng }) {
 	];
 
 	return (
-		<header className="bg-lightBlue">
-			<div className="flex py-4 mx-auto max-w-screen-2xl 2xl:px-[120px] xl:px-20 md:px-10 px-4 relative xl:flex-row flex-col xl:gap-4 xl:items-center xl:justify-between gap-0">
+		<div className="fixed z-20 w-full border-t border-b bg-lightBlue border-deepBlue">
+			<div className="flex xl:py-4 mx-auto max-w-screen-2xl 2xl:px-[120px] xl:px-20 md:px-10 px-4 relative xl:flex-row flex-col xl:gap-4 xl:items-center xl:justify-between gap-0">
 				<div className="items-center hidden xl:flex xl:justify-center">
 					<LogoIcon alt="Hands of Friends logo" />
 				</div>
@@ -76,7 +76,7 @@ export default function Header({ lng }) {
 							<li key={link.id}>
 								<Link
 									href={link.url}
-									className="text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0"
+									className={`text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0 link ${pathname === link.url ? 'active' : ''}`}
 								>
 									{link.text}
 								</Link>
@@ -99,7 +99,7 @@ export default function Header({ lng }) {
 							className={
 								lng === "en"
 									? "text-deepBlue uppercase pointer-events-none"
-									: "text-gray uppercase"
+									: "text-gray uppercase hover:text-black"
 							}
 						>
 							{languages
@@ -119,7 +119,7 @@ export default function Header({ lng }) {
 							className={
 								lng === "ua"
 									? "text-deepBlue uppercase pointer-events-none"
-									: "text-gray uppercase"
+									: "text-gray uppercase hover:text-black"
 							}
 						>
 							{languages
@@ -136,7 +136,7 @@ export default function Header({ lng }) {
 						</span>
 					</div>
 				</Trans>
-				<div className="flex items-center justify-between w-full gap-5 px-4 py-4 xl:hidden">
+				<div className="flex items-center justify-between w-full gap-5 px-4 py-[22px] xl:hidden">
 					<div
 						className={`cursor-pointer transition xl:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
 							}`}
@@ -202,7 +202,7 @@ export default function Header({ lng }) {
 					className="xl:hidden"
 				>
 					{menuOpen && (
-						<div className="flex flex-col gap-8 px-4 py-4 xl:flex-row xl:justify-between">
+						<div className="flex flex-col gap-8 px-4 xl:flex-row xl:justify-between">
 							<div className="bg-deepBlue h-[1px] w-full"></div>
 							<div className="flex items-center xl:justify-center">
 								<ul className="flex flex-col justify-between gap-6 xl:gap-14 xl:flex-row">
@@ -211,7 +211,7 @@ export default function Header({ lng }) {
 											<Link
 												href={link.url}
 												onClick={toggleMenu}
-												className="text-sm text-black duration-300 hover:text-violet hover:pl-4 xl:hover:pl-0"
+												className={`text-sm text-black duration-300 link ${pathname === link.url ? 'active' : ''}`}
 											>
 												{link.text}
 											</Link>
@@ -223,7 +223,7 @@ export default function Header({ lng }) {
 								href="https://www.monobank.ua/?lang=uk"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="px-4 py-2 text-sm text-white transition border-2 rounded cursor-pointer border-violet xl:self-center bg-violet hover:bg-white hover:text-violet w-36"
+								className="px-4 py-2 mb-20 text-sm text-white transition border-2 rounded cursor-pointer border-violet xl:self-center bg-violet w-36"
 							>
 								{t("support")}
 							</a>
@@ -231,6 +231,6 @@ export default function Header({ lng }) {
 					)}
 				</motion.nav>
 			</div>
-		</header>
+		</div>
 	);
 }
