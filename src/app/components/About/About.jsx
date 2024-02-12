@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import { useRouter } from "next/navigation";
+
 import Team from "../../../../public/img/about-us1.png";
 import Office from "../../../../public/img/about-us2.png";
 
@@ -17,6 +19,7 @@ import Title from "../Title";
 import Action from "../Action";
 
 export default function About() {
+  const router = useRouter();
   return (
     <Section>
       <Container>
@@ -106,6 +109,7 @@ export default function About() {
           </p>
         </div>
         <Action
+          onClick={() => router.push("/aboutUs")}
           type="button"
           className=" px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
         >
