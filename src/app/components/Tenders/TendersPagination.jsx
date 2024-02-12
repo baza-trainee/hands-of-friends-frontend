@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Section from "../Section";
@@ -13,11 +13,12 @@ export default function TendersPagination({ data }) {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [activeTab, setActiveTab] = useState("all");
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
   const endOffset = itemOffset + itemsPerPage;
-  const [isLoading, setIsLoading] = useState(true)
-  let skeleton = [... new Array(9)].map((_, i) => (<Skeleton key={i} className="bg-zinc-200" />));
-
+  const [isLoading, setIsLoading] = useState(true);
+  let skeleton = [...new Array(6)].map((_, i) => (
+    <Skeleton key={i} className="bg-zinc-200" />
+  ));
 
   // console.log(data)
   useEffect(() => {
@@ -50,19 +51,18 @@ export default function TendersPagination({ data }) {
       <TendersHeader handleTabClick={handleTabClick} activeTab={activeTab} />
       {currentItems && (
         <Container>
-        <Section>
-          {isLoading ? 
-        <ul className="grid lg:grid-cols-3 gap-5 mb-40">
-        {skeleton}
-        </ul>:
-        <>
-          <TenderList currentItems={currentItems} activeTab={activeTab} />
-            <Pagination
-              handlePageClick={handlePageClick}
-              pageCount={pageCount}
-            />
-            </>
-          }
+          <Section>
+            {isLoading ? (
+              <ul className="grid lg:grid-cols-3 gap-5 mb-40">{skeleton}</ul>
+            ) : (
+              <>
+                <TenderList currentItems={currentItems} activeTab={activeTab} />
+                <Pagination
+                  handlePageClick={handlePageClick}
+                  pageCount={pageCount}
+                />
+              </>
+            )}
           </Section>
         </Container>
       )}
