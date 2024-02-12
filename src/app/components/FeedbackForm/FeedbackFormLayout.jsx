@@ -1,16 +1,21 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image'
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
-
 import * as Yup from "yup";
+
+import { ErrorMessage, Field, Form, Formik, useFormik } from "formik";
+import React, { useState } from 'react';
+
 import Action from "../Action";
-import img from "../../../../public/img/hand-holds-smartphone.png";
+import Image from 'next/image'
+import InputField from './InputField';
+import Modal from '../Modal/Modal';
 import axios from "axios";
-import InputField from './InputField'; 
+import img from "../../../../public/img/hand-holds-smartphone.png";
 
 const FeedbackFormLayout = () => {
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => setShowModal(false);
+  
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -63,13 +68,15 @@ const FeedbackFormLayout = () => {
         .finally(() => {
           setSubmitting(false);
           resetForm();
+          setShowModal(true);
         });
     },
   });
 
   return (
     <div className='container relative grid'>
-      <form
+        {showModal && <Modal handleClose={handleClose} />}
+        {!showModal && <form
         className="md:justify-self-end justify-self-center flex md:mt-20 mt-[60%] 2xl:p-9  xl:p-6 xs:py-6 xs:px-4  2xl:w-[527px]  xl:w-[503px]  md:w-[334px]  sm:w-[340px] xs:w-[268px]
         flex-col items-center bg-white shadow-md z-10"
         action="/submit_form"
@@ -126,7 +133,7 @@ const FeedbackFormLayout = () => {
         >
           Надіслати
         </Action>
-      </form>
+      </form>}
       <Image src={img} alt="hand-holds-smartphone" 
       className='ol absolute md:max-w-[75%] max-w-[calc(100%+32px)] md:mx-0 -mx-4  xs:pr-auto xs:pl-auto xs:m-inline-auto   '/>
   </div>

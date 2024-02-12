@@ -1,6 +1,6 @@
 "use client";
 
-import { FaBars, FaGlobe, FaPlus } from "react-icons/fa6";
+import { FaGlobe } from "react-icons/fa6";
 
 import Bars from "../../../../public/img/bars.svg";
 import { HiPlus } from "react-icons/hi2";
