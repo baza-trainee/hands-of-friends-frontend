@@ -167,6 +167,9 @@ video {
     height: 0.75rem;
   }
 }
+:root {
+  --swiper-navigation-size: 19px !important;
+}
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
@@ -239,8 +242,8 @@ video {
   top: 10;
 }
 
-.swiper .swiper-button-prev::after,
-.swiper .swiper-button-next::after {
+.HeroSlider .swiper .swiper-button-prev::after,
+.HeroSlider .swiper .swiper-button-next::after {
   display: none;
 }
 .HeroSlider .HeroSlider .swiper-pagination-fraction,
