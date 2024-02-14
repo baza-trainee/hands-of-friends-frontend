@@ -24,7 +24,7 @@ export default function About() {
     <Section>
       <Container>
         <blockquote>
-          <p className="text-xs italic mb-8 font-bold sm:text-sm md:text-2xl lg:text-center xl:text-left">
+          <p className="text-xs italic mb-8 font-bold sm:text-sm md:text-2xl xl:text-left">
             “Щодня наша команда зливається в один оркестр.<br></br> Головне –
             чути ритм кожного!”
           </p>
@@ -56,7 +56,7 @@ export default function About() {
             <SwiperSlide>
               <div>
                 <Image
-                  src={Office}
+                  src={Team}
                   width="100%"
                   height={167}
                   alt="Picture of the our team"
@@ -66,20 +66,20 @@ export default function About() {
           </Swiper>
         </div>
 
-        <div className="hidden md:flex flex-col	gap-5 mb-10 xl:flex-row	">
+        <div className="hidden md:flex flex-col	gap-5 mb-10 xl:flex-row ">
           <Image
             src={Team}
             width="auto"
             height={398}
             alt="Picture of the our team"
-            className="md:h-[386px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[588px]"
+            className="md:h-[386px] w-[688px] xl:w-[550px] 2xl:w-[588px]"
           />
           <Image
             src={Team}
             width="auto"
             height={398}
             alt="Picture of the our team"
-            className="md:h-[386px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[588px]"
+            className="md:h-[386px] w-[688px] xl:w-[550px] 2xl:w-[588px]"
           />
         </div>
 
