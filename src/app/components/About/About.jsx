@@ -72,14 +72,14 @@ export default function About() {
             width="auto"
             height={398}
             alt="Picture of the our team"
-            className="md:h-[361px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[690px]"
+            className="md:h-[386px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[588px]"
           />
           <Image
             src={Team}
             width="auto"
             height={398}
             alt="Picture of the our team"
-            className="md:h-[361px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[690px]"
+            className="md:h-[386px] w-[688px] lg:mx-auto xl:w-[550px] 2xl:w-[588px]"
           />
         </div>
 

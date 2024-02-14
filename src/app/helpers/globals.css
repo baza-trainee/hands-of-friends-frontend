@@ -19,16 +19,16 @@ body {
   flex-direction: column;
 }
 
-body>main {
+body > main {
   flex: 1 1 auto;
 }
 
-body>* {
+body > * {
   min-width: 0;
 }
 
 main {
-  background-color: #F1F5F9;
+  
 }
 
 .pseudo:after {
@@ -131,7 +131,7 @@ video {
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   display: flex;
   align-items: flex-end;
@@ -143,7 +143,8 @@ video {
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #d1d5db;
@@ -155,7 +156,8 @@ video {
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 1.5rem;
   height: 0.5rem;
   background-color: #60a5fa;
@@ -165,6 +167,9 @@ video {
     width: 2rem;
     height: 0.75rem;
   }
+}
+:root {
+  --swiper-navigation-size: 19px !important;
 }
 
 .swiper .swiper-button-prev,
@@ -198,7 +203,9 @@ video {
   right: -0.9rem;
   top: 4rem;
 }
-
+.HeroSlider .swiper .swiper-slide {
+  padding-bottom: 0;
+}
 .HeroSlider .swiper .swiper-button-prev {
   left: 0;
   top: 11.64rem;
@@ -207,8 +214,8 @@ video {
 .HeroSlider .swiper .swiper-button-next {
   width: 33px;
   height: 26px;
-  right: 80px;
-  top: 350px;
+  right: 125px;
+  top: 50%;
   position: absolute;
   background-image: url(../../../public/img/arrow.png);
   background-repeat: no-repeat;
@@ -224,8 +231,8 @@ video {
   background-repeat: no-repeat;
   width: 33px;
   height: 26px;
-  left: 80px;
-  top: 350px;
+  left: 125px;
+  top: 50%;
 
   @media screen and (max-width: 1279.98px) {
     display: block;
@@ -236,14 +243,13 @@ video {
   top: 10;
 }
 
-.swiper .swiper-button-prev::after,
-.swiper .swiper-button-next::after {
+.HeroSlider .swiper .swiper-button-prev::after,
+.HeroSlider .swiper .swiper-button-next::after {
   display: none;
 }
-
-.HeroSlider .swiper-pagination-fraction,
+.HeroSlider .HeroSlider .swiper-pagination-fraction,
 .HeroSlider .swiper-pagination-custom,
-.HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+.HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
 }

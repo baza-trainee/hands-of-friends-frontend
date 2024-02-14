@@ -7,18 +7,11 @@ import HeroItem from "./HeroItem";
 const HeroSlider = () => {
   return (
     <>
-      <div className="HeroSlider relative">
+      <div className="HeroSlider max-w-[1440px] relative mx-auto bg-gray">
         <UniversalSlider
           endpoint="projects/"
           ItemComponent={HeroItem}
-          swiperSettings={{
-            breakpoints: {
-              320: { slidesPerView: 1, spaceBetween: 2 },
-              420: { slidesPerView: 1, spaceBetween: 2 },
-              768: { slidesPerView: 1, spaceBetween: 2 },
-              1280: { slidesPerView: 1, spaceBetween: 2 },
-            },
-          }}
+          swiperSettings={{}}
         />
       </div>
     </>
