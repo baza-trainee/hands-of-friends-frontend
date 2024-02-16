@@ -9,7 +9,7 @@ const HeroSlider = () => {
     <>
       <div className="HeroSlider max-w-[1440px] relative mx-auto bg-gray">
         <UniversalSlider
-          endpoint="projects/"
+          endpoint="hero-slider/"
           ItemComponent={HeroItem}
           swiperSettings={{}}
         />
