@@ -42,7 +42,7 @@ export default function ProjectList() {
  
       <ul className="xs:hidden
       xl:grid xl:grid-cols-3 xl:max-w-[1120px] xl:gap:5
-      2xl:max-w-[1200px] gap-6 not-italic leading-normal">
+      2xl:max-w-[1200px] 2xl:gap-6 2xl:text-lg not-italic leading-normal">
         { isLoading? skeleton : 
         data.map((item) => (
           

@@ -16,6 +16,7 @@ export default function ProjectSwiperList() {
             // 420: { slidesPerView: 1.3, spaceBetween: 16 },
             // 768: { slidesPerView: 3, spaceBetween: 20 },
             1280: { slidesPerView: 3, spaceBetween: 20 },
+            1420: { slidesPerView: 3, spaceBetween: 24 }
           },
         }}
       />
