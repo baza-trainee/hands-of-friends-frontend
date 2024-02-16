@@ -5,21 +5,21 @@ import Title from "../../Title";
 import UniversalSlider from "../../ UniversalSlider";
 import PartnerItem from "./PartnerItem";
 
-const PartnerWrapper = ({ title }) => {
+const PartnerWrapper = ({ title, endpoint }) => {
   return (
     <>
       <Title titleName={title} className="titleNoPseudo" />
       <div className="wrapperDonor relative">
         <UniversalSlider
-          endpoint="partners/"
+          endpoint={endpoint}
           skeletonType="donor"
           ItemComponent={PartnerItem}
           swiperSettings={{
             breakpoints: {
               320: { slidesPerView: 3.2, spaceBetween: 8 },
-              420: { slidesPerView: 3.5, spaceBetween: 8 },
-              768: { slidesPerView: 4, spaceBetween: 20 },
-              1280: { slidesPerView: 5, spaceBetween: 20 },
+              420: { slidesPerView: 1.3, spaceBetween: 8 },
+              768: { slidesPerView: 2.6, spaceBetween: 20 },
+              1280: { slidesPerView: 3.3, spaceBetween: 20 },
             },
           }}
         />

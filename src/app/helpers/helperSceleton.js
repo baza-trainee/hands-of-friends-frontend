@@ -37,22 +37,3 @@ export const skeletonConfig = {
     ],
   },
 };
-
-const skeletonCounts = {
-  small: 3,
-  medium: 5,
-  large: 8,
-};
-
-// Визначення кількості на основі розміру екрану
-export const getSkeletonCount = () => {
-  if (typeof window !== "undefined") {
-    const width = window.innerWidth;
-
-    if (width < 768) return skeletonCounts.small;
-    else if (width >= 768 && width < 1024) return skeletonCounts.medium;
-    else return skeletonCounts.large;
-  }
-
-  return skeletonCounts.medium;
-};

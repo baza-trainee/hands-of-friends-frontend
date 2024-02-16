@@ -8,7 +8,6 @@ import UniversalSkeleton from "./UniversalSkeleton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { getSkeletonCount } from "../helpers/helperSceleton";
 
 const UniversalSlider = ({
   endpoint,
@@ -18,7 +17,6 @@ const UniversalSlider = ({
   skeletonType = "default",
 }) => {
   const [data, setData] = useHttp(endpoint);
-  const skeletonCount = getSkeletonCount();
 
   return (
     <>
@@ -36,7 +34,7 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {!data.length
-          ? [...Array(skeletonCount)].map((_, index) => (
+          ? Array.from({ length: 4 }).map((_, index) => (
               <SwiperSlide className="flex flex-col items-center" key={index}>
                 <UniversalSkeleton
                   id={`skeleton-${index}`}
