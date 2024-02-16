@@ -108,6 +108,10 @@ body .wrapperTeam .swiper {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
+  @media screen and (min-width: 1440px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
 }
 
 img,

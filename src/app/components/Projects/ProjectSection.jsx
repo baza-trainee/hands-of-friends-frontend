@@ -20,7 +20,7 @@ export default function ProjectSection() {
           type="button"
           className=" block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-10 xl:mt-8"
         >
-         Більше проєктів
+         Всі проєкти
         </Action>
           </Container>
         </Section>
