@@ -1,3 +1,5 @@
+"use client";
+
 export const skeletonConfig = {
   team: {
     speed: 2,
