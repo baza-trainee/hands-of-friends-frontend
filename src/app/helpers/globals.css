@@ -27,8 +27,6 @@ body > * {
   min-width: 0;
 }
 
-main {
-}
 
 .pseudo:after {
   content: "";
@@ -348,10 +346,10 @@ a.active-link {
   background-color: #4c1d95;
 }
 
-.next:not(.disabled) a:hover {
-  path {
+.next:not(.disabled) a:hover path {
+  
     fill: #ffffff;
-  }
+  
 }
 
 .next.disabled {
@@ -362,13 +360,12 @@ a.active-link {
   pointer-events: none;
 }
 
-li.previous:not(.disabled):hover {
+li.previous:not(.disabled):hover path{
   border-radius: 50%;
   background-color: #4c1d95 !important;
 
-  path {
     fill: #ffffff;
-  }
+  
 }
 
 .previous.disabled a,
@@ -377,14 +374,12 @@ li.previous:not(.disabled):hover {
 }
 
 .previous.disabled a svg,
-.next.disabled a svg {
-  path {
+.next.disabled a svg path{
+ 
     fill: #dbd6d1;
-  }
-
-  circle {
+  
     stroke: #dbd3d1;
-  }
+  
 }
 
 .break {
@@ -401,16 +396,13 @@ li.previous:not(.disabled):hover {
 
 /* Styles for hiden Section title */
 
-.titleNoPseudo {
+.titleNoPseudo ::after{
   display: none;
 
   @media (min-width: 768px) {
     display: block;
   }
 
-  &::after {
-    display: none;
-  }
 }
 
 a.active {
