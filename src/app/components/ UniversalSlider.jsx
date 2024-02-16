@@ -3,26 +3,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 import { useHttp } from "../hooks/useHttp";
 
-import Title from "./Title";
 import UniversalSkeleton from "./UniversalSkeleton";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import TeamSkeleton from "./Team/Sceleton";
+import { getSkeletonCount } from "../helpers/helperSceleton";
 
 const UniversalSlider = ({
   endpoint,
   ItemComponent,
   className,
   swiperSettings,
+  skeletonType = "default",
 }) => {
   const [data, setData] = useHttp(endpoint);
+  const skeletonCount = getSkeletonCount();
 
   return (
     <>
       <Swiper
         navigation={true}
-        pagination={{ clickable: true }}
+        pagination={{
+          type: "progressbar",
+        }}
         {...swiperSettings}
         grabCursor={true}
         keyboard={true}
@@ -32,19 +37,14 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {!data.length
-          ? Array(5)
-              .fill(0)
-              .map((_, index) => (
-                <SwiperSlide
-                  className="flex flex-col items-center cursor-pointer"
-                  key={index}
-                >
-                  <UniversalSkeleton
-                    id={`skeleton-${index}`}
-                    type={endpoint === "team/" ? "team" : "donor" }
-                  />
-                </SwiperSlide>
-              ))
+          ? [...Array(skeletonCount)].map((_, index) => (
+              <SwiperSlide className="flex flex-col items-center" key={index}>
+                <UniversalSkeleton
+                  id={`skeleton-${index}`}
+                  type={skeletonType}
+                />
+              </SwiperSlide>
+            ))
           : data.map((item, index) => (
               <SwiperSlide className="flex flex-col items-center " key={index}>
                 <ItemComponent data={item} />

@@ -33,7 +33,22 @@ export const skeletonConfig = {
       { x: 0, y: 0, rx: 0, ry: 0, width: 360, height: 400 },
       { x: 0, y: 524, rx: 0, ry: 0, width: 360, height: 336 },
       { x: 1, y: 432, rx: 0, ry: 0, width: 360, height: 36 },
-      { x: 0, y: 472, rx: 0, ry: 0, width: 200, height: 36 }
-    ]
-  }
+      { x: 0, y: 472, rx: 0, ry: 0, width: 200, height: 36 },
+    ],
+  },
+};
+
+const skeletonCounts = {
+  small: 3,
+  medium: 5,
+  large: 8,
+};
+
+// Визначення кількості на основі розміру екрану
+export const getSkeletonCount = () => {
+  const width = window.innerWidth;
+
+  if (width < 768) return skeletonCounts.small;
+  else if (width >= 768 && width < 1024) return skeletonCounts.medium;
+  else return skeletonCounts.large;
 };
