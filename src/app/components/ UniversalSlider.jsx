@@ -8,7 +8,6 @@ import UniversalSkeleton from "./UniversalSkeleton";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import TeamSkeleton from "./Team/Sceleton";
 import { getSkeletonCount } from "../helpers/helperSceleton";
 
 const UniversalSlider = ({
