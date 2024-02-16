@@ -12,6 +12,7 @@ const PartnerWrapper = ({ title }) => {
       <div className="wrapperDonor relative">
         <UniversalSlider
           endpoint="partners/"
+          skeletonType="donor"
           ItemComponent={PartnerItem}
           swiperSettings={{
             breakpoints: {

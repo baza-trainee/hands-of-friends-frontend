@@ -28,7 +28,6 @@ body > * {
 }
 
 main {
-  
 }
 
 .pseudo:after {
@@ -56,18 +55,18 @@ main {
 .wrapperTeam .swiper,
 .wrapperDonor .swiper,
 .wrapperTender .swiper {
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.12rem;
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 2.5rem;
+    padding-bottom: 3.12rem;
   }
 
   @media screen and (min-width: 1280px) {
-    padding-bottom: 3rem;
+    padding-bottom: 3.63rem;
   }
 }
 
-body .wrapperTeam .swiper {
+.wrapperTeam .swiper {
   padding-left: 2.13rem;
 
   @media screen and (min-width: 768px) {
@@ -132,6 +131,26 @@ video {
 .about .swiper-slide {
   padding-bottom: 2rem;
 }
+/*Progressbar*/
+
+body .swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-vertical
+  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #d1d5db;
+  overflow: hidden;
+}
+body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  border-radius: 10px;
+  background-color: #60a5fa;
+}
+
+/*Progressbar*/
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
