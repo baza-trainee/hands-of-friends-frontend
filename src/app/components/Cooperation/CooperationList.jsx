@@ -1,11 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Action from "../Action";
 import { dataCooperation } from "./data";
+import BaseModal from "../BaseModal/BaseModal";
 
 export default function CooperationList() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <ul
-      className="flex flex-col justify-center items-center gap-5 mb-8 font-body  text-black
+      className="relative flex flex-col justify-center items-center gap-5 mb-8 font-body  text-black
       sm:gap-8 sm:mb-10
       md:flex-row md:flex-wrap md:gap-5 md:mb-16
       xl:mb-20"
@@ -32,14 +35,15 @@ export default function CooperationList() {
           >
             {item.text}
           </p>
+          <div></div>
           <Action
-            href={"https://docs.google.com/forms/u/0/"}
-            rel="noopener noreferrer"
-            target="_blank"
+            type="button"
+            onClick={() => setShowModal(true)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {item.btnText}
           </Action>
+          {showModal && <BaseModal onClose={() => setShowModal(false)} />}
         </li>
       ))}
     </ul>
