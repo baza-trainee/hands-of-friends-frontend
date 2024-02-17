@@ -3,16 +3,26 @@ import Image from "next/image";
 
 export default function PartnerItem({ data }) {
   return (
-    <li className=" bg-[#E0F2FE]">
-      <Image
-        src={data.image}
-        alt={`${data.image} donor logo`}
-        width={90}
-        height={52}
-        className="opacity-50
+    <li className="grow ">
+      <div
+        className="m-auto mb-4 bg-[#E0F2FE]
         sm:w-[110px] sm:h-[64px]
-        md:w-[157px] md:h-[100px]"
-      />
+        md:w-[170px] md:h-[100px]"
+      >
+        <Image
+          src={data.image}
+          alt={`${data.image} donor logo`}
+          width={90}
+          height={52}
+          className="m-auto opacity-50
+        sm:w-[110px] sm:h-[64px]
+        md:w-[170px] md:h-[100px]"
+        />
+      </div>
+
+      <p className=" text-black text-xl font-bold text-center leading-7">
+        {data.name}
+      </p>
     </li>
   );
 }

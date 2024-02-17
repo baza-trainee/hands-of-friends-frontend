@@ -16,7 +16,7 @@ export default function CooperationList() {
       {dataCooperation.map((item, index) => (
         <li
           key={index}
-          className="flex flex-col even:grow items-center px-[1.25rem] py-[1.63rem] max-w-[18rem] h-min bg-[#E0F2FE]
+          className="flex flex-col grow items-center px-[1.25rem] py-[1.63rem] max-w-[18rem] h-min bg-[#E0F2FE]
           md:px-6 md:py-8 md:max-w-[20.87rem] 
           lg:py-12 lg:px-8 lg:max-w-[22.5rem]
           2xl:py-14 2xl:px-11 2xl:max-w-[24rem]"
@@ -29,7 +29,7 @@ export default function CooperationList() {
             {item.subtitle}
           </h3>
           <p
-            className="mb-6 even:grow text-base italic font-light text-center
+            className="mb-6 text-base italic font-light text-center
             md:mb-5 md:text-lg
             xl:mb-8"
           >

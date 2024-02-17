@@ -10,12 +10,12 @@ export const Partners = () => {
       xl:mb-36
     "
     >
-      <PartnerWrapper title="Донори" />
+      <PartnerWrapper title="Донори" endpoint="donors/" />
       <div
         className="hidden
       md:block"
       >
-        <PartnerWrapper title="Партнери" />
+        <PartnerWrapper title="Партнери" endpoint="partners/" />
       </div>
     </div>
   );
