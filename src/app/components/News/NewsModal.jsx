@@ -15,7 +15,7 @@ const NewsModal = ({ isOpen, onClose, data, formattedDescription }) => {
 	return (
 		<Modal
 			isOpen={isOpen}
-			className='news-modal w-[344px] md:w-[792px] flex flex-col custom-scrollbar [&::-webkit-scrollbar]:[width:10px]'
+			className='news-modal w-[344px] md:w-[792px] md:h-[867px] xl:h-[819px] 2xl:h-[835px] flex flex-col custom-scrollbar [&::-webkit-scrollbar]:[width:10px]'
 			overlayClassName='news-overlay'
 			onRequestClose={onClose}
 			contentLabel='Детальна інформація про новину'

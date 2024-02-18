@@ -56,7 +56,7 @@ export default function About() {
 						<SwiperSlide>
 							<div>
 								<Image
-									src={Office}
+									src={Team}
 									width='100%'
 									height={167}
 									alt='Picture of the our team'
