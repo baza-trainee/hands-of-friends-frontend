@@ -5,11 +5,11 @@ export default function TenderItem({ data, href }) {
   return (
     <Link href={`tenders/${data.id}`}>
       <li
-        className="flex flex-col flex-wrap min-w-[18rem] min-h-[248px] p-4 bg-[#E0F2FE]
-        sm:p-6 sm:min-w-[388px]
-        md:min-w-[334px] md:min-h-[279px]
-        xl:min-w-[330px] xl:min-h-[279px]
-        2xl:p-9 2xl:min-w-[24rem] 2xl:min-h-[321px]"
+        className="flex flex-col flex-wrap min-w-[288px] min-h-[304px] p-4 bg-[#E0F2FE]
+        sm:p-6 sm:min-w-[388px] sm:min-h-[326px]
+        md:min-w-[334px] md:min-h-[288px]
+        xl:min-w-[330px] xl:min-h-[279px] 
+        2xl:p-8 2xl:min-w-[352px] 2xl:min-h-[307px]"
         style={{ cursor: "pointer" }}
       >
         <p
@@ -25,25 +25,24 @@ export default function TenderItem({ data, href }) {
             {data.is_active ? "Активний" : "Архівний"}
           </span>
           <span
-            className="text-black text-base
-        md:text-lg
-        xl:text-base"
+            className="text-black text-base"
           >
             {data.start_date} - {data.end_date}
           </span>
         </p>
         <p
-          className="font-sans mt-6 text-left text-lg text-black font-medium
-        sm:text-xl
-        xl:text-lg"
+          className="font-['Open_Sans'] mt-6 text-left text-lg text-black font-medium
+        md:mt-4 
+        xl:font-semibold
+        2xl:mt-6"
         >
           {data.title
             .split(" ")
-            .slice(0, 20)
+            .slice(0, 200)
             .map((word, index) => (
               <span key={index}>{word.trim()} </span>
             ))}
-          {data.description.split(" ").length > 20 && "..."}{" "}
+          {/* {data.description.split(" ").length > 20 && "..."}{" "} */}
         </p>
       </li>
     </Link>

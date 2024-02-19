@@ -51,8 +51,7 @@ body > * {
 /* Styles for Slider*/
 
 .wrapperTeam .swiper,
-.wrapperDonor .swiper,
-.wrapperTender .swiper {
+.wrapperDonor .swiper {
   padding-bottom: 2.12rem;
 
   @media screen and (min-width: 768px) {
@@ -63,7 +62,16 @@ body > * {
     padding-bottom: 3.63rem;
   }
 }
+.wrapperTender .swiper {
+  padding-bottom: 1.5rem;
 
+  @media screen and (min-width: 768px) {
+    padding-bottom: 2.5rem;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 3rem;
+  }
+}
 .wrapperTeam .swiper {
   padding-left: 2.13rem;
 
@@ -101,14 +109,14 @@ body > * {
 }
 
 .wrapperTender .swiper {
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+  }
   @media screen and (min-width: 1280px) {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
-  @media screen and (min-width: 1440px) {
-    padding-left: 2.75rem;
-    padding-right: 2.75rem;
-  }
+ 
 }
 
 img,
