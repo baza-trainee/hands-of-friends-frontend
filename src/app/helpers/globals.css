@@ -27,7 +27,6 @@ body > * {
   min-width: 0;
 }
 
-
 .pseudo:after {
   content: "";
   display: block;
@@ -347,9 +346,7 @@ a.active-link {
 }
 
 .next:not(.disabled) a:hover path {
-  
-    fill: #ffffff;
-  
+  fill: #ffffff;
 }
 
 .next.disabled {
@@ -360,12 +357,11 @@ a.active-link {
   pointer-events: none;
 }
 
-li.previous:not(.disabled):hover path{
+li.previous:not(.disabled):hover path {
   border-radius: 50%;
   background-color: #4c1d95 !important;
 
-    fill: #ffffff;
-  
+  fill: #ffffff;
 }
 
 .previous.disabled a,
@@ -374,12 +370,10 @@ li.previous:not(.disabled):hover path{
 }
 
 .previous.disabled a svg,
-.next.disabled a svg path{
- 
-    fill: #dbd6d1;
-  
-    stroke: #dbd3d1;
-  
+.next.disabled a svg path {
+  fill: #dbd6d1;
+
+  stroke: #dbd3d1;
 }
 
 .break {
@@ -396,13 +390,8 @@ li.previous:not(.disabled):hover path{
 
 /* Styles for hiden Section title */
 
-.titleNoPseudo ::after{
+.titleNoPseudo::after {
   display: none;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-
 }
 
 a.active {
