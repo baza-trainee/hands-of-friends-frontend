@@ -42,7 +42,7 @@ body > * {
     width: 20.88rem;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1280px) {
     width: 22.5rem;
   }
 }
@@ -108,11 +108,6 @@ body > * {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
-}
-
-img,
-video {
-  max-width: none;
 }
 
 .swiper .swiper-slide {
@@ -396,4 +391,17 @@ li.previous:not(.disabled):hover path {
 
 a.active {
   color: #60a5fa;
+}
+
+/* Form Image*/
+.bg-form {
+  background-image: linear-gradient(
+      rgba(30, 30, 30, 0.3),
+      rgba(30, 30, 30, 0.3)
+    ),
+    url("../../../public/img/hand-holds-smartphone.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
 }

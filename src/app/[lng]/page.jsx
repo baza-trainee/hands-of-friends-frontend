@@ -19,7 +19,6 @@ export default async function Page() {
       <CooperationSection />
       <News />
       <FeedbackFormSection />
-      <div id="modal-root"></div>
     </>
   );
 }

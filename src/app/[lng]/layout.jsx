@@ -33,6 +33,7 @@ export default async function RootLayout({ children, params: { lng } }) {
       <head />
       <body className={`${ptSans.className} overflow-x-hidden`}>
         <Layout lng={lng}>{children}</Layout>
+        <div id="modal-root" />
         <CookiesPanel />
       </body>
     </html>
