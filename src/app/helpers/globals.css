@@ -74,19 +74,26 @@ body > * {
 }
 .wrapperTeam .swiper {
   padding-left: 2.13rem;
+  padding-bottom: 1.5rem;
 
   @media screen and (min-width: 768px) {
     padding-left: 0;
+    padding-bottom: 2.5rem;
+
   }
 
   @media screen and (min-width: 1280px) {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
+    padding-bottom: 3rem;
+
   }
 
   @media screen and (min-width: 1440px) {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
+    padding-bottom: 4rem;
+
   }
 }
 
@@ -138,10 +145,7 @@ body > * {
     padding-right: 0;
   }
 }
-img,
-video {
-  max-width: none;
-}
+
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #6291f5;
@@ -218,9 +222,11 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     padding-left: 0;
     padding-right: 0;
   }
+
 }
 .newsSlider .swiper .swiper-button-next {
   width: auto;
+
 }
 
 .swiper-pagination-fraction,
@@ -299,7 +305,9 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 }
 .HeroSlider .swiper .swiper-slide {
   padding-bottom: 0;
+
   height: 100%;
+
 }
 .HeroSlider .swiper .swiper-button-prev {
   left: 0;
@@ -315,6 +323,12 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background-image: url(../../../public/img/arrow.png);
   background-repeat: no-repeat;
   transform: rotate(180deg);
+
+
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
+
 }
 
 .HeroSlider .swiper .swiper-button-prev {
@@ -324,6 +338,12 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   height: 26px;
   left: 125px;
   top: 50%;
+
+
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
+
 }
 
 .swiper-pagination-horizontal {
@@ -339,6 +359,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
+
 }
 @media screen and (max-width: 768px) {
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
@@ -355,6 +376,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 160px;
   }
+
 }
 
 .bg-image-tenders {
@@ -430,6 +452,7 @@ a.active-link {
 
 .next:not(.disabled) a:hover path {
   fill: #ffffff;
+
 }
 
 .next.disabled {
@@ -443,7 +466,6 @@ a.active-link {
 li.previous:not(.disabled):hover path {
   border-radius: 50%;
   background-color: #4c1d95 !important;
-
   fill: #ffffff;
 }
 
@@ -455,6 +477,12 @@ li.previous:not(.disabled):hover path {
 .previous.disabled a svg,
 .next.disabled a svg path {
   fill: #dbd6d1;
+
+  stroke: #dbd3d1;
+}
+.next.disabled a svg path {
+  fill: #dbd6d1;
+
 
   stroke: #dbd3d1;
 }
@@ -476,11 +504,23 @@ li.previous:not(.disabled):hover path {
 .titleNoPseudo ::after {
   display: none;
 
-  @media (min-width: 768px) {
-    display: block;
-  }
 }
 
 a.active {
   color: #60a5fa;
+
+}
+
+/* Form Image*/
+.bg-form {
+  background-image: linear-gradient(
+      rgba(30, 30, 30, 0.3),
+      rgba(30, 30, 30, 0.3)
+    ),
+    url("../../../public/img/hand-holds-smartphone.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+
 }
