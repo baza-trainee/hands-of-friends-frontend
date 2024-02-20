@@ -79,18 +79,21 @@ body > * {
   @media screen and (min-width: 768px) {
     padding-left: 0;
     padding-bottom: 2.5rem;
+
   }
 
   @media screen and (min-width: 1280px) {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
     padding-bottom: 3rem;
+
   }
 
   @media screen and (min-width: 1440px) {
     padding-left: 3.75rem;
     padding-right: 3.75rem;
     padding-bottom: 4rem;
+
   }
 }
 
@@ -142,6 +145,7 @@ body > * {
     padding-right: 0;
   }
 }
+
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #6291f5;
@@ -212,11 +216,17 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   padding-right: 2.75rem;
   padding-bottom: 40px;
 }
+
 @media (max-width: 1024px) {
   .newsSlider .swiper {
     padding-left: 0;
     padding-right: 0;
   }
+
+}
+.newsSlider .swiper .swiper-button-next {
+  width: auto;
+
 }
 
 .swiper-pagination-fraction,
@@ -295,6 +305,9 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 }
 .HeroSlider .swiper .swiper-slide {
   padding-bottom: 0;
+
+  height: 100%;
+
 }
 .HeroSlider .swiper .swiper-button-prev {
   left: 0;
@@ -311,9 +324,11 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background-repeat: no-repeat;
   transform: rotate(180deg);
 
+
   @media screen and (max-width: 1279.98px) {
     display: block;
   }
+
 }
 
 .HeroSlider .swiper .swiper-button-prev {
@@ -324,9 +339,11 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   left: 125px;
   top: 50%;
 
+
   @media screen and (max-width: 1279.98px) {
     display: block;
   }
+
 }
 
 .swiper-pagination-horizontal {
@@ -342,6 +359,24 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
+
+}
+@media screen and (max-width: 768px) {
+  .HeroSlider .HeroSlider .swiper-pagination-fraction,
+  .HeroSlider .swiper-pagination-custom,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
+  .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 205px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .HeroSlider .HeroSlider .swiper-pagination-fraction,
+  .HeroSlider .swiper-pagination-custom,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
+  .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 160px;
+  }
+
 }
 
 .bg-image-tenders {
@@ -417,7 +452,7 @@ a.active-link {
 
 .next:not(.disabled) a:hover path {
   fill: #ffffff;
-  fill: #ffffff;
+
 }
 
 .next.disabled {
@@ -442,10 +477,12 @@ li.previous:not(.disabled):hover path {
 .previous.disabled a svg,
 .next.disabled a svg path {
   fill: #dbd6d1;
+
   stroke: #dbd3d1;
 }
 .next.disabled a svg path {
   fill: #dbd6d1;
+
 
   stroke: #dbd3d1;
 }
@@ -466,10 +503,12 @@ li.previous:not(.disabled):hover path {
 
 .titleNoPseudo ::after {
   display: none;
+
 }
 
 a.active {
   color: #60a5fa;
+
 }
 
 /* Form Image*/
@@ -483,4 +522,5 @@ a.active {
   background-size: cover;
   background-repeat: no-repeat;
   transform: scaleX(-1);
+
 }
