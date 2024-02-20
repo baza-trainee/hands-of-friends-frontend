@@ -38,7 +38,7 @@ export default function ProjectItem({ data}) {
             <button
           onClick={() => router.push(`/projects/${data.id}`)}
           type="button"
-          className=" block min-w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 font-normal bg-transperent text-black border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-8 md:min-h-[64px] xl:mt-4 2xl:mt-8"
+          className=" block min-w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 font-normal bg-transperent text-black text-xl border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-8 md:text-2xl md:min-h-[64px] xl:mt-4 2xl:mt-8 2xl:text-xl 2xl:min-h-[60px]"
         >
          Детальніше
         </button>
