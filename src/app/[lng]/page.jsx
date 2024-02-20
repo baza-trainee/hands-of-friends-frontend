@@ -4,9 +4,9 @@ import ProjectSection from "../components/Projects/ProjectSection";
 import TendersSection from "../components/Tenders/TendersSection";
 import TeamSection from "../components/Team/TeamSection";
 import CooperationSection from "../components/Cooperation/CooperationSection";
-import News from "../components/News";
 import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection";
 import HeroSlider from "../components/Hero/HeroSlider";
+import NewsSection from "../components/News/NewsSection";
 
 export default async function Page() {
   return (
@@ -17,7 +17,7 @@ export default async function Page() {
       <TendersSection />
       <TeamSection />
       <CooperationSection />
-      <News />
+      <NewsSection />
       <FeedbackFormSection />
     </>
   );
