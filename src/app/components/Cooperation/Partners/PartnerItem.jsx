@@ -5,13 +5,13 @@ export default function PartnerItem({ data }) {
   return (
     <li className="grow ">
       <div
-        className="m-auto mb-4 bg-[#E0F2FE]
+        className="m-auto mb-4 bg-[#E0F2FE] w-[90px]
         sm:w-[110px] sm:h-[64px]
         md:w-[170px] md:h-[100px]"
       >
         <Image
           src={data.image}
-          alt={`${data.image} donor logo`}
+          alt={`Logo`}
           width={90}
           height={52}
           className="m-auto opacity-50

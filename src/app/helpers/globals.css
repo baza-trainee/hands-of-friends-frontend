@@ -3,48 +3,48 @@
 @tailwind utilities;
 
 :root {
-	--foreground-rgb: 255, 255, 255;
-	--background-start-rgb: 255, 255, 255;
-	--background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
 html,
 body {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 body > main {
-	flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 body > * {
-	min-width: 0;
+  min-width: 0;
 }
 
 .pseudo:after {
-	content: '';
-	display: block;
-	width: 18rem;
-	height: 0.06rem;
-	background-color: #020617;
+  content: "";
+  display: block;
+  width: 18rem;
+  height: 0.06rem;
+  background-color: #020617;
 
-	@media screen and (min-width: 420px) {
-		width: 15rem;
-	}
+  @media screen and (min-width: 420px) {
+    width: 15rem;
+  }
 
-	@media screen and (min-width: 768px) {
-		width: 20.88rem;
-	}
+  @media screen and (min-width: 768px) {
+    width: 20.88rem;
+  }
 
-	@media screen and (min-width: 1440px) {
-		width: 22.5rem;
-	}
+  @media screen and (min-width: 1440px) {
+    width: 22.5rem;
+  }
 }
 
 /* Styles for Slider*/
@@ -52,15 +52,15 @@ body > * {
 .wrapperDonor .swiper,
 .wrapperTender .swiper,
 .newsSlider {
-	padding-bottom: 2.12rem;
+  padding-bottom: 2.12rem;
 
-	@media screen and (min-width: 768px) {
-		padding-bottom: 3.12rem;
-	}
+  @media screen and (min-width: 768px) {
+    padding-bottom: 3.12rem;
+  }
 
-	@media screen and (min-width: 1280px) {
-		padding-bottom: 3.63rem;
-	}
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 3.63rem;
+  }
 }
 .wrapperTender .swiper {
   padding-bottom: 1.5rem;
@@ -73,39 +73,43 @@ body > * {
   }
 }
 .wrapperTeam .swiper {
-	padding-left: 2.13rem;
+  padding-left: 2.13rem;
+  padding-bottom: 1.5rem;
 
-	@media screen and (min-width: 768px) {
-		padding-left: 0;
-	}
+  @media screen and (min-width: 768px) {
+    padding-left: 0;
+    padding-bottom: 2.5rem;
+  }
 
-	@media screen and (min-width: 1280px) {
-		padding-left: 2.75rem;
-		padding-right: 2.75rem;
-	}
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    padding-bottom: 3rem;
+  }
 
-	@media screen and (min-width: 1440px) {
-		padding-left: 3.75rem;
-		padding-right: 3.75rem;
-	}
+  @media screen and (min-width: 1440px) {
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+    padding-bottom: 4rem;
+  }
 }
 
 .wrapperDonor .swiper {
-	margin-bottom: 4rem;
+  margin-bottom: 4rem;
 
-	@media screen and (min-width: 420px) {
-		margin-bottom: 4.5rem;
-	}
+  @media screen and (min-width: 420px) {
+    margin-bottom: 4.5rem;
+  }
 
-	@media screen and (min-width: 768px) {
-		margin-bottom: 4rem;
-	}
+  @media screen and (min-width: 768px) {
+    margin-bottom: 4rem;
+  }
 
-	@media screen and (min-width: 1280px) {
-		margin-bottom: 5rem;
-		padding-left: 4rem;
-		padding-right: 4rem;
-	}
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .wrapperTender .swiper {
@@ -116,358 +120,367 @@ body > * {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
   }
- 
-	@media screen and (min-width: 1440px) {
-		padding-left: 2.75rem;
-		padding-right: 2.75rem;
-	}
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
 }
 .newsSlider .swiper {
-	@media screen and (min-width: 1280px) {
-		padding-left: 2.75rem;
-		padding-right: 2.75rem;
-	}
-	@media screen and (min-width: 1440px) {
-		padding-left: 2.75rem;
-		padding-right: 2.75rem;
-	}
+  @media screen and (min-width: 1280px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
 }
 @media screen and (max-width: 320px) {
-	.newsSlider .swiper {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-img,
-video {
-	max-width: none;
+  .newsSlider .swiper {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-	background-color: #6291f5;
-	border-radius: 10px;
+  background-color: #6291f5;
+  border-radius: 10px;
 }
 .news-modal {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color:#E0F2FE;
-	border: none;
-	padding: 20px;
-	z-index: 1000;
-	max-width: 80%;
-	max-height: 80%;
-	overflow-y: auto;
-	border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e0f2fe;
+  border: none;
+  padding: 20px;
+  z-index: 1000;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 5px;
 }
 .news-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 .swiper .swiper-slide {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 1rem;
-	width: 16.56rem;
-	height: auto;
-	overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  width: 16.56rem;
+  height: auto;
+  overflow: hidden;
 }
 
 .about .swiper-slide {
-	padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 /*Progressbar*/
 
 body .swiper-horizontal > .swiper-pagination-progressbar,
 .swiper-pagination-progressbar.swiper-pagination-horizontal,
 .swiper-vertical
-	> .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
-	height: 10px;
-	top: auto;
-	bottom: 0;
-	border-radius: 10px;
-	background-color: #d1d5db;
-	overflow: hidden;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #d1d5db;
+  overflow: hidden;
 }
 body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-	border-radius: 10px;
-	background-color: #60a5fa;
+  border-radius: 10px;
+  background-color: #60a5fa;
 }
 
 /*Progressbar*/
 .swiper-pagination-lock {
-	display: block !important;
+  display: block !important;
 }
 
 .newsSlider .swiper {
-	padding-left: 2.75rem;
-	padding-right: 2.75rem;
-	padding-bottom: 40px;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+  padding-bottom: 40px;
 }
 @media (max-width: 1024px) {
-	.newsSlider .swiper {
-		padding-left: 0;
-		padding-right: 0;
-	}
+  .newsSlider .swiper {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	gap: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
 
-	@media screen and (min-width: 768px) {
-		gap: 1.25rem;
-	}
+  @media screen and (min-width: 768px) {
+    gap: 1.25rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-	.swiper-pagination-bullet {
-	width: 0.5rem;
-	height: 0.5rem;
-	background-color: #d1d5db;
-	margin: 0;
+  .swiper-pagination-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #d1d5db;
+  margin: 0;
 
-	@media screen and (min-width: 768px) {
-		width: 0.75rem;
-		height: 0.75rem;
-	}
+  @media screen and (min-width: 768px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 }
 
 .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
-	.swiper-pagination-bullet.swiper-pagination-bullet-active {
-	width: 1.5rem;
-	height: 0.5rem;
-	background-color: #60a5fa;
-	border-radius: 0.62rem;
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 1.5rem;
+  height: 0.5rem;
+  background-color: #60a5fa;
+  border-radius: 0.62rem;
 
-	@media screen and (min-width: 768px) {
-		width: 2rem;
-		height: 0.75rem;
-	}
+  @media screen and (min-width: 768px) {
+    width: 2rem;
+    height: 0.75rem;
+  }
 }
 :root {
-	--swiper-navigation-size: 19px !important;
+  --swiper-navigation-size: 19px !important;
 }
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-	display: block;
-	width: 1.5rem;
-	height: 1.5rem;
-	color: #020617;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #020617;
 
-	@media screen and (max-width: 1279.98px) {
-		display: none;
-	}
+  @media screen and (max-width: 1279.98px) {
+    display: none;
+  }
 }
 
 .wrapperTeam .swiper .swiper-button-prev {
-	left: 0;
-	top: 11.64rem;
+  left: 0;
+  top: 11.64rem;
 }
 
 .wrapperTeam .swiper .swiper-button-next {
-	right: -0.9rem;
-	top: 11.64rem;
+  right: -0.9rem;
+  top: 11.64rem;
 }
 
 .wrapperDonor .swiper .swiper-button-prev {
-	left: 0;
-	top: 4rem;
+  left: 0;
+  top: 4rem;
 }
 
 .wrapperDonor .swiper .swiper-button-next {
-	right: -0.9rem;
-	top: 4rem;
+  right: -0.9rem;
+  top: 4rem;
 }
 .HeroSlider .swiper .swiper-slide {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 .HeroSlider .swiper .swiper-button-prev {
-	left: 0;
-	top: 11.64rem;
+  left: 0;
+  top: 11.64rem;
 }
 
 .HeroSlider .swiper .swiper-button-next {
-	width: 33px;
-	height: 26px;
-	right: 125px;
-	top: 50%;
-	position: absolute;
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	transform: rotate(180deg);
+  width: 33px;
+  height: 26px;
+  right: 125px;
+  top: 50%;
+  position: absolute;
+  background-image: url(../../../public/img/arrow.png);
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
 
-	@media screen and (max-width: 1279.98px) {
-		display: block;
-	}
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
 }
 
 .HeroSlider .swiper .swiper-button-prev {
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	width: 33px;
-	height: 26px;
-	left: 125px;
-	top: 50%;
+  background-image: url(../../../public/img/arrow.png);
+  background-repeat: no-repeat;
+  width: 33px;
+  height: 26px;
+  left: 125px;
+  top: 50%;
 
-	@media screen and (max-width: 1279.98px) {
-		display: block;
-	}
+  @media screen and (max-width: 1279.98px) {
+    display: block;
+  }
 }
 
 .swiper-pagination-horizontal {
-	top: 10;
+  top: 10;
 }
 
 .HeroSlider .swiper .swiper-button-prev::after,
 .HeroSlider .swiper .swiper-button-next::after {
-	display: none;
+  display: none;
 }
 .HeroSlider .HeroSlider .swiper-pagination-fraction,
 .HeroSlider .swiper-pagination-custom,
 .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
-	bottom: 40px;
+  bottom: 40px;
 }
 
 .bg-image-tenders {
-	background-image: url('../../../public/img/tender-bg.png');
-	background-repeat: no-repeat;
+  background-image: url("../../../public/img/tender-bg.png");
+  background-repeat: no-repeat;
 }
 
 .bg-image-about {
-	background-image: url('../../../public/img/about-bg.png');
-	background-repeat: no-repeat;
+  background-image: url("../../../public/img/about-bg.png");
+  background-repeat: no-repeat;
 }
 
 .about.swiper {
-	padding-left: 0;
-	padding-right: 0;
-	margin-bottom: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 30px;
 }
 
 /* Styles for Pagination*/
 .pagination {
-	margin-top: 88px;
-	margin-bottom: 132px;
-	display: flex;
-	gap: 16px;
-	justify-content: flex-end;
-	color: white;
+  margin-top: 88px;
+  margin-bottom: 132px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  color: white;
 }
 
 .active-btn {
-	background-color: #4c1d95;
-	border-radius: 50%;
+  background-color: #4c1d95;
+  border-radius: 50%;
 }
 
 .pageClass a {
-	border: #4c1d95 1px solid;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #4c1d95;
-	width: 36px;
-	height: 36px;
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4c1d95;
+  width: 36px;
+  height: 36px;
 }
 
 .pageClass a:hover {
-	color: white;
-	background-color: #4c1d95;
+  color: white;
+  background-color: #4c1d95;
 }
 
 a.active-link {
-	display: flex;
-	width: 36px;
-	height: 36px;
-	align-items: center;
-	justify-content: center;
-	color: white;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .next a {
-	display: flex;
-	border: #4c1d95 1px solid;
-	border-radius: 50%;
-	width: 36px;
-	height: 36px;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+  display: flex;
+  border: #4c1d95 1px solid;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .next:not(.disabled) a:hover {
-	background-color: #4c1d95;
+  background-color: #4c1d95;
 }
 
 .next:not(.disabled) a:hover path {
-	fill: #ffffff;
+  fill: #ffffff;
+  fill: #ffffff;
 }
 
 .next.disabled {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 .previous.disabled {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 li.previous:not(.disabled):hover path {
-	border-radius: 50%;
-	background-color: #4c1d95 !important;
-
-	fill: #ffffff;
+  border-radius: 50%;
+  background-color: #4c1d95 !important;
+  fill: #ffffff;
 }
 
 .previous.disabled a,
 .next.disabled a {
-	border-color: #d1d5db;
+  border-color: #d1d5db;
 }
 
 .previous.disabled a svg,
 .next.disabled a svg path {
-	fill: #dbd6d1;
+  fill: #dbd6d1;
+  stroke: #dbd3d1;
+}
+.next.disabled a svg path {
+  fill: #dbd6d1;
 
-	stroke: #dbd3d1;
+  stroke: #dbd3d1;
 }
 
 .break {
-	display: flex;
-	align-items: flex-end;
-	color: #4c1d95;
+  display: flex;
+  align-items: flex-end;
+  color: #4c1d95;
 }
 
 .height-minus {
-	@media screen and (min-width: 1280px) {
-		min-height: calc(100vh - 322px);
-	}
+  @media screen and (min-width: 1280px) {
+    min-height: calc(100vh - 322px);
+  }
 }
 
 /* Styles for hiden Section title */
 
 .titleNoPseudo ::after {
-	display: none;
-
-	@media (min-width: 768px) {
-		display: block;
-	}
+  display: none;
 }
 
 a.active {
-	color: #60a5fa;
+  color: #60a5fa;
+}
+
+/* Form Image*/
+.bg-form {
+  background-image: linear-gradient(
+      rgba(30, 30, 30, 0.3),
+      rgba(30, 30, 30, 0.3)
+    ),
+    url("../../../public/img/hand-holds-smartphone.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
 }

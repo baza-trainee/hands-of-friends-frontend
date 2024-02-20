@@ -11,12 +11,8 @@ export const Partners = () => {
     "
     >
       <PartnerWrapper title="Донори" endpoint="donors/" />
-      <div
-        className="hidden
-      md:block"
-      >
-        <PartnerWrapper title="Партнери" endpoint="partners/" />
-      </div>
+
+      <PartnerWrapper title="Партнери" endpoint="partners/" />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const PartnerWrapper = ({ title, endpoint }) => {
           ItemComponent={PartnerItem}
           swiperSettings={{
             breakpoints: {
-              320: { slidesPerView: 3.2, spaceBetween: 8 },
+              320: { slidesPerView: 1.1, spaceBetween: 16 },
               420: { slidesPerView: 1.3, spaceBetween: 8 },
               768: { slidesPerView: 2.6, spaceBetween: 20 },
               1280: { slidesPerView: 3.3, spaceBetween: 20 },

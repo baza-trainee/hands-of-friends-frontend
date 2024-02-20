@@ -26,7 +26,7 @@ const BaseModal = ({ onClose, children }) => {
   const modalContent = (
     <div
       onClick={handleCloseClick}
-      className="fixed z-10 top-0 left-0 w-full h-full flex justify-center items-center bg-[rgba(30,30,30,0.5)]"
+      className="fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center bg-[rgba(30,30,30,0.2)]"
     >
       {children}
     </div>
