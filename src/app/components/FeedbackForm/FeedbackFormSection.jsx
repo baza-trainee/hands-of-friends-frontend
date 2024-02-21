@@ -20,14 +20,15 @@ export default function FeedbackFormSection() {
           titleName="Форма зворотного зв'язку"
           className="w-60 xl:w-full"
         />
-        <div
-          className="absolute left-0 rigth-0 bg-form w-[320px] h-[211px]
-        sm:w-[420px] sm:h-[277px]
-        md:w-[511px] md:h-[416px] md:left-10
-        xl:w-[740px] xl:h-[490px] xl:left-20
-        2xl:w-[852px] 2xl:h-[564px] 2xl:left-[120px]"
-        />
+
         <div className="container relative grid">
+          <div
+            className="absolute left-[-16px] rigth-0 bg-form w-[320px] h-[211px]
+        sm:w-[420px] sm:h-[277px]
+        md:w-[511px] md:h-[416px] md:left-0
+        xl:w-[740px] xl:h-[490px] 
+        2xl:w-[852px] 2xl:h-[564px]"
+          />
           <FeedbackFormLayout />
         </div>
       </Container>
