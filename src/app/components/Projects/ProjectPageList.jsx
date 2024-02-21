@@ -12,7 +12,7 @@ export default function ProjectPageList({ currentItems, isLoading }) {
     sm:min-w-[388px] sm:gap-8
     md:min-w-[688px] md:grid-cols-2 md:gap-6
     xl:min-w-[1120px] xl:grid-cols-3 xl:gap-8
-    2xl:min-w-[1200px]">
+    2xl:min-w-[1200px] 2xl:gap-6">
       {isLoading
         ? skeletonItems
         : currentItems.map(
@@ -21,6 +21,8 @@ export default function ProjectPageList({ currentItems, isLoading }) {
                 <ProjectItem
                   key={data.id}
                   data={data}
+                  
+                  // className="projects-page-item"
                 />
               
           )}

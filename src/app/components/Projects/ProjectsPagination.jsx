@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Section from "../Section";
 import Container from "../Container";
 import ProjectPageList from "./ProjectPageList";
-import Pagination from "../Tenders/Pagination";
+import Pagination from "./PaginationProjects";
 import ProjectsHeader from "./ProjectsHeader";
 import Skeleton from "./Skeleton";
 
