@@ -1,10 +1,13 @@
+"use client";
 import React from "react";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
 import FeedbackFormLayout from "./FeedbackFormLayout";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function FeedbackFormSection() {
+export default function FeedbackFormSection({ lng }) {
+  const { t } = useTranslation(lng, "title");
   return (
     <Section
       marginbottom="
@@ -16,10 +19,7 @@ export default function FeedbackFormSection() {
     "
     >
       <Container>
-        <Title
-          titleName="Форма зворотного зв'язку"
-          className="w-60 xl:w-full"
-        />
+        <Title titleName={t("form")} className="w-60 xl:w-full" />
 
         <div className="container relative grid">
           <div

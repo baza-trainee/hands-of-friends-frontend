@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 import PartnerWrapper from "./PartnerWrapper";
+import { useTranslation } from "@/app/i18n/client";
 
-export const Partners = () => {
+export const Partners = ({ lng }) => {
+  const { t } = useTranslation(lng, "title");
   return (
     <div
       className="mb-16
@@ -10,9 +14,9 @@ export const Partners = () => {
       xl:mb-36
     "
     >
-      <PartnerWrapper title="Донори" endpoint="donors/" />
+      <PartnerWrapper title={t("donors")} endpoint="donors/" />
 
-      <PartnerWrapper title="Партнери" endpoint="partners/" />
+      <PartnerWrapper title={t("partners")} endpoint="partners/" />
     </div>
   );
 };

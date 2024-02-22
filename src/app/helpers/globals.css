@@ -508,10 +508,10 @@ li.previous.disabled svg {
 
 /* Styles for hiden Section title */
 
-.titleNoPseudo ::after {
+.titleNoPseudo::after {
   display: none;
 }
-
+/* Styles for hiden Section title */
 a.active {
   color: #60a5fa;
 }
