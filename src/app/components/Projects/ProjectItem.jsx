@@ -6,12 +6,14 @@ import Image from "next/image";
 export default function ProjectItem({ data})
 {
   return (
-    
-      <li key={data.id} className="flex flex-col min-w-[288px] h-[844px] 
-      sm:min-w-[388px] sm:h-[858px]
-      md:min-w-[334px] md:h-[983px]
-      xl:min-w-[330px] xl:min-h-[996px] 
-      2xl:min-w-[352px] 2xl:min-h-[962px]">
+
+      <li key={data.id} 
+      className="flex flex-col w-[288px] h-[844px]
+      sm:w-[388px] sm:h-[858px]
+      md:w-[334px] md:h-[983px]
+      xl:w-[330px] xl:min-h-[996px] 
+      2xl:w-[352px] 2xl:min-h-[962px]">
+     
           <Image
         src={data.image}
         alt= "Photo of the project"
@@ -26,7 +28,7 @@ export default function ProjectItem({ data})
             <h3 className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold
             md:mt-8">{data.title}</h3>
             <span
-              className="font-body text-base md:text-lg">{data.start_date} - {data.end_date}
+              className="font-body text-base md:text-lg">{data.start_date} - {data.end_date? data.end_date: "Активний"}
             </span>
         
             <p className="mt-4 w-[288px] h-[352px] text-base leading-6 text-left text-black font-body
@@ -44,6 +46,6 @@ export default function ProjectItem({ data})
          Детальніше
         </button>
           </li>
-   
+ 
   );
 }
