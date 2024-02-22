@@ -355,7 +355,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
   .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
@@ -368,9 +368,9 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   .HeroSlider .swiper-pagination-custom,
   .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 198px;
-    position: relative;
-     }
+    bottom: 218px;
+    position: absolute;
+  }
 }
 
 .bg-image-tenders {
