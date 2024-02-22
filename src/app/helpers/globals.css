@@ -363,7 +363,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     bottom: 232px;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 419px) {
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
   .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
