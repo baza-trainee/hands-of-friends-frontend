@@ -17,7 +17,9 @@ import Container from "../Container";
 import Title from "../Title";
 import Action from "../Action";
 
+
 export default function About() {
+
   const router = useRouter();
   return (
     <Section>
