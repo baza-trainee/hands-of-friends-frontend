@@ -13,7 +13,7 @@ export default function CooperationSection({ lng }) {
     <Section>
       <Container>
         <Title titleName={t("collaboration")} />
-        <CooperationList />
+        <CooperationList lng={lng} />
         <Partners lng={lng} />
       </Container>
     </Section>
