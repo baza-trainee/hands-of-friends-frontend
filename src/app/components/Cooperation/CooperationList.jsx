@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Action from "../Action";
-// import { dataCooperation } from "./data";
-import BaseModal from "../BaseModal/BaseModal";
 import { useTranslation } from "@/app/i18n/client";
+import Action from "../Action";
+import BaseModal from "../BaseModal/BaseModal";
 
 export default function CooperationList({ lng }) {
   const [showModal, setShowModal] = useState(false);
@@ -33,7 +32,6 @@ export default function CooperationList({ lng }) {
           xl:leading-9"
           >
             {t(`cooperation.${item}.title`)}
-            {/* {item.subtitle} */}
           </h3>
           <p
             className="mb-6 text-base italic font-light text-center 
@@ -41,7 +39,6 @@ export default function CooperationList({ lng }) {
             xl:mb-8"
           >
             {t(`cooperation.${item}.text`)}
-            {/* {item.text} */}
           </p>
 
           <Action
@@ -50,7 +47,6 @@ export default function CooperationList({ lng }) {
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {t(`cooperation.${item}.btnText`)}
-            {/* {item.btnText} */}
           </Action>
           {showModal && <BaseModal onClose={() => setShowModal(false)} />}
         </li>
