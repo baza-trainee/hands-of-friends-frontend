@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useCurrentLang } from "../hooks/useCurrentLang";
 import About from "../components/About/About";
 import ProjectSection from "../components/Projects/ProjectSection";
 import TendersSection from "../components/Tenders/TendersSection";
@@ -8,17 +11,18 @@ import FeedbackFormSection from "../components/FeedbackForm/FeedbackFormSection"
 import HeroSlider from "../components/Hero/HeroSlider";
 import NewsSection from "../components/News/NewsSection";
 
-export default async function Page() {
+export default function Page() {
+  const lng = useCurrentLang();
   return (
     <>
       <HeroSlider />
       <About />
       <ProjectSection />
       <TendersSection />
-      <TeamSection />
-      <CooperationSection />
+      <TeamSection lng={lng} />
+      <CooperationSection lng={lng} />
       <NewsSection />
-      <FeedbackFormSection />
+      <FeedbackFormSection lng={lng} />
     </>
   );
 }
