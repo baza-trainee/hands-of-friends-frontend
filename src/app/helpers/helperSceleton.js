@@ -36,7 +36,26 @@ export const skeletonConfig = {
 			{ x: 0, y: 472, rx: 0, ry: 0, width: 200, height: 36 },
 		],
 	},
-	hero: {
+	tenders: {
+		speed: 2,
+		width: 360,
+		height: 318,
+		viewBox: '0 0 360 318',
+		backgroundColor: '#afaaaa',
+		foregroundColor: '#eee2e2',
+		
+		shapes: [
+			{ x: 258, y: 41, rx: 0, ry: 0, width: 1, height: 0 },
+			{ x: 239, y: 31, rx: 0, ry: 0, width: 2, height: 0 },
+			{ x: 98, y: 192, rx: 0, ry: 0, width: 9, height: 3 },
+			{ x: 90, y: 187, rx: 0, ry: 0, width: 2, height: 3 },
+			{ x: 24, y: 72, rx: 0, ry: 0, width: 312, height: 219 },
+			{ x: 24, y: 24, rx: 0, ry: 0, width: 76, height: 27 },
+			{ x: 260, y: 24, rx: 0, ry: 0, width: 76, height: 27 },
+	
+		],
+	},
+		hero: {
 		speed: 1,
 		width: 1440,
 		height: 976,

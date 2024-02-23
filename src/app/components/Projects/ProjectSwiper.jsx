@@ -10,6 +10,7 @@ export default function ProjectSwiperList() {
       <UniversalSlider
         endpoint="projects/"
         ItemComponent={ProjectItem}
+        skeletonType="projects"
         swiperSettings={{
           breakpoints: {
             320: { slidesPerView: 1, spaceBetween: 20 },
