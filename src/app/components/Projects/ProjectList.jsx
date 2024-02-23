@@ -49,7 +49,12 @@ export default function ProjectList() {
          <ProjectItem
          key={item.id}
          item={item}
-          href={`/projects/${item.id}`}/>
+          href={`/projects/${item.id}`}
+          className="flex flex-col w-[288px] h-[844px]
+          sm:w-[388px] sm:h-[858px]
+          md:w-[334px] md:h-[983px]
+          xl:w-[330px] xl:min-h-[996px] 
+          2xl:w-[352px] 2xl:min-h-[962px]"/>
         ))
         }
       </ul> 

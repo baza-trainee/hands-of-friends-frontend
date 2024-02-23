@@ -10,6 +10,7 @@ export default function TenderSwiperList() {
       <UniversalSlider
         endpoint="tenders/"
         ItemComponent={TenderItem}
+        skeletonType="tenders"
         swiperSettings={{
           breakpoints: {
             // 320: { slidesPerView: 1.15, spaceBetween: 16 },
