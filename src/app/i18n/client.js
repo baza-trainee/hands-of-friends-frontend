@@ -45,7 +45,7 @@ export function useTranslation(lng, ns, options) {
   useEffect(() => {
     if (activeLng === i18n.resolvedLanguage) return;
     setActiveLng(i18n.resolvedLanguage);
-  }, [activeLng, i18n.resolvedLanguage]);
+  }, [activeLng]);
 
   useEffect(() => {
     if (!lng || i18n.resolvedLanguage === lng) return;
@@ -55,7 +55,7 @@ export function useTranslation(lng, ns, options) {
   useEffect(() => {
     if (cookies.i18next === lng) return;
     setCookie(cookieName, lng, { path: "/" });
-  }, [lng, cookies.i18next, setCookie]);
+  }, [lng]);
 
   return ret;
 }
