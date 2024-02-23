@@ -19,10 +19,10 @@ export default function Page() {
       <About />
       <ProjectSection />
       <TendersSection />
-      <TeamSection lng={lng} />
-      <CooperationSection lng={lng} />
+      <TeamSection />
+      <CooperationSection />
       <NewsSection />
-      <FeedbackFormSection lng={lng} />
+      <FeedbackFormSection/>
     </>
   );
 }
