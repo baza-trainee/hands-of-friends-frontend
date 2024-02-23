@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
-import { dataCooperation } from "./data";
 import BaseModal from "../BaseModal/BaseModal";
 
-export default function CooperationList() {
+export default function CooperationList({ lng }) {
   const [showModal, setShowModal] = useState(false);
+  const { t } = useTranslation(lng, "cooperation");
+
+  const items = ["partners", "donors", "volunteers"];
+
   return (
     <ul
       role="list"
@@ -14,7 +18,7 @@ export default function CooperationList() {
       md:flex-row md:flex-wrap md:gap-5 md:mb-16
       xl:mb-20"
     >
-      {dataCooperation.map((item, index) => (
+      {items.map((item, index) => (
         <li
           key={index}
           className="flex flex-col grow items-center px-[1.25rem] py-[1.63rem] w-[18rem] h-min bg-[#E0F2FE] even:px-[50px]
@@ -27,14 +31,14 @@ export default function CooperationList() {
           md:text-3xl md:font-bold leading-8
           xl:leading-9"
           >
-            {item.subtitle}
+            {t(`cooperation.${item}.title`)}
           </h3>
           <p
             className="mb-6 text-base italic font-light text-center 
             md:mb-5 md:text-lg
             xl:mb-8"
           >
-            {item.text}
+            {t(`cooperation.${item}.text`)}
           </p>
 
           <Action
@@ -42,7 +46,7 @@ export default function CooperationList() {
             onClick={() => setShowModal(true)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
-            {item.btnText}
+            {t(`cooperation.${item}.btnText`)}
           </Action>
           {showModal && <BaseModal onClose={() => setShowModal(false)} />}
         </li>

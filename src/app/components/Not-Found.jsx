@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 import Action from "./Action";
+import { useTranslation } from "../i18n/client";
 
-export default function NotFound() {
+export default function NotFound({ lng }) {
+  const { t } = useTranslation(lng, "notFound");
   return (
     <div
       className="mt-[2rem] mx-auto mb-16 max-w-[20rem] font-body text-center
@@ -21,7 +23,7 @@ export default function NotFound() {
       md:text-3xl md:mb-[3.75rem]
       xl:text-[2rem] xl:leading-normal"
       >
-        Вибачте, сторінка, яку ви шукаєте, переміщена або видалена.
+        {t("text")}
       </p>
 
       <Action
@@ -30,7 +32,7 @@ export default function NotFound() {
         target="_self"
         className="inline-block p-4 text-xl text-white duration-300 border-2 rounded cursor-pointer lg:self-center bg-violet border-violet hover:bg-white hover:text-violet"
       >
-        Повернутися на головну
+        {t("button")}
       </Action>
     </div>
   );
