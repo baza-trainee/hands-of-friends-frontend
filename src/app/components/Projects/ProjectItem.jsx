@@ -3,16 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 // import Action from '../Action';
-export default function ProjectItem({ data})
+export default function ProjectItem({ data, className})
 {
   return (
 
       <li key={data.id} 
-      className="flex flex-col w-[288px] h-[844px]
-      sm:w-[388px] sm:h-[858px]
-      md:w-[334px] md:h-[983px]
-      xl:w-[330px] xl:min-h-[996px] 
-      2xl:w-[352px] 2xl:min-h-[962px]">
+      >
      
           <Image
         src={data.image}
@@ -21,9 +17,9 @@ export default function ProjectItem({ data})
         height={400}
         className="min-w-[288px] h-[320px] object-cover
         sm:min-w-[388px] sm:h-[430px]
-        md:min-w-[334px] md:h-[371px]
-        xl:min-w-[330px] xl:h-[400px]
-        2xl:min-w-[352px] 2xl:h-[426px]"
+        md:min-w-full md:h-[371px]
+        xl:min-w-full xl:h-[400px]
+        2xl:min-w-full 2xl:h-[426px]"
         />
             <h3 className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold
             md:mt-8">{data.title}</h3>
@@ -32,10 +28,11 @@ export default function ProjectItem({ data})
             </span>
         
             <p className="mt-4 w-[288px] h-[352px] text-base leading-6 text-left text-black font-body
-            sm:w-[388px] sm:h-[316px]
-            md:w-[334px] md:h-[408px] md:text-lg
-            xl:w-[330px] xl:h-[408px]
-            2xl:w-[352px] 2xl:h-[352px]">
+            sm:w-full sm:h-[316px]
+            md:w-full md:h-[408px] md:text-lg
+            xl:w-full xl:h-[408px]
+            2xl:w-full 2xl:h-[352px]"
+            >
               {data.description}
             </p>
             <button
