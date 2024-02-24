@@ -381,8 +381,13 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .bg-image-about {
   background-image: url("../../../public/img/about-bg.png");
   background-repeat: no-repeat;
+  background-size: cover;  
 }
-
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: 0;
+    margin-left: 0;}
+    
 .about.swiper {
   padding-left: 0;
   padding-right: 0;
