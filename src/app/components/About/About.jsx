@@ -1,29 +1,28 @@
-"use client";
+'use client'
 
-import Image from "next/image";
+import Image from 'next/image'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Keyboard, A11y, Mousewheel } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Keyboard, A11y, Mousewheel } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation'
 
-import Team from "../../../../public/img/about-us1.png";
+import Team from '../../../../public/img/about-us1.png'
 
-import Section from "../Section";
-import Container from "../Container";
-import Title from "../Title";
-import Action from "../Action";
-import { useTranslation } from "@/app/i18n/client";
+import Section from '../Section'
+import Container from '../Container'
+import Title from '../Title'
+import Action from '../Action'
+import { useTranslation } from '@/app/i18n/client'
 
+export default function About({ lng }) {
+	const { t } = useTranslation(lng, 'about-section')
 
-export default function About({lng}) {
-   const { t } = useTranslation(lng, 'about-section')
-
-  const router = useRouter();
-  return (
+	const router = useRouter()
+	return (
 		<Section>
 			<Container>
 				<blockquote>
@@ -94,13 +93,15 @@ export default function About({lng}) {
 					<p className='mb-4'>{t('p2')}</p>
 					<p className='mb-8'>{t('p3')}</p>
 				</div>
-				<Action
-					onClick={() => router.push('/aboutUs')}
-					type='button'
-					className='mx-auto px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue'
-				>
-					{t('btn')}
-				</Action>
+				<div className='flex justify-center md:justify-start'>
+					<Action
+						onClick={() => router.push('/aboutUs')}
+						type='button'
+						className='text-center px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue'
+					>
+						{t('btn')}
+					</Action>
+				</div>
 			</Container>
 		</Section>
 	)
