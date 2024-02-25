@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import { HiPlus } from "react-icons/hi2";
+// import { HiPlus } from "react-icons/hi2";
 
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
@@ -22,6 +22,8 @@ const FeedbackFormLayout = ({ lng }) => {
       email: "",
       phone_number: "",
       message: "",
+      company_name: "",
+      city: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values, formikHelpers) =>
@@ -46,6 +48,30 @@ const FeedbackFormLayout = ({ lng }) => {
             />
           </button> */}
 
+          {/* <InputField
+            label={t("company_name")}
+            id="company_name"
+            name="company_name"
+            type="text"
+            placeholder={t("placeholder_company_name")}
+            value={formik.values.company_name}
+            error={formik.touched.company_name && formik.errors.company_name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            required
+          />
+          <InputField
+            label={t("city")}
+            id="city"
+            name="city"
+            type="text"
+            placeholder={t("placeholder_city")}
+            value={formik.values.city}
+            error={formik.touched.city && formik.errors.city}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            required
+          /> */}
           <InputField
             label={t("name")}
             id="name"

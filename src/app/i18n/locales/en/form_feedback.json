@@ -1,11 +1,21 @@
 {
+  "company_name": "Company name",
+  "placeholder_company_name": "Company name",
+
   "name": "Name",
   "placeholder_name": "Olha",
+
+  "city": "Your city",
+  "placeholder_city": "Your city",
+
   "email": "Email address",
   "placeholder_email": "example@gmail.com",
+
   "phone": "Phone number",
   "placeholder_phone": "+38 000 000 0000",
+
   "message": "Message",
   "placeholder_message": "Your message...",
+
   "button": "Send"
 }
