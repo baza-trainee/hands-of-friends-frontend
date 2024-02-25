@@ -4,6 +4,8 @@ import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
 import FeedbackFormLayout from "../FeedbackForm/FeedbackFormLayout";
+import { HiPlus } from "react-icons/hi2";
+import FeedbackFormTitle from "../FeedbackForm/helpers/FeedbackFormTitle";
 
 export default function CooperationList({ lng }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +54,15 @@ export default function CooperationList({ lng }) {
           </Action>
           {isOpen && (
             <BaseModal isOpen={isOpen} onClose={toggleModal}>
-              <FeedbackFormLayout />
+              <FeedbackFormLayout additionalData={item}>
+                <FeedbackFormTitle />
+                <button type="button" onClick={toggleModal}>
+                  <HiPlus
+                    size={24}
+                    className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+                  />
+                </button>
+              </FeedbackFormLayout>
             </BaseModal>
           )}
         </li>

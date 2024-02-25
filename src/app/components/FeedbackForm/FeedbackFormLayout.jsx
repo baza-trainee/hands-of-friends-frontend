@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { useFormik } from "formik";
-// import { HiPlus } from "react-icons/hi2";
-
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import InputField from "./InputField";
@@ -11,9 +9,10 @@ import Modal from "../Modal/Modal";
 import { validationSchema } from "./helpers/validationSchema";
 import { handleSubmit } from "./helpers/handleSubmit";
 
-const FeedbackFormLayout = ({ lng }) => {
+const FeedbackFormLayout = ({ lng, additionalData, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);
+
   const { t } = useTranslation(lng, "form_feedback");
 
   const formik = useFormik({
@@ -41,13 +40,21 @@ const FeedbackFormLayout = ({ lng }) => {
           method="post"
           onSubmit={formik.handleSubmit}
         >
-          {/* <button type="button" onClick={handleClose}>
-            <HiPlus
-              size={24}
-              className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+          {children}
+          {additionalData && (
+            <InputField
+              label={t("company_name")}
+              id="company_name"
+              name="company_name"
+              type="text"
+              placeholder={t("placeholder_company_name")}
+              value={formik.values.company_name}
+              error={formik.touched.company_name && formik.errors.company_name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              required
             />
-          </button> */}
-
+          )}
           {/* <InputField
             label={t("company_name")}
             id="company_name"
@@ -59,8 +66,8 @@ const FeedbackFormLayout = ({ lng }) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             required
-          />
-          <InputField
+          /> */}
+          {/* <InputField
             label={t("city")}
             id="city"
             name="city"
@@ -73,7 +80,7 @@ const FeedbackFormLayout = ({ lng }) => {
             required
           /> */}
           <InputField
-            label={t("name")}
+            label={additionalData ? t("representative's_name") : t("name")}
             id="name"
             name="name"
             type="text"

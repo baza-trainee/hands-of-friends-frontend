@@ -1,9 +1,15 @@
 {
+  "title_partner": "Partner form",
+  "title_donor": "Donor form",
+  "title_volunteer": "Volunteer form",
+
   "company_name": "Company name",
   "placeholder_company_name": "Company name",
 
   "name": "Name",
   "placeholder_name": "Olha",
+
+  "representative's_name": "Representative's name",
 
   "city": "Your city",
   "placeholder_city": "Your city",

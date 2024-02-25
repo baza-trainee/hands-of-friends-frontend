@@ -1,9 +1,15 @@
 {
+  "title_partner": "Форма партнера",
+  "title_donor": "Форма донора",
+  "title_volunteer": "Форма волонтера",
+
   "company_name": "Назва організації",
   "placeholder_company_name": "Назва організації",
 
   "name": "Ім’я",
   "placeholder_name": "Ольга",
+
+  "representative's_name": "Ім’я представника організації",
 
   "city": "Ваше місто",
   "placeholder_city": "Ваше місто",
