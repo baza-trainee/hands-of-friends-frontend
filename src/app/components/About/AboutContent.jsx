@@ -7,7 +7,7 @@ function AboutContent({ activeTab, lng }) {
 		<Container>
 			<div className='mt-4'>
 				{activeTab === 'mission' && (
-					<div className='mt-[32px] md:mt-[56px] mb-[112px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]'>
+					<div className='mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]'>
 						<p className='mb-6'>{t('mission-p1')}</p>
 						<p className='mb-6'>{t('mission-p2')}</p>
 						<p className='mb-6'>{t('mission-p3')}</p>
