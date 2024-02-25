@@ -29,7 +29,7 @@ export default function FeedbackFormSection({ lng }) {
         xl:w-[740px] xl:h-[490px] 
         2xl:w-[852px] 2xl:h-[564px]"
           />
-          <FeedbackFormLayout />
+          <FeedbackFormLayout lng={lng} />
         </div>
       </Container>
     </Section>
