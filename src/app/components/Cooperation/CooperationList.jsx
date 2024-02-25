@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
+import FeedbackFormLayout from "../FeedbackForm/FeedbackFormLayout";
 
 export default function CooperationList({ lng }) {
-  const [showModal, setShowModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => setIsOpen((prev) => !prev);
   const { t } = useTranslation(lng, "cooperation");
 
   const items = ["partners", "donors", "volunteers"];
@@ -43,12 +45,16 @@ export default function CooperationList({ lng }) {
 
           <Action
             type="button"
-            onClick={() => setShowModal(true)}
+            onClick={() => setIsOpen(true)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {t(`cooperation.${item}.btnText`)}
           </Action>
-          {showModal && <BaseModal onClose={() => setShowModal(false)} />}
+          {isOpen && (
+            <BaseModal isOpen={isOpen} onClose={toggleModal}>
+              <FeedbackFormLayout />
+            </BaseModal>
+          )}
         </li>
       ))}
     </ul>

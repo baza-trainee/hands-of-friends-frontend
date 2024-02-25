@@ -1,0 +1,11 @@
+{
+  "name": "Ім’я",
+  "placeholder_name": "Ольга",
+  "email": "Електронна пошта",
+  "placeholder_email": "example@gmail.com",
+  "phone": "Телефон",
+  "placeholder_phone": "+38 000 000 0000",
+  "message": "Повідомлення",
+  "placeholder_message": "Ваше повідомлення...",
+  "button": "Надіслати"
+}
