@@ -1,11 +1,27 @@
-import React from "react";
+
 import { useRouter } from "next/navigation";
 
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 // import Action from '../Action';
 export default function ProjectItem({ data, className})
-{
+{ const [formattedDescription, setFormattedDescription] = useState();
+  const ulClass = "list-disc px-5 py-6";
+  const olClass = "list-decimal px-5 py-6";
+
+  useEffect(() => {
+    async function fetchData(data) {
+     
+      const desc = data.description
+        .replace(/<ul/g, `<ul class="${ulClass}"`)
+        .replace(/<ol/g, `<ol class="${olClass}"`);
+
+      setFormattedDescription(desc);
+   
+    }
+    fetchData(data);
+  }, []);
   const router = useRouter();
   return (
 
@@ -34,8 +50,12 @@ export default function ProjectItem({ data, className})
             md:w-full md:h-[408px] md:text-lg
             xl:w-full xl:h-[408px]
             2xl:w-full 2xl:h-[352px]"
+            
+          dangerouslySetInnerHTML={{
+              __html: formattedDescription,
+            }}
             >
-              {data.description}
+            
             </p>
             <button
           onClick={() => router.push(`/projects/${data.id}`)}
