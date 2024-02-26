@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const handleSubmit = (
   values,
-  { resetForm, setSubmitting, setShowModal }
+  { resetForm, setSubmitting, setIsOpen }
 ) => {
   let data = JSON.stringify(values, null, 2);
   axios
@@ -20,6 +20,6 @@ export const handleSubmit = (
     .finally(() => {
       setSubmitting(false);
       resetForm();
-      setShowModal(true);
+      setIsOpen(true);
     });
 };

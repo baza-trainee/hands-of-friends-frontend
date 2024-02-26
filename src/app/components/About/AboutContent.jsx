@@ -1,125 +1,65 @@
-import Container from "@/app/components/Container";
+import Container from '@/app/components/Container'
+import { useTranslation } from '@/app/i18n/client'
 
-function AboutContent({ activeTab }) {
-  return (
-    <Container>
-      <div className="mt-4">
-        {activeTab === "mission" && (
-          <div className="mt-[56px] mb-[112px] text-lg max-w-[740px]">
-            <p className="mb-6">
-              Фонд засновано у 2015 у Краматорську. Від початку діяльності
-              організація реалізовувала проєкти з доставки благодійної допомоги
-              до освітніх і медичних закладів, соціальних служб на території
-              Донецької та Луганської областей.
-            </p>
-            <p className="mb-6">
-              До 24 лютого ми доставляли за фінансової підтримки Дитячого фонду
-              ООН UNICEF освітні матеріали та санітарно-гігієнічні засоби до
-              закладів шкільної та дошкільної освіти, реабілітаційних центів,
-              комунальних та медичних закладів. Проводили у прифронтових містах
-              тренінги з основ чистоти для малечі та учнів початкових шкіл.
-            </p>
-            <p className="mb-6">
-              Після повномасштабного вторгнення росії ми намагалися зберегти
-              логістику до постраждалих населених пунктів та відправляли
-              допомогу до новостворених на Донеччині колективних центрів
-              тимчасового перебування переселенців. Але в умовах обстрілів і
-              евакуації установ робота була майже паралізована, і команда була
-              вимушена релокуватися у більш безпечний регіон України.
-            </p>
-            <p className="mb-6">
-              Разом з родинами співробітники організації переселилися у
-              колективний центр, організований для вимушених переселенців у
-              місті Бар Вінницької області. Свою роботу не припиняли ані на день
-              – одразу розпочали моніторинг потреб у найближчих до своєї локації
-              областях України, не забували про рідний Краматорськ і тримали
-              зв’язок з представниками закладів Донеччини.
-            </p>
-            <p>
-              Після відновлення роботи у Барі розпочали співпрацю та перемовини
-              з між- народними благодійними організаціями. Так у 2022 році ми
-              стали реалізовувати благодійні проєкти на території Вінницької та
-              Хмельницької областей у партнерстві з Дитячим фондом ООН UNICEF,
-              Міжнародною організацією з міграції МОМ, Міжнародною благодійною
-              організацією «Choose Love», французькою міжнародною асоціацією
-              солідарності ACTED, Міжнародною благодійною організацією PLAN
-              International. Запроваджували власні ініціативи та взаємодіяли з
-              українськими громадськими та благодійними організаціями.
-            </p>
-          </div>
-        )}
-        {activeTab === "principles" && (
-          <div className="mt-[80px] mb-[160px]">
-            <ul className="list-disc ">
-              <li className="ml-4 text-2xl">Відповідальність</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми завжди виконуємо те, що обіцяємо. Ми не боїмося брати на себе
-                відповідальність і робимо це свідомо.
-              </p>
-              <li className="ml-4 text-2xl">Результативність</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми завжди виконуємо те, що обіцяємо. Ми не боїмося брати на себе
-                відповідальність і робимо це свідомо.
-              </p>
-              <li className="ml-4 text-2xl">Ефективність</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми завжди виконуємо те, що обіцяємо. Ми не боїмося брати на себе
-                відповідальність і робимо це свідомо.
-              </p>
-              <li className="ml-4 text-2xl">Партнерство</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми завжди виконуємо те, що обіцяємо. Ми не боїмося брати на себе
-                відповідальність і робимо це свідомо.
-              </p>
-              <li className="ml-4 text-2xl">Розвиток</li>
-              <p className="text-lg ml-4">
-                Ми завжди виконуємо те, що обіцяємо. Ми не боїмося брати на себе
-                відповідальність і робимо це свідомо.
-              </p>
-            </ul>
-          </div>
-        )}
-        {activeTab === "values" && (
-          <div className="mt-[80px] mb-[160px]">
-            <ul className="list-disc ">
-              <li className="ml-4 text-2xl">Служіння суспільству</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми здійснюємо свою діяльність в інтересах громади, суспільства в
-                цілому та в інтересах окремих соціальних груп. Суспільне благо
-                має пріоритет перед інтересами як самої організації, так і її
-                членів.
-              </p>
-              <li className="ml-4 text-2xl">Людина</li>
-              <p className="text-lg ml-4 mb-10">
-                Розуміння, повага та увага до людей, з якими і для яких ми
-                працюємо. Гендерна рівність і повага до інтересів національних
-                та інших меншин.
-              </p>
-              <li className="ml-4 text-2xl">Відкритість</li>
-              <p className="text-lg ml-4 mb-10">
-                Ми відкрито інформуємо наших співробітників, партнерів,
-                бенефіціарів та інші зацікавлені сторони про важливі питання
-                діяльності нашої організації, створюючи основу для довірчого
-                співробітництва.
-              </p>
-              <li className="ml-4 text-2xl">Довіра</li>
-              <p className="text-lg ml-4 mb-10">
-                Основа суспільної дії, яка складається між людьми в результаті
-                доброчесного співробітництва. Чесність, відповідальність,
-                доброзичливість, щирість, компетентність – це наші принципи, як
-                моделі поведінки, що формують довіру.
-              </p>
-              <li className="ml-4 text-2xl">Свобода</li>
-              <p className="text-lg ml-4">
-                Свобода від впливу політичних партій та влади. Свобода у
-                прийнятті рішень.
-              </p>
-            </ul>
-          </div>
-        )}
-      </div>
-    </Container>
-  );
+function AboutContent({ activeTab, lng }) {
+	const { t } = useTranslation(lng, 'about-page')
+	return (
+		<Container>
+			<div className='mt-4'>
+				{activeTab === 'mission' && (
+					<div className='mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]'>
+						<p className='mb-6'>{t('mission-p1')}</p>
+						<p className='mb-6'>{t('mission-p2')}</p>
+						<p className='mb-6'>{t('mission-p3')}</p>
+						<p className='mb-6'>{t('mission-p4')}</p>
+						<p>{t('mission-p5')}</p>
+					</div>
+				)}
+				{activeTab === 'principles' && (
+					<div className='mt-[32px] md:mt-[80px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[792px]'>
+						<ul className='list-disc '>
+							<li className='ml-4 text-lg md:text-2xl'>
+								{t('principles-li1')}
+							</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('principles-p1')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>
+								{t('principles-li2')}
+							</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('principles-p2')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>
+								{t('principles-li3')}
+							</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('principles-p3')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>
+								{t('principles-li4')}
+							</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('principles-p4')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>
+								{t('principles-li5')}
+							</li>
+							<p className='md:text-lg ml-4'>{t('principles-p5')}</p>
+						</ul>
+					</div>
+				)}
+				{activeTab === 'values' && (
+					<div className='mt-[32px] md:mt-[80px] mb-[160px] md:max-w-[688px] xl:max-w-[740px] 2xl:max-w-[740px]'>
+						<ul className='list-disc '>
+							<li className='ml-4 text-lg md:text-2xl'>{t('values-li1')}</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('values-p1')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>{t('values-li2')}</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('values-p2')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>{t('values-li3')}</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('values-p3')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>{t('values-li4')}</li>
+							<p className='md:text-lg ml-4 mb-10'>{t('values-p4')}</p>
+							<li className='ml-4 text-lg md:text-2xl'>{t('values-li5')}</li>
+							<p className='md:text-lg ml-4'>{t('values-p5')}</p>
+						</ul>
+					</div>
+				)}
+			</div>
+		</Container>
+	)
 }
 
-export default AboutContent;
+export default AboutContent

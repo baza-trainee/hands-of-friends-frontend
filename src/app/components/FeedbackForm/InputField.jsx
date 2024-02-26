@@ -10,6 +10,7 @@ const InputField = ({
   onChange,
   onBlur,
   required,
+  placeholder,
 }) => {
   const InputElement = type === "textarea" ? "textarea" : "input";
 
@@ -20,7 +21,8 @@ const InputField = ({
         {required && <span className="text-[red]"> *</span>}
       </label>
       <InputElement
-        className={`w-full h-10 rounded-[0.3rem] mt-2 px-2 outline-none focus:ring-1 focus:ring-transparent border 
+        className={`w-full h-10 rounded-[0.3rem] mt-2 px-3 outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        xl:text-base xl:placeholder:text-base
           ${
             type === "textarea"
               ? "xl:h-[135px] p-1 xs:h-[99px] resize-none"
@@ -38,6 +40,7 @@ const InputField = ({
         autoComplete="off"
         id={id}
         name={name}
+        placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
         value={value}

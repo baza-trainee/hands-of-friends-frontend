@@ -1,19 +1,21 @@
-import React from "react";
-import Container from "../Container";
-import BreadCrumbs from "../BreadCrumbs";
+import React from 'react'
+import Container from '../Container'
+import BreadCrumbs from '../BreadCrumbs'
+import { useTranslation } from '@/app/i18n/client'
 
-export default function TenderList({ handleTabClick, activeTab }) {
-  return (
-    <div className="bg-image-tenders bg-center min-h-[620px]">
-      <Container>
-        <BreadCrumbs
-          className="mb-[389px] z-10"
-          href="/"
-          text="Назад"
-          textColor="white"
-        />
-        <h2 className="text-3xl text-white font-bold mb-16">Тендери</h2>
-        {/*<div className="flex space-x-4 gap-8">
+export default function TenderList({ handleTabClick, activeTab, lng }) {
+	const { t } = useTranslation(lng, 'tenders')
+	return (
+		<div className='bg-image-tenders bg-center min-h-[620px]'>
+			<Container>
+				<BreadCrumbs
+					className='mb-[389px] z-10'
+					href='/'
+					text={t('breadcrumbs')}
+					textColor='white'
+				/>
+				<h2 className='text-3xl text-white font-bold mb-16'>{t('title')}</h2>
+				{/*<div className="flex space-x-4 gap-8">
           <button
             onClick={() => handleTabClick("all")}
             className={`focus:outline-none w-[180px] text-start text-2xl pb-2 ${activeTab === "all"
@@ -33,7 +35,7 @@ export default function TenderList({ handleTabClick, activeTab }) {
             Активні
           </button>
         </div>*/}
-      </Container>
-    </div>
-  );
+			</Container>
+		</div>
+	)
 }

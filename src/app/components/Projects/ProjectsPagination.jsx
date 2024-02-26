@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Section from "../Section";
 import Container from "../Container";
 import ProjectPageList from "./ProjectPageList";
-import Pagination from "../Tenders/Pagination";
+import Pagination from "./PaginationProjects";
 import ProjectsHeader from "./ProjectsHeader";
 import Skeleton from "./Skeleton";
 
@@ -42,7 +42,7 @@ export default function ProjectsPagination({ data }) {
       <ProjectsHeader/>
       {currentItems && (
         <Container>
-          <Section>
+          <Section className="mt-8 sm:mt-10 xl:mt-20" >
             {isLoading ? (
               <ul className="grid lg:grid-cols-3 gap-5 mb-40">{skeleton}</ul>
             ) : (
