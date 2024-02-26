@@ -24,7 +24,7 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
       company_name: "",
       city: "",
     },
-    validationSchema: validationSchema,
+    validationSchema: validationSchema(t),
     onSubmit: (values, formikHelpers) =>
       handleSubmit(values, { ...formikHelpers, setIsOpen }),
   });

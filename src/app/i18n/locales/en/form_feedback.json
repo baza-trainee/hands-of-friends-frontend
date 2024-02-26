@@ -19,5 +19,25 @@
   "message": "Message",
   "placeholder_message": "Your message...",
 
-  "button": "Send"
+  "button": "Send",
+
+  "company_name_required": "Enter the organization's name",
+  "company_name_matches": "Invalid organization name",
+  "company_name_min": "Organization's name must be at least 2 characters long",
+  "company_name_max": "Organization's name must not exceed 50 characters",
+  "name_required": "Enter a name",
+  "name_matches": "Invalid name",
+  "name_min": "Name must be at least 2 characters long",
+  "name_max": "Name must not exceed 50 characters",
+  "email_required": "Enter email",
+  "email_matches": "Enter a valid email",
+  "email_test": "Domains .ru and .by are not allowed",
+  "phone_number_required": "Enter a phone number",
+  "phone_number_matches": "Enter a valid phone number",
+  "message_required": "Enter a message",
+  "message_max": "Please limit your message to 300 characters",
+  "city_required": "Enter the name of the city",
+  "city_matches": "Invalid city name",
+  "city_min": "City name must have at least 2 characters",
+  "city_max": "City name must not exceed 50 characters"
 }
