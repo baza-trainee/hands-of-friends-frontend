@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { useFormik } from "formik";
-// import { HiPlus } from "react-icons/hi2";
-
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import InputField from "./InputField";
@@ -11,9 +9,10 @@ import Modal from "../Modal/Modal";
 import { validationSchema } from "./helpers/validationSchema";
 import { handleSubmit } from "./helpers/handleSubmit";
 
-const FeedbackFormLayout = ({ lng }) => {
+const FeedbackFormLayout = ({ lng, additionalData, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => setIsOpen(false);
+
   const { t } = useTranslation(lng, "form_feedback");
 
   const formik = useFormik({
@@ -25,7 +24,7 @@ const FeedbackFormLayout = ({ lng }) => {
       company_name: "",
       city: "",
     },
-    validationSchema: validationSchema,
+    validationSchema: validationSchema(t),
     onSubmit: (values, formikHelpers) =>
       handleSubmit(values, { ...formikHelpers, setIsOpen }),
   });
@@ -35,45 +34,39 @@ const FeedbackFormLayout = ({ lng }) => {
       {isOpen && <Modal handleClose={handleClose} />}
       {!isOpen && (
         <form
-          className=" relative md:justify-self-end justify-self-center flex md:mt-20 mt-[60%] 2xl:p-9  xl:p-6 xs:py-6 xs:px-4  2xl:w-[527px]  xl:w-[503px]  md:w-[334px]  sm:w-[340px] xs:w-[268px]
-        flex-col items-center bg-white shadow-md z-10"
+          className={`relative flex justify-self-center flex-col items-center gap-8 mt-20 bg-white shadow-md z-10 
+          xs:py-6 xs:px-4 xs:w-[268px]
+          sm:w-[340px]
+          md:justify-self-end md:w-[334px]
+          xl:p-6 xl:w-[503px]
+          2xl:p-9 2xl:w-[527px]
+          ${additionalData ? "md:mt-0" : ""}`}
           action="/submit_form"
           method="post"
           onSubmit={formik.handleSubmit}
         >
-          {/* <button type="button" onClick={handleClose}>
-            <HiPlus
-              size={24}
-              className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+          {children}
+          {additionalData === "partners" || additionalData === "donors" ? (
+            <InputField
+              label={t("company_name")}
+              id="company_name"
+              name="company_name"
+              type="text"
+              placeholder={t("placeholder_company_name")}
+              value={formik.values.company_name}
+              error={formik.touched.company_name && formik.errors.company_name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              required
             />
-          </button> */}
+          ) : null}
 
-          {/* <InputField
-            label={t("company_name")}
-            id="company_name"
-            name="company_name"
-            type="text"
-            placeholder={t("placeholder_company_name")}
-            value={formik.values.company_name}
-            error={formik.touched.company_name && formik.errors.company_name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            required
-          />
           <InputField
-            label={t("city")}
-            id="city"
-            name="city"
-            type="text"
-            placeholder={t("placeholder_city")}
-            value={formik.values.city}
-            error={formik.touched.city && formik.errors.city}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            required
-          /> */}
-          <InputField
-            label={t("name")}
+            label={
+              additionalData === "partners" || additionalData === "donors"
+                ? t("representative's_name")
+                : t("name")
+            }
             id="name"
             name="name"
             type="text"
@@ -84,6 +77,20 @@ const FeedbackFormLayout = ({ lng }) => {
             onBlur={formik.handleBlur}
             required
           />
+          {additionalData === "volunteers" && (
+            <InputField
+              label={t("city")}
+              id="city"
+              name="city"
+              type="text"
+              placeholder={t("placeholder_city")}
+              value={formik.values.city}
+              error={formik.touched.city && formik.errors.city}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              required
+            />
+          )}
 
           <InputField
             label={t("email")}

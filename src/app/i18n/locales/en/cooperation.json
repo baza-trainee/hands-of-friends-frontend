@@ -2,16 +2,19 @@
   "cooperation": {
     "partners": {
       "title": "Become a partner",
+      "form_title": "Partner form",
       "text": "Join our charity fund and you will help us realize our mission",
       "btnText": "Fill in the form"
     },
     "donors": {
       "title": "Become a donor",
+      "form_title": "Donor form",
       "text": "Join us as a donor and we will change lives and build a brighter future",
       "btnText": "Fill in the form"
     },
     "volunteers": {
       "title": "Become a volunteer",
+      "form_title": "Volunteer form",
       "text": "Join our team and it will be a useful experience for you personally, as well as for others",
       "btnText": "Fill in the form"
     }

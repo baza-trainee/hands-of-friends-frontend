@@ -1,36 +1,38 @@
 import * as Yup from "yup";
 
-export const validationSchema = Yup.object({
-  company_name: Yup.string()
-    .required("Введіть назву організації")
-    .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, "Некоректна назва організації")
-    .min(2, "Назва організації повинна мати не менше 2 знаків")
-    .max(50, "Назва організації повинна бути не більше 50 знаків"),
-  name: Yup.string()
-    .required("Введіть ім'я")
-    .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, "Некоректне ім’я")
-    .min(2, "Ім’я повинно мати не менше 2 знаків")
-    .max(50, "Ім’я повинно бути не більше 50 знаків"),
-  email: Yup.string()
-    .required("Введіть email")
-    .matches(
-      /^[a-zA-Z0-9._%+-]+.{1,}@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/,
-      "Введіть дійсний email"
-    )
-    .test(
-      "valid-domain",
-      "Домени .ru і .by не допускаються",
-      (value) => !/(.ru|.by)$/.test(value.split("@")[1])
-    ),
-  phone_number: Yup.string()
-    .required("Введіть номер телефону")
-    .matches(/^\+380\d{9}$/, "Введіть дійсний номер телефону"),
-  message: Yup.string()
-    .required("Введіть повідомлення")
-    .max(300, "Просимо скоротити ваше повідомлення до 300 знаків"),
-  city: Yup.string()
-    .required("Введіть назву міста")
-    .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, "Некоректна назва міста")
-    .min(2, "Назва міста повинна мати не менше 2 знаків")
-    .max(50, "Назва міста повинна бути не більше 50 знаків"),
-});
+export const validationSchema = (t) => {
+  return Yup.object({
+    company_name: Yup.string()
+      .required(t("company_name_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("company_name.matches"))
+      .min(2, t("company_name_min"))
+      .max(50, t("company_name_max")),
+    name: Yup.string()
+      .required(t("name_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name.matches"))
+      .min(2, t("name_min"))
+      .max(50, t("nam_max")),
+    email: Yup.string()
+      .required(t("email_required"))
+      .matches(
+        /^[a-zA-Z0-9._%+-]+.{1,}@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/,
+        t("email_matches")
+      )
+      .test(
+        "valid-domain",
+        t("email_matches"),
+        (value) => !/(.ru|.by)$/.test(value.split("@")[1])
+      ),
+    phone_number: Yup.string()
+      .required(t("phone_number_required"))
+      .matches(/^\+380\d{9}$/, t("phone_number_matches")),
+    message: Yup.string()
+      .required(t("message_required"))
+      .max(300, t("message_max")),
+    city: Yup.string()
+      .required(t("city_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("city_matches"))
+      .min(2, t("city_min"))
+      .max(50, t("city_max")),
+  });
+};

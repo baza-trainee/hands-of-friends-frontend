@@ -4,10 +4,15 @@ import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
 import FeedbackFormLayout from "../FeedbackForm/FeedbackFormLayout";
+import { HiPlus } from "react-icons/hi2";
 
 export default function CooperationList({ lng }) {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = () => setIsOpen((prev) => !prev);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+  const toggleModal = (index) => {
+    setSelectedItemIndex(index);
+    setIsOpen((prev) => !prev);
+  };
   const { t } = useTranslation(lng, "cooperation");
 
   const items = ["partners", "donors", "volunteers"];
@@ -45,14 +50,24 @@ export default function CooperationList({ lng }) {
 
           <Action
             type="button"
-            onClick={() => setIsOpen(true)}
+            onClick={() => toggleModal(index)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {t(`cooperation.${item}.btnText`)}
           </Action>
-          {isOpen && (
+          {isOpen && selectedItemIndex === index && (
             <BaseModal isOpen={isOpen} onClose={toggleModal}>
-              <FeedbackFormLayout />
+              <FeedbackFormLayout additionalData={item}>
+                <h2 className="text-base xl:text-2xl">
+                  {t(`cooperation.${item}.form_title`)}
+                </h2>
+                <button type="button" onClick={toggleModal}>
+                  <HiPlus
+                    size={24}
+                    className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+                  />
+                </button>
+              </FeedbackFormLayout>
             </BaseModal>
           )}
         </li>
