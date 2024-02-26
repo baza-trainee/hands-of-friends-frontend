@@ -1,10 +1,12 @@
 import React from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 
 // import Action from '../Action';
 export default function ProjectItem({ data, className})
 {
+  const router = useRouter();
   return (
 
       <li key={data.id} 
