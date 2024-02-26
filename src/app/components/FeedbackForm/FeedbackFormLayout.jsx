@@ -34,14 +34,19 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
       {isOpen && <Modal handleClose={handleClose} />}
       {!isOpen && (
         <form
-          className=" relative md:justify-self-end justify-self-center flex md:mt-20 mt-[60%] 2xl:p-9  xl:p-6 xs:py-6 xs:px-4  2xl:w-[527px]  xl:w-[503px]  md:w-[334px]  sm:w-[340px] xs:w-[268px]
-        flex-col items-center bg-white shadow-md z-10"
+          className={`relative flex justify-self-center flex-col items-center gap-8 mt-20 bg-white shadow-md z-10 
+          xs:py-6 xs:px-4 xs:w-[268px]
+          sm:w-[340px]
+          md:justify-self-end md:w-[334px]
+          xl:p-6 xl:w-[503px]
+          2xl:p-9 2xl:w-[527px]
+          ${additionalData ? "md:mt-0" : ""}`}
           action="/submit_form"
           method="post"
           onSubmit={formik.handleSubmit}
         >
           {children}
-          {additionalData && (
+          {additionalData === "partners" || additionalData === "donors" ? (
             <InputField
               label={t("company_name")}
               id="company_name"
@@ -54,33 +59,14 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
               onBlur={formik.handleBlur}
               required
             />
-          )}
-          {/* <InputField
-            label={t("company_name")}
-            id="company_name"
-            name="company_name"
-            type="text"
-            placeholder={t("placeholder_company_name")}
-            value={formik.values.company_name}
-            error={formik.touched.company_name && formik.errors.company_name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            required
-          /> */}
-          {/* <InputField
-            label={t("city")}
-            id="city"
-            name="city"
-            type="text"
-            placeholder={t("placeholder_city")}
-            value={formik.values.city}
-            error={formik.touched.city && formik.errors.city}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            required
-          /> */}
+          ) : null}
+
           <InputField
-            label={additionalData ? t("representative's_name") : t("name")}
+            label={
+              additionalData === "partners" || additionalData === "donors"
+                ? t("representative's_name")
+                : t("name")
+            }
             id="name"
             name="name"
             type="text"
@@ -91,6 +77,20 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
             onBlur={formik.handleBlur}
             required
           />
+          {additionalData === "volunteers" && (
+            <InputField
+              label={t("city")}
+              id="city"
+              name="city"
+              type="text"
+              placeholder={t("placeholder_city")}
+              value={formik.values.city}
+              error={formik.touched.city && formik.errors.city}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              required
+            />
+          )}
 
           <InputField
             label={t("email")}
