@@ -8,7 +8,7 @@ export default function TenderList({ currentItems, activeTab, isLoading }) {
   ));
 
   return (
-    <ul className="grid gap-8 min-w-[360px] not-italic leading-normal
+    <ul className="grid gap-8 min-w-[288px] not-italic leading-normal
     sm:min-w-[388px] sm:gap-8
     md:min-w-[688px] md:grid-cols-2 md:gap-6
     xl:min-w-[1120px] xl:grid-cols-3 xl:gap-8
