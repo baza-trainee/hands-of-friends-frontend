@@ -24,7 +24,6 @@ const ptSans = PT_Sans({
 // })
 
 export async function generateStaticParams() {
-  console.log("languages RootLayout", languages);
   return languages.map((lng) => ({ lng }));
 }
 

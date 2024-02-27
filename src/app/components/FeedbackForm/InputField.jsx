@@ -25,7 +25,7 @@ const InputField = ({
         xl:text-base xl:placeholder:text-base
           ${
             type === "textarea"
-              ? "xl:h-[135px] p-1 xs:h-[99px] resize-none"
+              ? "xl:h-[120px] p-1 xs:h-[99px] resize-none"
               : "h-[45px]"
           }
           ${

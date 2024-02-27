@@ -11,23 +11,18 @@ export const config = {
 };
 
 export function middleware(req) {
-  // console.log("middleware req", req);
-  let lng; //=undefined
-  console.log("lng!!!", lng);
+
+  let lng; 
+
   const pathLng = req.nextUrl.pathname.split("/")[1];
-  // console.log("jhjg", req.nextUrl.pathname);
-  // console.log("pathLng", pathLng);
+
 
   if (languages.includes(pathLng)) {
-    console.log("Languages.includes(pathLng)", languages.includes(pathLng)); //=true
     return NextResponse.next();
   }
 
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName).value);
-  console.log("LNG??", lng);
-  console.log("Req.cookies.has(cookieName)", req.cookies.has(cookieName));
-  console.log("Midleware", lng);
   if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
   if (!lng) lng = fallbackLng;
 

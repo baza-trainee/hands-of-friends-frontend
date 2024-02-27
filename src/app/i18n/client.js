@@ -1,16 +1,15 @@
 "use client";
 
-import { cookieName, getOptions, languages } from "./settings";
+import { useEffect, useState } from "react";
 import {
   initReactI18next,
   useTranslation as useTranslationOrg,
 } from "react-i18next";
-import { useEffect, useState } from "react";
-
-import LanguageDetector from "i18next-browser-languagedetector";
-import i18next from "i18next";
-import resourcesToBackend from "i18next-resources-to-backend";
 import { useCookies } from "react-cookie";
+import i18next from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import resourcesToBackend from "i18next-resources-to-backend";
+import { cookieName, getOptions, languages } from "./settings";
 
 const runsOnServerSide = typeof window === "undefined";
 
@@ -27,17 +26,15 @@ i18next
     ...getOptions(),
     lng: undefined, // let detect the language on client side
     detection: {
-      order: ["cookie", "path", "htmlTag", "navigator"],
+      order: ["path", "htmlTag", "cookie", "navigator"],
     },
     preload: runsOnServerSide ? languages : [],
   });
 
 export function useTranslation(lng, ns, options) {
   const [cookies, setCookie] = useCookies([cookieName]);
-  const ret = useTranslationOrg(lng, ns, options);
-
+  const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
-
   const server = runsOnServerSide && lng && i18n.resolvedLanguage !== lng;
   if (server) {
     server && i18n.changeLanguage(lng);
