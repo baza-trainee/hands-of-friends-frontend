@@ -20,7 +20,6 @@ export default function TendersPagination({ data }) {
     <Skeleton key={i} className="bg-zinc-200" />
   ));
 
-  // console.log(data)
   useEffect(() => {
     setIsLoading(true);
     const filteredData = data.filter((tender) => {

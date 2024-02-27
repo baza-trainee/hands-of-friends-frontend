@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function TenderItem({ data, href }) {
+export default function TenderItem({ data }) {
   return (
     <Link href={`tenders/${data.id}`}>
       <li
@@ -24,9 +24,7 @@ export default function TenderItem({ data, href }) {
           >
             {data.is_active ? "Активний" : "Архівний"}
           </span>
-          <span
-            className="text-black text-base"
-          >
+          <span className="text-black text-base">
             {data.start_date} - {data.end_date}
           </span>
         </p>

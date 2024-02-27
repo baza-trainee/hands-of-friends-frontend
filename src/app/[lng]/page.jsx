@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useCurrentLang } from "../hooks/useCurrentLang";
 import About from "../components/About/About";
 import ProjectSection from "../components/Projects/ProjectSection";
 import TendersSection from "../components/Tenders/TendersSection";
@@ -12,7 +11,6 @@ import HeroSlider from "../components/Hero/HeroSlider";
 import NewsSection from "../components/News/NewsSection";
 
 export default function Page() {
-  const lng = useCurrentLang();
   return (
     <>
       <HeroSlider />
@@ -22,7 +20,7 @@ export default function Page() {
       <TeamSection />
       <CooperationSection />
       <NewsSection />
-      <FeedbackFormSection/>
+      <FeedbackFormSection />
     </>
   );
 }

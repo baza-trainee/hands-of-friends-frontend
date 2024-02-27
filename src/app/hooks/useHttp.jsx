@@ -19,5 +19,6 @@ export const useHttp = (endpoint) => {
     }
     fetchData();
   }, [endpoint, lang]);
+
   return [data, setData, isLoading];
 };

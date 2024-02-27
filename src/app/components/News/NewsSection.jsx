@@ -1,23 +1,20 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
+import { useTranslation } from "@/app/i18n/client";
+import Section from "../Section";
+import Container from "../Container";
+import Title from "../Title";
+import NewsSlider from "./NewsSlider";
 
-import { useRouter } from 'next/navigation'
+export default function NewsSection({ lng }) {
+  const { t } = useTranslation(lng, "title");
 
-import Section from '../Section'
-import Container from '../Container'
-import Title from '../Title'
-import NewsSlider from './NewsSlider'
-import { useTranslation } from '@/app/i18n/client'
-
-export default function NewsSection({lng}) {
-	const { t } = useTranslation(lng, 'title')
-	const router = useRouter()
-	return (
-		<Section>
-			<Container>
-				<Title titleName={t('news')} />
-				<NewsSlider />
-			</Container>
-		</Section>
-	)
+  return (
+    <Section>
+      <Container>
+        <Title titleName={t("news")} />
+        <NewsSlider />
+      </Container>
+    </Section>
+  );
 }

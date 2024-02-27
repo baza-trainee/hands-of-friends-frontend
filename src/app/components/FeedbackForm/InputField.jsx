@@ -15,7 +15,7 @@ const InputField = ({
   const InputElement = type === "textarea" ? "textarea" : "input";
 
   return (
-    <div className={`w-full relative`}>
+    <div className={`w-full relative mb-6`}>
       <label className="xl:text-lg xs:text-sm" htmlFor={id}>
         {label}
         {required && <span className="text-[red]"> *</span>}
@@ -25,7 +25,7 @@ const InputField = ({
         xl:text-base xl:placeholder:text-base
           ${
             type === "textarea"
-              ? "xl:h-[135px] p-1 xs:h-[99px] resize-none"
+              ? "xl:h-[120px] p-1 xs:h-[99px] resize-none"
               : "h-[45px]"
           }
           ${
