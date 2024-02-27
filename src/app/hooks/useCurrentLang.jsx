@@ -3,8 +3,9 @@ import { cookieName } from "../i18n/settings";
 
 export const useCurrentLang = () => {
   const [cookies, setCookie] = useCookies([cookieName]);
+  const storedData = localStorage.getItem('i18nextLng');
 
-  if ("ua" === cookies.i18next) {
+  if ("ua" === storedData) {
     return "ua";
   } else {
     return "en";
