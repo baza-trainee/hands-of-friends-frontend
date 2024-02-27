@@ -15,7 +15,7 @@ const InputField = ({
   const InputElement = type === "textarea" ? "textarea" : "input";
 
   return (
-    <div className={`w-full relative`}>
+    <div className={`w-full relative mb-6`}>
       <label className="xl:text-lg xs:text-sm" htmlFor={id}>
         {label}
         {required && <span className="text-[red]"> *</span>}

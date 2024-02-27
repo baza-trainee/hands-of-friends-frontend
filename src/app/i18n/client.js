@@ -27,14 +27,15 @@ i18next
     ...getOptions(),
     lng: undefined, // let detect the language on client side
     detection: {
-      order: ["path", "htmlTag", "cookie", "navigator"],
+      order: ["cookie", "path", "htmlTag", "navigator"],
     },
     preload: runsOnServerSide ? languages : [],
   });
 
 export function useTranslation(lng, ns, options) {
   const [cookies, setCookie] = useCookies([cookieName]);
-  const ret = useTranslationOrg(ns, options);
+  const ret = useTranslationOrg(lng, ns, options);
+
   const { i18n } = ret;
 
   const server = runsOnServerSide && lng && i18n.resolvedLanguage !== lng;

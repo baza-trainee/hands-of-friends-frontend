@@ -58,7 +58,7 @@ export default function CooperationList({ lng }) {
           {isOpen && selectedItemIndex === index && (
             <BaseModal isOpen={isOpen} onClose={toggleModal}>
               <FeedbackFormLayout additionalData={item}>
-                <h2 className="text-base xl:text-2xl">
+                <h2 className="mb-6 text-base xl:text-2xl antialiased">
                   {t(`cooperation.${item}.form_title`)}
                 </h2>
                 <button type="button" onClick={toggleModal}>
