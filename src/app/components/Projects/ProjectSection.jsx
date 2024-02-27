@@ -7,13 +7,15 @@ import Title from "../Title";
 import Action from '../Action';
 // import ProjectList from "./ProjectList";
 import ProjectSwiperList from './ProjectSwiper';
+import { useTranslation } from "@/app/i18n/client";
 
-export default function ProjectSection() {
+export default function ProjectSection({ lng }) {
+  const { t } = useTranslation(lng, "title");
   const router = useRouter();
     return (
         <Section>
           <Container>
-            <Title titleName="Проєкти" />
+            <Title titleName={t("projects")} />
             <ProjectSwiperList />
             <Action
           onClick={() => router.push("/projects")}

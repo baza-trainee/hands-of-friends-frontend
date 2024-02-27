@@ -2,20 +2,21 @@
 
 import React from 'react';
 import { useRouter } from "next/navigation";
-
+import { useTranslation} from "@/app/i18n/client";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
-import TenderList from "./TendersShortList";
+
 import Action from "../Action";
 import TenderSwiperList from './TendersSwiper';
-export default function TendersSection() {
+export default function TendersSection({lng}) {
+ 
+  const { t } = useTranslation(lng, "title");
   const router = useRouter();
-  
   return (
     <Section>
       <Container>
-        <Title titleName="Тендери" />
+        <Title titleName={t("tenders")}/>
        <TenderSwiperList/>
         <Action
           onClick={() => router.push("/tenders")}
