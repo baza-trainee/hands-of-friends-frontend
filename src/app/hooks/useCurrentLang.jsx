@@ -3,13 +3,12 @@ import { cookieName } from "../i18n/settings";
 
 export const useCurrentLang = () => {
   const [cookies, setCookie] = useCookies([cookieName]);
-  console.log("cookieName useCurrentLang ", [cookieName]);
-  console.log("useCurrentLang", cookies);
-  console.log("useCurrentLang cookies.i18next", cookies.i18next);
-
-  if ("ua" === cookies.i18next) {
-    return "uk";
-  } else {
-    return "en";
+  if (typeof window !== "undefined") {
+    const storedData = localStorage.getItem("i18nextLng");
+    if ("ua" === storedData) {
+      return "ua";
+    } else {
+      return "en";
+    }
   }
 };

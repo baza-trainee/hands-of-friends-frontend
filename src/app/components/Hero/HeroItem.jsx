@@ -10,6 +10,7 @@ export default function HeroItem({ data }) {
           alt={`${data.image}`}
           width={1440}
           height={869}
+          priority={true}
           className="w-[1440px] h-[1024px] xs:h-[240px] sm:h-[288px] md:h-[440px] xl:h-[685px] 2xl:h-[869px] object-cover "
         />
 
