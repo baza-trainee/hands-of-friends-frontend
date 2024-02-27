@@ -7,6 +7,7 @@ export const useHttp = (endpoint) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const lang = useCurrentLang();
+  console.log("useHttp", lang);
 
   useEffect(() => {
     async function fetchData() {
@@ -19,5 +20,6 @@ export const useHttp = (endpoint) => {
     }
     fetchData();
   }, [endpoint, lang]);
+
   return [data, setData, isLoading];
 };

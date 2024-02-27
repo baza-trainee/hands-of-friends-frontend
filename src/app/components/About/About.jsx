@@ -1,22 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Keyboard, A11y, Mousewheel } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-import { useRouter } from "next/navigation";
-
-import Team from "../../../../public/img/about-us1.png";
-
+import { useTranslation } from "@/app/i18n/client";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
 import Action from "../Action";
-import { useTranslation } from "@/app/i18n/client";
+import Team from "../../../../public/img/about-us1.png";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function About({ lng }) {
   const { t } = useTranslation(lng, "about-section");

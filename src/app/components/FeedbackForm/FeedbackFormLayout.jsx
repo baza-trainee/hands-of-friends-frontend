@@ -34,7 +34,7 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
       {isOpen && <Modal handleClose={handleClose} />}
       {!isOpen && (
         <form
-          className={`relative flex justify-self-center flex-col items-center gap-8 mt-20 bg-white shadow-md z-10 
+          className={`relative flex justify-self-center flex-col items-center gap-6 mt-20 bg-white shadow-md z-10 
           xs:py-6 xs:px-4 xs:w-[268px]
           sm:w-[340px]
           md:justify-self-end md:w-[334px]

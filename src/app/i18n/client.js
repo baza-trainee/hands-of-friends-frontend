@@ -36,6 +36,7 @@ export function useTranslation(lng, ns, options) {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
+
   const server = runsOnServerSide && lng && i18n.resolvedLanguage !== lng;
   if (server) {
     server && i18n.changeLanguage(lng);

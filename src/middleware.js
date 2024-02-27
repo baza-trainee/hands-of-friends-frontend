@@ -13,6 +13,8 @@ export const config = {
 export function middleware(req) {
   let lng;
   const pathLng = req.nextUrl.pathname.split("/")[1];
+  console.log("jhjg", req.nextUrl.pathname);
+  console.log("pathLng", pathLng);
 
   if (languages.includes(pathLng)) {
     return NextResponse.next();
@@ -20,6 +22,7 @@ export function middleware(req) {
 
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName).value);
+  console.log("Midleware", lng);
   if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
   if (!lng) lng = fallbackLng;
 
@@ -41,6 +44,6 @@ export function middleware(req) {
       return response;
     }
   }
-
+  console.log("middleware");
   return NextResponse.next();
 }
