@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         deepBlue: "#2563EB",
         vividBlue: "#60A5FA",
-        violet: "#4C1D95",
+        violet: "#6F4AAA",
         lightBlue: "#E0F2FE",
         slate: "F1F5F9",
         whiteFont: "#F8FAFC",
