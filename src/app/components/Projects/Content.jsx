@@ -31,8 +31,8 @@ export default function ContentItem({ item }) {
           alt="Photo of the project"
           width={334}
           height={241}
-          className="min-w-[288px] h-[180px] object-cover mb-6
-        sm:min-w-[388px] sm:h-[241px]
+          className="min-w-[288px] object-cover mb-6
+        sm:min-w-[388px]
         md:min-w-[334px] 
         xl:min-w-[455px] 
         2xl:min-w-[486px]"

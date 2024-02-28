@@ -6,7 +6,7 @@ import ProjectItem from "./ProjectItem";
 
 export default function ProjectSwiperList() {
   return (
-    <div className="wrapperTender">
+    <div className="wrapperProject">
       <UniversalSlider
         endpoint="projects/"
         ItemComponent={ProjectItem}

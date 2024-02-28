@@ -1,13 +1,15 @@
 "use client";
-
+import { useHttp } from "@/app/hooks/useHttp";
 import React, { useEffect, useState } from "react";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
 import Image from "next/image";
 import ContentItem from "@/app/components/Projects/Content";
 import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Page({ params }) {
+export default function Page({ params, lng }) {
+  const { t } = useTranslation(lng, "projects");
   const { id } = params;
   const [dataByID, , isLoading] = useHttp(`projects/${id}`);
   const [content, setContent] = useState([]);
@@ -30,14 +32,14 @@ export default function Page({ params }) {
         <BreadCrumbs
           className="my-12"
           href="/projects"
-          text="Проєкти"
+          text={t("title")}
           textColor="blue"
         />
 
         <div className="max-w-[835px] text-lg mb-40">
-          <h2 className="text-3xl font-bold mb-10">{data.title}</h2>
+          <h2 className="text-3xl font-bold mb-10">{dataByID.title}</h2>
           <p className="mb-6">
-            {data.start_date}-{data.end_date}
+            {dataByID.start_date}-{dataByID.end_date}
           </p>
           <div
             className="text-lg mb-6"
@@ -46,12 +48,12 @@ export default function Page({ params }) {
             }}
           />
           <Image
-            src={data.image}
+            src={dataByID.image}
             alt="Photo of the project"
             width={334}
             height={241}
-            className="min-w-[288px] h-[180px] object-cover mb-6
-       sm:min-w-[388px] sm:h-[241px]
+            className="min-w-[288px] object-cover mb-6
+       sm:min-w-[388px] 
          md:min-w-[334px] 
          xl:min-w-[455px]
         2xl:min-w-[486px]"
