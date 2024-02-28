@@ -51,6 +51,7 @@ body > * {
 
 .wrapperDonor .swiper,
 .wrapperTender .swiper,
+.wrapperProject .swiper,
 .newsSlider {
   padding-bottom: 2.12rem;
 
@@ -62,7 +63,8 @@ body > * {
     padding-bottom: 3.63rem;
   }
 }
-.wrapperTender .swiper {
+.wrapperTender .swiper,
+.wrapperProject .swiper {
   padding-bottom: 1.5rem;
 
   @media screen and (min-width: 768px) {
@@ -112,7 +114,8 @@ body > * {
   }
 }
 
-.wrapperTender .swiper {
+.wrapperTender .swiper,
+.wrapperProject .swiper {
   @media screen and (min-width: 768px) {
     padding-left: 0;
   }
@@ -302,6 +305,22 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .wrapperDonor .swiper .swiper-button-next {
   right: -13px;
   top: 4rem;
+}
+.wrapperTender .swiper .swiper-button-prev {
+  left: 1px;
+  top: 9.6rem;
+}
+.wrapperTender .swiper .swiper-button-next {
+  right: -13px;
+  top: 9.6rem;
+}
+.wrapperProject .swiper .swiper-button-prev {
+  left: 1px;
+  top: 30rem;
+}
+.wrapperProject .swiper .swiper-button-next {
+  right: -13px;
+  top: 30rem;
 }
 .HeroSlider .swiper .swiper-slide {
   padding-bottom: 0;
