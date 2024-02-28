@@ -285,22 +285,22 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   }
 }
 .wrapperTeam .swiper .swiper-button-prev {
-  left: 0;
+  left: 1px;
   top: 11.64rem;
 }
 
 .wrapperTeam .swiper .swiper-button-next {
-  right: -0.9rem;
+  right: -13px;
   top: 11.64rem;
 }
 
 .wrapperDonor .swiper .swiper-button-prev {
-  left: 0;
+  left: 1px;
   top: 4rem;
 }
 
 .wrapperDonor .swiper .swiper-button-next {
-  right: -0.9rem;
+  right: -13px;
   top: 4rem;
 }
 .HeroSlider .swiper .swiper-slide {
@@ -376,7 +376,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 .bg-image-tenders {
   background-image: url("../../../public/img/tender-bg.png");
   background-repeat: no-repeat;
-	background-size: cover;
+  background-size: cover;
 }
 
 .bg-image-about {

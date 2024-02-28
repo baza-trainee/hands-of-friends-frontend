@@ -40,7 +40,7 @@ const FeedbackFormLayout = ({ lng, additionalData, children }) => {
           md:justify-self-end md:w-[334px]
           xl:p-6 xl:w-[503px]
           2xl:p-9 2xl:w-[527px]
-          ${additionalData ? "md:mt-0" : ""}`}
+          ${additionalData ? "xs:mt-0" : ""}`}
           action="/submit_form"
           method="post"
           onSubmit={formik.handleSubmit}
