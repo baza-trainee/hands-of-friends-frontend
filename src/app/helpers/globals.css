@@ -149,7 +149,6 @@ body > * {
 .modal-content {
   position: relative;
   background-color: #e0f2fe;
-  padding-right: 5px;
   overflow-y: auto;
 }
 
@@ -164,13 +163,27 @@ body > * {
   transform: translate(-50%, -50%);
   background-color: #e0f2fe;
   border: none;
-  padding: 15px 5px 15px 15px;
+  padding: 15px 5px 48px 48px;
   z-index: 1000;
   max-width: 80%;
   max-height: 80%;
   overflow-y: auto;
   border-radius: 5px;
+  @media screen and (min-width: 768px) {
+    padding: 15px 5px 48px 48px;
+  }
 }
+.news-modal {
+  @media screen and (max-width: 760px) {
+    padding: 5px 10px 24px 24px;
+  }
+}
+.news-modal {
+  @media screen and (max-width: 420px) {
+    padding: 5px 2px 16px 16px;
+  }
+}
+
 .news-overlay {
   position: fixed;
   top: 0;
