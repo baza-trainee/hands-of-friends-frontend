@@ -92,7 +92,7 @@ export default function Header({ lng }) {
           href="https://www.monobank.ua/?lang=uk"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer xl:self-center bg-violet border-violet hover:bg-white hover:text-violet xl:block"
+          className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer xl:self-center bg-violet border-violet hover:bg-transparent hover:text-violet xl:block"
         >
           {t("support")}
         </a>
