@@ -9,7 +9,9 @@ export default function TenderItem({ data }) {
         sm:p-6 sm:min-w-[388px] sm:min-h-[326px]
         md:min-w-[334px] md:min-h-[288px]
         xl:min-w-[330px] xl:min-h-[279px] 
-        2xl:p-8 2xl:min-w-[352px] 2xl:min-h-[307px]"
+        2xl:p-8 2xl:min-w-[352px] 2xl:min-h-[307px]
+        border border-transparent border-gray-300 hover:border-blue-500 transition duration-400 hover:shadow-md
+        "
         style={{ cursor: "pointer" }}
       >
         <p
@@ -18,9 +20,7 @@ export default function TenderItem({ data }) {
         xl:text-base"
         >
           <span
-            className={`font-bold ${
-              data.is_active ? "text-green" : "text-lightGray"
-            }`}
+            className={`font-bold ${data.is_active ? "text-green" : "text-lightGray"}`}
           >
             {data.is_active ? "Активний" : "Архівний"}
           </span>

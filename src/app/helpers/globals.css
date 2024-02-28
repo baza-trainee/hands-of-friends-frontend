@@ -300,6 +300,11 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     display: none;
   }
 }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #2563EB;
+}
 .wrapperTeam .swiper .swiper-button-prev {
   left: 1px;
   top: 11.64rem;
@@ -471,24 +476,24 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   width: 384px;
 }
 .active-btn {
-  background-color: #4c1d95;
+  background-color: #6F4AAA;
   border-radius: 50%;
 }
 
 .pageClass a {
-  border: #4c1d95 1px solid;
+  border: #6F4AAA 1px solid;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4c1d95;
+  color: #6F4AAA;
   width: 36px;
   height: 36px;
 }
 
 .pageClass a:hover {
   color: white;
-  background-color: #4c1d95;
+  background-color: #6F4AAA;
 }
 
 a.active-link {
@@ -502,7 +507,7 @@ a.active-link {
 
 .next a {
   display: flex;
-  border: #4c1d95 1px solid;
+  border: #6F4AAA 1px solid;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -512,7 +517,7 @@ a.active-link {
 }
 
 /* .next:not(.disabled) a:hover {
-	background-color: #4c1d95;
+	background-color: #6F4AAA;
 } */
 
 /* .next:not(.disabled) a:hover {
@@ -531,7 +536,7 @@ a.active-link {
 
 /* li.previous:not(.disabled):hover {
 	border-radius: 50%;
-	background-color: #4c1d95 !important;
+	background-color: #6F4AAA !important;
 	path {
 		fill: #ffffff;
 	}
@@ -562,7 +567,7 @@ a.active-link {
 .break {
   display: flex;
   align-items: flex-end;
-  color: #4c1d95;
+  color: #6F4AAA;
 }
 
 .height-minus {
