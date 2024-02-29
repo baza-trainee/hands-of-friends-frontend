@@ -7,8 +7,6 @@ import Cookies from 'js-cookie'
 import Action from './Action'
 import Container from './Container'
 
-import { twMerge } from 'tailwind-merge'
-
 const CookiesPanel = () => {
 	const [showPanel, setShowPanel] = useState(false)
 
