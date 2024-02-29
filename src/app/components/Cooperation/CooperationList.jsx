@@ -3,32 +3,23 @@ import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
-
-import { HiPlus } from "react-icons/hi2";
-
-import PartnerForm from "./Form/ParnterForm";
-import DonorForm from "./Form/DonorForm";
-import VolunteerForm from "./Form/VolunteerForm";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import { formToggle } from "../BaseForm/helpers/formToggle";
 
 export default function CooperationList({ lng }) {
   const { t } = useTranslation(lng, "cooperation");
   const [isOpen, setIsOpen] = useState(false);
-  const [isVissible, setIsVissible] = useState(false);
-
+  const [selectedItemType, setSelectedItemType] = useState("");
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
-  const toggleModal = (index) => {
+  const items = ["partners", "donors", "volunteers"];
+
+  const toggleModal = (index, item) => {
     setSelectedItemIndex(index);
+    setSelectedItemType(item);
     setIsOpen((prev) => !prev);
   };
-  const handleClose = () => setIsVissible(false);
 
-  const items = ["partners", "donors", "volunteers"];
-  const formComponents = {
-    0: <PartnerForm lng={lng} />,
-    1: <DonorForm lng={lng} />,
-    2: <VolunteerForm lng={lng} />,
-  };
+  const handleClose = () => setIsVissible(false);
 
   return (
     <ul
@@ -63,30 +54,19 @@ export default function CooperationList({ lng }) {
 
           <Action
             type="button"
-            onClick={() => toggleModal(index)}
+            onClick={() => toggleModal(index, item)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {t(`cooperation.${item}.btnText`)}
           </Action>
+
           {isOpen && selectedItemIndex === index && (
-            <BaseModal isOpen={isOpen} onClose={toggleModal}>
-              <>
-                {isVissible ? (
-                  <SuccessModal handleClose={handleClose} />
-                ) : (
-                  <DonorForm lng={lng} setIsVissible={setIsVissible}>
-                    <h2 className="mb-5 text-base xl:text-2xl antialiased">
-                      {t(`cooperation.${item}.form_title`)}
-                    </h2>
-                    <button type="button" onClick={toggleModal}>
-                      <HiPlus
-                        size={24}
-                        className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
-                      />
-                    </button>
-                  </DonorForm>
-                )}
-              </>
+            <BaseModal isOpen={isOpen} onClose={() => toggleModal(index)}>
+              {formToggle(selectedItemType, {
+                lng,
+                toggleModal,
+                title: t(`cooperation.${selectedItemType}.form_title`),
+              })}
             </BaseModal>
           )}
         </li>

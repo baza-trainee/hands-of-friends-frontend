@@ -1,0 +1,26 @@
+import React from "react";
+import { useSubmitForm } from "@/app/hooks/useSubmitForm";
+import { BaseForm } from "../BaseForm";
+import { initialValuesVolunteer } from "../helpers/consts";
+import { validationSchema } from "../helpers/validationSchemaVolonteer";
+
+const VolunteerForm = ({ lng, toggleModal, title }) => {
+  const { handleSubmit, isLoading } = useSubmitForm(
+    "collaboration/volunteer-form/"
+  );
+
+  return (
+    <BaseForm
+      initialValues={initialValuesVolunteer}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+      lng={lng}
+      isLoading={isLoading}
+      toggleModal={toggleModal}
+      title={title}
+      formType={"volunteers"}
+    />
+  );
+};
+
+export default VolunteerForm;

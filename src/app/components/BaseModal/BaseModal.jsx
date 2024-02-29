@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 const BaseModal = ({ isOpen, onClose, children }) => {
   const modalRoot = document.querySelector("#modal-root");

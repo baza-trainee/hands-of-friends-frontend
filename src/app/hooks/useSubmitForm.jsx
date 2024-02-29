@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BASE_URL } from "../helpers/consts";
 
 export const useSubmitForm = (endpoint) => {

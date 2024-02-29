@@ -18,7 +18,7 @@ export const validationSchema = (t) => {
         t("email_matches"),
         (value) => !/(.ru|.by)$/.test(value.split("@")[1])
       ),
-    phone_number: Yup.string()
+    phone: Yup.string()
       .required(t("phone_number_required"))
       .matches(/^\+380\d{9}$/, t("phone_number_matches")),
     message: Yup.string()
