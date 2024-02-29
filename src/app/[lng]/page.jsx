@@ -13,13 +13,13 @@ import NewsSection from "../components/News/NewsSection";
 export default function Page() {
   return (
     <>
-      <HeroSlider />
+      {/* <HeroSlider />
       <About />
       <ProjectSection />
       <TendersSection />
-      <TeamSection />
+      <TeamSection /> */}
       <CooperationSection />
-      <NewsSection />
+      {/* <NewsSection /> */}
       <FeedbackFormSection />
     </>
   );

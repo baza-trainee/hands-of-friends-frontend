@@ -3,19 +3,32 @@ import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
-import FeedbackFormLayout from "../FeedbackForm/FeedbackFormLayout";
+
 import { HiPlus } from "react-icons/hi2";
 
+import PartnerForm from "./Form/ParnterForm";
+import DonorForm from "./Form/DonorForm";
+import VolunteerForm from "./Form/VolunteerForm";
+import SuccessModal from "../SuccessModal/SuccessModal";
+
 export default function CooperationList({ lng }) {
+  const { t } = useTranslation(lng, "cooperation");
   const [isOpen, setIsOpen] = useState(false);
+  const [isVissible, setIsVissible] = useState(false);
+
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const toggleModal = (index) => {
     setSelectedItemIndex(index);
     setIsOpen((prev) => !prev);
   };
-  const { t } = useTranslation(lng, "cooperation");
+  const handleClose = () => setIsVissible(false);
 
   const items = ["partners", "donors", "volunteers"];
+  const formComponents = {
+    0: <PartnerForm lng={lng} />,
+    1: <DonorForm lng={lng} />,
+    2: <VolunteerForm lng={lng} />,
+  };
 
   return (
     <ul
@@ -57,17 +70,23 @@ export default function CooperationList({ lng }) {
           </Action>
           {isOpen && selectedItemIndex === index && (
             <BaseModal isOpen={isOpen} onClose={toggleModal}>
-              <FeedbackFormLayout additionalData={item}>
-                <h2 className="mb-6 text-base xl:text-2xl antialiased">
-                  {t(`cooperation.${item}.form_title`)}
-                </h2>
-                <button type="button" onClick={toggleModal}>
-                  <HiPlus
-                    size={24}
-                    className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
-                  />
-                </button>
-              </FeedbackFormLayout>
+              <>
+                {isVissible ? (
+                  <SuccessModal handleClose={handleClose} />
+                ) : (
+                  <DonorForm lng={lng} setIsVissible={setIsVissible}>
+                    <h2 className="mb-5 text-base xl:text-2xl antialiased">
+                      {t(`cooperation.${item}.form_title`)}
+                    </h2>
+                    <button type="button" onClick={toggleModal}>
+                      <HiPlus
+                        size={24}
+                        className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+                      />
+                    </button>
+                  </DonorForm>
+                )}
+              </>
             </BaseModal>
           )}
         </li>

@@ -2,7 +2,12 @@ import * as Yup from "yup";
 
 export const validationSchema = (t) => {
   return Yup.object({
-    name: Yup.string()
+    organization_name: Yup.string()
+      .required(t("company_name_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("company_name.matches"))
+      .min(2, t("company_name_min"))
+      .max(50, t("company_name_max")),
+    representative_name: Yup.string()
       .required(t("name_required"))
       .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name.matches"))
       .min(2, t("name_min"))
@@ -18,7 +23,7 @@ export const validationSchema = (t) => {
         t("email_matches"),
         (value) => !/(.ru|.by)$/.test(value.split("@")[1])
       ),
-    phone_number: Yup.string()
+    phone: Yup.string()
       .required(t("phone_number_required"))
       .matches(/^\+380\d{9}$/, t("phone_number_matches")),
     message: Yup.string()

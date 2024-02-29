@@ -3,8 +3,9 @@ import React from "react";
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
-import FeedbackFormLayout from "./FeedbackFormLayout";
+
 import { useTranslation } from "@/app/i18n/client";
+import FeedbackForm from "./FeedbackFormMain";
 
 export default function FeedbackFormSection({ lng }) {
   const { t } = useTranslation(lng, "title");
@@ -29,7 +30,7 @@ export default function FeedbackFormSection({ lng }) {
         xl:w-[740px] xl:h-[490px] 
         2xl:w-[852px] 2xl:h-[564px]"
           />
-          <FeedbackFormLayout lng={lng} />
+          <FeedbackForm lng={lng} />
         </div>
       </Container>
     </Section>
