@@ -21,7 +21,7 @@ const InputField = ({
         {required && <span className="text-[red]"> *</span>}
       </label>
       <InputElement
-        className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  bg-inherit outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
         md:mt-[6px]
         xl:text-base xl:placeholder:text-base
           ${
