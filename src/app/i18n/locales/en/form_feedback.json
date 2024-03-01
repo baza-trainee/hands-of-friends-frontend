@@ -1,11 +1,11 @@
 {
-  "company_name": "Company name",
-  "placeholder_company_name": "Company name",
+  "organization_name": "Organization name",
+  "placeholder_organization_name": "Organization name",
 
   "name": "Name",
   "placeholder_name": "Olha",
 
-  "representative's_name": "Representative's name",
+  "representative_name": "Representative's name",
 
   "city": "Your city",
   "placeholder_city": "Your city",

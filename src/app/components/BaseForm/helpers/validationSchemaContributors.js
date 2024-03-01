@@ -2,7 +2,12 @@ import * as Yup from "yup";
 
 export const validationSchema = (t) => {
   return Yup.object({
-    name: Yup.string()
+    organization_name: Yup.string()
+      .required(t("company_name_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("company_name_matches"))
+      .min(2, t("company_name_min"))
+      .max(50, t("company_name_max")),
+    representative_name: Yup.string()
       .required(t("name_required"))
       .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name_matches"))
       .min(2, t("name_min"))

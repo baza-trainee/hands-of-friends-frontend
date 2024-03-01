@@ -3,24 +3,26 @@ import Image from "next/image";
 
 export default function PartnerItem({ data }) {
   return (
-    <li className="grow ">
+    <li className="grow max-w-[282px]">
       <div
-        className="m-auto mb-4 bg-[#E0F2FE] w-[90px]
-        sm:w-[110px] sm:h-[64px]
-        md:w-[170px] md:h-[100px]"
+        className="m-auto mb-4 bg-[#E0F2FE] w-[170px] h-[100px]
+        md:w-[157px]
+        xl:w-[170px] 
+        2xl:w-[185px]"
       >
         <Image
           src={data.image}
           alt={`Logo`}
           width={90}
           height={52}
-          className="m-auto opacity-50
-        sm:w-[110px] sm:h-[64px]
-        md:w-[170px] md:h-[100px]"
+          className="m-auto opacity-50 w-[170px] h-[100px]
+        md:w-[157px]
+        xl:w-[170px] 
+        2xl:w-[185px]"
         />
       </div>
 
-      <p className=" text-black text-xl font-bold text-center leading-7">
+      <p className="px-[9px] text-black text-xl font-bold text-center leading-7">
         {data.name}
       </p>
     </li>

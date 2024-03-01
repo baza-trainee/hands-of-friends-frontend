@@ -1,11 +1,11 @@
 {
-  "company_name": "Назва організації",
-  "placeholder_company_name": "Назва організації",
+  "organization_name": "Назва організації",
+  "placeholder_organization_name": "Назва організації",
 
   "name": "Ім’я",
   "placeholder_name": "Ольга",
 
-  "representative's_name": "Ім’я представника організації",
+  "representative_name": "Ім’я представника організації",
 
   "city": "Ваше місто",
   "placeholder_city": "Ваше місто",
