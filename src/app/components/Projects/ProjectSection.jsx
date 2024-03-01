@@ -10,19 +10,19 @@ import ProjectSwiperList from './ProjectSwiper';
 import { useTranslation } from "@/app/i18n/client";
 
 export default function ProjectSection({ lng }) {
-  const { t } = useTranslation(lng, "title");
+  const { t } = useTranslation(lng, "project-section");
   const router = useRouter();
     return (
         <Section>
           <Container>
-            <Title titleName={t("projects")} />
+            <Title titleName={t("title")} />
             <ProjectSwiperList />
-            <Action
+            <Action 
           onClick={() => router.push("/projects")}
           type="button"
           className="block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue text-xl md:mt-12 xl:mt-8"
         >
-         Всі проєкти
+           {t("button")}
         </Action>
           </Container>
         </Section>

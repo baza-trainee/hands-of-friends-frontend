@@ -21,11 +21,12 @@ const InputField = ({
         {required && <span className="text-[red]"> *</span>}
       </label>
       <InputElement
-        className={`w-full h-10 rounded-[0.3rem] mt-2 px-3 outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        md:mt-[6px]
         xl:text-base xl:placeholder:text-base
           ${
             type === "textarea"
-              ? "xl:h-[120px] p-1 xs:h-[99px] resize-none"
+              ? "xl:h-[120px] pt-2 xs:h-[99px] resize-none"
               : "h-[45px]"
           }
           ${

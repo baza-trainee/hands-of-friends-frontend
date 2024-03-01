@@ -1,33 +1,38 @@
-"use client";
+"use client"
 
-import { FaGlobe } from "react-icons/fa6";
+import { FaGlobe } from "react-icons/fa6"
 
-import Bars from "../../../../public/img/bars.svg";
-import { HiPlus } from "react-icons/hi2";
-import Link from "next/link";
-import LogoIcon from "../../../../public/img/logo.svg";
-import LogoIconTablet from "../../../../public/img/logo-tablet.svg";
-import { Trans } from "react-i18next/TransWithoutContext";
-import { languages } from "../../i18n/settings";
-import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { useTranslation } from "@/app/i18n/client";
+import Bars from "../../../../public/img/bars.svg"
+import { HiPlus } from "react-icons/hi2"
+import Link from "next/link"
+import LogoIcon from "../../../../public/img/logo.svg"
+import LogoIconTablet from "../../../../public/img/logo-tablet.svg"
+import { Trans } from "react-i18next/TransWithoutContext"
+import { languages } from "../../i18n/settings"
+import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
+import { useTranslation } from "@/app/i18n/client"
 
 export default function Header({ lng }) {
   const variants = {
     open: { opacity: 1, y: 0 },
     closed: { opacity: 0, y: "-100%" },
-  };
+  }
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toggleMenu = () => setMenuOpen(!menuOpen)
 
-  const { t } = useTranslation(lng, "header");
-  const pathname = usePathname();
-  const pathParts = pathname.split("/");
+  const { t } = useTranslation(lng, "header")
+  const pathname = usePathname()
+  const pathParts = pathname.split("/")
+
   const pathWithoutLanguage =
-    pathParts.length > 2 ? pathParts[pathParts.length - 1] : "";
+    pathParts.length > 2
+      ? pathParts.length > 3
+        ? pathParts[pathParts.length - 2] + '/' + pathParts[pathParts.length - 1]
+        : pathParts[pathParts.length - 1]
+      : ""
 
   const links = [
     {
@@ -60,7 +65,7 @@ export default function Header({ lng }) {
       url: `/${lng}/contacts`,
       text: t("contacts"),
     },
-  ];
+  ]
 
   return (
     <div className="fixed z-20 w-full border-t border-b bg-lightBlue border-deepBlue">
@@ -74,9 +79,8 @@ export default function Header({ lng }) {
               <li key={link.id}>
                 <Link
                   href={link.url}
-                  className={`text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0 link ${
-                    pathname === link.url ? "active" : ""
-                  }`}
+                  className={`text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0 link ${pathname === link.url ? "active" : ""
+                    }`}
                 >
                   {link.text}
                 </Link>
@@ -88,7 +92,7 @@ export default function Header({ lng }) {
           href="https://www.monobank.ua/?lang=uk"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer xl:self-center bg-violet border-violet hover:bg-white hover:text-violet xl:block"
+          className="hidden p-4 text-xl text-white transition border-2 rounded cursor-pointer xl:self-center bg-violet border-violet hover:bg-transparent hover:text-violet xl:block"
         >
           {t("support")}
         </a>
@@ -111,7 +115,7 @@ export default function Header({ lng }) {
                         EN
                       </Link>
                     </span>
-                  );
+                  )
                 })}
             </span>
             |
@@ -131,16 +135,15 @@ export default function Header({ lng }) {
                         UA
                       </Link>
                     </span>
-                  );
+                  )
                 })}
             </span>
           </div>
         </Trans>
         <div className="flex items-center justify-between w-full gap-5 p-4 sm:py-5 md:py-[22px] xl:hidden">
           <div
-            className={`cursor-pointer transition xl:hidden ${
-              menuOpen ? "transform rotate-45 scale-125" : ""
-            }`}
+            className={`cursor-pointer transition xl:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
+              }`}
             onClick={toggleMenu}
           >
             {menuOpen ? (
@@ -171,7 +174,7 @@ export default function Header({ lng }) {
                           EN
                         </Link>
                       </span>
-                    );
+                    )
                   })}
               </span>
               |
@@ -191,7 +194,7 @@ export default function Header({ lng }) {
                           UA
                         </Link>
                       </span>
-                    );
+                    )
                   })}
               </span>
             </div>
@@ -212,9 +215,8 @@ export default function Header({ lng }) {
                       <Link
                         href={link.url}
                         onClick={toggleMenu}
-                        className={`text-sm text-black duration-300 link ${
-                          pathname === link.url ? "active" : ""
-                        }`}
+                        className={`text-sm text-black duration-300 link ${pathname === link.url ? "active" : ""
+                          }`}
                       >
                         {link.text}
                       </Link>
@@ -235,5 +237,5 @@ export default function Header({ lng }) {
         </motion.nav>
       </div>
     </div>
-  );
+  )
 }

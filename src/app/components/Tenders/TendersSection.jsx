@@ -11,19 +11,19 @@ import Action from "../Action";
 import TenderSwiperList from './TendersSwiper';
 export default function TendersSection({lng}) {
  
-  const { t } = useTranslation(lng, "title");
+  const { t } = useTranslation(lng, "tender-section");
   const router = useRouter();
   return (
     <Section>
       <Container>
-        <Title titleName={t("tenders")}/>
+        <Title titleName={t("title")}/>
        <TenderSwiperList/>
         <Action
           onClick={() => router.push("/tenders")}
           type="button"
           className=" block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-12 xl:mt-[60px]"
         >
-         Всі тендери
+         {t("button")}
         </Action>
       </Container>
     </Section>

@@ -19,6 +19,9 @@ const UniversalSlider = ({
 }) => {
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data, setData] = useHttp(endpoint);
+	const paginationType = useBullets ? 'bullets' : 'progressbar'
+	const [data, setData] = useHttp(endpoint)
+	const showNavigation = data.length > 1;
 
   return (
     <>
@@ -53,5 +56,38 @@ const UniversalSlider = ({
     </>
   );
 };
+	return (
+    <>
+      <Swiper
+        navigation={showNavigation}
+        pagination={{
+          type: paginationType,
+        }}
+        {...swiperSettings}
+        grabCursor={true}
+        keyboard={true}
+        cssMode={true}
+        modules={[Keyboard, Pagination, Navigation, A11y]}
+        loop={true}
+        className={`swiper ${className}`}
+      >
+        {!data.length
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <SwiperSlide className="flex flex-col items-center" key={index}>
+                <UniversalSkeleton
+                  id={`skeleton-${index}`}
+                  type={skeletonType}
+                />
+              </SwiperSlide>
+            ))
+          : data.map((item, index) => (
+              <SwiperSlide className="flex flex-col items-center " key={index}>
+                <ItemComponent data={item} />
+              </SwiperSlide>
+            ))}
+      </Swiper>
+    </>
+  );
+}
 
 export default UniversalSlider;
