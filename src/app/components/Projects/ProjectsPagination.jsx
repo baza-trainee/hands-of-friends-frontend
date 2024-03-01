@@ -35,11 +35,10 @@ export default function ProjectsPagination({ data }) {
   return (
     <>
       <ProjectsHeader />
-      {currentItems && (
         <Container>
           <Section className="mt-8 sm:mt-10 xl:mt-20">
             {isLoading ? (
-              <ul className="grid lg:grid-cols-3 gap-5 mb-40">{skeleton}</ul>
+              <ul className="grid gap-5 mb-40 md:grid-cols-2 md:gap-1 xl:grid-cols-3">{skeleton}</ul>
             ) : (
               <>
                 <ProjectPageList
@@ -55,7 +54,6 @@ export default function ProjectsPagination({ data }) {
             )}
           </Section>
         </Container>
-      )}
     </>
   );
 }

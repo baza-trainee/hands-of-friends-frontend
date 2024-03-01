@@ -3,9 +3,10 @@ import Skeleton from "./Skeleton";
 import TenderItem from "./TenderItem";
 
 export default function TenderList({ currentItems, activeTab, isLoading }) {
-  const skeletonItems = Array.from({ length: 3 }, (_, index) => (
-    <Skeleton key={index} className="bg-zinc-300" />
+  let skeletonItems = [...new Array(6)].map((_, i) => (
+    <Skeleton key={i} className="bg-zinc-200" />
   ));
+
 
   return (
     <ul className="grid gap-8 min-w-[288px] not-italic leading-normal
