@@ -576,7 +576,7 @@ a.active-link {
 
 .height-minus {
   @media screen and (min-width: 1280px) {
-    min-height: calc(100vh - 322px);
+    min-height: calc(100vh - 324px);
   }
 }
 
