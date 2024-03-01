@@ -4,7 +4,7 @@ import { BaseForm } from "../BaseForm";
 import { initialValuesVolunteer } from "../helpers/consts";
 import { validationSchema } from "../helpers/validationSchemaVolonteer";
 
-const VolunteerForm = ({ lng, toggleModal, title }) => {
+const VolunteerForm = ({ lng, title, toggleModal }) => {
   const { handleSubmit, isLoading } = useSubmitForm(
     "collaboration/volunteer-form/"
   );
@@ -14,9 +14,9 @@ const VolunteerForm = ({ lng, toggleModal, title }) => {
       initialValues={initialValuesVolunteer}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      toggleModal={toggleModal}
       lng={lng}
       isLoading={isLoading}
-      toggleModal={toggleModal}
       title={title}
       formType={"volunteers"}
     />

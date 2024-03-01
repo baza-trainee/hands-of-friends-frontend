@@ -4,7 +4,7 @@ import { BaseForm } from "../BaseForm";
 import { initialValuesContributors } from "../helpers/consts";
 import { validationSchema } from "../helpers/validationSchemaContributors";
 
-const DonorForm = ({ lng, toggleModal, title }) => {
+const DonorForm = ({ lng, title, toggleModal }) => {
   const { handleSubmit, isLoading } = useSubmitForm(
     "collaboration/donor-form/"
   );
@@ -14,9 +14,9 @@ const DonorForm = ({ lng, toggleModal, title }) => {
       initialValues={initialValuesContributors}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      toggleModal={toggleModal}
       lng={lng}
       isLoading={isLoading}
-      toggleModal={toggleModal}
       title={title}
       formType={"donors"}
     />

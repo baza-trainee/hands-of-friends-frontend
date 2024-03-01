@@ -11,7 +11,7 @@ export default function Action({
   target,
   textColor,
 }) {
-  const ActionComponent = href ? Link : "button";
+  const ActionComponent = href ? Link : "button" || "submit";
   const additionalProps = href ? { href, rel, target } : { onClick };
 
   return (

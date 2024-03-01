@@ -21,6 +21,7 @@ export const BaseForm = ({
 }) => {
   const [isVissible, setIsVissible] = useState(false);
   const handleClose = () => setIsVissible(false);
+
   const { t } = useTranslation(lng, "form_feedback");
 
   const formik = useFormik({
@@ -36,9 +37,8 @@ export const BaseForm = ({
 
   return (
     <>
-      {isVissible ? (
-        <SuccessModal handleClose={handleClose} />
-      ) : (
+      {isVissible && <SuccessModal handleClose={handleClose} />}
+      {!isVissible && (
         <form
           className={`relative flex justify-self-center flex-col items-center mt-20 bg-white shadow-md z-10 
           xs:py-6 xs:px-4 xs:w-[268px]
@@ -58,14 +58,18 @@ export const BaseForm = ({
           onSubmit={formik.handleSubmit}
         >
           {title && (
-            <h2 className="mb-5 text-base xl:text-2xl antialiased">{title}</h2>
+            <>
+              <h2 className="mb-5 text-base xl:text-2xl antialiased">
+                {title}
+              </h2>
+              <button type="button" onClick={toggleModal}>
+                <HiPlus
+                  size={24}
+                  className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
+                />
+              </button>
+            </>
           )}
-          <button type="button" onClick={toggleModal}>
-            <HiPlus
-              size={24}
-              className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
-            />
-          </button>
 
           {formType === "partners" || formType === "donors" ? (
             <>

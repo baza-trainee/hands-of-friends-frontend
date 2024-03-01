@@ -3,7 +3,7 @@ import { BaseForm } from "../BaseForm";
 import { initialValuesContributors } from "../helpers/consts";
 import { validationSchema } from "../helpers/validationSchemaContributors";
 
-const PartnerForm = ({ lng, toggleModal, title }) => {
+const PartnerForm = ({ lng, title, toggleModal }) => {
   const { handleSubmit, isLoading } = useSubmitForm(
     "collaboration/partner-form/"
   );
@@ -13,9 +13,9 @@ const PartnerForm = ({ lng, toggleModal, title }) => {
       initialValues={initialValuesContributors}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      toggleModal={toggleModal}
       lng={lng}
       isLoading={isLoading}
-      toggleModal={toggleModal}
       title={title}
       formType={"partners"}
     />

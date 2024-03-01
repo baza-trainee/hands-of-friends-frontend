@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
-import SuccessModal from "../SuccessModal/SuccessModal";
 import { formToggle } from "../BaseForm/helpers/formToggle";
 
 export default function CooperationList({ lng }) {
@@ -18,8 +17,6 @@ export default function CooperationList({ lng }) {
     setSelectedItemType(item);
     setIsOpen((prev) => !prev);
   };
-
-  const handleClose = () => setIsVissible(false);
 
   return (
     <ul

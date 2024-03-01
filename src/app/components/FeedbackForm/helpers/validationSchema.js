@@ -4,7 +4,7 @@ export const validationSchema = (t) => {
   return Yup.object({
     name: Yup.string()
       .required(t("name_required"))
-      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name.matches"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name_matches"))
       .min(2, t("name_min"))
       .max(50, t("nam_max")),
     email: Yup.string()

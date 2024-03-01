@@ -18,6 +18,7 @@ export const useSubmitForm = (endpoint) => {
       if (actions.setIsVissible) {
         actions.setIsVissible(true);
       }
+
       actions.resetForm();
     } catch (error) {
       console.log("Помилка при надсиланні запиту:", error.message);
