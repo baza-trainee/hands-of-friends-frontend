@@ -6,7 +6,7 @@ import BreadCrumbs from "@/app/components/BreadCrumbs";
 import Image from "next/image";
 import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
 import { useTranslation } from "@/app/i18n/client";
-
+import Skeleton from "@/app/components/Projects/Skeleton";
 export default function Page({ params, lng }) {
   const { t } = useTranslation(lng, "projects");
   const { id } = params;
@@ -39,9 +39,10 @@ export default function Page({ params, lng }) {
           text={t("title")}
           textColor="blue"
         />
-
+ { dataByID && !isLoading ? (
         <div className="max-w-[835px] text-lg mb-40">
-          <h2 className="text-3xl font-bold mb-10">{dataByID.title}</h2>
+        
+         <h2 className="text-3xl font-bold mb-10">{dataByID.title}</h2>
           <p className="mb-6">
             {dataByID.start_date}-{dataByID.end_date}
           </p>
@@ -90,8 +91,9 @@ export default function Page({ params, lng }) {
               )}
             </li>
             ))}
-          </ul>
-        </div>
+          </ul>   
+          </div>) : <Skeleton></Skeleton> }
+      
        
       </Container>
     </>
