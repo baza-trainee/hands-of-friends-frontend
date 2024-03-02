@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
 import Image from "next/image";
-import ContentItem from "@/app/components/Projects/Content";
 import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
 import { useTranslation } from "@/app/i18n/client";
 
@@ -27,24 +26,10 @@ export default function Page({ params, lng }) {
       const text= content.map((item) => (
        item.text.replace(/<ul/g, `<ul class="${ULCLASS}"`).replace(/<ol/g, `<ol class="${OLCLASS}"`)))
        setFormattedContent(text)
-       console.log(text)
+ 
     }
   }, [isLoading, dataByID]);
 
-
-    // const [formattedContent, setFormattedContent] = useState();
-  
-    // useEffect((content) => {
-    //   async function fetchData(item) {
-    //     const desc = item.text
-    //       .replace(/<ul/g, `<ul class="${ULCLASS}"`)
-    //       .replace(/<ol/g, `<ol class="${OLCLASS}"`);
-  
-    //     setFormattedContent(desc);
-    //   }
-    //   fetchData(item);
-    // }, [content]);
- 
   return (
     <>
       <Container>
@@ -107,6 +92,7 @@ export default function Page({ params, lng }) {
             ))}
           </ul>
         </div>
+       
       </Container>
     </>
   );
