@@ -112,6 +112,10 @@ body > * {
     padding-left: 4rem;
     padding-right: 4rem;
   }
+  @media screen and (min-width: 1440px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .wrapperTender .swiper,
@@ -572,7 +576,7 @@ a.active-link {
 
 .height-minus {
   @media screen and (min-width: 1280px) {
-    min-height: calc(100vh - 322px);
+    min-height: calc(100vh - 324px);
   }
 }
 

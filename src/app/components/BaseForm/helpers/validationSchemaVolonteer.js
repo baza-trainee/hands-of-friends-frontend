@@ -7,6 +7,11 @@ export const validationSchema = (t) => {
       .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name_matches"))
       .min(2, t("name_min"))
       .max(50, t("nam_max")),
+    city: Yup.string()
+      .required(t("city_required"))
+      .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("city_matches"))
+      .min(2, t("city_min"))
+      .max(50, t("city_max")),
     email: Yup.string()
       .required(t("email_required"))
       .matches(

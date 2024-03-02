@@ -25,6 +25,7 @@ module.exports = {
         red: "E11D48",
         purple: "#3F3493",
         lavender: "#EEF2FF",
+        mainBg: "#EEF2FF"
       },
     },
     screens: {

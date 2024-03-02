@@ -1,7 +1,7 @@
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "@/app/i18n/client";
 
 export default function ProjectItem({ data, lng }) {
@@ -37,7 +37,7 @@ export default function ProjectItem({ data, lng }) {
       >
         {data.title}
       </h3>
-      <span className="font-body text-base md:text-lg">
+      <span className="text-base font-body md:text-lg">
         {data.start_date} - {data.end_date ? data.end_date : "Активний"}
       </span>
 
@@ -54,7 +54,7 @@ export default function ProjectItem({ data, lng }) {
       <button
         onClick={() => router.push(`/projects/${data.id}`)}
         type="button"
-        className="block w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 font-normal bg-transperent text-black text-xl border border-transparent hover:border hover:border-deepBlue hover:bg-lightBlue md:mt-8 md:text-2xl md:min-h-[64px] xl:mt-4 2xl:mt-8 2xl:text-xl 2xl:min-h-[60px]"
+        className="block w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 font-normal bg-transparent text-black text-xl border border-transparent hover:border hover:border-deepBlue hover:bg-lightBlue md:mt-8 md:text-2xl md:min-h-[64px] xl:mt-4 2xl:mt-8 2xl:text-xl 2xl:min-h-[60px]"
       >
        {t("btn")}
       </button>
