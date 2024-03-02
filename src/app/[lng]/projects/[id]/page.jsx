@@ -13,8 +13,9 @@ export default function Page({ params, lng }) {
   const { id } = params;
   const [dataByID, , isLoading] = useHttp(`projects/${id}`);
   const [content, setContent] = useState([]);
+  
   const [formattedDescription, setFormattedDescription] = useState();
-
+  const [formattedContent, setFormattedContent] = useState();
   useEffect(() => {
     if (!isLoading && dataByID) {
       const desc = dataByID.description
@@ -23,9 +24,27 @@ export default function Page({ params, lng }) {
       setFormattedDescription(desc);
       const content = dataByID.content;
       setContent(content);
+      const text= content.map((item) => (
+       item.text.replace(/<ul/g, `<ul class="${ULCLASS}"`).replace(/<ol/g, `<ol class="${OLCLASS}"`)))
+       setFormattedContent(text)
+       console.log(text)
     }
   }, [isLoading, dataByID]);
 
+
+    // const [formattedContent, setFormattedContent] = useState();
+  
+    // useEffect((content) => {
+    //   async function fetchData(item) {
+    //     const desc = item.text
+    //       .replace(/<ul/g, `<ul class="${ULCLASS}"`)
+    //       .replace(/<ol/g, `<ol class="${OLCLASS}"`);
+  
+    //     setFormattedContent(desc);
+    //   }
+    //   fetchData(item);
+    // }, [content]);
+ 
   return (
     <>
       <Container>
@@ -44,7 +63,7 @@ export default function Page({ params, lng }) {
           <div
             className="text-lg mb-6"
             dangerouslySetInnerHTML={{
-              __html: formattedDescription,
+              __html: formattedDescription
             }}
           />
           <Image
@@ -60,8 +79,31 @@ export default function Page({ params, lng }) {
           />
 
           <ul>
-            {content.map((item) => (
-              <ContentItem key={item.id} item={item} />
+            {content.map((item, index) => (
+              <li key={item.id}>
+              {<p
+                className="mb-6"
+                dangerouslySetInnerHTML={{
+                  __html: formattedContent[index]
+                }}
+              ></p> 
+               }
+              {item.image ? (
+                <Image
+                  src={item.image}
+                  alt="Photo of the project"
+                  width={334}
+                  height={241}
+                  className="min-w-[288px] object-cover mb-6
+                sm:min-w-[388px]
+                md:min-w-[334px] 
+                xl:min-w-[455px] 
+                2xl:min-w-[486px]"
+                />
+              ) : (
+                " "
+              )}
+            </li>
             ))}
           </ul>
         </div>
