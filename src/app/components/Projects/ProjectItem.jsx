@@ -19,7 +19,9 @@ export default function ProjectItem({ data, lng }) {
   }, [data]);
 
   return (
+    
     <li key={data.id}>
+     
       <Image
         src={data.image}
         alt="Photo of the project"
@@ -58,6 +60,7 @@ export default function ProjectItem({ data, lng }) {
       >
        {t("btn")}
       </button>
+      
     </li>
   );
 }

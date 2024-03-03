@@ -17,17 +17,18 @@ export default function ProjectPageList({ currentItems, isLoading }) {
     >
       {isLoading
         ? skeletonItems
-        : currentItems.map((data) => (
+        : currentItems.map((data) => (data.is_shown? (
             <ProjectItem
               key={data.id}
               data={data}
+             
               className="flex flex-col w-[288px] h-[844px]
                   sm:w-[388px] sm:h-[858px]
                   md:w-[360px] md:h-[944px]
                   xl:w-[360px] xl:min-h-[944px] 
                   2xl:w-[384px] 2xl:min-h-[966px]"
               // className="projects-page-item"
-            />
+            />) : (<></>)
           ))}
     </ul>
   );
