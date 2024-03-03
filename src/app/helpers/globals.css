@@ -400,41 +400,6 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	left: 0;
 	top: 11.64rem;
 }
-
-.HeroSlider .swiper .swiper-button-next {
-	width: 33px;
-	height: 26px;
-	right: 125px;
-	top: 50%;
-	position: absolute;
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	transform: rotate(180deg);
-
-	@media screen and (max-width: 1279.98px) {
-		display: none;
-	}
-}
-.HeroSlider .swiper .swiper-button-prev {
-	background-image: url(../../../public/img/arrow.png);
-	background-repeat: no-repeat;
-	width: 33px;
-	height: 26px;
-	left: 125px;
-	top: 50%;
-
-	@media screen and (max-width: 1279.98px) {
-		display: none;
-	}
-}
-.HeroSlider .swiper .swiper-button-prev:hover {
-	filter: invert(70%) sepia(47%) saturate(4139%) hue-rotate(187deg)
-		brightness(100%) contrast(97%);
-}
-.HeroSlider .swiper .swiper-button-next:hover {
-	filter: invert(70%) sepia(47%) saturate(4139%) hue-rotate(187deg)
-		brightness(100%) contrast(97%);
-}
 .swiper-pagination-horizontal {
 	top: 10;
 }
