@@ -15,7 +15,7 @@ export default function PartnerItem({ data }) {
           alt={`Logo`}
           width={90}
           height={52}
-          className="m-auto opacity-50 w-[170px] h-[100px]
+          className="m-auto w-[170px] h-[100px]
         md:w-[157px]
         xl:w-[170px] 
         2xl:w-[185px]"

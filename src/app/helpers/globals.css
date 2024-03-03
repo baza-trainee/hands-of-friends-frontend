@@ -223,13 +223,60 @@ body .swiper-horizontal > .swiper-pagination-progressbar,
   border-radius: 10px;
   background-color: #d1d5db;
   overflow: hidden;
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 44px;
+    width: 1030px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 48px;
+    width: 1104px;
+  }
 }
+
 body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   border-radius: 10px;
   background-color: #60a5fa;
 }
+.wrapperTeam .swiper-horizontal > .swiper-pagination-progressbar {
+  @media screen and (min-width: 320px) and (max-width: 419px) {
+    margin-left: 44px;
+    width: 220px;
+  }
+  @media screen and (min-width: 420px) and (max-width: 767px) {
+    margin-left: 44px;
+    width: 260px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 56px;
+    width: 1188px;
+  }
+}
+
+.wrapperDonor .swiper-horizontal > .swiper-pagination-progressbar {
+  margin-left: 14px;
+  width: 260px;
+
+  @media screen and (min-width: 420px) {
+    margin-left: 64px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 0px;
+    width: 688px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-left: 95px;
+    width: 930px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 48px;
+    width: 1104px;
+  }
+}
 
 /*Progressbar*/
+
 .swiper-pagination-lock {
   display: block !important;
 }
@@ -307,7 +354,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #2563EB;
+  color: #2563eb;
 }
 .wrapperTeam .swiper .swiper-button-prev {
   left: 1px;
@@ -480,24 +527,24 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   width: 384px;
 }
 .active-btn {
-  background-color: #6F4AAA;
+  background-color: #6f4aaa;
   border-radius: 50%;
 }
 
 .pageClass a {
-  border: #6F4AAA 1px solid;
+  border: #6f4aaa 1px solid;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6F4AAA;
+  color: #6f4aaa;
   width: 36px;
   height: 36px;
 }
 
 .pageClass a:hover {
   color: white;
-  background-color: #6F4AAA;
+  background-color: #6f4aaa;
 }
 
 a.active-link {
@@ -511,7 +558,7 @@ a.active-link {
 
 .next a {
   display: flex;
-  border: #6F4AAA 1px solid;
+  border: #6f4aaa 1px solid;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -571,7 +618,7 @@ a.active-link {
 .break {
   display: flex;
   align-items: flex-end;
-  color: #6F4AAA;
+  color: #6f4aaa;
 }
 
 .height-minus {
