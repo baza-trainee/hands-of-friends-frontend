@@ -217,12 +217,12 @@ body .swiper-horizontal > .swiper-pagination-progressbar,
 .swiper-vertical
 	> .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
-  height: 10px;
-  top: auto;
-  bottom: 0;
-  border-radius: 10px;
-  background-color: #d1d5db;
-  overflow: hidden;
+	height: 10px;
+	top: auto;
+	bottom: 0;
+	border-radius: 10px;
+	background-color: #d1d5db;
+	overflow: hidden;
 
 	@media screen and (min-width: 1280px) {
 		margin-left: 44px;
@@ -239,14 +239,14 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	background-color: #60a5fa;
 }
 .wrapperTeam .swiper-horizontal > .swiper-pagination-progressbar {
-  @media screen and (min-width: 320px) and (max-width: 419px) {
-    margin-left: 44px;
-    width: 220px;
-  }
-  @media screen and (min-width: 420px) and (max-width: 767px) {
-    margin-left: 64px;
-    width: 260px;
-  }
+	@media screen and (min-width: 320px) and (max-width: 419px) {
+		margin-left: 44px;
+		width: 220px;
+	}
+	@media screen and (min-width: 420px) and (max-width: 767px) {
+		margin-left: 64px;
+		width: 260px;
+	}
 
 	@media screen and (min-width: 1440px) {
 		margin-left: 56px;
@@ -258,21 +258,21 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	margin-left: 14px;
 	width: 260px;
 
-  @media screen and (min-width: 420px) {
-    margin-left: 64px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279.98px) {
-    margin-left: 0px;
-    width: 100%;
-  }
-  @media screen and (min-width: 1280px) {
-    margin-left: 95px;
-    width: 930px;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-left: 48px;
-    width: 1104px;
-  }
+	@media screen and (min-width: 420px) {
+		margin-left: 64px;
+	}
+	@media screen and (min-width: 768px) and (max-width: 1279.98px) {
+		margin-left: 0px;
+		width: 100%;
+	}
+	@media screen and (min-width: 1280px) {
+		margin-left: 95px;
+		width: 930px;
+	}
+	@media screen and (min-width: 1440px) {
+		margin-left: 48px;
+		width: 1104px;
+	}
 }
 
 /*Progressbar*/
@@ -354,7 +354,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #2563eb;
+	color: #2563eb;
 }
 .wrapperTeam .swiper .swiper-button-prev {
 	left: 1px;
@@ -554,24 +554,24 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	width: 384px;
 }
 .active-btn {
-  background-color: #6f4aaa;
-  border-radius: 50%;
+	background-color: #6f4aaa;
+	border-radius: 50%;
 }
 
 .pageClass a {
-  border: #6f4aaa 1px solid;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6f4aaa;
-  width: 36px;
-  height: 36px;
+	border: #6f4aaa 1px solid;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6f4aaa;
+	width: 36px;
+	height: 36px;
 }
 
 .pageClass a:hover {
-  color: white;
-  background-color: #6f4aaa;
+	color: white;
+	background-color: #6f4aaa;
 }
 
 a.active-link {
@@ -584,14 +584,14 @@ a.active-link {
 }
 
 .next a {
-  display: flex;
-  border: #6f4aaa 1px solid;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+	display: flex;
+	border: #6f4aaa 1px solid;
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 }
 .next.disabled {
 	pointer-events: none;
@@ -616,9 +616,9 @@ a.active-link {
 }
 
 .break {
-  display: flex;
-  align-items: flex-end;
-  color: #6f4aaa;
+	display: flex;
+	align-items: flex-end;
+	color: #6f4aaa;
 }
 
 .height-minus {
