@@ -463,6 +463,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 	background-image: url('../../../public/img/about-bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+	width: auto;
 }
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
