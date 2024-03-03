@@ -6,9 +6,11 @@ export default async function getFetchedData(type, headers) {
     const response = await axios.get(`${BASE_URL}content_management/${type}`, {
       headers,
     });
+
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
+    console.log(error.response.data.detail);
     return [];
   }
 }
