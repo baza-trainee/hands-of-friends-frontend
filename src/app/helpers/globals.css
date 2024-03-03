@@ -244,7 +244,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     width: 220px;
   }
   @media screen and (min-width: 420px) and (max-width: 767px) {
-    margin-left: 44px;
+    margin-left: 64px;
     width: 260px;
   }
 
@@ -261,9 +261,9 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   @media screen and (min-width: 420px) {
     margin-left: 64px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1279.98px) {
     margin-left: 0px;
-    width: 688px;
+    width: 100%;
   }
   @media screen and (min-width: 1280px) {
     margin-left: 95px;

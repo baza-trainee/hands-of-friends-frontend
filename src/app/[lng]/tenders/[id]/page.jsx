@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { notFound } from "next/navigation";
 import { useHttp } from "@/app/hooks/useHttp";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
@@ -13,6 +14,9 @@ export default function Page({ params }) {
 
   useEffect(() => {
     if (!isLoading && dataByID) {
+      if (!dataByID.description) {
+        notFound();
+      }
       const desc = dataByID.description
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)
         .replace(/<ol/g, `<ol class="${OLCLASS}"`);
