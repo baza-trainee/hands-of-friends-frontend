@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 const Skeleton = ({id}) => (
   <ContentLoader 
     speed={2}
-    width={360}
+    width={330}
     height={318}
     viewBox="0 0 360 318"
     backgroundColor="#afaaaa"
