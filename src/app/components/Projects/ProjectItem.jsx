@@ -34,7 +34,7 @@ export default function ProjectItem({ data, lng }) {
         2xl:min-w-full 2xl:h-[426px]"
       />
       <h3
-        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold
+        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold line-clamp-2 h-[60px]
             md:mt-8"
       >
         {data.title}
@@ -44,7 +44,7 @@ export default function ProjectItem({ data, lng }) {
       </span>
 
       <p
-        className="mt-4 w-[288px] h-[352px] text-base leading-6 text-left text-black font-body
+        className="mt-4 w-[288px] h-[352px] text-base leading-6 text-left text-black font-body 
             sm:w-full sm:h-[316px]
             md:w-full md:h-[408px] md:text-lg
             xl:w-full xl:h-[408px]
