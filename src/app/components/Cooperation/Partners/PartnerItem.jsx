@@ -13,6 +13,7 @@ export default function PartnerItem({ data }) {
         <Image
           src={data.image}
           alt={`Logo`}
+          sizes="100vw"
           width={90}
           height={52}
           className="m-auto w-[170px] h-[100px]

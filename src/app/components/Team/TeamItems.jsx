@@ -10,6 +10,7 @@ export default function TeamItem({ data }) {
       <Image
         src={data.image}
         alt={`${data.full_name} team member`}
+        sizes="100vw"
         width={243}
         height={290}
         className="mb-3 h-[290px] object-cover "
