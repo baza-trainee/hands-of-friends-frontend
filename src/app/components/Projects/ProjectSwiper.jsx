@@ -10,7 +10,7 @@ export default function ProjectSwiperList() {
   return (
     <div className="wrapperProject">
       <UniversalSlider
-        endpoint={`projects/?is_shown=true`}
+        endpoint={`projects/?is_active=true&is_shown=true`}
         ItemComponent={ProjectItem}
         skeletonType="projects"
         swiperSettings={{
