@@ -14,13 +14,13 @@ export default function Page() {
   return (
     <>
       <HeroSlider />
-      {/* <About />
+      <About />
       <ProjectSection />
       <TendersSection />
       <TeamSection />
       <CooperationSection />
       <NewsSection />
-      <FeedbackFormSection /> */}
+      <FeedbackFormSection />
     </>
   );
 }
