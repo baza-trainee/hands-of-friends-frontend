@@ -19,8 +19,9 @@ const UniversalSlider = ({
 }) => {
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data, setData] = useHttp(endpoint);
-
   const [prevData, setPrevData] = useState();
+  
+  const showNavigation = data.length > 3;
   const showPagination = data.length > 3;
 
   useEffect(() => {
