@@ -37,16 +37,16 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {
-        // !data.length
-        //   ? Array.from({ length: 4 }).map((_, index) => (
-        //       <SwiperSlide className="flex flex-col items-center" key={index}>
-        //         <UniversalSkeleton
-        //           id={`skeleton-${index}`}
-        //           type={skeletonType}
-        //         />
-        //       </SwiperSlide>
-        //     ))
-        //   :
+        !data.length
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <SwiperSlide className="flex flex-col items-center" key={index}>
+                <UniversalSkeleton
+                  id={`skeleton-${index}`}
+                  type={skeletonType}
+                />
+              </SwiperSlide>
+            ))
+          :
            data.map((item, index) => (
               <SwiperSlide className="flex flex-col items-center " key={`${item.title} ${index}`}>
                 <ItemComponent data={item} />
