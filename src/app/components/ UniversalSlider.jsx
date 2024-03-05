@@ -19,15 +19,20 @@ const UniversalSlider = ({
 }) => {
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data, setData] = useHttp(endpoint);
-  const showNavigation = data.length > 1;
+  const showNavigation = data.length > 3;
+  const showPagination = data.length > 3;
 
   return (
     <>
       <Swiper
         navigation={showNavigation}
-        pagination={{
-          type: paginationType,
-        }}
+        pagination={
+          showPagination
+            ? {
+                type: paginationType,
+              }
+            : false
+        }
         {...swiperSettings}
         grabCursor={true}
         keyboard={true}
