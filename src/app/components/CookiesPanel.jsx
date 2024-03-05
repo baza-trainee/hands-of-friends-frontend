@@ -7,7 +7,10 @@ import Cookies from "js-cookie";
 import Action from "./Action";
 import Container from "./Container";
 
-const CookiesPanel = () => {
+import { useTranslation } from "../i18n/client";
+
+const CookiesPanel = ({ lng }) => {
+  const { t } = useTranslation(lng, "cookies");
   const [showPanel, setShowPanel] = useState(false);
 
   useEffect(() => {
@@ -27,10 +30,9 @@ const CookiesPanel = () => {
         <Container>
           <div className="flex flex-col xl:flex-row justify-between xl:py-8 items-center">
             <div className="text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:w-[688px] text-center xl:text-start">
-              Цей сайт використовує файли cookie для зручнішої роботи
-              користувача. Продовжуючи перегляд сторінок сайту, ви погоджуєтесь{" "}
+              {t("text")}{" "}
               <Link className="font-bold	" href={"/privacy-policy"}>
-                з використанням файлів cookie.
+                {t("link")}
               </Link>
             </div>
 
@@ -40,7 +42,7 @@ const CookiesPanel = () => {
                 onClick={acceptCookies}
                 className="min-w-[184px] xl:min-w-[208px] py-[6px] lg:py-4 text-[14px] lg:text-[16px] xl:text-[18px] mx-auto  bg-deepBlue border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
               >
-                Прийняти всі
+                {t("btn-all")}
               </Action>
               <Action
                 type="button"
@@ -48,7 +50,7 @@ const CookiesPanel = () => {
                 textColor="black"
                 className="min-w-[184px] py-[6px] lg:py-4 xl:min-w-[208px] text-[14px] lg:text-[16px] xl:text-[18px] mx-auto bg-white border-deepBlue hover:underline decoration-solid"
               >
-                Прийняти обов’язкові
+                {t("btn")}
               </Action>
             </div>
           </div>
