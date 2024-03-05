@@ -7,7 +7,7 @@ import TendersHeader from "./TendersHeader";
 import Skeleton from "./Skeleton";
 
 export default function TendersPagination({ data }) {
-  const [currentItems, setCurrentItems] = useState([]);
+  const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [activeTab, setActiveTab] = useState("all");
@@ -55,15 +55,7 @@ export default function TendersPagination({ data }) {
             </ul>
           ) : (
             <>
-              {currentItems
-                .filter((tender) => tender.is_shown) 
-                .map((tender) => (
-                  <TenderList
-                    key={tender.id}
-                    tender={tender}
-                    activeTab={activeTab}
-                  />
-                ))}
+              <TenderList currentItems={currentItems} activeTab={activeTab} />
               <Pagination
                 handlePageClick={handlePageClick}
                 pageCount={pageCount}
