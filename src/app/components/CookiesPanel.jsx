@@ -26,7 +26,7 @@ const CookiesPanel = () => {
       <div className="fixed bottom-0 left-0 right-0 bg-[#F8FAFC] z-[1000]  ">
         <Container>
           <div className="flex flex-col xl:flex-row justify-between xl:py-8 items-center">
-            <div className="text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:[688px] text-center xl:text-start">
+            <div className="text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:w-[688px] text-center xl:text-start">
               Цей сайт використовує файли cookie для зручнішої роботи
               користувача. Продовжуючи перегляд сторінок сайту, ви погоджуєтесь{" "}
               <Link className="font-bold	" href={"/privacy-policy"}>
@@ -38,7 +38,7 @@ const CookiesPanel = () => {
               <Action
                 type="button"
                 onClick={acceptCookies}
-                className="min-w-[184px] xl:min-w-[208px] py-[6px] lg:py-4 text-[16px] lg:text-lg mx-auto  bg-deepBlue border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+                className="min-w-[184px] xl:min-w-[208px] py-[6px] lg:py-4 text-[14px] lg:text-[16px] xl:text-[18px] mx-auto  bg-deepBlue border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
               >
                 Прийняти всі
               </Action>
@@ -46,7 +46,7 @@ const CookiesPanel = () => {
                 type="button"
                 onClick={acceptCookies}
                 textColor="black"
-                className="min-w-[184px] py-[6px] lg:py-4 xl:min-w-[208px] text-[16px] lg:text-lg mx-auto bg-white border-deepBlue hover:underline decoration-solid"
+                className="min-w-[184px] py-[6px] lg:py-4 xl:min-w-[208px] text-[14px] lg:text-[16px] xl:text-[18px] mx-auto bg-white border-deepBlue hover:underline decoration-solid"
               >
                 Прийняти обов’язкові
               </Action>
