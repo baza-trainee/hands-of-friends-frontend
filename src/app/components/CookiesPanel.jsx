@@ -46,7 +46,7 @@ const CookiesPanel = () => {
                 type="button"
                 onClick={acceptCookies}
                 textColor="black"
-                className="min-w-[184px] py-[6px] lg:py-[10px] lg:py-4 xl:min-w-[208px] text-[16px] lg:text-lg mx-auto bg-white border-deepBlue hover:underline decoration-solid"
+                className="min-w-[184px] py-[6px] lg:py-4 xl:min-w-[208px] text-[16px] lg:text-lg mx-auto bg-white border-deepBlue hover:underline decoration-solid"
               >
                 Прийняти обов’язкові
               </Action>
