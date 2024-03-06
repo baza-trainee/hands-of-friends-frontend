@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
-import React from 'react'
-import UniversalSlider from '../ UniversalSlider'
-import NewsItem from './NewsItem'
+import React from 'react';
+
+import NewsItem from './NewsItem';
+import UniversalSlider from '../ UniversalSlider';
 
 export default function NewsSlider() {
 	return (
@@ -22,5 +23,5 @@ export default function NewsSlider() {
 				}}
 			/>
 		</div>
-	)
+	);
 }

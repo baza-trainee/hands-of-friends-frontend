@@ -123,7 +123,7 @@ export default function Header({ lng }) {
 									);
 								})}
 						</span>
-						|
+						<div className='w-px bg-black h-7'></div>
 						<span
 							className={
 								lng === 'ua'

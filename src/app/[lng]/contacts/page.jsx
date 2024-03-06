@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import React from 'react';
 import {
-	FaArrowLeftLong,
 	FaEnvelope,
 	FaFacebook,
 	FaLocationDot,
