@@ -21,7 +21,11 @@ export default function FeedbackFormSection({ lng }) {
       <Container>
         <Title titleName={t("form")} className="w-60 xl:w-full" />
 
-        <div className="container relative grid">
+        <div
+          className="relative grid
+        md:w-[688px] md:m-auto
+        xl:w-full"
+        >
           <div
             className="absolute left-[-16px] rigth-0 bg-form w-[320px] h-[211px]
         sm:w-[420px] sm:h-[277px]
