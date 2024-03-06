@@ -4,7 +4,7 @@ import { skeletonConfig } from "../helpers/helperSceleton";
 
 const UniversalSkeleton = ({ id, type }) => {
   const config = skeletonConfig[type] || skeletonConfig.team;
-  
+
   return (
     <ContentLoader
       speed={config.speed}
