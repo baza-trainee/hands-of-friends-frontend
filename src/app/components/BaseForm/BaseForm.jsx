@@ -40,10 +40,10 @@ export const BaseForm = ({
       {isVissible && <SuccessModal handleClose={handleClose} />}
       {!isVissible && (
         <form
-          className={`relative flex justify-self-center flex-col items-center mt-20 bg-whiteFont shadow-md z-10 
+          className={`relative flex justify-self-center flex-col items-center mt-[180px] bg-whiteFont shadow-md z-10 
           xs:py-6 xs:px-4 xs:w-[268px]
-          sm:w-[340px]
-          md:justify-self-end md:w-[334px]
+          sm:w-[340px] sm:mt-[233px]
+          md:justify-self-end md:w-[334px] md:mt-20
           xl:p-6 xl:w-[503px]
           2xl:p-9 2xl:w-[527px]
           ${
