@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 import { useHttp } from "../hooks/useHttp";
-
+import NoItem from "./NoitemElement";
 import UniversalSkeleton from "./UniversalSkeleton";
 
 import "swiper/css";
@@ -20,16 +20,18 @@ const UniversalSlider = ({
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data, setData] = useHttp(endpoint);
   const [prevData, setPrevData] = useState();
-  
+  const [length, setLength] = useState()
   const showNavigation = data.length > 3;
   const showPagination = data.length > 3;
-
+  
   useEffect(() => {
     setPrevData(data);
+   setLength(data.length);
+   
   }, [data]);
-
+ 
   return (
-    <>
+    <> 
       <Swiper
         navigation={showNavigation}
         pagination={
@@ -44,7 +46,7 @@ const UniversalSlider = ({
         keyboard={true}
         cssMode={true}
         modules={[Keyboard, Pagination, Navigation, A11y]}
-        loop={true}
+        loop={false}
         className={`swiper ${className}`}
       >
         {
@@ -57,12 +59,12 @@ const UniversalSlider = ({
                 />
               </SwiperSlide>
             ))
-            : prevData.map((item, index) => (
+            : (length>0? (prevData.map((item, index) => (
               <SwiperSlide className="flex flex-col items-center " key={`${item.title} ${index}`}>
-                <ItemComponent data={item} />
+                <ItemComponent data={item}/> 
               </SwiperSlide>
-            ))
-        }
+              ))) : <NoItem/>)
+              }
       </Swiper>
     </>
   );

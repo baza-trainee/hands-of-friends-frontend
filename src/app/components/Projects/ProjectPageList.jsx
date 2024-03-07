@@ -21,7 +21,7 @@ export default function ProjectPageList({ currentItems, isLoading }) {
             <ProjectItem
               key={data.id}
               data={data}
-             
+              
               className="flex flex-col w-[288px] h-[844px]
                   sm:w-[388px] sm:h-[858px]
                   md:w-[360px] md:h-[944px]

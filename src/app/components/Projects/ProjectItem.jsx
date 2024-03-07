@@ -15,7 +15,7 @@ export default function ProjectItem({ data, lng }) {
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)
         .replace(/<ol/g, `<ol class="${OLCLASS}"`);
       setFormattedDescription(desc);
-    }
+      }
   }, [data]);
 
   return (
