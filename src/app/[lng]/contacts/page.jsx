@@ -3,18 +3,19 @@
 import Link from 'next/link';
 import React from 'react';
 import {
-	FaArrowLeftLong,
 	FaEnvelope,
 	FaFacebook,
 	FaLocationDot,
 	FaPhone,
 	FaYoutube,
 } from 'react-icons/fa6';
+import { useHttp } from '@/app/hooks/useHttp'
 
 import { useTranslation } from '../../i18n/client';
 
 export default function Contacts({ params: { lng } }) {
 	const { t } = useTranslation(lng, 'contacts');
+	const [contacts] = useHttp("contacts");
 
 	return (
 		<section className='xl:py-12 max-w-screen-2xl 2xl:px-[120px] height-minus xl:px-20 md:px-10 p-4 pb-12 mx-auto md:pt-8'>
@@ -44,41 +45,41 @@ export default function Contacts({ params: { lng } }) {
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaPhone className='text-base md:text-2xl' />
 					<p className='text-sm text-black md:text-lg'>
-						+380 50 821 4978
+						{contacts[0]?.phone_number}
 					</p>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaEnvelope className='text-base md:text-2xl' />
 					<p className='text-sm text-black md:text-lg'>
-						fond.hands@gmail.com
+						{contacts[0]?.email}
 					</p>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaYoutube className='text-base md:text-2xl' />
 					<a
-						href='https://www.youtube.com/@go2frg'
+						href={contacts[0]?.youtube_link}
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-sm text-black md:text-lg hover:text-violet'
 					>
-						https://www.youtube.com/@go2frg
+						{contacts[0]?.youtube_link}
 					</a>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaFacebook className='text-base md:text-2xl' />
 					<a
-						href='https://www.facebook.com/FriendsHands'
+						href={contacts[0]?.facebook_link}
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-sm text-black md:text-lg hover:text-violet'
 					>
-						https://www.facebook.com/FriendsHands
+						{contacts[0]?.facebook_link}
 					</a>
 				</div>
 				<div className='flex items-center gap-4 text-lightGray'>
 					<FaLocationDot className='text-base md:text-2xl' />
 					<p className='text-sm text-black md:text-lg'>
-						{t('address')}
+						{contacts[0]?.address}
 					</p>
 				</div>
 			</div>
