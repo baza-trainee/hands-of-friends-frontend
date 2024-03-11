@@ -1,7 +1,7 @@
 "use client";
 import { useHttp } from "@/app/hooks/useHttp";
 import React, { useEffect, useState } from "react";
-import { notFound } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import Skeleton from "@/app/components/Projects/Skeleton";
 export default function Page({ params, lng }) {
   const { t } = useTranslation(lng, "projects");
   const { id } = params;
+   const router = useRouter();
   const [dataByID, , isLoading] = useHttp(`projects/${id}`);
   const [content, setContent] = useState([]);
   
@@ -18,8 +19,9 @@ export default function Page({ params, lng }) {
   const [formattedContent, setFormattedContent] = useState();
   useEffect(() => {
     if (!isLoading && dataByID) {
-      if (!dataByID.description) {
-        notFound();
+      if (!dataByID.is_shown) {
+        router.replace("/404");
+        return;
       }
       const desc = dataByID.description
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)
