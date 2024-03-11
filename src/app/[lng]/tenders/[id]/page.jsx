@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { notFound } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useHttp } from "@/app/hooks/useHttp";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
@@ -9,13 +9,15 @@ import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
 
 export default function Page({ params }) {
   const { id } = params;
+   const router = useRouter();
   const [dataByID, , isLoading] = useHttp(`tenders/${id}`);
   const [formattedDescription, setFormattedDescription] = useState();
 
   useEffect(() => {
     if (!isLoading && dataByID) {
-      if (!dataByID.description) {
-        notFound();
+      if (!dataByID.is_shown) {
+        router.replace("/404");
+        return;
       }
       const desc = dataByID.description
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)

@@ -6,10 +6,10 @@ import ProjectsPagination from "@/app/components/Projects/ProjectsPagination";
 
 function ProjectsData() {
   const [projects] = useHttp("projects/?is_shown=true");
-
+  const shownProjects = projects.filter((project) => project.is_shown);
   return (
     <div>
-      <ProjectsPagination data={projects} />
+      <ProjectsPagination data={shownProjects} />
     </div>
   );
 }
