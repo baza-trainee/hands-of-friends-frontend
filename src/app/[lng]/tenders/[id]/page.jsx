@@ -6,8 +6,10 @@ import { useHttp } from "@/app/hooks/useHttp";
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
 import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Page({ params }) {
+export default function Page({ params, lng }) {
+  const { t } = useTranslation(lng, "tenders-page");
   const { id } = params;
    const router = useRouter();
   const [dataByID, , isLoading] = useHttp(`tenders/${id}`);
@@ -32,7 +34,7 @@ export default function Page({ params }) {
         <BreadCrumbs
           className="my-12"
           href="/tenders"
-          text="Тендери"
+          text={t("breadcrumbs")}
           textColor="blue"
         />
 

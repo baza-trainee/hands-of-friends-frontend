@@ -1,4 +1,6 @@
 {
-	"breadcrumbs": "Back",
-	"title": "Tenders"
+  "breadcrumbs": "Back",
+  "title": "Tenders",
+  "status1": "Active",
+  "status2": "Archive"
 }
