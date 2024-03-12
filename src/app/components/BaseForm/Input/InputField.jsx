@@ -49,13 +49,13 @@ const InputField = ({
         required
       />
       {error && (
-        <div
-          className={`absolute top-[100%] text-[red] transition duration-300  ${
-            error ? "" : "opacity-0 translate-y-[-0.625rem]"
+        <span
+          className={`w-full absolute right-0 top-[102%] xl:top-[100%] text-sm xl:text-lg text-[red] leading-none transition duration-300  ${
+            error ? "" : "opacity-0 "
           } `}
         >
           {error}
-        </div>
+        </span>
       )}
     </div>
   );
