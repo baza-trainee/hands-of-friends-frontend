@@ -70,7 +70,7 @@ const NewsItem = ({ data, lng }) => {
               </h2>
 
               <p
-                className="lg:max-w-[660px] md:max-w-[506px]"
+                className="lg:max-w-[660px] md:max-w-[506px] xs:max-w-[256px] sm:max-w-[288px] "
                 dangerouslySetInnerHTML={{ __html: data.description }}
               ></p>
             </div>
