@@ -17,13 +17,14 @@ const initI18next = async (lng, ns) => {
 };
 
 export async function useTranslation(lng, ns, options = {}) {
-	const i18nextInstance = await initI18next(lng, ns);
+	const currentLng = getSavedLanguage() // Функція для отримання збереженої мови
+	const i18nextInstance = await initI18next(currentLng || lng, ns) // Використовуємо збережену мову, якщо вона є
 	return {
 		t: i18nextInstance.getFixedT(
-			lng,
+			currentLng || lng,
 			Array.isArray(ns) ? ns[0] : ns,
 			options.keyPrefix
 		),
 		i18n: i18nextInstance,
-	};
+	}
 }

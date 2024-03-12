@@ -40,11 +40,11 @@ export function useTranslation(lng, ns, options) {
     server && i18n.changeLanguage(lng);
   }
 
-  const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
-  useEffect(() => {
-    if (activeLng === i18n.resolvedLanguage) return;
-    setActiveLng(i18n.resolvedLanguage);
-  }, [activeLng]);
+  // const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
+  // useEffect(() => {
+  //   if (activeLng === i18n.resolvedLanguage) return;
+  //   setActiveLng(i18n.resolvedLanguage);
+  // }, [activeLng]);
 
   useEffect(() => {
     if (!lng || i18n.resolvedLanguage === lng) return;
