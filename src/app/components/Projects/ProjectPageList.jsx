@@ -22,11 +22,11 @@ export default function ProjectPageList({ currentItems, isLoading }) {
               key={data.id}
               data={data}
               
-              className="flex flex-col w-[288px] h-[844px]
+              className="flex flex-col w-[288px] h-[908px]
                   sm:w-[388px] sm:h-[858px]
-                  md:w-[360px] md:h-[944px]
-                  xl:w-[360px] xl:min-h-[944px] 
-                  2xl:w-[384px] 2xl:min-h-[966px]"
+                  md:w-[360px] md:h-[983px]
+                  xl:w-[360px] xl:min-h-[996px] 
+                  2xl:w-[384px] 2xl:min-h-[962px]"
               // className="projects-page-item"
             />) : (<></>)
           ))}

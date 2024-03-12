@@ -50,7 +50,7 @@ export default function Page({ params, lng }) {
         
          <h2 className="text-3xl font-bold mb-10">{dataByID.title}</h2>
           <p className="mb-6">
-            {dataByID.start_date}-{dataByID.end_date}
+            {dataByID.start_date}-{dataByID.end_date? dataByID.end_date : "Активний"}
           </p>
           <div
             className="text-lg mb-6"

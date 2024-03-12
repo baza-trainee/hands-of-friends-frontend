@@ -30,25 +30,27 @@ export default function ProjectItem({ data, lng }) {
         className="min-w-[288px] h-[320px] object-cover
         sm:min-w-[388px] sm:h-[430px]
         md:min-w-full md:h-[371px]
-        xl:min-w-full xl:h-[400px]
+        xl:min-w-full xl:h-[426px]
         2xl:min-w-full 2xl:h-[426px]"
       />
       <h3
-        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold line-clamp-2 h-[60px]
-            md:mt-8"
+        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold line-clamp-2 h-[60px] w-[288px]
+        sm:w-full sm:line-clamp-2
+        md:mt-8"
       >
         {data.title}
       </h3>
       <span className="text-base font-body md:text-lg">
-        {data.start_date} - {data.end_date ? data.end_date : "Активний"}
+        {data.start_date} - {data.end_date ? data.end_date : t("act")}
+
       </span>
 
       <p
-        className="mt-4 w-[288px] h-[352px] text-base leading-6 text-left text-black font-body 
+        className="mt-4 w-[288px] h-[396px] text-base leading-6 text-left text-black font-body 
             sm:w-full sm:h-[316px]
-            md:w-full md:h-[408px] md:text-lg
-            xl:w-full xl:h-[408px]
-            2xl:w-full 2xl:h-[352px]"
+            md:w-full md:h-[468px] md:text-lg
+            xl:w-full xl:h-[468px]
+            2xl:w-full 2xl:h-[408px]"
         dangerouslySetInnerHTML={{
           __html: formattedDescription,
         }}
