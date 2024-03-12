@@ -22,7 +22,6 @@
   "button": "Send",
 
   "company_name_required": "Enter the organization's name",
-  "company_name_matches": "Invalid organization name",
   "company_name_min": "Organization's name must be at least 2 characters long",
   "company_name_max": "Organization's name must not exceed 50 characters",
   "name_required": "Enter a name",
