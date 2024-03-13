@@ -21,7 +21,7 @@ export default function Contacts({ params: { lng } }) {
 		<section className='xl:py-12 max-w-screen-2xl 2xl:px-[120px] height-minus xl:px-20 md:px-10 p-4 pb-12 mx-auto md:pt-8'>
 			<Link
 				href={`/${lng}`}
-				className='flex items-center gap-2 text-xs md:text-lg xl:text-xl text-deepBlue hover:text-violet'
+				className='flex items-center w-24 gap-2 text-xs md:text-lg xl:text-xl text-deepBlue hover:text-violet'
 			>
 				<svg
 					className='w-3 md:w-[18px] xl:w-5'
