@@ -1,3 +1,4 @@
+import { phoneRegExp } from "@/app/helpers/consts";
 import * as Yup from "yup";
 
 export const validationSchema = (t) => {
@@ -23,8 +24,10 @@ export const validationSchema = (t) => {
         (value) => !/(.ru|.by)$/.test(value.split("@")[1])
       ),
     phone: Yup.string()
-      .required(t("phone_number_required"))
-      .matches(/^\+380\d{9}$/, t("phone_number_matches")),
+      .min(10, t("phone_number_min"))
+      .max(19, t("phone_number_max"))
+      .matches(phoneRegExp, t("phone_number_matches"))
+      .required(t("phone_number_required")),
     message: Yup.string()
       .required(t("message_required"))
       .max(300, t("message_max")),
