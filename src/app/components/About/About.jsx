@@ -6,24 +6,30 @@ import { useRouter } from 'next/navigation'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Keyboard, A11y, Mousewheel } from 'swiper/modules'
 import { useTranslation } from '@/app/i18n/client'
+import { motion } from 'framer-motion'
+
+import { useCurrentLang } from "@/app/hooks/useCurrentLang";
+
 import Section from '../Section'
 import Container from '../Container'
 import Title from '../Title'
 import Action from '../Action'
+
 import Team from '../../../../public/img/about-us1.png'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { motion } from 'framer-motion'
 
 const aboutAnimation = {
 	hidden: { opacity: 0 },
 	visible: { opacity: 1 },
 }
 export default function About({ lng }) {
-	const { t } = useTranslation(lng, 'about-section')
+	const { t } = useTranslation(lng, 'about-section');
+	const router = useRouter();
+	const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
 
-	const router = useRouter()
 	return (
 		<motion.div
 			initial='hidden'
@@ -83,7 +89,7 @@ export default function About({ lng }) {
 					<div className='hidden md:flex flex-col	gap-5 mb-10 xl:flex-row	'>
 						<motion.div
 							variants={aboutAnimation}
-							
+
 						>
 							<Image
 								src={Team}
@@ -95,7 +101,7 @@ export default function About({ lng }) {
 						</motion.div>
 						<motion.div
 							variants={aboutAnimation}
-							
+
 						>
 							<Image
 								src={Team}
@@ -116,7 +122,7 @@ export default function About({ lng }) {
 					</div>
 					<div className='flex justify-center md:justify-start'>
 						<Action
-							onClick={() => router.push('/aboutUs')}
+							onClick={() => router.push(`${lang}/aboutUs`)}
 							type='button'
 							className='text-center px-0 min-w-[12.38rem] font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue'
 						>

@@ -1,13 +1,24 @@
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import { OLCLASS, ULCLASS } from "@/app/helpers/consts";
 import { useTranslation } from "@/app/i18n/client";
+import { useCurrentLang } from "@/app/hooks/useCurrentLang";
 
 export default function ProjectItem({ data, lng }) {
   const { t } = useTranslation(lng, "project-section");
   const [formattedDescription, setFormattedDescription] = useState();
   const router = useRouter();
+
+  const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
+  const pathname = usePathname();
+  const pathParts = pathname.split('/');
+
+  const modPath = pathParts.length > 2
+    ? pathParts[pathParts.length - 1]
+    : `${lang}/projects`;
 
   useEffect(() => {
     if (data) {
@@ -15,13 +26,13 @@ export default function ProjectItem({ data, lng }) {
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)
         .replace(/<ol/g, `<ol class="${OLCLASS}"`);
       setFormattedDescription(desc);
-      }
+    }
   }, [data]);
 
   return (
-    
+
     <li key={data.id}>
-     
+
       <Image
         src={data.image}
         alt="Photo of the project"
@@ -56,13 +67,13 @@ export default function ProjectItem({ data, lng }) {
         }}
       ></p>
       <button
-        onClick={() => router.push(`/projects/${data.id}`)}
+        onClick={() => router.push(`${modPath}/${data.id}`)}
         type="button"
         className="block w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 font-normal bg-transparent text-black text-xl border border-transparent hover:border hover:border-deepBlue hover:bg-lightBlue md:mt-8 md:text-2xl md:min-h-[64px] xl:mt-4 2xl:mt-8 2xl:text-xl 2xl:min-h-[60px]"
       >
-       {t("btn")}
+        {t("btn")}
       </button>
-      
+
     </li>
   );
 }

@@ -3,8 +3,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+import { useCurrentLang } from "@/app/hooks/useCurrentLang";
+
 export default function BreadCrumbs({ href, text, textColor, className }) {
   const [isHovered, setIsHovered] = useState(false);
+  const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
+
   const handleHover = () => {
     setIsHovered(true);
   };
@@ -13,7 +17,7 @@ export default function BreadCrumbs({ href, text, textColor, className }) {
   };
   return (
     <div className="display: inline-block ">
-      <Link href={href}>
+      <Link href={`/${lang}${href}`}>
         <p
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
