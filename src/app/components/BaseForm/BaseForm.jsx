@@ -37,7 +37,9 @@ export const BaseForm = ({
 
   return (
     <>
-      {isVissible && <SuccessModal handleClose={handleClose} />}
+      {isVissible && (
+        <SuccessModal handleClose={handleClose} formType={formType} />
+      )}
       {!isVissible && (
         <form
           className={`relative flex justify-self-center flex-col items-center mt-[180px] bg-whiteFont shadow-md z-10 
@@ -70,7 +72,6 @@ export const BaseForm = ({
               </button>
             </>
           )}
-
           {formType === "partners" || formType === "donors" ? (
             <>
               <InputField
@@ -105,7 +106,6 @@ export const BaseForm = ({
               />
             </>
           ) : null}
-
           {formType === "volunteers" || formType === "feedback" ? (
             <InputField
               label={t("name")}
@@ -120,7 +120,6 @@ export const BaseForm = ({
               required
             />
           ) : null}
-
           {formType === "volunteers" && (
             <InputField
               label={t("city")}
@@ -135,7 +134,6 @@ export const BaseForm = ({
               required
             />
           )}
-
           <InputField
             label={t("email")}
             id="email"
@@ -148,7 +146,6 @@ export const BaseForm = ({
             onBlur={formik.handleBlur}
             required
           />
-
           <InputField
             label={t("phone")}
             id="phone"
