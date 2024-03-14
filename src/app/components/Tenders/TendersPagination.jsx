@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Section from "../Section";
 import Container from "../Container";
@@ -20,7 +18,6 @@ export default function TendersPagination({ data }) {
     <Skeleton key={i} className="bg-zinc-200" />
   ));
 
-  // console.log(data)
   useEffect(() => {
     setIsLoading(true);
     const filteredData = data.filter((tender) => {
@@ -49,23 +46,24 @@ export default function TendersPagination({ data }) {
   return (
     <>
       <TendersHeader handleTabClick={handleTabClick} activeTab={activeTab} />
-      {currentItems && (
-        <Container>
-          <Section className="mt-8 sm:mt-10 xl:mt-20">
-            {isLoading ? (
-              <ul className="grid lg:grid-cols-3 gap-5 mb-40">{skeleton}</ul>
-            ) : (
-              <>
-                <TenderList currentItems={currentItems} activeTab={activeTab} />
-                <Pagination
-                  handlePageClick={handlePageClick}
-                  pageCount={pageCount}
-                />
-              </>
-            )}
-          </Section>
-        </Container>
-      )}
+
+      <Container>
+        <Section className="mt-8 sm:mt-10 xl:mt-20">
+          {isLoading ? (
+            <ul className="grid gap-5 mb-40 md:grid-cols-2 md:gap-1 xl:grid-cols-3">
+              {skeleton}
+            </ul>
+          ) : (
+            <>
+              <TenderList currentItems={currentItems} activeTab={activeTab} />
+              <Pagination
+                handlePageClick={handlePageClick}
+                pageCount={pageCount}
+              />
+            </>
+          )}
+        </Section>
+      </Container>
     </>
   );
 }

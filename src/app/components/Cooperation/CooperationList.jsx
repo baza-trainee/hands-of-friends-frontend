@@ -3,19 +3,20 @@ import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
-import FeedbackFormLayout from "../FeedbackForm/FeedbackFormLayout";
-import { HiPlus } from "react-icons/hi2";
+import { formToggle } from "../BaseForm/helpers/formToggle";
 
 export default function CooperationList({ lng }) {
+  const { t } = useTranslation(lng, "cooperation");
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedItemType, setSelectedItemType] = useState("");
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
-  const toggleModal = (index) => {
+  const items = ["partners", "donors", "volunteers"];
+
+  const toggleModal = (index, item) => {
     setSelectedItemIndex(index);
+    setSelectedItemType(item);
     setIsOpen((prev) => !prev);
   };
-  const { t } = useTranslation(lng, "cooperation");
-
-  const items = ["partners", "donors", "volunteers"];
 
   return (
     <ul
@@ -50,24 +51,19 @@ export default function CooperationList({ lng }) {
 
           <Action
             type="button"
-            onClick={() => toggleModal(index)}
+            onClick={() => toggleModal(index, item)}
             className="px-0 min-w-[12.38rem]  bg-deepBlue text-center border-0 border-transparent hover:text-deepBlue  hover:border-deepBlue"
           >
             {t(`cooperation.${item}.btnText`)}
           </Action>
+
           {isOpen && selectedItemIndex === index && (
-            <BaseModal isOpen={isOpen} onClose={toggleModal}>
-              <FeedbackFormLayout additionalData={item}>
-                <h2 className="text-base xl:text-2xl">
-                  {t(`cooperation.${item}.form_title`)}
-                </h2>
-                <button type="button" onClick={toggleModal}>
-                  <HiPlus
-                    size={24}
-                    className="absolute transition transform rotate-45 cursor-pointer top-[10px] right-[10px] fill-slate-900  hover:fill-violet hover:scale-110"
-                  />
-                </button>
-              </FeedbackFormLayout>
+            <BaseModal isOpen={isOpen} onClose={() => toggleModal(index)}>
+              {formToggle(selectedItemType, {
+                lng,
+                toggleModal,
+                title: t(`cooperation.${selectedItemType}.form_title`),
+              })}
             </BaseModal>
           )}
         </li>

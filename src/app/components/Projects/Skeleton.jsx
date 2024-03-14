@@ -5,7 +5,7 @@ export default function Skeleton({id}) {
   return (
     <ContentLoader
       speed={2}
-      width={360}
+      width={330}
       height={860}
       viewBox="0 0 360 860"
       backgroundColor="#afaaaa"

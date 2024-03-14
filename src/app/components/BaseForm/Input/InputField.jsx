@@ -15,17 +15,18 @@ const InputField = ({
   const InputElement = type === "textarea" ? "textarea" : "input";
 
   return (
-    <div className={`w-full relative`}>
+    <div className={`w-full relative mb-6`}>
       <label className="xl:text-lg xs:text-sm" htmlFor={id}>
         {label}
         {required && <span className="text-[red]"> *</span>}
       </label>
       <InputElement
-        className={`w-full h-10 rounded-[0.3rem] mt-2 px-3 outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  bg-inherit outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
+        md:mt-[6px]
         xl:text-base xl:placeholder:text-base
           ${
             type === "textarea"
-              ? "xl:h-[135px] p-1 xs:h-[99px] resize-none"
+              ? "xl:h-[120px] pt-2 xs:h-[99px] resize-none"
               : "h-[45px]"
           }
           ${
@@ -48,13 +49,13 @@ const InputField = ({
         required
       />
       {error && (
-        <div
-          className={`absolute top-[100%] text-[red] transition duration-300  ${
-            error ? "" : "opacity-0 translate-y-[-0.625rem]"
+        <span
+          className={`w-full absolute right-0 top-[102%] xl:top-[100%] text-sm xl:text-lg text-[red] leading-none transition duration-300  ${
+            error ? "" : "opacity-0 "
           } `}
         >
           {error}
-        </div>
+        </span>
       )}
     </div>
   );

@@ -8,8 +8,8 @@ export default function TenderSwiperList() {
   return (
     <div className="wrapperTender">
       <UniversalSlider
-        endpoint="tenders/"
-        ItemComponent={TenderItem}
+        endpoint={`tenders/?is_active=true&is_shown=true`}
+       ItemComponent={TenderItem}
         skeletonType="tenders"
         swiperSettings={{
           breakpoints: {

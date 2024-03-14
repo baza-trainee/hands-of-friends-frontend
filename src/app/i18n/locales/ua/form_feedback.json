@@ -1,11 +1,11 @@
 {
-  "company_name": "Назва організації",
-  "placeholder_company_name": "Назва організації",
+  "organization_name": "Назва організації",
+  "placeholder_organization_name": "Назва організації",
 
   "name": "Ім’я",
   "placeholder_name": "Ольга",
 
-  "representative's_name": "Ім’я представника організації",
+  "representative_name": "Ім’я представника організації",
 
   "city": "Ваше місто",
   "placeholder_city": "Ваше місто",
@@ -22,7 +22,6 @@
   "button": "Надіслати",
 
   "company_name_required": "Введіть назву організації",
-  "company_name_matches": "Некоректна назва організації",
   "company_name_min": "Назва організації повинна мати не менше 2 знаків",
   "company_name_max": "Назва організації повинна бути не більше 50 знаків",
   "name_required": "Введіть ім'я",

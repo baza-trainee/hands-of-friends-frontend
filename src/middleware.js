@@ -6,13 +6,16 @@ import acceptLanguage from "accept-language";
 acceptLanguage.languages(languages);
 
 export const config = {
-  // matcher: '/:lng*'
+  // matcher: "/:lng*",
   matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
 };
 
 export function middleware(req) {
-  let lng;
+
+  let lng; 
+
   const pathLng = req.nextUrl.pathname.split("/")[1];
+
 
   if (languages.includes(pathLng)) {
     return NextResponse.next();

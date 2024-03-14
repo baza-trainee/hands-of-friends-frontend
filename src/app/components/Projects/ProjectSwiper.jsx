@@ -4,11 +4,13 @@ import React from "react";
 import UniversalSlider from "../ UniversalSlider";
 import ProjectItem from "./ProjectItem";
 
+
+
 export default function ProjectSwiperList() {
   return (
-    <div className="wrapperTender">
+    <div className="wrapperProject">
       <UniversalSlider
-        endpoint="projects/"
+        endpoint={`projects/?is_active=true&is_shown=true`}
         ItemComponent={ProjectItem}
         skeletonType="projects"
         swiperSettings={{

@@ -1,4 +1,6 @@
 {
-	"breadcrumbs": "Назад",
-	"title": "Тендери"
+  "breadcrumbs": "Назад",
+  "title": "Тендери",
+  "status1": "Активний",
+  "status2": "Архівний"
 }

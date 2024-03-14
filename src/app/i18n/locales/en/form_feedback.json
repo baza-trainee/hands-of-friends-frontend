@@ -1,11 +1,11 @@
 {
-  "company_name": "Company name",
-  "placeholder_company_name": "Company name",
+  "organization_name": "Organization name",
+  "placeholder_organization_name": "Organization name",
 
   "name": "Name",
   "placeholder_name": "Olha",
 
-  "representative's_name": "Representative's name",
+  "representative_name": "Representative's name",
 
   "city": "Your city",
   "placeholder_city": "Your city",
@@ -22,14 +22,13 @@
   "button": "Send",
 
   "company_name_required": "Enter the organization's name",
-  "company_name_matches": "Invalid organization name",
   "company_name_min": "Organization's name must be at least 2 characters long",
   "company_name_max": "Organization's name must not exceed 50 characters",
   "name_required": "Enter a name",
   "name_matches": "Invalid name",
   "name_min": "Name must be at least 2 characters long",
   "name_max": "Name must not exceed 50 characters",
-  "email_required": "Enter email",
+  "email_required": "Enter an email",
   "email_matches": "Enter a valid email",
   "email_test": "Domains .ru and .by are not allowed",
   "phone_number_required": "Enter a phone number",

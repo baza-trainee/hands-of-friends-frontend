@@ -20,11 +20,8 @@ export default function ProjectsPagination({ data }) {
     <Skeleton key={i} className="bg-zinc-200" />
   ));
 
-  // console.log(data)
   useEffect(() => {
     setIsLoading(true);
-    
-
     setCurrentItems(data.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(data.length / itemsPerPage));
     setIsLoading(false);
@@ -35,19 +32,20 @@ export default function ProjectsPagination({ data }) {
     setItemOffset(newOffset);
   };
 
- 
-
   return (
     <>
-      <ProjectsHeader/>
-      {currentItems && (
+      <ProjectsHeader />
         <Container>
-          <Section className="mt-8 sm:mt-10 xl:mt-20" >
+          <Section className="mt-8 sm:mt-10 xl:mt-20">
             {isLoading ? (
-              <ul className="grid lg:grid-cols-3 gap-5 mb-40">{skeleton}</ul>
+              <ul className="grid gap-5 mb-40 md:grid-cols-2 md:gap-1 xl:grid-cols-3">{skeleton}</ul>
             ) : (
               <>
-                <ProjectPageList currentItems={currentItems} />
+                <ProjectPageList
+                  currentItems={currentItems}
+                  isLoading={isLoading}
+                  skeleton={skeleton}
+                />
                 <Pagination
                   handlePageClick={handlePageClick}
                   pageCount={pageCount}
@@ -56,7 +54,6 @@ export default function ProjectsPagination({ data }) {
             )}
           </Section>
         </Container>
-      )}
     </>
   );
 }
