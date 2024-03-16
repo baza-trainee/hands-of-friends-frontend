@@ -14,7 +14,7 @@ export default function ProjectsHeader({lng}) {
           text={t("breadcrumbs")}
           textColor="white"
         />
-        <h2 className="text-3xl text-white font-bold mb-16">{t("title")}</h2>
+        <h2 className="text-2xl md:text-3xl text-white font-bold mb-16">{t("title")}</h2>
         
       </Container>
     </div>
