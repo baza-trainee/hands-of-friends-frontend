@@ -1,4 +1,4 @@
-import PoliciesItem from "@/app/components/PoliciesProcedures/PoliciesItem";
+import PoliciesItem from "./PoliciesItem";
 
 const PoliciesList = ({ currentItems }) => {
     return (
