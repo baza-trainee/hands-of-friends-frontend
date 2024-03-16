@@ -52,7 +52,7 @@ export const BaseForm = ({
             formType === "partners" ||
             formType === "donors" ||
             formType === "volunteers"
-              ? "xs:mt-0"
+              ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
               : ""
           }`}
           action="/submit_form"
@@ -61,7 +61,7 @@ export const BaseForm = ({
         >
           {title && (
             <>
-              <h2 className="mb-5 text-base xl:text-2xl antialiased">
+              <h2 className="mb-3 xl:mb-5 text-base xl:text-2xl antialiased">
                 {title}
               </h2>
               <button type="button" onClick={toggleModal}>
@@ -169,6 +169,7 @@ export const BaseForm = ({
             error={formik.touched.message && formik.errors.message}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            formType={formType}
             required
           />
           {isLoading ? (

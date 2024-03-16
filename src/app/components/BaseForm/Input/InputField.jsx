@@ -11,8 +11,11 @@ const InputField = ({
   onBlur,
   required,
   placeholder,
+  formType,
 }) => {
   const InputElement = type === "textarea" ? "textarea" : "input";
+
+  const isFeedbackForm = formType === "feedback";
 
   return (
     <div className={`w-full relative mb-6`}>
@@ -24,11 +27,14 @@ const InputField = ({
         className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  bg-inherit outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
         md:mt-[6px]
         xl:text-base xl:placeholder:text-base
-          ${
-            type === "textarea"
-              ? "xl:h-[120px] pt-2 xs:h-[99px] resize-none"
-              : "h-[45px]"
-          }
+            ${
+              type === "textarea"
+                ? isFeedbackForm
+                  ? "h-[99px] pt-2 resize-none"
+                  : "xl:h-32 pt-2 xs:h-16 md:h-24 resize-none"
+                : "h-11"
+            }
+       
           ${
             error
               ? "border-[red] "
