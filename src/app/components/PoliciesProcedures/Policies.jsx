@@ -12,7 +12,7 @@ import Pagination from "../Pagination";
 import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const Policies = ({ data, lng }) => {
-    const { t } = useTranslation(lng, "title");
+    const { t } = useTranslation(lng, "policies-procedures");
 
     const [procesData, setProcesData] = useState(null);
     const [currentItems, setCurrentItems] = useState(null);
@@ -80,7 +80,7 @@ const Policies = ({ data, lng }) => {
                 ? <PoliciesList currentItems={currentItems} />
                 : <div className="mb-6 text-base font-normal 
                 md:text-xl md:mb-8"
-                >За вашим пошуком нічого не знайдено</div>
+                >{t('not-found')}</div>
             }
             <div className="flex justify-center md:justify-end">
                 <Pagination
