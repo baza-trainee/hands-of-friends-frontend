@@ -31,23 +31,24 @@ export default function ProjectItem({ data, lng }) {
 
   return (
 
-    <li key={data.id}>
-
+    <li key={data.id} >
+<div className="p-4 border border-solid border-1 border-gray-300"> 
+ {/* 2xl:w-[352px] 2xl:min-h-[1011px]"> */}
       <Image
         src={data.image}
         alt="Photo of the project"
-        width={288}
+        width={280}
         height={400}
-        className="min-w-[288px] h-[320px] object-cover
-        sm:min-w-[388px] sm:h-[430px]
+        className="min-w-full h-[320px] object-cover
+        sm:min-w-full sm:h-[430px]
         md:min-w-full md:h-[371px]
-        xl:min-w-full xl:h-[426px]
-        2xl:min-w-full 2xl:h-[426px]"
+        xl:min-w-full xl:h-[361.21px]
+        2xl:min-w-full 2xl:h-[387px]"
       />
       <h3
-        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold line-clamp-2 h-[60px] w-[288px]
+        className="mb-1 mt-6 text-xl font-['Open_Sans'] font-bold line-clamp-2 h-[60px] w-full
         sm:w-full sm:line-clamp-2
-        md:mt-8"
+        md:mt-8 "
       >
         {data.title}
       </h3>
@@ -57,11 +58,11 @@ export default function ProjectItem({ data, lng }) {
       </span>
 
       <p
-        className="mt-4 w-[288px] h-[396px] text-base leading-6 text-left text-black font-body 
+        className="mt-4 w-full h-[400px] text-base leading-6 text-left text-black font-body
             sm:w-full sm:h-[316px]
             md:w-full md:h-[468px] md:text-lg
-            xl:w-full xl:h-[468px]
-            2xl:w-full 2xl:h-[408px]"
+            xl:w-full xl:h-[488px]
+            2xl:w-full 2xl:h-[435px]"
         dangerouslySetInnerHTML={{
           __html: formattedDescription,
         }}
@@ -73,7 +74,7 @@ export default function ProjectItem({ data, lng }) {
       >
         {t("btn")}
       </button>
-
+      </div>
     </li>
   );
 }
