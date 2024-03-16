@@ -3,7 +3,6 @@
 import React, { useContext } from 'react';
 import Link from "next/link";
 
-import { useCurrentLang } from '@/app/hooks/useCurrentLang';
 import { useTranslation } from "../../i18n/client";
 import { PdfContext } from '../PdfProvider';
 
@@ -13,7 +12,6 @@ import { FaFacebook, FaYoutube } from "react-icons/fa6";
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng, "footer");
   const { setSharedSearchValue } = useContext(PdfContext);
-  const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
 
   const links = [
     {
@@ -118,7 +116,7 @@ export default function Footer({ lng }) {
                 {docs.map((doc) => (
                   <li key={doc.id}>
                     <Link
-                      href={`/${lang}/policies-procedures`}
+                      href={`/${lng}/policies-procedures`}
                       type='submit'
                       onClick={() => setSharedSearchValue(doc.text)}
                       className="text-sm text-black underline transition md:text-base hover:text-violet"
