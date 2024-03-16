@@ -6,7 +6,7 @@ import { useTranslation } from "@/app/i18n/client";
 export default function ProjectsHeader({lng}) {
   const { t } = useTranslation(lng, "projects");
   return (
-    <div className="bg-image-tenders bg-center h-[210px] sm:h-[275px] md:h-[440px] xl:h-[734px] 2xl:h-[825px]">
+    <div className="bg-image-projects bg-center h-[210px] sm:h-[275px] md:h-[440px] xl:h-[734px] 2xl:h-[825px]">
       <Container>
         <BreadCrumbs
           className="mb-[114px] sm:mb-[171px] mt-[16px] md:mt-[41px] md:mb-[290px] xl:mb-[540px] 2xl:mb-[615px] z-10"
