@@ -1,4 +1,4 @@
-import PoliciesItem from "./PoliciesItem";
+import PoliciesItem from "./policiesItem";
 
 const PoliciesList = ({ currentItems }) => {
     return (
