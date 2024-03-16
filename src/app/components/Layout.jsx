@@ -1,29 +1,25 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import React from 'react';
+
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { PdfProvider } from './PdfProvider';
 
 const Layout = ({ children, lng }) => {
-  const pathname = usePathname();
-  const isTest =
-    pathname.includes("privacy-policy") || pathname.includes("Terms");
-
   return (
     <>
-      {!isTest && (
-        <header>
-          <Header lng={lng} />
-        </header>
-      )}
-      <main className="overflow-x-hidden mt-[78px] sm:mt-[86px] md:mt-[90px] xl:mt-[109px] bg-mainBg">
-        {children}
-      </main>
-      {!isTest && (
+      <header>
+        <Header lng={lng} />
+      </header>
+      <PdfProvider>
+        <main className="overflow-x-hidden mt-[78px] sm:mt-[86px] md:mt-[109px] bg-mainBg">
+          {children}
+        </main>
         <footer>
           <Footer lng={lng} />
         </footer>
-      )}
+      </PdfProvider>
     </>
   );
 };

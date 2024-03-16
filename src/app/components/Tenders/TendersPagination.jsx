@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Section from "../Section";
 import Container from "../Container";
 import TenderList from "./TenderList";
-import Pagination from "../../components/Tenders/Pagination";
+import Pagination from "../Pagination";
 import TendersHeader from "./TendersHeader";
 import Skeleton from "./Skeleton";
 

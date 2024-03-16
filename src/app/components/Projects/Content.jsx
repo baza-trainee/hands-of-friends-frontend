@@ -26,7 +26,6 @@ export default function ContentItem({ item }) {
 				className='mb-6'
 				dangerouslySetInnerHTML={{ __html: formattedDescription }}
 			/>
-			{/* <p>{item.text}</p> */}
 			{item.image ? 111 : ' '}
 		</li>
 	)

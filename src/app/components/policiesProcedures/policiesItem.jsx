@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { useTranslation } from '@/app/i18n/client'
-
-function PoliciesItem({ lng }) {
-    const { t } = useTranslation(lng, 'news')
-
-
+function PoliciesItem({ info }) {
     return (
         <>
-            <div className="border border-violet">
-                <div className="m-4 font-semibold text-base xl:my-7 xl:mx-9 ">
-                    <p>
-                        Політика відповідальності
-                        перед постраждалим
-                        населенням внаслідок
-                        збройної агресії рф проти
-                        України
-                    </p>
+            <a
+                href={`${info.file_url}#toolbar=0`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-violet hover:border-blue-500 transition duration-400 
+                hover:shadow-md min-h-[152px] sm:min-h-[104px] md:min-h-[115px] 2xl:min-h-[131px]"
+            >
+                <div className="m-4 font-semibold text-base xl:mr-8 2xl:my-6 2xl:mx-9">
+                    <p>{info.title}</p>
                 </div>
-            </div>
+            </a>
         </>
     )
 }
