@@ -15,7 +15,7 @@ export default function SuccessModal({ lng, handleClose, formType }) {
             formType === "partners" ||
             formType === "donors" ||
             formType === "volunteers"
-              ? "xs:mt-0 sm:mt-0 md:mt-0 xl:mt-0"
+              ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
               : ""
           }`}
     >
