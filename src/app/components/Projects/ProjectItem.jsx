@@ -32,7 +32,7 @@ export default function ProjectItem({ data, lng }) {
   return (
 
     <li key={data.id} >
-<div className="p-4 border border-solid border-1 border-gray-300"> 
+<div className="p-4 border border-solid border-1 border-[#D1D5DB]"> 
  {/* 2xl:w-[352px] 2xl:min-h-[1011px]"> */}
       <Image
         src={data.image}
@@ -58,7 +58,7 @@ export default function ProjectItem({ data, lng }) {
       </span>
 
       <p
-        className="mt-4 w-full h-[400px] text-base leading-6 text-left text-black font-body
+        className="mt-4 w-full h-[406px] text-base leading-6 text-left text-black font-body
             sm:w-full sm:h-[316px]
             md:w-full md:h-[468px] md:text-lg
             xl:w-full xl:h-[488px]
