@@ -28,17 +28,16 @@ export default function ProjectItem({ data, lng }) {
 		}
 	}, [data])
 
-  return (
-
-    <li key={data.id} >
-<div className="p-4 border border-solid border-1 border-[#D1D5DB]"> 
- {/* 2xl:w-[352px] 2xl:min-h-[1011px]"> */}
-      <Image
-        src={data.image}
-        alt="Photo of the project"
-        width={280}
-        height={400}
-        className="min-w-full h-[320px] object-cover
+	return (
+		<li key={data.id}>
+			<div className='p-4 border border-solid border-1 border-[#D1D5DB]'>
+				{/* 2xl:w-[352px] 2xl:min-h-[1011px]"> */}
+				<Image
+					src={data.image}
+					alt='Photo of the project'
+					width={280}
+					height={400}
+					className='min-w-full h-[320px] object-cover
         sm:min-w-full sm:h-[430px]
         md:min-w-full md:h-[371px]
         xl:min-w-full xl:h-[361.21px]
@@ -55,10 +54,8 @@ export default function ProjectItem({ data, lng }) {
 					{data.start_date} - {data.end_date ? data.end_date : t('act')}
 				</span>
 
-      </span>
-
-      <p
-        className="mt-4 w-full h-[406px] text-base leading-6 text-left text-black font-body
+				<p
+					className='mt-4 w-full h-[400px] text-base leading-6 text-left text-black font-body
             sm:w-full sm:h-[316px]
             md:w-full md:h-[468px] md:text-lg
             xl:w-full xl:h-[488px]
