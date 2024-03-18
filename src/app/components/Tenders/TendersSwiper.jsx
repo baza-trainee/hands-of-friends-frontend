@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import UniversalSlider from "../ UniversalSlider";
+
+import UniversalSlider from "../UniversalSlider";
 import TenderItem from "./TenderItem";
 
 export default function TenderSwiperList() {
@@ -10,7 +11,7 @@ export default function TenderSwiperList() {
       <UniversalSlider
         endpoint={`tenders/?is_active=true&is_shown=true`}
         ItemComponent={TenderItem}
-        skeletonType="tenders"
+        loaderType="tenders"
         swiperSettings={{
           breakpoints: {
             320: { slidesPerView: 1, spaceBetween: 20 },

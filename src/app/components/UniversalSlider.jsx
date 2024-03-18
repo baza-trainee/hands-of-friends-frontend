@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
 
 import NoItem from "./NoitemElement";
-import UniversalSkeleton from "./UniversalSkeleton";
 
 import { useHttp } from "../hooks/useHttp";
 
@@ -18,7 +17,7 @@ const UniversalSlider = ({
   ItemComponent,
   className,
   swiperSettings,
-  skeletonType = "default",
+  loaderType = "hero",
   useBullets = false,
 }) => {
   const paginationType = useBullets ? "bullets" : "progressbar";
@@ -32,7 +31,14 @@ const UniversalSlider = ({
   useEffect(() => {
     setPrevData(data);
     setLength(data.length);
-    setIsLoaing(false)
+
+    const timeoutId = setTimeout(() => {
+      setIsLoaing(false)
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [data]);
 
   return (
@@ -55,19 +61,17 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {
-          !prevData ?? isLoading
-            ?
-            <SwiperSlide className="!w-full h-full">
+          isLoading
+            ? <div className={`${loaderType} loader`}>
               <div className='flex items-center justify-center'>
                 <Loader className='animate-spin' />
               </div>
-            </SwiperSlide>
-
-            : (length > 0 ? (prevData.map((item, index) => (
-              <SwiperSlide className="flex flex-col items-center " key={`${item.title} ${index}`}>
+            </div>
+            : (prevData.map((item, index) => (
+              <SwiperSlide className="flex flex-col items-center" key={`${item.title} ${index}`}>
                 <ItemComponent data={item} />
               </SwiperSlide>
-            ))) : <NoItem />)
+            )))
         }
       </Swiper>
     </>

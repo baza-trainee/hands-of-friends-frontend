@@ -506,6 +506,7 @@ div[aria-disabled="true"] {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .bg-image-projects {
   background-image: url("../../../public/img/project-bg.png");
   background-repeat: no-repeat;
@@ -697,4 +698,118 @@ a.active {
 
 .politics-icon.active {
   display: none;
+}
+
+/* Loaders */
+
+.hero.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 24.1875rem;
+
+  @media screen and (min-width: 420px) {
+    min-height: 28.75rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 27.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 42.8125rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-height: 54.3125rem;
+  }
+}
+
+.projects.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 62.125rem;
+
+  @media screen and (min-width: 420px) {
+    min-height: 63.125rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 70.3125rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 69.9375rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-height: 69rem;
+  }
+}
+
+.tenders.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 20.125rem;
+
+  @media screen and (min-width: 420px) {
+    min-height: 21.375rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 19.125rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 18.875rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-height: 20.375rem;
+  }
+}
+
+.team.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 418px;
+}
+
+.donors-partners.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 13.5rem;
+}
+
+.news.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50.375rem;
+
+  @media screen and (min-width: 420px) {
+    min-height: 49.25rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 53rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    min-height: 53.25rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-height: 52.3125rem;
+  }
 }
