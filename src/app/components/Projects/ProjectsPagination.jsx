@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
 import Section from "../Section";
 import Container from "../Container";
 import ProjectPageList from "./ProjectPageList";
-import Pagination from "./PaginationProjects";
+import Pagination from "../Pagination";
 import ProjectsHeader from "./ProjectsHeader";
 import Skeleton from "./Skeleton";
 
@@ -12,11 +13,12 @@ export default function ProjectsPagination({ data }) {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  // const [activeTab, setActiveTab] = useState("all");
+  const [isLoading, setIsLoading] = useState(true);
+
   const itemsPerPage = 6;
   const endOffset = itemOffset + itemsPerPage;
-  const [isLoading, setIsLoading] = useState(true);
-  let skeleton = [...new Array(6)].map((_, i) => (
+
+  const skeleton = [...new Array(6)].map((_, i) => (
     <Skeleton key={i} className="bg-zinc-200" />
   ));
 
@@ -43,8 +45,6 @@ export default function ProjectsPagination({ data }) {
               <>
                 <ProjectPageList
                   currentItems={currentItems}
-                  isLoading={isLoading}
-                  skeleton={skeleton}
                 />
                 <Pagination
                   handlePageClick={handlePageClick}
