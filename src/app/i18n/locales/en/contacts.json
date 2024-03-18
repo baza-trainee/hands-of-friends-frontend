@@ -1,5 +1,6 @@
 {   
     "back": "Back",
     "title": "Contacts",
-    "address": "Vinnitsa region, Bar"
+    "address": "Vinnitsia region, Bar",
+    "error": "Loading error"
 }

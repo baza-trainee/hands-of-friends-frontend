@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y } from "swiper/modules";
-import { useHttp } from "../hooks/useHttp";
+
 import NoItem from "./NoitemElement";
 import UniversalSkeleton from "./UniversalSkeleton";
+
+import { useHttp } from "../hooks/useHttp";
+
+import Loader from '../../../public/img/loader.svg'
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,27 +22,28 @@ const UniversalSlider = ({
   useBullets = false,
 }) => {
   const paginationType = useBullets ? "bullets" : "progressbar";
-  const [data, setData] = useHttp(endpoint);
+  const [data] = useHttp(endpoint);
   const [prevData, setPrevData] = useState();
-  const [length, setLength] = useState()
-  const showNavigation = data.length > 3;
-  const showPagination = data.length > 3;
-  
+  const [length, setLength] = useState();
+  const [isLoading, setIsLoaing] = useState(true);
+  const showNavigation = data ? data.length > 3 : false;
+  const showPagination = data ? data.length > 3 : false;
+
   useEffect(() => {
     setPrevData(data);
-   setLength(data.length);
-   
+    setLength(data.length);
+    setIsLoaing(false)
   }, [data]);
- 
+
   return (
-    <> 
+    <>
       <Swiper
         navigation={showNavigation}
         pagination={
           showPagination
             ? {
-                type: paginationType,
-              }
+              type: paginationType,
+            }
             : false
         }
         {...swiperSettings}
@@ -50,21 +55,20 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {
-          !prevData
-            ? Array.from({ length: 4 }).map((_, index) => (
-              <SwiperSlide className="flex flex-col items-center" key={index}>
-                <UniversalSkeleton
-                  id={`skeleton-${index}`}
-                  type={skeletonType}
-                />
-              </SwiperSlide>
-            ))
-            : (length>0? (prevData.map((item, index) => (
+          !prevData ?? isLoading
+            ?
+            <SwiperSlide className="!w-full h-full">
+              <div className='flex items-center justify-center'>
+                <Loader className='animate-spin' />
+              </div>
+            </SwiperSlide>
+
+            : (length > 0 ? (prevData.map((item, index) => (
               <SwiperSlide className="flex flex-col items-center " key={`${item.title} ${index}`}>
-                <ItemComponent data={item}/> 
+                <ItemComponent data={item} />
               </SwiperSlide>
-              ))) : <NoItem/>)
-              }
+            ))) : <NoItem />)
+        }
       </Swiper>
     </>
   );
