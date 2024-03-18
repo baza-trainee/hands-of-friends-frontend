@@ -4,6 +4,7 @@ import Image from "next/image";
 import Close from "../../../../public/img/close.svg";
 
 import { useTranslation } from "@/app/i18n/client";
+
 import BaseModal from "../BaseModal/BaseModal";
 
 const NewsItem = ({ data, lng }) => {
