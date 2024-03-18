@@ -1,7 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+
+import { useHttp } from '@/app/hooks/useHttp';
+import { useTranslation } from '../../i18n/client';
+
 import {
 	FaEnvelope,
 	FaFacebook,
@@ -9,10 +13,7 @@ import {
 	FaPhone,
 	FaYoutube,
 } from 'react-icons/fa6';
-import { useHttp } from '@/app/hooks/useHttp';
-
 import Loader from '../../../../public/img/loader.svg';
-import { useTranslation } from '../../i18n/client';
 
 export default function Contacts({ params: { lng } }) {
 	const { t } = useTranslation(lng, 'contacts');
