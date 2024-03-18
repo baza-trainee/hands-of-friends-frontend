@@ -7,7 +7,7 @@ import { useCurrentLang } from "@/app/hooks/useCurrentLang";
 
 export default function BreadCrumbs({ href, text, textColor, className }) {
   const [isHovered, setIsHovered] = useState(false);
-  const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
+  const lang = useCurrentLang() === "uk" ? "ua" : "en";
 
   const handleHover = () => {
     setIsHovered(true);
@@ -21,7 +21,7 @@ export default function BreadCrumbs({ href, text, textColor, className }) {
         <p
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
-          className={`flex justify-centre items-center 2xl:mt-[51px] gap-2 text-xs md:text-xl ${
+          className={`flex justify-centre items-center 2xl:mt-[51px] gap-2 text-base md:text-xl ${
             textColor === "white" ? "text-white" : "deepBlue"
           } transition ${className}`}
           style={{
