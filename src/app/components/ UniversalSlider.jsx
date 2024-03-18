@@ -56,10 +56,10 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {
-          !prevData ?? isLoading
+          !prevData && isLoading && helperLoader
             ?
             <div className={`flex items-center justify-center w-full
-            h-[${helperLoader[loaderType].height.xs}]
+            xs:h-[${helperLoader[loaderType].height.xs}]
             sm:h-[${helperLoader[loaderType].height.sm}]
             md:h-[${helperLoader[loaderType].height.md}]
             xl:h-[${helperLoader[loaderType].height.xl}]
