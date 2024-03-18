@@ -53,17 +53,18 @@ export default function ProjectItem({ data, lng }) {
 				<span className='text-base font-body md:text-lg'>
 					{data.start_date} - {data.end_date ? data.end_date : t('act')}
 				</span>
-
+<div className=" xs:line-clamp-[18] md:line-clamp-[17] xl:line-clamp-[18] 2xl:line-clamp-[16]">
 				<p
-					className='mt-4 w-full h-[420px] text-base leading-6 text-left text-black font-body 
-            sm:w-full sm:h-[326px] 
-            md:w-full md:h-[468px] md:text-lg 
-            xl:w-full xl:h-[488px]
-            2xl:w-full 2xl:h-[435px]'
+					className='w-full mt-4 h-[435px] text-base leading-6 text-left text-black font-body
+            sm:w-full sm:h-[336px] 
+            md:w-full md:h-[473px] md:text-lg 
+            xl:w-full xl:h-[505px]
+            2xl:w-full 2xl:h-[445px]'
 					dangerouslySetInnerHTML={{
 						__html: formattedDescription,
 					}}
 				></p>
+        </div>
 				<button
 					onClick={() => router.push(`${modPath}/${data.id}`)}
 					type='button'
