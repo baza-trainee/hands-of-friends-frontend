@@ -68,8 +68,8 @@ const Policies = ({ data, lng }) => {
                     sm:mb-[48px] 
                     md:text-lg md:mb-[67px] 
                     xl:mb-8 2xl:mb-[59px]'
-					href={`/${lng}`}
-					text={t('back')}
+					href='/'
+					text={t('home')}
 					textColor='#2563EB'
 				/>
             <PoliciesTitles lng={lng} setSearchText={setSearchText} />
