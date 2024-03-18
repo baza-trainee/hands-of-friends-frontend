@@ -59,8 +59,8 @@ const UniversalSlider = ({
           !prevData && isLoading && helperLoader
             ?
             <div className={`flex items-center justify-center w-full
-            xs:h-[${helperLoader[loaderType].height.xs}]
-            sm:h-[${helperLoader[loaderType].height.sm}]
+            xs:h-[387px]
+            sm:h-[460px]
             md:h-[${helperLoader[loaderType].height.md}]
             xl:h-[${helperLoader[loaderType].height.xl}]
             2xl:h-[${helperLoader[loaderType].height['2xl']}]
