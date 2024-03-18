@@ -15,7 +15,7 @@ const HeroSlider = ({ lng }) => {
 				<UniversalSlider
 					endpoint='hero-slider/'
 					ItemComponent={HeroItem}
-					skeletonType='hero'
+					loaderType='hero'
 					useBullets={true}
 					swiperSettings={{
 						navigation: {
