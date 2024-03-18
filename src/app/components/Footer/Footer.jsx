@@ -61,7 +61,7 @@ export default function Footer({ lng }) {
     },
     {
       id: 4,
-      text: t("status"),
+      text: t("charter"),
     },
   ];
 
