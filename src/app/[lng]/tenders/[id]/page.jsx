@@ -29,6 +29,16 @@ export default function Page({ params, lng }) {
 		}
 	}, [isLoading, dataByID])
 
+	useEffect(() => {
+		const formattedLinksContainer = document.querySelector(
+			'.formatted-links-container'
+		)
+		if (formattedLinksContainer) {
+			formattedLinksContainer.style.maxWidth = '100%'
+			formattedLinksContainer.style.wordWrap = 'break-word'
+		}
+	}, [formattedDescription])
+
 	return (
 		<>
 			<Container>
@@ -43,7 +53,7 @@ export default function Page({ params, lng }) {
 					<p className='mb-6'>{dataByID.date}</p>
 					<h2 className='text-3xl font-bold mb-10'>{dataByID.title}</h2>
 					<div
-						className='text-lg'
+						className='text-lg formatted-links-container'
 						dangerouslySetInnerHTML={{
 							__html: formattedDescription,
 						}}

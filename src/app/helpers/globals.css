@@ -506,6 +506,11 @@ div[aria-disabled="true"] {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.bg-image-projects {
+  background-image: url("../../../public/img/project-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .bg-image-about {
   background-image: url("../../../public/img/about-bg.png");

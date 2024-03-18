@@ -33,6 +33,8 @@
   "email_test": "Domains .ru and .by are not allowed",
   "phone_number_required": "Enter a phone number",
   "phone_number_matches": "Enter a valid phone number",
+  "phone_number_max": "Phone must be maximum 19 characters",
+  "phone_number_min": "Phone must be at least 10 characters",
   "message_required": "Enter a message",
   "message_max": "Please limit your message to 300 characters",
   "city_required": "Enter the name of the city",

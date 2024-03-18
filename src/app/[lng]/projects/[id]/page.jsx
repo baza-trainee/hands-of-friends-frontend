@@ -46,14 +46,21 @@ export default function Page({ params, lng }) {
           textColor="blue"
         />
  { dataByID && !isLoading ? (
-        <div className="max-w-[835px] text-lg mb-40">
+        <div className="max-w-[320px] text-base mb-40
+        sm:max-w-[388px]
+        md:max-w-[688px] md:text-lg 
+        xl:max-w-[835px]
+        2xl:max-w-[894px]">
         
-         <h2 className="text-3xl font-bold mb-10">{dataByID.title}</h2>
-          <p className="mb-6">
-            {dataByID.start_date}-{dataByID.end_date? dataByID.end_date : "Активний"}
+         <h2 className="text-2xl max-w-[894px] font-bold mb-10
+         md:text-3xl">{dataByID.title}</h2>
+          <p className="text-xl mb-6
+          sm:text-base
+          md:text-xl">
+            {dataByID.start_date}-{dataByID.end_date? dataByID.end_date : t("act")}
           </p>
           <div
-            className="text-lg mb-6"
+            className="text-lg mb-6 font-body"
             dangerouslySetInnerHTML={{
               __html: formattedDescription
             }}
@@ -72,9 +79,10 @@ export default function Page({ params, lng }) {
 
           <ul>
             {content.map((item, index) => (
-              <li key={item.id}>
+              <li key={item.id}
+              className="max-w-[894px]">
               {<p
-                className="mb-6"
+                className="max-w-[894px] mb-6 font-body text-lg"
                 dangerouslySetInnerHTML={{
                   __html: formattedContent[index]
                 }}
@@ -105,3 +113,5 @@ export default function Page({ params, lng }) {
     </>
   );
 }
+
+
