@@ -4,7 +4,7 @@ import ProjectItem from "./ProjectItem";
 export default function ProjectPageList({ currentItems }) {
   return (
     <ul
-      className="mt-0 grid gap-8 min-w-[360px] not-italic leading-normal
+      className="mt-0 grid gap-8 min-w-[288px] not-italic leading-normal
         sm:min-w-[388px] sm:gap-8
         md:min-w-[688px] md:grid-cols-2 md:gap-6
         xl:min-w-[1120px] xl:grid-cols-3 xl:gap-8
