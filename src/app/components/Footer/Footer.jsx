@@ -1,13 +1,17 @@
 "use client";
 
-import { FaFacebook, FaYoutube } from "react-icons/fa6";
-
+import React, { useContext } from 'react';
 import Link from "next/link";
-import LogoIcon from "../../../../public/img/logo.svg";
+
 import { useTranslation } from "../../i18n/client";
+import { PdfContext } from '../PdfProvider';
+
+import LogoIcon from "../../../../public/img/logo.svg";
+import { FaFacebook, FaYoutube } from "react-icons/fa6";
 
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng, "footer");
+  const { setSharedSearchValue } = useContext(PdfContext);
 
   const links = [
     {
@@ -45,22 +49,18 @@ export default function Footer({ lng }) {
   const docs = [
     {
       id: 1,
-      url: "/Terms",
       text: t("terms"),
     },
     {
       id: 2,
-      url: "/privacy-policy",
       text: t("policy"),
     },
     {
       id: 3,
-      url: "https://www.monobank.com.ua/",
       text: t("report"),
     },
     {
       id: 4,
-      url: "https://www.monobank.com.ua/",
       text: t("status"),
     },
   ];
@@ -115,14 +115,14 @@ export default function Footer({ lng }) {
               <ul className="flex flex-col flex-wrap items-center justify-center md:flex-row xl:gap-x-20 md:gap-y-7 md:justify-between md:gap-14 md:gap-x-5 gap-y-4">
                 {docs.map((doc) => (
                   <li key={doc.id}>
-                    <a
-                      href={doc.url}
-                      target="blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href={`/${lng}/policies-procedures`}
+                      type='submit'
+                      onClick={() => setSharedSearchValue(doc.text)}
                       className="text-sm text-black underline transition md:text-base hover:text-violet"
                     >
                       {doc.text}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
