@@ -98,7 +98,7 @@ export default function Footer({ lng }) {
           </div>
           <div className="flex flex-col items-center gap-10">
             <div className="flex items-center justify-center">
-              <ul className="flex flex-row flex-wrap justify-between xl:gap-x-20 gap-y-7 md:gap-14 md:gap-x-6 gap-x-4">
+              <ul className="flex flex-row flex-wrap justify-between xl:gap-x-20 gap-y-7 md:gap-14 md:gap-x-6 gap-x-4 max-w-48 md:max-w-full">
                 {links.map((link) => (
                   <li key={link.id}>
                     <Link

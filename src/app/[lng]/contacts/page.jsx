@@ -9,13 +9,30 @@ import {
 	FaPhone,
 	FaYoutube,
 } from 'react-icons/fa6';
-import { useHttp } from '@/app/hooks/useHttp'
+import { useHttp } from '@/app/hooks/useHttp';
 
+import Loader from '../../../../public/img/loader.svg';
 import { useTranslation } from '../../i18n/client';
 
 export default function Contacts({ params: { lng } }) {
 	const { t } = useTranslation(lng, 'contacts');
-	const [contacts] = useHttp("contacts");
+	const [contacts, , isLoading] = useHttp('contacts');
+
+	if (isLoading) {
+		return (
+			<div className='flex items-center justify-center my-[20%] xl:my-0 height-minus'>
+				<Loader className='animate-spin' />
+			</div>
+		);
+	}
+
+	if (contacts.length === 0) {
+		return (
+			<div className='flex items-center justify-center my-[20%] height-minus xl:my-0'>
+				<h1 className='text-2xl italic font-semibold'>{t('error')}</h1>
+			</div>
+		);
+	}
 
 	return (
 		<section className='xl:py-12 max-w-screen-2xl 2xl:px-[120px] height-minus xl:px-20 md:px-10 p-4 pb-12 mx-auto md:pt-8'>
