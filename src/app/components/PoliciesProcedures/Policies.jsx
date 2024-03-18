@@ -1,15 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 
-import { useTranslation } from "@/app/i18n/client";
 import Container from "@/app/components/Container";
 import PoliciesTitles from "./PoliciesTitles";
 import PoliciesList from "./PoliciesList";
 import Pagination from "../Pagination";
+import BreadCrumbs from "../BreadCrumbs";
 
-import { FaArrowLeftLong } from 'react-icons/fa6';
+import { useTranslation } from "@/app/i18n/client";
 
 const Policies = ({ data, lng }) => {
     const { t } = useTranslation(lng, "policies-procedures");
@@ -29,13 +28,13 @@ const Policies = ({ data, lng }) => {
     const endOffset = itemOffset + itemsPerPage;
 
     useEffect(() => {
-        setProcesData(data)
-    }, [data])
-
-    useEffect(() => {
         setItemsPerPage(window.innerWidth < 768 ? 10 : 9);
         setMarginPagesDisplayed(window.innerWidth < 768 ? 0 : 1);
     }, [])
+
+    useEffect(() => {
+        setProcesData(data)
+    }, [data])
 
     useEffect(() => {
         if (procesData) {
@@ -51,7 +50,6 @@ const Policies = ({ data, lng }) => {
         if (searchText === 'https://github.com/dav1dashka') {
             items = data;
         } else {
-
             items = data.filter(el => el.title.toLowerCase().includes(searchText.toLowerCase()) ? true : false);
         }
 
@@ -65,16 +63,15 @@ const Policies = ({ data, lng }) => {
 
     return (
         <Container politicscontainer='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[57px]'>
-            <Link
-                href={`/${lng}`}
-                className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
+            <BreadCrumbs
+					className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
                     sm:mb-[48px] 
                     md:text-lg md:mb-[67px] 
                     xl:mb-8 2xl:mb-[59px]'
-            >
-                <FaArrowLeftLong className='text-base md:text-2xl' />
-                {t('back')}
-            </Link>
+					href={`/${lng}`}
+					text={t('back')}
+					textColor='#2563EB'
+				/>
             <PoliciesTitles lng={lng} setSearchText={setSearchText} />
             {procesData && procesData.length
                 ? <PoliciesList currentItems={currentItems} />
@@ -92,4 +89,5 @@ const Policies = ({ data, lng }) => {
         </Container>
     );
 }
+
 export default Policies;
