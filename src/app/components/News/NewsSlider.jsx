@@ -3,7 +3,7 @@
 import React from 'react';
 
 import NewsItem from './NewsItem';
-import UniversalSlider from '../ UniversalSlider';
+import UniversalSlider from '../UniversalSlider';
 
 export default function NewsSlider() {
 	return (
@@ -11,6 +11,7 @@ export default function NewsSlider() {
 			<UniversalSlider
 				endpoint='news/'
 				ItemComponent={NewsItem}
+				loaderType="news"
 				swiperSettings={{
 					breakpoints: {
 						320: { slidesPerView: 1, spaceBetween: 16 },

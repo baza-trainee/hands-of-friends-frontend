@@ -31,7 +31,14 @@ const UniversalSlider = ({
   useEffect(() => {
     setPrevData(data);
     setLength(data.length);
-    setIsLoaing(false)
+
+    const timeoutId = setTimeout(() => {
+      setIsLoaing(false)
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [data]);
 
   return (
@@ -54,19 +61,17 @@ const UniversalSlider = ({
         className={`swiper ${className}`}
       >
         {
-          !prevData && isLoading
-            ?
-            <div className={`${loaderType} loader`}>
+          isLoading
+            ? <div className={`${loaderType} loader`}>
               <div className='flex items-center justify-center'>
                 <Loader className='animate-spin' />
               </div>
             </div>
-
-            : (length > 0 ? (prevData.map((item, index) => (
-              <SwiperSlide className="flex flex-col items-center " key={`${item.title} ${index}`}>
+            : (prevData.map((item, index) => (
+              <SwiperSlide className="flex flex-col items-center" key={`${item.title} ${index}`}>
                 <ItemComponent data={item} />
               </SwiperSlide>
-            ))) : <NoItem />)
+            )))
         }
       </Swiper>
     </>
