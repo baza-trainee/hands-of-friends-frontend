@@ -55,9 +55,9 @@ export default function ProjectItem({ data, lng }) {
 				</span>
 
 				<p
-					className='mt-4 w-full h-[400px] text-base leading-6 text-left text-black font-body
-            sm:w-full sm:h-[316px]
-            md:w-full md:h-[468px] md:text-lg
+					className='mt-4 w-full h-[420px] text-base leading-6 text-left text-black font-body 
+            sm:w-full sm:h-[326px] 
+            md:w-full md:h-[468px] md:text-lg 
             xl:w-full xl:h-[488px]
             2xl:w-full 2xl:h-[435px]'
 					dangerouslySetInnerHTML={{
