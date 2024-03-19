@@ -23,15 +23,14 @@ const UniversalSlider = ({
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data] = useHttp(endpoint);
   const [prevData, setPrevData] = useState();
-  const [length, setLength] = useState();
   const [isLoading, setIsLoaing] = useState(true);
+  
   const showNavigation = data ? data.length > 3 : false;
   const showPagination = data ? data.length > 3 : false;
 
   useEffect(() => {
     if (data) {
       setPrevData(data);
-      setLength(data.length);
 
       const timeoutId = setTimeout(() => {
         setIsLoaing(false)
@@ -42,7 +41,7 @@ const UniversalSlider = ({
       }
     }
   }, [data]);
-  console.log(prevData)
+
   return (
     <>
       <Swiper
