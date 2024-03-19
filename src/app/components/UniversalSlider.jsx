@@ -23,22 +23,23 @@ const UniversalSlider = ({
   const paginationType = useBullets ? "bullets" : "progressbar";
   const [data] = useHttp(endpoint);
   const [prevData, setPrevData] = useState();
-  const [length, setLength] = useState();
   const [isLoading, setIsLoaing] = useState(true);
+  
   const showNavigation = data ? data.length > 3 : false;
   const showPagination = data ? data.length > 3 : false;
 
   useEffect(() => {
-    setPrevData(data);
-    setLength(data.length);
+    if (data) {
+      setPrevData(data);
 
-    const timeoutId = setTimeout(() => {
-      setIsLoaing(false)
-    }, 1000);
+      const timeoutId = setTimeout(() => {
+        setIsLoaing(false)
+      }, 1000);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
+      return () => {
+        clearTimeout(timeoutId);
+      }
+    }
   }, [data]);
 
   return (
@@ -67,11 +68,17 @@ const UniversalSlider = ({
                 <Loader className='animate-spin' />
               </div>
             </div>
-            : (length>0? (prevData.map((item, index) => (
-              <SwiperSlide className="flex flex-col items-center" key={`${item.title} ${index}`}>
-                <ItemComponent data={item} />
-              </SwiperSlide>
-            ))) : <NoItem/>)
+            : typeof prevData !== 'undefined' && prevData.length > 0
+              ? (prevData.map((item, index) => (
+                <SwiperSlide className="flex flex-col items-center" key={`${item.title} ${index}`}>
+                  <ItemComponent data={item} />
+                </SwiperSlide>
+              )))
+              : Array.isArray(prevData)
+                ? <NoItem />
+                : <div className='flex items-center justify-center'>
+                  {prevData}
+                </div>
         }
       </Swiper>
     </>

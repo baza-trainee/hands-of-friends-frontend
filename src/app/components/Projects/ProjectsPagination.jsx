@@ -8,10 +8,10 @@ import ProjectPageList from "./ProjectPageList";
 import Pagination from "../Pagination";
 import ProjectsHeader from "./ProjectsHeader";
 
-import Loader from '../../../../public/img/loader.svg'
+import Loader from '../../../../public/img/loader.svg';
 
 export default function ProjectsPagination({ data, isLoading }) {
-  const [currentItems, setCurrentItems] = useState(null);
+  const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -19,8 +19,10 @@ export default function ProjectsPagination({ data, isLoading }) {
   const endOffset = itemOffset + itemsPerPage;
 
   useEffect(() => {
-    setCurrentItems(data.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(data.length / itemsPerPage));
+    if (data && typeof data.props == 'undefined') {
+      setCurrentItems(data.slice(itemOffset, endOffset));
+      setPageCount(Math.ceil(data.length / itemsPerPage));
+    }
   }, [itemOffset, itemsPerPage, data]);
 
   const handlePageClick = (e) => {
@@ -37,15 +39,19 @@ export default function ProjectsPagination({ data, isLoading }) {
             ? <div className='flex items-center justify-center overflow-hidden my-16'>
               <Loader className='animate-spin' />
             </div>
-            : <>
-              <ProjectPageList
-                currentItems={currentItems}
-              />
-              <Pagination
-                handlePageClick={handlePageClick}
-                pageCount={pageCount}
-              />
-            </>
+            : data.length > 0 && data && currentItems && typeof currentItems !== 'undefined'
+              ? <>
+                <ProjectPageList
+                  currentItems={currentItems}
+                />
+                <Pagination
+                  handlePageClick={handlePageClick}
+                  pageCount={pageCount}
+                />
+              </>
+              : <div className='flex items-center justify-center mb-8 xl:mb-20'>
+                {data}
+              </div>
           }
         </Section>
       </Container>

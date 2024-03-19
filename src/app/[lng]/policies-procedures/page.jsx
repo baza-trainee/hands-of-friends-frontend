@@ -6,7 +6,7 @@ import { useHttp } from "@/app/hooks/useHttp";
 import { useEffect } from "react";
 
 function Page({ params: { lng } }) {
-  const [data, , isLoading] = useHttp('pdf-report/');
+  const [data] = useHttp('pdf-report/');
 
   useEffect(() => {
     if (window) {
@@ -17,7 +17,7 @@ function Page({ params: { lng } }) {
   }, [])
 
   return (
-    <Policies data={data} lng={lng} isLoading={isLoading} />
+    <Policies data={data} lng={lng} />
   );
 }
 export default Page;
