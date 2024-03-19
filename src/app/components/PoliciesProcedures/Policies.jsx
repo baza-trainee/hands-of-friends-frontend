@@ -12,7 +12,7 @@ import { useTranslation } from "@/app/i18n/client";
 
 import Loader from '../../../../public/img/loader.svg'
 
-const Policies = ({ data, lng, isLoading }) => {
+const Policies = ({ data, lng }) => {
     const { t } = useTranslation(lng, "policies-procedures");
 
     const [procesData, setProcesData] = useState(null);
@@ -24,6 +24,7 @@ const Policies = ({ data, lng, isLoading }) => {
     const [marginPagesDisplayed, setMarginPagesDisplayed] = useState(0);
 
     const [searchText, setSearchText] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     const endOffset = itemOffset + itemsPerPage;
 
@@ -34,6 +35,7 @@ const Policies = ({ data, lng, isLoading }) => {
 
     useEffect(() => {
         if (data) {
+            setIsLoading(true);
             setProcesData(data);
         }
     }, [data])
@@ -42,6 +44,7 @@ const Policies = ({ data, lng, isLoading }) => {
         if (procesData && typeof data.props === 'undefined') {
             setCurrentItems(procesData.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(procesData.length / itemsPerPage));
+            setIsLoading(false)
         }
     }, [itemOffset, itemsPerPage, procesData]);
 
