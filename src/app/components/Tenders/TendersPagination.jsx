@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
+
 import Section from "../Section";
 import Container from "../Container";
 import TenderList from "./TenderList";
-import Pagination from "../../components/Tenders/Pagination";
+import Pagination from "../Pagination";
 import TendersHeader from "./TendersHeader";
-import Skeleton from "./Skeleton";
 
-export default function TendersPagination({ data }) {
+import Loader from '../../../../public/img/loader.svg'
+
+export default function TendersPagination({ data, isLoading }) {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [activeTab, setActiveTab] = useState("all");
+
   const itemsPerPage = 6;
   const endOffset = itemOffset + itemsPerPage;
-  const [isLoading, setIsLoading] = useState(true);
-  let skeleton = [...new Array(6)].map((_, i) => (
-    <Skeleton key={i} className="bg-zinc-200" />
-  ));
 
   useEffect(() => {
-    setIsLoading(true);
     const filteredData = data.filter((tender) => {
       if (activeTab === "all") {
         return true;
@@ -31,7 +29,6 @@ export default function TendersPagination({ data }) {
 
     setCurrentItems(filteredData.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(filteredData.length / itemsPerPage));
-    setIsLoading(false);
   }, [itemOffset, itemsPerPage, data, activeTab]);
 
   const handlePageClick = (event) => {
@@ -49,19 +46,18 @@ export default function TendersPagination({ data }) {
 
       <Container>
         <Section className="mt-8 sm:mt-10 xl:mt-20">
-          {isLoading ? (
-            <ul className="grid gap-5 mb-40 md:grid-cols-2 md:gap-1 xl:grid-cols-3">
-              {skeleton}
-            </ul>
-          ) : (
-            <>
+          {isLoading
+            ? <div className='flex items-center justify-center overflow-hidden my-16'>
+              <Loader className='animate-spin' />
+            </div>
+            : <>
               <TenderList currentItems={currentItems} activeTab={activeTab} />
               <Pagination
                 handlePageClick={handlePageClick}
                 pageCount={pageCount}
               />
             </>
-          )}
+          }
         </Section>
       </Container>
     </>

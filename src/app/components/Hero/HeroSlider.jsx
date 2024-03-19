@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
-import UniversalSlider from "../ UniversalSlider";
+import UniversalSlider from "../UniversalSlider";
 import HeroItem from "./HeroItem";
 import Container from "../Container";
-import { Payment } from "../Payment/Payment";
 
 const HeroSlider = ({ lng }) => {
   const { t } = useTranslation(lng, "hero");
@@ -15,7 +15,7 @@ const HeroSlider = ({ lng }) => {
         <UniversalSlider
           endpoint="hero-slider/"
           ItemComponent={HeroItem}
-          skeletonType="hero"
+          loaderType="hero"
           useBullets={true}
           swiperSettings={{
             navigation: {
@@ -53,13 +53,15 @@ const HeroSlider = ({ lng }) => {
           </svg>
         </div>
       </div>
-      <Container className="md:hidden">
-        <Payment
-          lng={lng}
-          className="block m-auto mt-6 w-full p-4 text-xl 
-		  sm:mt-8
-		  md:hidden"
-        />
+      <Container>
+        <Link
+          href="https://www.monobank.ua/?lang=uk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block py-4 text-lg text-center text-white transition rounded cursor-pointer border-2 border-violet bg-violet hover:bg-transparent hover:text-violet hover:border-violet w-full md:hidden"
+        >
+          {t("btn")}
+        </Link>
       </Container>
     </>
   );

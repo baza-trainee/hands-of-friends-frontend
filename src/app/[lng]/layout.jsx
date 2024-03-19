@@ -18,11 +18,6 @@ const ptSans = PT_Sans({
   weight: ["400", "700"],
 });
 
-// const bloggerSans = BloggerSans({
-//   subsets: ['latin'],
-//   weight: ['400', '700']
-// })
-
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }

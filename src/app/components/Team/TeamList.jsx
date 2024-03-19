@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import UniversalSlider from "../ UniversalSlider";
+
+import UniversalSlider from "../UniversalSlider";
 import TeamItem from "./TeamItems";
 
 export default function TeamList() {
@@ -10,6 +11,7 @@ export default function TeamList() {
       <UniversalSlider
         endpoint="team/"
         ItemComponent={TeamItem}
+        loaderType='team'
         swiperSettings={{
           breakpoints: {
             320: { slidesPerView: 1, spaceBetween: 16 },

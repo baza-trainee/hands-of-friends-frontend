@@ -1,13 +1,17 @@
 "use client";
 
-import { FaFacebook, FaYoutube } from "react-icons/fa6";
-
+import React, { useContext } from 'react';
 import Link from "next/link";
-import LogoIcon from "../../../../public/img/logo.svg";
+
 import { useTranslation } from "../../i18n/client";
+import { PdfContext } from '../PdfProvider';
+
+import LogoIcon from "../../../../public/img/logo.svg";
+import { FaFacebook, FaYoutube } from "react-icons/fa6";
 
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng, "footer");
+  const { setSharedSearchValue } = useContext(PdfContext);
 
   const links = [
     {
@@ -45,23 +49,19 @@ export default function Footer({ lng }) {
   const docs = [
     {
       id: 1,
-      url: "/Terms",
       text: t("terms"),
     },
     {
       id: 2,
-      url: "/privacy-policy",
       text: t("policy"),
     },
     {
       id: 3,
-      url: "https://www.monobank.com.ua/",
       text: t("report"),
     },
     {
       id: 4,
-      url: "https://www.monobank.com.ua/",
-      text: t("status"),
+      text: t("charter"),
     },
   ];
 
@@ -98,7 +98,7 @@ export default function Footer({ lng }) {
           </div>
           <div className="flex flex-col items-center gap-10">
             <div className="flex items-center justify-center">
-              <ul className="flex flex-row flex-wrap justify-between xl:gap-x-20 gap-y-7 md:gap-14 md:gap-x-6 gap-x-4">
+              <ul className="flex flex-row flex-wrap justify-between xl:gap-x-20 gap-y-7 md:gap-14 md:gap-x-6 gap-x-4 max-w-48 md:max-w-full">
                 {links.map((link) => (
                   <li key={link.id}>
                     <Link
@@ -115,14 +115,14 @@ export default function Footer({ lng }) {
               <ul className="flex flex-col flex-wrap items-center justify-center md:flex-row xl:gap-x-20 md:gap-y-7 md:justify-between md:gap-14 md:gap-x-5 gap-y-4">
                 {docs.map((doc) => (
                   <li key={doc.id}>
-                    <a
-                      href={doc.url}
-                      target="blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href={`/${lng}/policies-procedures`}
+                      type='submit'
+                      onClick={() => setSharedSearchValue(doc.text)}
                       className="text-sm text-black underline transition md:text-base hover:text-violet"
                     >
                       {doc.text}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

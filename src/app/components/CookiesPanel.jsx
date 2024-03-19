@@ -40,7 +40,7 @@ const CookiesPanel = ({ lng }) => {
               <Action
                 type="button"
                 onClick={acceptCookies}
-                className="min-w-[184px] xl:min-w-[208px] py-[6px] lg:py-4 text-[14px] lg:text-[16px] xl:text-[18px] mx-auto  bg-deepBlue border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
+                className="min-w-[184px] xl:min-w-[208px] py-[6px] xl:py-4 xs:text-[16px] lg:text-[16px] xl:text-[18px] mx-auto  bg-deepBlue border-transparent hover:text-deepBlue hover:border hover:border-deepBlue"
               >
                 {t("btn-all")}
               </Action>
@@ -48,7 +48,7 @@ const CookiesPanel = ({ lng }) => {
                 type="button"
                 onClick={acceptCookies}
                 textColor="black"
-                className="min-w-[184px] py-[6px] lg:py-4 xl:min-w-[208px] text-[14px] lg:text-[16px] xl:text-[18px] mx-auto bg-white border-deepBlue hover:underline decoration-solid"
+                className="min-w-[184px] py-[6px] xl:py-4 xl:min-w-[208px] xs:text-[16px] md:text-[16px] xl:text-[18px] mx-auto bg-white border-deepBlue hover:underline decoration-solid"
               >
                 {t("btn")}
               </Action>

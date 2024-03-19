@@ -2,7 +2,7 @@
 
 import React from "react";
 import Title from "../../Title";
-import UniversalSlider from "../../ UniversalSlider";
+import UniversalSlider from "../../UniversalSlider";
 import PartnerItem from "./PartnerItem";
 
 const PartnerWrapper = ({ title, endpoint }) => {
@@ -14,6 +14,7 @@ const PartnerWrapper = ({ title, endpoint }) => {
           endpoint={endpoint}
           skeletonType="donor"
           ItemComponent={PartnerItem}
+          loaderType="donors-partners"
           swiperSettings={{
             breakpoints: {
               320: { slidesPerView: 1, spaceBetween: 16 },

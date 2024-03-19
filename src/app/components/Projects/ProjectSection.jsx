@@ -11,7 +11,6 @@ import Container from "../Container";
 import Title from "../Title";
 import Action from '../Action';
 import ProjectSwiperList from './ProjectSwiper';
-// import ProjectList from "./ProjectList";
 
 export default function ProjectSection({ lng }) {
   const { t } = useTranslation(lng, "project-section");
