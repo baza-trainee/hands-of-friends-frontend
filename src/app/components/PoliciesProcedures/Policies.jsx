@@ -33,25 +33,29 @@ const Policies = ({ data, lng, isLoading }) => {
     }, [])
 
     useEffect(() => {
-        setProcesData(data)
+        if (typeof data.props === 'undefined') {
+            setProcesData(data);
+        }
     }, [data])
 
     useEffect(() => {
-        if (procesData) {
+        if (procesData && typeof data.props === 'undefined') {
             setCurrentItems(procesData.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(procesData.length / itemsPerPage));
         }
     }, [itemOffset, itemsPerPage, procesData]);
 
     useEffect(() => {
-        let items;
-        if (searchText === 'https://github.com/dav1dashka') {
-            items = data;
-        } else {
-            items = data.filter(el => el.title.toLowerCase().includes(searchText.toLowerCase()) ? true : false);
-        }
+        if (typeof data.props === 'undefined') {
+            let items;
+            if (searchText === 'https://github.com/dav1dashka') {
+                items = data;
+            } else {
+                items = data.filter(el => el.title.toLowerCase().includes(searchText.toLowerCase()) ? true : false);
+            }
 
-        setProcesData(items);
+            setProcesData(items);
+        }
     }, [searchText])
 
     const handlePageClick = (e) => {
@@ -71,19 +75,23 @@ const Policies = ({ data, lng, isLoading }) => {
                 textColor='#2563EB'
             />
             <PoliciesTitles lng={lng} setSearchText={setSearchText} />
-            {!isLoading
-                ? procesData && procesData.length
-                    ? <PoliciesList currentItems={currentItems} />
-                    : <div className="mb-6 text-base font-normal 
-                           md:text-xl md:mb-8"
-                    >
-                        {t('not-found')}
-                    </div>
-                : <div className='flex items-center justify-center 
-                       min-h-[160px] md:min-h-[393px] xl:min-h-[270px] 2xl:min-h-[310px]'
+            {isLoading
+                ? <div className='flex items-center justify-center 
+                min-h-[160px] md:min-h-[393px] xl:min-h-[270px] 2xl:min-h-[310px]'
                 >
                     <Loader className='animate-spin' />
                 </div>
+                : typeof data.props === 'undefined'
+                    ? procesData && procesData.length
+                        ? <PoliciesList currentItems={currentItems} />
+                        : <div className="mb-6 text-base font-normal 
+                           md:text-xl md:mb-8"
+                        >
+                            {t('not-found')}
+                        </div>
+                    : <div className='flex items-center justify-center my-10'>
+                        {data}
+                    </div>
             }
             <div className="flex justify-center md:justify-end">
                 <Pagination

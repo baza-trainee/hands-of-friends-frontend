@@ -27,10 +27,10 @@ export default function Contacts({ params: { lng } }) {
 		);
 	}
 
-	if (contacts.length === 0) {
+	if (contacts.props.type === 'error') {
 		return (
-			<div className='flex items-center justify-center my-[20%] height-minus xl:my-0'>
-				<h1 className='text-2xl italic font-semibold'>{t('error')}</h1>
+			<div className='flex items-center justify-center my-8'>
+				{contacts}
 			</div>
 		);
 	}
