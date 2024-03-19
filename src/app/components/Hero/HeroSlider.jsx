@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { useTranslation } from "@/app/i18n/client";
 import UniversalSlider from "../ UniversalSlider";
 import HeroItem from "./HeroItem";

@@ -1,9 +1,21 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Action from "../Action";
 import { useTranslation } from "@/app/i18n/client";
 
 export const PaymentBody = ({ lng }) => {
   const { t } = useTranslation(lng, "payment");
+  const iban = "UA000000000000000000000000";
+  const ref = useRef(null);
+
+  const copyToClipboard = async (e) => {
+    try {
+      await navigator.clipboard.writeText(iban);
+      e.target.focus();
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
   return (
     <div className="text-sm sm:text-base md:text-lg xl:text-xl">
       <h2
@@ -19,7 +31,7 @@ export const PaymentBody = ({ lng }) => {
           <p> {t("EDRPOU")}</p>
         </li>
         <li>
-          <p> {t("IBAN")}</p>
+          <p>{t("IBAN")}</p>
         </li>
         <li>
           <p> {t("BankName")}</p>
@@ -27,7 +39,11 @@ export const PaymentBody = ({ lng }) => {
       </ul>
       <p className="mb-1 font-bold"> {t("PurposeOfPayment")}</p>
       <p className="mb-6"> {t("text")}</p>
-      <Action className="mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer">
+      <Action
+        onClick={copyToClipboard}
+        ref={ref}
+        className="mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer"
+      >
         {t("copyIBAN")}
       </Action>
       <p className="font-bold"> {t("gratitude")}</p>

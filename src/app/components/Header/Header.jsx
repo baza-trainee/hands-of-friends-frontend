@@ -14,7 +14,6 @@ import LogoIcon from "../../../../public/img/logo.svg";
 import LogoIconTablet from "../../../../public/img/logo-tablet.svg";
 import { languages } from "../../i18n/settings";
 import { Payment } from "../Payment/Payment";
-import BaseModal from "../BaseModal/BaseModal";
 
 export default function Header({ lng }) {
   const variants = {
