@@ -78,7 +78,7 @@ const UniversalSlider = ({
                 {/* <Loader className='animate-spin' /> */}
               </div>
             </div>
-            : typeof prevData !== 'undefined' && prevData.length > 0 && prevData.type !== 'error'
+            : typeof prevData !== 'undefined' && prevData.length > 0
               ? (prevData.map((item, index) => (
                 <SwiperSlide className="flex flex-col items-center" key={`${item.title} ${index}`}>
                   <ItemComponent data={item} />

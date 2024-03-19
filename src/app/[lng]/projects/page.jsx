@@ -8,9 +8,11 @@ import { useHttp } from "@/app/hooks/useHttp";
 
 function ProjectsData() {
   const [projects, , isLoading] = useHttp("projects/?is_shown=true");
-  const shownProjects = projects.filter((project) => project.is_shown);
+  const shownProjects = typeof projects !== 'undefined' && projects.length > 0 && projects.type !== 'error'
+    ? projects.filter((project) => project.is_shown)
+    : projects;
 
-  return (
+    return (
     <ProjectsPagination data={shownProjects} isLoading={isLoading} />
   );
 }

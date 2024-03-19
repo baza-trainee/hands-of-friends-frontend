@@ -19,8 +19,10 @@ export default function ProjectsPagination({ data, isLoading }) {
   const endOffset = itemOffset + itemsPerPage;
 
   useEffect(() => {
-    setCurrentItems(data.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(data.length / itemsPerPage));
+    if (typeof data !== 'undefined' && typeof data.props == 'undefined') {
+      setCurrentItems(data.slice(itemOffset, endOffset));
+      setPageCount(Math.ceil(data.length / itemsPerPage));
+    }
   }, [itemOffset, itemsPerPage, data]);
 
   const handlePageClick = (e) => {
@@ -37,15 +39,19 @@ export default function ProjectsPagination({ data, isLoading }) {
             ? <div className='flex items-center justify-center overflow-hidden my-16'>
               <Loader className='animate-spin' />
             </div>
-            : <>
-              <ProjectPageList
-                currentItems={currentItems}
-              />
-              <Pagination
-                handlePageClick={handlePageClick}
-                pageCount={pageCount}
-              />
-            </>
+            : data.length > 0 && typeof data !== 'undefined' && typeof currentItems !== 'undefined'
+              ? <>
+                <ProjectPageList
+                  currentItems={currentItems}
+                />
+                <Pagination
+                  handlePageClick={handlePageClick}
+                  pageCount={pageCount}
+                />
+              </>
+              : <div className='flex items-center justify-center mb-8 xl:mb-20'>
+                {data}
+              </div>
           }
         </Section>
       </Container>
