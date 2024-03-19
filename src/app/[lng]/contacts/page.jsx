@@ -27,7 +27,7 @@ export default function Contacts({ params: { lng } }) {
 		);
 	}
 
-	if (contacts.props.type === 'error') {
+	if (contacts && typeof contacts.props !== 'undefined' && contacts.props.type === 'error') {
 		return (
 			<div className='flex items-center justify-center my-8'>
 				{contacts}

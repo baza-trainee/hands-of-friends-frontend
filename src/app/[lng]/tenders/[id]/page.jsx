@@ -60,7 +60,7 @@ export default function Page({ params, lng }) {
 					? <div className='flex items-center justify-center pb-14'>
 						<Loader className='animate-spin' />
 					</div>
-					: dataByID.length > 0 && typeof dataByID !== 'undefined'
+					: dataByID && typeof dataByID.props === 'undefined'
 						? <div className='max-w-[835px] text-lg mb-40'>
 							<p className='mb-6'>{dataByID.date}</p>
 							<h2 className='text-3xl font-bold mb-10'>{dataByID.title}</h2>
@@ -71,7 +71,7 @@ export default function Page({ params, lng }) {
 								}}
 							/>
 						</div>
-						: dataByID
+						: <div className="my-8">{dataByID}</div>
 				}
 			</Container>
 		</>

@@ -7,7 +7,6 @@ import NoItem from "./NoitemElement";
 import { useHttp } from "../hooks/useHttp";
 
 import Loader from '../../../public/img/loader.svg'
-import { Oval } from "react-loader-spinner";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -30,18 +29,20 @@ const UniversalSlider = ({
   const showPagination = data ? data.length > 3 : false;
 
   useEffect(() => {
-    setPrevData(data);
-    setLength(data.length);
+    if (data) {
+      setPrevData(data);
+      setLength(data.length);
 
-    const timeoutId = setTimeout(() => {
-      setIsLoaing(false)
-    }, 1000);
+      const timeoutId = setTimeout(() => {
+        setIsLoaing(false)
+      }, 1000);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
+      return () => {
+        clearTimeout(timeoutId);
+      }
+    }
   }, [data]);
-
+  console.log(prevData)
   return (
     <>
       <Swiper
@@ -65,17 +66,7 @@ const UniversalSlider = ({
           isLoading
             ? <div className={`${loaderType} loader`}>
               <div className='flex items-center justify-center'>
-                <Oval
-                  visible={true}
-                  height="80"
-                  width="80"
-                  color="#2563EB"
-                  strokeWidth="4"
-                  strokeWidthSecondary=""
-                  secondaryColor="#E0F2FE"
-                  ariaLabel="oval-loading"
-                />
-                {/* <Loader className='animate-spin' /> */}
+                <Loader className='animate-spin' />
               </div>
             </div>
             : typeof prevData !== 'undefined' && prevData.length > 0
@@ -84,9 +75,11 @@ const UniversalSlider = ({
                   <ItemComponent data={item} />
                 </SwiperSlide>
               )))
-              : <div className='flex items-center justify-center'>
-                {prevData}
-              </div>
+              : Array.isArray(prevData)
+                ? <NoItem />
+                : <div className='flex items-center justify-center'>
+                  {prevData}
+                </div>
         }
       </Swiper>
     </>

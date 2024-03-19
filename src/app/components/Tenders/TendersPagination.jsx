@@ -9,7 +9,7 @@ import TendersHeader from "./TendersHeader";
 import Loader from '../../../../public/img/loader.svg'
 
 export default function TendersPagination({ data, isLoading }) {
-  const [currentItems, setCurrentItems] = useState();
+  const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [activeTab, setActiveTab] = useState("all");
@@ -18,7 +18,7 @@ export default function TendersPagination({ data, isLoading }) {
   const endOffset = itemOffset + itemsPerPage;
 
   useEffect(() => {
-    if (typeof data !== 'undefined' && typeof data.props == 'undefined') {
+    if (data && typeof data.props == 'undefined') {
       const filteredData = data.filter((tender) => {
         if (activeTab === "all") {
           return true;
@@ -41,7 +41,6 @@ export default function TendersPagination({ data, isLoading }) {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-  { console.log(currentItems) }
 
   return (
     <>
@@ -52,7 +51,7 @@ export default function TendersPagination({ data, isLoading }) {
             ? <div className='flex items-center justify-center overflow-hidden my-16'>
               <Loader className='animate-spin' />
             </div>
-            : data.length > 0 && typeof data !== 'undefined' && typeof currentItems !== 'undefined'
+            : data.length > 0 && data && currentItems && typeof currentItems !== 'undefined'
               ? <>
                 <TenderList currentItems={currentItems} activeTab={activeTab} />
                 <Pagination

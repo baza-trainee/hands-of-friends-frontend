@@ -11,7 +11,7 @@ import ProjectsHeader from "./ProjectsHeader";
 import Loader from '../../../../public/img/loader.svg';
 
 export default function ProjectsPagination({ data, isLoading }) {
-  const [currentItems, setCurrentItems] = useState(null);
+  const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -19,7 +19,7 @@ export default function ProjectsPagination({ data, isLoading }) {
   const endOffset = itemOffset + itemsPerPage;
 
   useEffect(() => {
-    if (typeof data !== 'undefined' && typeof data.props == 'undefined') {
+    if (data && typeof data.props == 'undefined') {
       setCurrentItems(data.slice(itemOffset, endOffset));
       setPageCount(Math.ceil(data.length / itemsPerPage));
     }
@@ -39,7 +39,7 @@ export default function ProjectsPagination({ data, isLoading }) {
             ? <div className='flex items-center justify-center overflow-hidden my-16'>
               <Loader className='animate-spin' />
             </div>
-            : data.length > 0 && typeof data !== 'undefined' && typeof currentItems !== 'undefined'
+            : data.length > 0 && data && currentItems && typeof currentItems !== 'undefined'
               ? <>
                 <ProjectPageList
                   currentItems={currentItems}

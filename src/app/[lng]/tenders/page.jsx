@@ -8,7 +8,7 @@ import { useHttp } from "@/app/hooks/useHttp";
 
 function TendersData() {
   const [tenders, , isLoading] = useHttp("tenders/?is_shown=true");
-  const shownTenders = typeof projects !== 'undefined' && projects.length > 0 && projects.type !== 'error'
+  const shownTenders = tenders && tenders.length > 0 && tenders.type !== 'error'
     ? tenders.filter((tender) => tender.is_shown)
     : tenders;
 

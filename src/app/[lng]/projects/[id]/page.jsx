@@ -55,11 +55,11 @@ export default function Page({ params, lng }) {
           text={t("title")}
           textColor="blue"
         />
-        {dataByID && isLoading
+        {isLoading
           ? <div className='flex items-center justify-center pb-14'>
             <Loader className='animate-spin' />
           </div>
-          : dataByID.length > 0 && typeof dataByID !== 'undefined'
+          : dataByID && typeof dataByID.props === 'undefined'
             ? <div className="max-w-[320px] text-base mb-40
                   sm:max-w-[388px]
                   md:max-w-[688px] md:text-lg 
@@ -122,7 +122,7 @@ export default function Page({ params, lng }) {
                 ))}
               </ul>
             </div>
-            : dataByID
+            : <div className="my-8">{dataByID}</div>
         }
       </Container>
     </>
