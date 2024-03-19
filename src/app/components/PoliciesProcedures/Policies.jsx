@@ -33,7 +33,7 @@ const Policies = ({ data, lng, isLoading }) => {
     }, [])
 
     useEffect(() => {
-        if (data && data.props === 'undefined') {
+        if (data) {
             setProcesData(data);
         }
     }, [data])
@@ -46,7 +46,7 @@ const Policies = ({ data, lng, isLoading }) => {
     }, [itemOffset, itemsPerPage, procesData]);
 
     useEffect(() => {
-        if (data && typeof data.props === 'undefined') {
+        if (data) {
             let items;
             if (searchText === 'https://github.com/dav1dashka') {
                 items = data;
