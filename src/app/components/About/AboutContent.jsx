@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
+
 import Container from "@/app/components/Container";
+
 import { useHttp } from "@/app/hooks/useHttp";
 import { ULCLASS } from "@/app/helpers/consts";
-import { useEffect, useState } from "react";
+
+import Loader from '../../../../public/img/loader.svg'
 
 function AboutContent({ activeTab }) {
   const [aboutData] = useHttp("about-us/");
@@ -31,9 +35,13 @@ function AboutContent({ activeTab }) {
   return (
     <Container>
       {activeTab === "mission" && (
-        <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]">
-          <p dangerouslySetInnerHTML={{ __html: formattedData?.history }} />
-        </div>
+        formattedData
+          ? <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]">
+            <p dangerouslySetInnerHTML={{ __html: formattedData?.history }} />
+          </div>
+          : <div className="flex items-center justify-center mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px]">
+            <Loader className='animate-spin' />
+          </div>
       )}
       {activeTab === "principles" && (
         <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[792px]">

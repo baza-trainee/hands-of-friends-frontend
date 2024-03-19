@@ -28,15 +28,13 @@ function Page({ lng }) {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
+          <AboutTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            className="flex flex-col text-[black] md:hidden"
+          />
         </Container>
       </div>
-      <Container>
-        <AboutTabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          className="flex flex-col text-[black] md:hidden"
-        />
-      </Container>
       <AboutContent activeTab={activeTab} />
     </div>
   );
