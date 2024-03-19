@@ -117,16 +117,10 @@ export default function Page({ params, lng }) {
               ))}
             </ul>
           </div>
-          : <div className="max-w-[320px] text-base mb-40
-                  sm:max-w-[388px]
-                  md:max-w-[688px] md:text-lg 
-                  xl:max-w-[835px]
-                  2xl:max-w-[894px]"
-          >
-            <div className='flex items-center justify-center'>
+          : 
+            <div className='flex items-center justify-center my-6'>
               <Loader className='animate-spin' />
             </div>
-          </div>
         }
       </Container>
     </>
