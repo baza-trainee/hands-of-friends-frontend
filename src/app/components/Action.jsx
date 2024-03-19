@@ -10,9 +10,10 @@ export default function Action({
   rel,
   target,
   textColor,
+  ref,
 }) {
   const ActionComponent = href ? Link : "button" || "submit";
-  const additionalProps = href ? { href, rel, target } : { onClick };
+  const additionalProps = href ? { href, rel, target } : { onClick, ref };
 
   return (
     <ActionComponent

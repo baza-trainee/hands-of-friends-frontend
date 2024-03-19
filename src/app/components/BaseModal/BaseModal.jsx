@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { clsx } from "clsx";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 
-const BaseModal = ({ isOpen, onClose, children }) => {
+const BaseModal = ({ isOpen, onClose, children, className }) => {
   const modalRoot = document.querySelector("#modal-root");
 
   const handleBackdropClick = (e) => {
@@ -33,7 +34,10 @@ const BaseModal = ({ isOpen, onClose, children }) => {
       <>
         {isOpen && (
           <div
-            className="fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center bg-[rgba(30,30,30,0.2)]"
+            className={clsx(
+              "fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center bg-[rgba(30,30,30,0.2)]",
+              className
+            )}
             onClick={handleBackdropClick}
           >
             {children}
