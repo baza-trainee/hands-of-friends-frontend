@@ -8,7 +8,7 @@ import ProjectPageList from "./ProjectPageList";
 import Pagination from "../Pagination";
 import ProjectsHeader from "./ProjectsHeader";
 
-import Loader from '../../../../public/img/loader.svg'
+import Loader from '../../../../public/img/loader.svg';
 
 export default function ProjectsPagination({ data, isLoading }) {
   const [currentItems, setCurrentItems] = useState(null);

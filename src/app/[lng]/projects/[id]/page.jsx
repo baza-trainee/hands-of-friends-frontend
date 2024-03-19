@@ -117,8 +117,7 @@ export default function Page({ params, lng }) {
               ))}
             </ul>
           </div>
-          :
-          <div className='flex items-center justify-center pb-14'>
+          : <div className='flex items-center justify-center pb-14'>
             <Loader className='animate-spin' />
           </div>
         }
