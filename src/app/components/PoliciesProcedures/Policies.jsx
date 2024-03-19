@@ -60,7 +60,7 @@ const Policies = ({ data, lng, isLoading }) => {
     };
 
     return (
-        <Container politicscontainer='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[57px]'>
+        <Container politicscontainer='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[57px]' >
             <BreadCrumbs
                 className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
                     sm:mb-[48px] 
