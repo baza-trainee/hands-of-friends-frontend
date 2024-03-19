@@ -44,7 +44,13 @@ export const PaymentBody = ({ lng }) => {
       <Action
         onClick={copyToClipboard}
         ref={ref}
-        className="mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer"
+        disabled={isCopied}
+        className={`mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded
+        ${
+          isCopied
+            ? "bg-fontGray border-[transparent] hover:cursor-not-allowed hover:bg-fontGray hover:text-white"
+            : ""
+        }`}
       >
         {!isCopied ? t("copyIBAN") : t("copied")}
       </Action>
