@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
 import { OLCLASS, ULCLASS } from '@/app/helpers/consts'
@@ -9,15 +8,9 @@ import { useCurrentLang } from '@/app/hooks/useCurrentLang'
 
 export default function ProjectItem({ data, lng }) {
 	const { t } = useTranslation(lng, 'project-section');
-	const [formattedDescription, setFormattedDescription] = useState();
-	const router = useRouter();
-
 	const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
-	const pathname = usePathname();
-	const pathParts = pathname.split('/');
-
-	const modPath =
-		pathParts.length > 2 ? pathParts[pathParts.length - 1] : `${lang}/projects`;
+	const router = useRouter();
+	const [formattedDescription, setFormattedDescription] = useState();
 
 	useEffect(() => {
 		if (data) {
@@ -65,7 +58,7 @@ export default function ProjectItem({ data, lng }) {
 					></p>
 				</div>
 				<button
-					onClick={() => router.push(`${modPath}/${data.id}`)}
+					onClick={() => router.push(`/${lang}/projects/${data.id}`)}
 					type='button'
 					className='block w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 
 					font-normal bg-transparent text-black text-xl border border-transparent hover:border h
