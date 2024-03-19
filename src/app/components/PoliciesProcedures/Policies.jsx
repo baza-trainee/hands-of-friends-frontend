@@ -10,7 +10,9 @@ import BreadCrumbs from "../BreadCrumbs";
 
 import { useTranslation } from "@/app/i18n/client";
 
-const Policies = ({ data, lng }) => {
+import Loader from '../../../../public/img/loader.svg'
+
+const Policies = ({ data, lng, isLoading }) => {
     const { t } = useTranslation(lng, "policies-procedures");
 
     const [procesData, setProcesData] = useState(null);
@@ -20,8 +22,6 @@ const Policies = ({ data, lng }) => {
 
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [marginPagesDisplayed, setMarginPagesDisplayed] = useState(0);
-
-    const [isLoading, setIsLoading] = useState(true);
 
     const [searchText, setSearchText] = useState('');
 
@@ -38,10 +38,8 @@ const Policies = ({ data, lng }) => {
 
     useEffect(() => {
         if (procesData) {
-            setIsLoading(true);
             setCurrentItems(procesData.slice(itemOffset, endOffset));
             setPageCount(Math.ceil(procesData.length / itemsPerPage));
-            setIsLoading(false);
         }
     }, [itemOffset, itemsPerPage, procesData]);
 
@@ -64,20 +62,28 @@ const Policies = ({ data, lng }) => {
     return (
         <Container politicscontainer='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[57px]'>
             <BreadCrumbs
-					className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
+                className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
                     sm:mb-[48px] 
                     md:text-lg md:mb-[67px] 
                     xl:mb-8 2xl:mb-[59px]'
-					href='/'
-					text={t('home')}
-					textColor='#2563EB'
-				/>
+                href='/'
+                text={t('home')}
+                textColor='#2563EB'
+            />
             <PoliciesTitles lng={lng} setSearchText={setSearchText} />
-            {procesData && procesData.length
-                ? <PoliciesList currentItems={currentItems} />
-                : <div className="mb-6 text-base font-normal 
-                md:text-xl md:mb-8"
-                >{t('not-found')}</div>
+            {!isLoading
+                ? procesData && procesData.length
+                    ? <PoliciesList currentItems={currentItems} />
+                    : <div className="mb-6 text-base font-normal 
+                           md:text-xl md:mb-8"
+                    >
+                        {t('not-found')}
+                    </div>
+                : <div className='flex items-center justify-center 
+                       min-h-[160px] md:min-h-[393px] xl:min-h-[270px] 2xl:min-h-[310px]'
+                >
+                    <Loader className='animate-spin' />
+                </div>
             }
             <div className="flex justify-center md:justify-end">
                 <Pagination

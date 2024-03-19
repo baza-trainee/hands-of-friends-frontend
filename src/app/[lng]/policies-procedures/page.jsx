@@ -7,10 +7,10 @@ import Policies from "@/app/components/PoliciesProcedures/Policies";
 import { useHttp } from "@/app/hooks/useHttp";
 
 function Page({ params: { lng } }) {
-  const [data] = useHttp('pdf-report/');
+  const [data, , isLoading] = useHttp('pdf-report/');
 
   return (
-    <Policies data={data} lng={lng} />
+    <Policies data={data} lng={lng} isLoading={isLoading} />
   );
 }
 export default Page;

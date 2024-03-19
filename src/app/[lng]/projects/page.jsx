@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import { useHttp } from "@/app/hooks/useHttp";
+
 import ProjectsPagination from "@/app/components/Projects/ProjectsPagination";
 
+import { useHttp } from "@/app/hooks/useHttp";
+
 function ProjectsData() {
-  const [projects] = useHttp("projects/?is_shown=true");
+  const [projects, , isLoading] = useHttp("projects/?is_shown=true");
   const shownProjects = projects.filter((project) => project.is_shown);
+
   return (
-    <div>
-      <ProjectsPagination data={shownProjects} />
-    </div>
+    <ProjectsPagination data={shownProjects} isLoading={isLoading} />
   );
 }
 export default ProjectsData;
