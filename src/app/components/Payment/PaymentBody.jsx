@@ -1,10 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Action from "../Action";
 import { useTranslation } from "@/app/i18n/client";
 
 export const PaymentBody = ({ lng }) => {
   const { t } = useTranslation(lng, "payment");
+  const [isCopied, setIsCopied] = useState(false);
   const iban = "UA000000000000000000000000";
   const ref = useRef(null);
 
@@ -12,6 +13,7 @@ export const PaymentBody = ({ lng }) => {
     try {
       await navigator.clipboard.writeText(iban);
       e.target.focus();
+      setIsCopied(true);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
@@ -44,7 +46,7 @@ export const PaymentBody = ({ lng }) => {
         ref={ref}
         className="mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer"
       >
-        {t("copyIBAN")}
+        {!isCopied ? t("copyIBAN") : t("copied")}
       </Action>
       <p className="font-bold"> {t("gratitude")}</p>
     </div>
