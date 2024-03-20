@@ -12,7 +12,7 @@ export const config = {
 
 export function middleware(req) {
 
-  let lng; 
+  let lng = "ua"; 
 
   const pathLng = req.nextUrl.pathname.split("/")[1];
 
