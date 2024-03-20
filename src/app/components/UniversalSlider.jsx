@@ -75,7 +75,7 @@ const UniversalSlider = ({
                 </SwiperSlide>
               )))
               : Array.isArray(prevData)
-                ? <NoItem />
+                ? <NoItem type={loaderType}/>
                 : <div className='flex items-center justify-center'>
                   {prevData}
                 </div>
