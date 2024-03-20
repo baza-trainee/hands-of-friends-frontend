@@ -46,16 +46,8 @@ export const PaymentBody = ({ lng }) => {
         onClick={copyToClipboard}
         ref={ref}
         disabled={isCopied}
-        className={clsx(
-          `mb-6 min-w-[184px] text-lg text-white transition border-2 rounded`,
-          {
-            "bg-[#D1D5DB] border-transparent hover:cursor-not-allowed":
-              isCopied,
-            "hover:bg-[#D1D5DB] hover:text-white hover:border-transparent":
-              isCopied,
-            "bg-violet hover:text-violet": !isCopied,
-          }
-        )}
+        className={`mb-6 min-w-[184px] text-lg text-white bg-violet hover:text-violet transition border-2 rounded
+           ${isCopied ? "payment" : ""}`}
       >
         {!isCopied ? t("copyIBAN") : t("copied")}
       </Action>
