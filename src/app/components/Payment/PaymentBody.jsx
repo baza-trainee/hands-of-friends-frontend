@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { clsx } from "clsx";
+import clsx from "clsx";
 import Action from "../Action";
 import { useTranslation } from "@/app/i18n/client";
 
@@ -47,18 +47,15 @@ export const PaymentBody = ({ lng }) => {
         ref={ref}
         disabled={isCopied}
         className={clsx(
-          "mb-6 min-w-[184px] text-lg text-white bg-violet hover:bg-transparent hover:text-violet transition border-2 rounded",
+          `mb-6 min-w-[184px] text-lg text-white transition border-2 rounded`,
           {
-            "bg-[#D1D5DB] border-transparent hover:cursor-not-allowed hover:bg-[#D1D5DB] hover:text-white hover:border-[transparent]":
+            "bg-[#D1D5DB] border-transparent hover:cursor-not-allowed":
               isCopied,
+            "hover:bg-[#D1D5DB] hover:text-white hover:border-transparent":
+              isCopied,
+            "bg-violet hover:text-violet": !isCopied,
           }
         )}
-        // className={`mb-6 min-w-[184px] text-lg text-white  bg-violet  hover:bg-transparent hover:text-violet transition border-2 rounded
-        // ${
-        //   isCopied
-        //     ? "bg-[#D1D5DB] border-transparent hover:cursor-not-allowed hover:bg-[#D1D5DB] hover:text-white hover:border-[transparent]"
-        //     : ""
-        // }`}
       >
         {!isCopied ? t("copyIBAN") : t("copied")}
       </Action>
