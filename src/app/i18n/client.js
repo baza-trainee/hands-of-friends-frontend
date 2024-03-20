@@ -52,8 +52,10 @@ export function useTranslation(lng, ns, options) {
   }, [lng, i18n]);
 
   useEffect(() => {
-    if (cookies.i18next === lng) return;
-    setCookie(cookieName, lng, { path: "/" });
+    if (typeof lng !== 'undefined') {
+      if (cookies.i18next === lng) return;
+      setCookie(cookieName, lng, { path: "/" });
+    }
   }, [lng]);
 
   return ret;
