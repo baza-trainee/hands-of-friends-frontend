@@ -5,7 +5,7 @@ import LoadingError from "../components/LoadingError";
 
 export default async function getFetchedData(type, headers) {
   try {
-    const response = await axios.get(`${BASE_URL}content_managemen/${type}`, {
+    const response = await axios.get(`${BASE_URL}content_management/${type}`, {
       headers,
     });
 
