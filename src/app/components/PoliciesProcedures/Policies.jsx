@@ -70,9 +70,9 @@ const Policies = ({ data, lng }) => {
     };
 
     return (
-        <Container politicscontainer='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[57px]' >
+        <Container className='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[52px]' >
             <BreadCrumbs
-                className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10
+                className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10 !mt-0
                     sm:mb-[48px] 
                     md:text-lg md:mb-[67px] 
                     xl:mb-8 2xl:mb-[59px]'
