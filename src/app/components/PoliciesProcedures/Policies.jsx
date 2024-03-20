@@ -46,10 +46,13 @@ const Policies = ({ data, lng }) => {
             setPageCount(Math.ceil(procesData.length / itemsPerPage));
             setIsLoading(false)
         }
+        if (data && typeof data.props !== 'undefined') {
+            setIsLoading(false)
+        }
     }, [itemOffset, itemsPerPage, procesData]);
 
     useEffect(() => {
-        if (data) {
+        if (data && typeof data.props === 'undefined') {
             let items;
             if (searchText === 'https://github.com/dav1dashka') {
                 items = data;
