@@ -48,13 +48,12 @@ export const BaseForm = ({
           md:justify-self-end md:w-[334px] md:mt-20
           xl:p-6 xl:w-[503px]
           2xl:p-9 2xl:w-[527px]
-          ${
-            formType === "partners" ||
-            formType === "donors" ||
-            formType === "volunteers"
+          ${formType === "partners" ||
+              formType === "donors" ||
+              formType === "volunteers"
               ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
               : ""
-          }`}
+            }`}
           action="/submit_form"
           method="post"
           onSubmit={formik.handleSubmit}
