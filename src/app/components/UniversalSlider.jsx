@@ -6,7 +6,7 @@ import NoItem from "./NoitemElement";
 
 import { useHttp } from "../hooks/useHttp";
 
-import Loader from '../../../public/img/loader.svg'
+import Loader from '../../../public/img/loader.svg';
 
 import "swiper/css";
 import "swiper/css/navigation";

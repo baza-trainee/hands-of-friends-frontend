@@ -10,10 +10,18 @@ import { PT_Sans } from "next/font/google";
 import "../helpers/globals.css";
 import "/node_modules/video-react/dist/video-react.css";
 
-export const metadata = {
+const enMetadata = {
   title: "Hands of Friends",
   description: "International Charitable Foundation 'Hands of Friends'",
 };
+const ukrMetadata = {
+  title: "Руки друзів",
+  description: "Міжнародний благодійний фонд 'Руки Друзів'"
+};
+
+export async function generateMetadata({ params }) {
+  return params.lng === "en" ? enMetadata : ukrMetadata;
+}
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
