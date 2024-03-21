@@ -6,7 +6,7 @@ export const validationSchema = (t) => {
     name: Yup.string()
       .required(t("name_required"))
       .min(2, t("name_min"))
-      .max(50, t("nam_max")),
+      .max(50, t("name_max")),
     city: Yup.string()
       .required(t("city_required"))
       .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("city_matches"))
