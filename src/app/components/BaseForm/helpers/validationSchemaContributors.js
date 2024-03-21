@@ -11,7 +11,7 @@ export const validationSchema = (t) => {
       .required(t("name_required"))
       .matches(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄ\s'-]+$/, t("name_matches"))
       .min(2, t("name_min"))
-      .max(50, t("nam_max")),
+      .max(50, t("name_max")),
     email: Yup.string()
       .required(t("email_required"))
       .matches(
