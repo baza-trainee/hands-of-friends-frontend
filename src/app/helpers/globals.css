@@ -539,7 +539,7 @@ div[aria-disabled="true"] {
   gap: 16px;
   justify-content: center;
   color: white;
-
+   
   @media screen and (min-width: 420px) {
     margin-bottom: 72px;
   }
@@ -555,6 +555,23 @@ div[aria-disabled="true"] {
   }
 }
 
+.next:hover a {
+  background-color: #6f4aaa;
+}
+.previous:hover a svg {
+  background-color: #6f4aaa;
+  border-radius: 50%;
+}
+li.next:hover a svg {
+  path {
+      fill: #ffffff;
+  }
+}
+.previous:hover a svg {
+  path {
+      fill: #ffffff;
+  }
+}
 .pagination-projects {
   margin-top: 32px;
   margin-bottom: 64px;

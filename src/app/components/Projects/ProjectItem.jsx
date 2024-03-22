@@ -17,6 +17,7 @@ export default function ProjectItem({ data, lng }) {
 			const desc = data.description
 				.replace(/<ul/g, `<ul class="${ULCLASS}"`)
 				.replace(/<ol/g, `<ol class="${OLCLASS}"`)
+				.replace(/<a /g, `<a style="color: blue;" target="_blank" `)
 			setFormattedDescription(desc)
 		}
 	}, [data])
@@ -61,8 +62,10 @@ export default function ProjectItem({ data, lng }) {
 					onClick={() => router.push(`/${lang}/projects/${data.id}`)}
 					type='button'
 					className='block w-[198px] min-h-[60px] mx-auto rounded-md underline underline-offset-4 px-0 mt-4 
-					font-normal bg-transparent text-black text-xl border border-transparent hover:border 
-					hover:border-deepBlue hover:bg-lightBlue 
+
+					font-normal bg-transparent text-black text-xl border border-transparent hover:border hover:border-deepBlue hover:bg-lightBlue 
+
+			
 					md:mt-8 md:text-2xl md:min-h-[64px] 
 					xl:mt-4 
 					2xl:mt-8 2xl:text-xl 2xl:min-h-[60px]'
