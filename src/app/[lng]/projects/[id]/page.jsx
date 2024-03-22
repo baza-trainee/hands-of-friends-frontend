@@ -34,7 +34,7 @@ export default function Page({ params, lng }) {
       const desc = dataByID.description
         .replace(/<ul/g, `<ul class="${ULCLASS}"`)
         .replace(/<ol/g, `<ol class="${OLCLASS}"`)
-        .replace(/<a /g, `<a style="color: blue;" target="_blank" `);;
+        .replace(/<a /g, `<a style="color: blue;" target="_blank" `);
 
       const content = dataByID.content;
 
