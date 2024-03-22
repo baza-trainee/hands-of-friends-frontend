@@ -56,20 +56,22 @@ export default function Page({ params, lng }) {
 					text={t('breadcrumbs')}
 					textColor='blue'
 				/>
-				{!isLoading
-					? <div className='max-w-[835px] text-lg mb-40'>
-						<p className='mb-6'>{dataByID.date}</p>
-						<h2 className='text-3xl font-bold mb-10'>{dataByID.title}</h2>
-						<div
-							className='text-lg formatted-links-container'
-							dangerouslySetInnerHTML={{
-								__html: formattedDescription,
-							}}
-						/>
-					</div>
-					: <div className='flex items-center justify-center pb-14'>
+				{isLoading
+					? <div className='flex items-center justify-center pb-14'>
 						<Loader className='animate-spin' />
 					</div>
+					: dataByID && typeof dataByID.props === 'undefined'
+						? <div className='max-w-[835px] text-lg mb-40'>
+							<p className='mb-6'>{dataByID.date}</p>
+							<h2 className='text-3xl font-bold mb-10'>{dataByID.title}</h2>
+							<div
+								className='text-lg formatted-links-container'
+								dangerouslySetInnerHTML={{
+									__html: formattedDescription,
+								}}
+							/>
+						</div>
+						: <div className="my-8">{dataByID}</div>
 				}
 			</Container>
 		</>

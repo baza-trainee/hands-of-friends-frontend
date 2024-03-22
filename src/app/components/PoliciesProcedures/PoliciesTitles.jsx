@@ -62,8 +62,9 @@ const PoliciesTitles = ({ lng, setSearchText }) => {
                         ref={inputSearch}
                         onChange={(e) => setSearchValue(e.target.value)}
                         value={searchValue}
-                        className="w-72 h-[44px] py-2.5 pl-3 pr-[90px] bg-transparent rounded border-fontGray border font-normal leading-normal 
-                        text-base hover:border-lightGray transition outline-none focus:border-blue-600 
+                        className="w-72 h-[44px] py-2.5 pl-3 pr-[90px] bg-transparent rounded border-fontGray 
+                        border font-normal leading-normal text-base hover:border-lightGray transition outline-none 
+                        focus:border-blue-600 
                         md:w-[334px]
                         xl:w-[455px]
                         2xl:w-[486px]"
@@ -82,7 +83,7 @@ const PoliciesTitles = ({ lng, setSearchText }) => {
                         onClick={() => setSearchText(searchValue)}
                         type="submit"
                         className="absolute top-0 end-0 px-4 text-[1rem] h-full leading-4 text-white bg-violet rounded-e 
-                        border border-violet hover:bg-deepBlue hover:border-deepBlue focus:outline-none transition
+                        border border-violet hover:bg-[#7c3aed] hover:border-[#7c3aed] focus:outline-none transition
                         sm:end-[100px]
                         md:end-0"
                     >

@@ -15,6 +15,7 @@ export const useSubmitForm = (endpoint) => {
           "Content-Type": "application/json",
         },
       });
+      
       if (actions.setIsVissible) {
         actions.setIsVissible(true);
       }

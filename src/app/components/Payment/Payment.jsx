@@ -18,7 +18,7 @@ export const Payment = ({ lng, className }) => {
         onClick={() => setModalOpen(true)}
         type="button"
         className={clsx(
-          " text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer",
+          " text-white  bg-violet border-violet outline-none hover:bg-transparent hover:text-violet transition border-2 rounded cursor-pointer",
           className
         )}
       >

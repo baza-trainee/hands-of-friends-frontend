@@ -17,8 +17,8 @@ const initI18next = async (lng, ns) => {
 };
 
 export async function useTranslation(lng, ns, options = {}) {
-	const currentLng = getSavedLanguage() // Функція для отримання збереженої мови
-	const i18nextInstance = await initI18next(currentLng || lng, ns) // Використовуємо збережену мову, якщо вона є
+	const currentLng = getSavedLanguage()
+	const i18nextInstance = await initI18next(currentLng || lng, ns)
 	return {
 		t: i18nextInstance.getFixedT(
 			currentLng || lng,

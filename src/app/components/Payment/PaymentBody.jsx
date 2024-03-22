@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
+import clsx from "clsx";
 import Action from "../Action";
 import { useTranslation } from "@/app/i18n/client";
 
@@ -45,12 +46,8 @@ export const PaymentBody = ({ lng }) => {
         onClick={copyToClipboard}
         ref={ref}
         disabled={isCopied}
-        className={`mb-6 min-w-[184px] text-lg text-white  bg-violet border-violet hover:bg-transparent hover:text-violet transition border-2 rounded
-        ${
-          isCopied
-            ? "bg-fontGray border-[transparent] hover:cursor-not-allowed hover:bg-fontGray hover:text-white"
-            : ""
-        }`}
+        className={`mb-6 min-w-[184px] text-lg text-white bg-violet hover:text-violet transition border-2 rounded
+           ${isCopied ? "payment" : ""}`}
       >
         {!isCopied ? t("copyIBAN") : t("copied")}
       </Action>

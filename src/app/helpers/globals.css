@@ -19,11 +19,11 @@ body {
   flex-direction: column;
 }
 
-body>main {
+body > main {
   flex: 1 1 auto;
 }
 
-body>* {
+body > * {
   min-width: 0;
 }
 
@@ -232,9 +232,10 @@ body>* {
 
 /*Progressbar*/
 
-body .swiper-horizontal>.swiper-pagination-progressbar,
+body .swiper-horizontal > .swiper-pagination-progressbar,
 .swiper-pagination-progressbar.swiper-pagination-horizontal,
-.swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-vertical
+  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
 .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
   height: 10px;
   top: auto;
@@ -259,7 +260,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background-color: #60a5fa;
 }
 
-.wrapperTeam .swiper-horizontal>.swiper-pagination-progressbar {
+.wrapperTeam .swiper-horizontal > .swiper-pagination-progressbar {
   @media screen and (min-width: 320px) and (max-width: 419px) {
     margin-left: 44px;
     width: 220px;
@@ -276,7 +277,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   }
 }
 
-.wrapperDonor .swiper-horizontal>.swiper-pagination-progressbar {
+.wrapperDonor .swiper-horizontal > .swiper-pagination-progressbar {
   margin-left: 14px;
   width: 260px;
 
@@ -325,7 +326,7 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
 
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   display: flex;
   align-items: flex-end;
@@ -337,7 +338,8 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet {
   width: 0.5rem;
   height: 0.5rem;
   background-color: #dbd6d1;
@@ -349,7 +351,8 @@ body .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   }
 }
 
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 1.5rem;
   height: 0.5rem;
   background-color: #60a5fa;
@@ -454,47 +457,43 @@ div[aria-disabled="true"] {
 
 .HeroSlider .HeroSlider .swiper-pagination-fraction,
 .HeroSlider .swiper-pagination-custom,
-.HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+.HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
 .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 84px;
   position: absolute;
 }
 
 @media screen and (max-width: 1440px) {
-
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
-  .HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 44px;
   }
 }
 
 @media screen and (max-width: 1280px) {
-
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
-  .HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 40px;
   }
 }
 
 @media screen and (max-width: 767px) {
-
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
-  .HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 200px;
   }
 }
 
 @media screen and (max-width: 419px) {
-
   .HeroSlider .HeroSlider .swiper-pagination-fraction,
   .HeroSlider .swiper-pagination-custom,
-  .HeroSlider .swiper-horizontal>.swiper-pagination-bullets,
+  .HeroSlider .swiper-horizontal > .swiper-pagination-bullets,
   .HeroSlider .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 175px;
     position: absolute;
@@ -520,7 +519,7 @@ div[aria-disabled="true"] {
   width: auto;
 }
 
-.space-x-4> :not([hidden])~ :not([hidden]) {
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: 0;
   margin-left: 0;
@@ -677,15 +676,16 @@ a.active {
 
 /* Form Image*/
 .bg-form {
-  background-image: linear-gradient(rgba(30, 30, 30, 0.3),
-      rgba(30, 30, 30, 0.3)),
+  background-image: linear-gradient(
+      rgba(30, 30, 30, 0.3),
+      rgba(30, 30, 30, 0.3)
+    ),
     url("../../../public/img/hand-holds-smartphone.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   transform: scaleX(-1);
 }
-
 
 /* Politics page icon*/
 .politics-icon {
@@ -811,5 +811,20 @@ a.active {
 
   @media screen and (min-width: 1440px) {
     min-height: 52.3125rem;
+  }
+}
+.payment {
+  background-color: #d1d5db;
+  border-color: transparent;
+
+  &:hover {
+    color: #f8fafc !important;
+    background-color: #d1d5db !important;
+    border-color: transparent;
+    cursor: not-allowed;
+  }
+  &:disabled {
+    background-color: #d1d5db;
+    border-color: transparent;
   }
 }

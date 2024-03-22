@@ -25,7 +25,8 @@ export default function TendersSection({ lng }) {
         <Action
           onClick={() => router.push(`${lang}/tenders`)}
           type="button"
-          className=" block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent hover:text-deepBlue hover:border hover:border-deepBlue md:mt-12 xl:mt-[60px]"
+          className="block min-w-[198px] mx-auto px-0 mt-8 font-normal bg-deepBlue border border-transparent 
+          hover:text-deepBlue hover:border hover:border-deepBlue md:mt-12 xl:mt-[60px]"
         >
           {t("button")}
         </Action>

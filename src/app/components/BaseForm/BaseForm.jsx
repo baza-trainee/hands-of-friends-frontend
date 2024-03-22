@@ -42,10 +42,10 @@ export const BaseForm = ({
       )}
       {!isVissible && (
         <form
-          className={`relative flex justify-self-center flex-col items-center mt-[180px] bg-whiteFont shadow-md z-10 
+          className={`relative flex justify-self-center flex-col items-center  bg-whiteFont shadow-md z-10 
           xs:py-6 xs:px-4 xs:w-[268px]
-          sm:w-[340px] sm:mt-[233px]
-          md:justify-self-end md:w-[334px] md:mt-20
+          sm:w-[340px] 
+          md:justify-self-end md:w-[334px] 
           xl:p-6 xl:w-[503px]
           2xl:p-9 2xl:w-[527px]
           ${
@@ -53,7 +53,7 @@ export const BaseForm = ({
             formType === "donors" ||
             formType === "volunteers"
               ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
-              : ""
+              : "mt-[180px] sm:mt-[233px] md:mt-20"
           }`}
           action="/submit_form"
           method="post"

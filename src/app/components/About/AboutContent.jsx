@@ -8,7 +8,7 @@ import { ULCLASS } from "@/app/helpers/consts";
 import Loader from '../../../../public/img/loader.svg'
 
 function AboutContent({ activeTab }) {
-  const [aboutData] = useHttp("about-us/");
+  const [aboutData, , isLoading] = useHttp("about-us/");
   const [formattedData, setFormattedData] = useState(null);
 
   useEffect(() => {
@@ -35,26 +35,38 @@ function AboutContent({ activeTab }) {
   return (
     <Container>
       {activeTab === "mission" && (
-        formattedData
-          ? <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]">
-            <p dangerouslySetInnerHTML={{ __html: formattedData?.history }} />
-          </div>
-          : <div className="flex items-center justify-center mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px]">
+        isLoading
+          ? <div className="flex items-center justify-center mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px]">
             <Loader className='animate-spin' />
           </div>
+          : typeof aboutData !== 'undefined' && aboutData.length > 0 && aboutData.type !== 'error'
+            ? <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] 2xl:mb-[160px] text-lg md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[912px]">
+              <p dangerouslySetInnerHTML={{ __html: formattedData?.history }} />
+            </div>
+            : <div className='flex items-center justify-center my-6'>
+              {aboutData}
+            </div>
       )}
       {activeTab === "principles" && (
-        <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[792px]">
-          <p
-            style={{ fontSize: "16px" }}
-            dangerouslySetInnerHTML={{ __html: formattedData?.principles }}
-          />
-        </div>
+        typeof aboutData !== 'undefined' && aboutData.length > 0 && aboutData.type !== 'error'
+          ? <div className="mt-[32px] md:mt-[56px] mb-[64px] sm:mb-[72px] md:mb-[112px] xl:mb-[144px] md:max-w-[688px] xl:max-w-[820px] 2xl:max-w-[792px]">
+            <p
+              style={{ fontSize: "16px" }}
+              dangerouslySetInnerHTML={{ __html: formattedData?.principles }}
+            />
+          </div>
+          : <div className='flex items-center justify-center my-6'>
+            {aboutData}
+          </div>
       )}
       {activeTab === "values" && (
-        <div className="mt-[32px] md:mt-[56px] mb-[160px] md:max-w-[688px] xl:max-w-[740px] 2xl:max-w-[740px]">
-          <p dangerouslySetInnerHTML={{ __html: formattedData?.values }} />
-        </div>
+        typeof aboutData !== 'undefined' && aboutData.length > 0 && aboutData.type !== 'error'
+          ? <div className="mt-[32px] md:mt-[56px] mb-[160px] md:max-w-[688px] xl:max-w-[740px] 2xl:max-w-[740px]">
+            <p dangerouslySetInnerHTML={{ __html: formattedData?.values }} />
+          </div>
+          : <div className='flex items-center justify-center my-6'>
+            {aboutData}
+          </div>
       )}
     </Container>
   );
