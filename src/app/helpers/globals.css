@@ -540,7 +540,7 @@ div[aria-disabled="true"] {
   gap: 16px;
   justify-content: center;
   color: white;
-
+   
   @media screen and (min-width: 420px) {
     margin-bottom: 72px;
   }

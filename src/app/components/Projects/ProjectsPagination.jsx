@@ -26,6 +26,7 @@ export default function ProjectsPagination({ data, isLoading }) {
   const handlePageClick = (e) => {
     const newOffset = (e.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
+    window.scrollTo({ top: 500 });
   };
 
   return (
