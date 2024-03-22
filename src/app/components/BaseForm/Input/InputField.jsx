@@ -31,7 +31,7 @@ const InputField = ({
               type === "textarea"
                 ? isFeedbackForm
                   ? "h-[99px] pt-2 resize-none"
-                  : "xl:h-32 pt-2 xs:h-16 md:h-24 resize-none"
+                  : "pt-2 xs:h-16 md:h-24  resize-none"
                 : "h-11"
             }
        
