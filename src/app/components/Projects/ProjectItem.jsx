@@ -17,6 +17,7 @@ export default function ProjectItem({ data, lng }) {
 			const desc = data.description
 				.replace(/<ul/g, `<ul class="${ULCLASS}"`)
 				.replace(/<ol/g, `<ol class="${OLCLASS}"`)
+				.replace(/<a /g, `<a style="color: blue;" target="_blank" `)
 			setFormattedDescription(desc)
 		}
 	}, [data])
