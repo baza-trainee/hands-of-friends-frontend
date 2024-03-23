@@ -31,7 +31,7 @@ const CookiesPanel = ({ lng }) => {
 					<div className='flex flex-col xl:flex-row justify-between xl:py-8 items-center'>
 						<div className='text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:w-[688px] text-center xl:text-start'>
 							{t('text')}{' '}
-							<Link className='font-bold	' href={'/ua/docs/terms.pdf#toolbar=0'}>
+							<Link className='font-bold	' href={'/ua/docs/Terms.pdf#toolbar=0'}>
 								{t('link')}
 							</Link>
 						</div>
