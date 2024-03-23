@@ -33,11 +33,15 @@ export default function TendersPagination({ data, isLoading }) {
     }
   }, [itemOffset, itemsPerPage, data, activeTab]);
 
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
-    setItemOffset(newOffset);
-    window.scrollTo({ top: 500 });
-  };
+  const handlePageClick = event => {
+		const newOffset = (event.selected * itemsPerPage) % data.length
+		setItemOffset(newOffset)
+		if (window.innerWidth < 768) {
+			window.scrollTo({ top: 0 })
+		} else {
+			window.scrollTo({ top: 500 })
+		}
+	}
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
