@@ -1,42 +1,37 @@
-"use client";
+'use client'
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-import Cookies from "js-cookie";
-import Action from "./Action";
-import Container from "./Container";
+import Cookies from 'js-cookie'
+import Action from './Action'
+import Container from './Container'
 
-import { useTranslation } from "../i18n/client";
+import { useTranslation } from '../i18n/client'
 
 const CookiesPanel = ({ lng }) => {
-  const { t } = useTranslation(lng, "cookies");
-  const [showPanel, setShowPanel] = useState(false);
+	const { t } = useTranslation(lng, 'cookies')
+	const [showPanel, setShowPanel] = useState(false)
 
-  useEffect(() => {
-    if (!Cookies.get("cookiesAccepted")) {
-      setShowPanel(true);
-    }
-  }, []);
+	useEffect(() => {
+		if (!Cookies.get('cookiesAccepted')) {
+			setShowPanel(true)
+		}
+	}, [])
 
-  const acceptCookies = () => {
-    setShowPanel(false);
-    Cookies.set("cookiesAccepted", "true", { expires: 365 });
-  };
+	const acceptCookies = () => {
+		setShowPanel(false)
+		Cookies.set('cookiesAccepted', 'true', { expires: 365 })
+	}
 
-  return (
+	return (
 		showPanel && (
 			<div className='fixed bottom-0 left-0 right-0 bg-[#F8FAFC] z-[1000]  '>
 				<Container>
 					<div className='flex flex-col xl:flex-row justify-between xl:py-8 items-center'>
 						<div className='text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:w-[688px] text-center xl:text-start'>
 							{t('text')}{' '}
-							<Link
-								className='font-bold	'
-								href={
-									'https://hands-of-friends-backend.onrender.com/media/pdf-report/a3d0c3ef-4e29-456b-b215-d41b254326f0.pdf#toolbar=0'
-								}
-							>
+							<Link className='font-bold	' href={'/ua/docs/terms.pdf#toolbar=0'}>
 								{t('link')}
 							</Link>
 						</div>
@@ -63,6 +58,6 @@ const CookiesPanel = ({ lng }) => {
 			</div>
 		)
 	)
-};
+}
 
-export default CookiesPanel;
+export default CookiesPanel
