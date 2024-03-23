@@ -26,10 +26,14 @@ export default function ProjectsPagination({ data, isLoading }) {
   }, [itemOffset, itemsPerPage, data]);
 
   const handlePageClick = (e) => {
-    const newOffset = (e.selected * itemsPerPage) % data.length;
-    setItemOffset(newOffset);
-    window.scrollTo({ top: 500 });
-  };
+		const newOffset = (e.selected * itemsPerPage) % data.length
+		setItemOffset(newOffset)
+		if (window.innerWidth < 768) {
+			window.scrollTo({ top: 0 })
+		} else {
+			window.scrollTo({ top: 500 })
+		}
+	}
 
   return (
     <>
