@@ -25,15 +25,23 @@ export default function ProjectsPagination({ data, isLoading }) {
     }
   }, [itemOffset, itemsPerPage, data]);
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.innerWidth < 768) {
+        window.scrollTo({ top: 0 });
+      } else if (window.innerWidth < 1280) {
+        window.scrollTo({ top: 300 });
+      } else {
+        window.scrollTo({ top: 500 });
+      }
+    }, 100);
+  }, [itemOffset])
+
   const handlePageClick = (e) => {
-		const newOffset = (e.selected * itemsPerPage) % data.length
-		setItemOffset(newOffset)
-		if (window.innerWidth < 768) {
-			window.scrollTo({ top: 0 })
-		} else {
-			window.scrollTo({ top: 500 })
-		}
-	}
+    const newOffset = (e.selected * itemsPerPage) % data.length
+    setItemOffset(newOffset)
+  }
 
   return (
     <>
