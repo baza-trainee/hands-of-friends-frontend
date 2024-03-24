@@ -19,7 +19,7 @@ export default function HeroItem({ data }) {
           {data.title}
         </p>
       </div>
-      <p className="md:hidden cursor-default sm:text-[24px] font-bold italic xs:text-[18px] xs:max-w-[288px] sm:max-w-[388px] mt-8 h-[115px] sm:h-[140px] swiper-hero-shadow">
+      <p className="md:hidden cursor-default sm:text-[24px] font-bold italic xs:text-[18px] xs:max-w-[288px] sm:max-w-[388px] mt-8 h-[115px] sm:h-[140px]">
         {data.title}
       </p>
     </>
