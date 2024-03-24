@@ -33,15 +33,22 @@ export default function TendersPagination({ data, isLoading }) {
     }
   }, [itemOffset, itemsPerPage, data, activeTab]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      if (window.innerWidth < 768) {
+        window.scrollTo({ top: 0 });
+      } else if (window.innerWidth < 1280) {
+        window.scrollTo({ top: 300 });
+      } else {
+        window.scrollTo({ top: 500 });
+      }
+    }, 100);
+  }, [itemOffset])
+
   const handlePageClick = event => {
-		const newOffset = (event.selected * itemsPerPage) % data.length
-		setItemOffset(newOffset)
-		if (window.innerWidth < 768) {
-			window.scrollTo({ top: 0 })
-		} else {
-			window.scrollTo({ top: 500 })
-		}
-	}
+    const newOffset = (event.selected * itemsPerPage) % data.length
+    setItemOffset(newOffset)
+  }
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
