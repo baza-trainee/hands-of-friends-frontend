@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
+
 import Policies from "@/app/components/PoliciesProcedures/Policies";
 
 import { useHttp } from "@/app/hooks/useHttp";
-import { useEffect } from "react";
 
 function Page({ params: { lng } }) {
   const [data] = useHttp('pdf-report/');

@@ -24,7 +24,7 @@ const UniversalSlider = ({
   const [data] = useHttp(endpoint);
   const [prevData, setPrevData] = useState();
   const [isLoading, setIsLoaing] = useState(true);
-  
+
   const showNavigation = data ? data.length > 3 : false;
   const showPagination = data ? data.length > 3 : false;
 
@@ -75,7 +75,7 @@ const UniversalSlider = ({
                 </SwiperSlide>
               )))
               : Array.isArray(prevData)
-                ? <NoItem type={loaderType}/>
+                ? <NoItem type={loaderType} />
                 : <div className='flex items-center justify-center'>
                   {prevData}
                 </div>

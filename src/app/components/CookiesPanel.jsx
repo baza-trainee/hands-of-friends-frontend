@@ -26,7 +26,7 @@ const CookiesPanel = ({ lng }) => {
 
 	return (
 		showPanel && (
-			<div className='fixed bottom-0 left-0 right-0 bg-[#F8FAFC] z-[1000]  '>
+			<div className='fixed bottom-0 left-0 right-0 bg-[#F8FAFC] z-[1000]'>
 				<Container>
 					<div className='flex flex-col xl:flex-row justify-between xl:py-8 items-center'>
 						<div className='text-sm py-4 md:text-lg md:w-[688px] xl:w-[644px] 2xl:w-[688px] text-center xl:text-start'>

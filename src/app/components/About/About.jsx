@@ -23,8 +23,8 @@ import 'swiper/css/pagination'
 
 export default function About({ lng }) {
 	const { t } = useTranslation(lng, 'about-section')
-	const router = useRouter()
-	const lang = useCurrentLang() === 'uk' ? 'ua' : 'en'
+	const router = useRouter();
+	const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
 
 	return (
 		<Section>

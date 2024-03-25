@@ -1,28 +1,26 @@
 "use client";
-import { clsx } from "clsx";
+
 import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { clsx } from "clsx";
 
 const BaseModal = ({ isOpen, onClose, children, className }) => {
   const modalRoot = document.querySelector("#modal-root");
 
   const handleBackdropClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+    e.target === e.currentTarget ? onClose() : null;
+  }
 
-  //Modal Escape close
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
+      e.key === "Escape" ? onClose() : null;
+    }
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.addEventListener("keydown", handleKeyDown);
     }
+
     return () => {
       document.body.style.overflow = "auto";
       document.removeEventListener("keydown", handleKeyDown);

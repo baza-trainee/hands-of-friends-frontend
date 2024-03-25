@@ -14,7 +14,6 @@ const InputField = ({
   formType,
 }) => {
   const InputElement = type === "textarea" ? "textarea" : "input";
-
   const isFeedbackForm = formType === "feedback";
 
   return (
@@ -27,18 +26,15 @@ const InputField = ({
         className={`w-full h-10 mt-1 px-3 rounded-[0.3rem]  bg-inherit outline-none focus:ring-1 focus:ring-transparent border placeholder:text-xs placeholder:text-fontGray
         md:mt-[6px]
         xl:text-base xl:placeholder:text-base
-            ${
-              type === "textarea"
-                ? isFeedbackForm
-                  ? "h-[99px] pt-2 resize-none"
-                  : "pt-2 xs:h-16 md:h-24  resize-none"
-                : "h-11"
-            }
-       
-          ${
-            error
-              ? "border-[red] "
-              : value
+            ${type === "textarea"
+            ? isFeedbackForm
+              ? "h-[99px] pt-2 resize-none"
+              : "pt-2 xs:h-16 md:h-24  resize-none"
+            : "h-11"
+          }
+          ${error
+            ? "border-[red] "
+            : value
               ? "border-deepBlue"
               : "border-fontGray focus:border-vividBlue"
           }
@@ -56,9 +52,8 @@ const InputField = ({
       />
       {error && (
         <span
-          className={`w-full absolute right-0 top-[102%] xl:top-[100%] text-sm xl:text-lg text-[red] leading-none transition duration-300  ${
-            error ? "" : "opacity-0 "
-          } `}
+          className={`w-full absolute right-0 top-[102%] xl:top-[100%] text-sm xl:text-lg text-[red] leading-none transition duration-300  ${error ? "" : "opacity-0 "
+            } `}
         >
           {error}
         </span>

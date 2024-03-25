@@ -1,19 +1,21 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { FaGlobe } from "react-icons/fa6";
-import { HiPlus } from "react-icons/hi2";
+
+import Payment from "../Payment/Payment";
+
 import { Trans } from "react-i18next/TransWithoutContext";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { useTranslation } from "@/app/i18n/client";
+import { languages } from "../../i18n/settings";
 
+import { FaGlobe } from "react-icons/fa6";
+import { HiPlus } from "react-icons/hi2";
 import Bars from "../../../../public/img/bars.svg";
 import LogoIcon from "../../../../public/img/logo.svg";
 import LogoIconTablet from "../../../../public/img/logo-tablet.svg";
-import { languages } from "../../i18n/settings";
-import { Payment } from "../Payment/Payment";
 
 export default function Header({ lng }) {
   const variants = {
@@ -32,8 +34,8 @@ export default function Header({ lng }) {
     pathParts.length > 2
       ? pathParts.length > 3
         ? pathParts[pathParts.length - 2] +
-          "/" +
-          pathParts[pathParts.length - 1]
+        "/" +
+        pathParts[pathParts.length - 1]
         : pathParts[pathParts.length - 1]
       : "";
 
@@ -82,9 +84,8 @@ export default function Header({ lng }) {
               <li key={link.id}>
                 <Link
                   href={link.url}
-                  className={`text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0 link ${
-                    pathname === link.url ? "active" : ""
-                  }`}
+                  className={`text-xl text-black transition hover:text-violet hover:pl-4 lg:hover:pl-0 link ${pathname === link.url ? "active" : ""
+                    }`}
                 >
                   {link.text}
                 </Link>
@@ -96,7 +97,7 @@ export default function Header({ lng }) {
         <Payment
           lng={lng}
           className="hidden p-4 text-xl 
-		  xl:self-center  xl:block"
+		       xl:self-center  xl:block"
         />
 
         <Trans i18nKey="languageSwitcher" t={t}>
@@ -145,9 +146,8 @@ export default function Header({ lng }) {
         </Trans>
         <div className="flex items-center justify-between w-full gap-5 p-4 sm:py-5 md:py-[22px] xl:hidden">
           <div
-            className={`cursor-pointer transition xl:hidden ${
-              menuOpen ? "transform rotate-45 scale-125" : ""
-            }`}
+            className={`cursor-pointer transition xl:hidden ${menuOpen ? "transform rotate-45 scale-125" : ""
+              }`}
             onClick={toggleMenu}
           >
             {menuOpen ? (
@@ -207,8 +207,8 @@ export default function Header({ lng }) {
           <Payment
             lng={lng}
             className="hidden p-4 text-xl 
-			 md:block 
-			 xl:self-center xl:hidden"
+            md:block 
+            xl:self-center xl:hidden"
           />
         </div>
         <motion.nav
@@ -226,9 +226,8 @@ export default function Header({ lng }) {
                       <Link
                         href={link.url}
                         onClick={toggleMenu}
-                        className={`text-sm text-black duration-300 link ${
-                          pathname === link.url ? "active" : ""
-                        }`}
+                        className={`text-sm text-black duration-300 link ${pathname === link.url ? "active" : ""
+                          }`}
                       >
                         {link.text}
                       </Link>
@@ -239,7 +238,7 @@ export default function Header({ lng }) {
               <Payment
                 lng={lng}
                 className="hidden px-4 py-2 mb-4 w-36 text-sm 
-				xl:self-center"
+				        xl:self-center"
               />
             </div>
           )}

@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useRef, useState } from "react";
-import clsx from "clsx";
+
 import Action from "../Action";
+
 import { useTranslation } from "@/app/i18n/client";
 
 export const PaymentBody = ({ lng }) => {

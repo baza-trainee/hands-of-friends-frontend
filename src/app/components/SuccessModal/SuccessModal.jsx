@@ -1,6 +1,7 @@
+import { useTranslation } from "@/app/i18n/client";
+
 import Hand from "../../../../public/img/hand-heart.svg";
 import { HiPlus } from "react-icons/hi2";
-import { useTranslation } from "@/app/i18n/client";
 
 export default function SuccessModal({ lng, handleClose, formType }) {
   const { t } = useTranslation(lng, "successModal");
@@ -11,13 +12,12 @@ export default function SuccessModal({ lng, handleClose, formType }) {
       md:justify-self-end md:w-[334px] md:mt-20 md:py-[132px]
       xl:w-[503px]  xl:px-[55px] xl:py-[184px]
       2xl:w-[527px] 
-          ${
-            formType === "partners" ||
-            formType === "donors" ||
-            formType === "volunteers"
-              ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
-              : ""
-          }`}
+          ${formType === "partners" ||
+          formType === "donors" ||
+          formType === "volunteers"
+          ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
+          : ""
+        }`}
     >
       <h3 className="mb-6 text-sm font-bold md:text-lg xl:text-xl xl:mb-8">
         {t("title")}

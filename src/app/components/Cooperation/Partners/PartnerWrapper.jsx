@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import Title from "../../Title";
 import UniversalSlider from "../../UniversalSlider";
 import PartnerItem from "./PartnerItem";

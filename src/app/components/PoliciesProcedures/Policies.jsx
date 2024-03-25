@@ -64,6 +64,13 @@ const Policies = ({ data, lng }) => {
         }
     }, [searchText])
 
+
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo({ top: 0 });
+        }, 100);
+    }, [itemOffset])
+
     const handlePageClick = (e) => {
         const newOffset = (e.selected * itemsPerPage) % data.length;
         setItemOffset(newOffset);
@@ -73,9 +80,9 @@ const Policies = ({ data, lng }) => {
         <Container className='mt-6 md:mt-[43px] xl:mt-[41px] 2xl:mt-[52px]' >
             <BreadCrumbs
                 className='max-w-fit flex items-center gap-2 text-sm xl:text-xl text-deepBlue hover:text-violet mb-10 !mt-0
-                    sm:mb-[48px] 
-                    md:text-lg md:mb-[67px] 
-                    xl:mb-8 2xl:mb-[59px]'
+                sm:mb-[48px] 
+                md:text-lg md:mb-[67px] 
+                xl:mb-8 2xl:mb-[59px]'
                 href='/'
                 text={t('home')}
                 textColor='#2563EB'
@@ -83,7 +90,7 @@ const Policies = ({ data, lng }) => {
             <PoliciesTitles lng={lng} setSearchText={setSearchText} />
             {isLoading
                 ? <div className='flex items-center justify-center 
-                min-h-[160px] md:min-h-[393px] xl:min-h-[270px] 2xl:min-h-[310px]'
+                        min-h-[160px] md:min-h-[393px] xl:min-h-[270px] 2xl:min-h-[310px]'
                 >
                     <Loader className='animate-spin' />
                 </div>
@@ -91,7 +98,7 @@ const Policies = ({ data, lng }) => {
                     ? procesData && procesData.length
                         ? <PoliciesList currentItems={currentItems} />
                         : <div className="mb-6 text-base font-normal 
-                           md:text-xl md:mb-8"
+                                md:text-xl md:mb-8"
                         >
                             {t('not-found')}
                         </div>

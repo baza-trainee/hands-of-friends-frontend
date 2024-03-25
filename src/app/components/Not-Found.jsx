@@ -1,5 +1,7 @@
 import React from "react";
+
 import Action from "./Action";
+
 import { useTranslation } from "../i18n/client";
 
 export default function NotFound({ lng }) {

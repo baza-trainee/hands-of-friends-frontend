@@ -1,6 +1,8 @@
 "use client";
-import axios from "axios";
+
 import { useState } from "react";
+import axios from "axios";
+
 import { BASE_URL } from "../helpers/consts";
 
 export const useSubmitForm = (endpoint) => {
@@ -8,6 +10,7 @@ export const useSubmitForm = (endpoint) => {
 
   const handleSubmit = async (values, actions) => {
     setIsLoading(true);
+
     try {
       const data = JSON.stringify(values, null, 2);
       await axios.post(`${BASE_URL}${endpoint}`, data, {
@@ -15,7 +18,7 @@ export const useSubmitForm = (endpoint) => {
           "Content-Type": "application/json",
         },
       });
-      
+
       if (actions.setIsVissible) {
         actions.setIsVissible(true);
       }

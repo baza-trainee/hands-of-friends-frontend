@@ -3,20 +3,20 @@
 import React from 'react';
 import { useRouter } from "next/navigation";
 
-import { useTranslation } from "@/app/i18n/client";
-import { useCurrentLang } from "@/app/hooks/useCurrentLang";
-
 import Section from "../Section";
 import Container from "../Container";
 import Title from "../Title";
 import Action from '../Action';
 import ProjectSwiperList from './ProjectSwiper';
 
+import { useTranslation } from "@/app/i18n/client";
+import { useCurrentLang } from "@/app/hooks/useCurrentLang";
+
 export default function ProjectSection({ lng }) {
   const { t } = useTranslation(lng, "project-section");
-  const router = useRouter();
   const lang = useCurrentLang() === 'uk' ? 'ua' : 'en';
-  
+  const router = useRouter();
+
   return (
     <Section>
       <Container>
