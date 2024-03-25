@@ -1,17 +1,21 @@
 "use client";
+
 import React, { useState } from "react";
 import { clsx } from "clsx";
+
 import Action from "../Action";
-import { useTranslation } from "@/app/i18n/client";
 import BaseModal from "../BaseModal/BaseModal";
 import { PaymentBody } from "./PaymentBody";
-import { BaseForm } from "../BaseForm/BaseForm";
+
+import { useTranslation } from "@/app/i18n/client";
+
 import { HiPlus } from "react-icons/hi2";
 
-export const Payment = ({ lng, className }) => {
+const Payment = ({ lng, className }) => {
   const { t } = useTranslation(lng, "payment");
   const [modalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen((prev) => !prev);
+
   return (
     <>
       <Action
@@ -52,4 +56,6 @@ export const Payment = ({ lng, className }) => {
       )}
     </>
   );
-};
+}
+
+export default Payment;

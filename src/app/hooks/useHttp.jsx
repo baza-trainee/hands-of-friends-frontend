@@ -1,5 +1,7 @@
 "use client";
+
 import { useEffect, useState } from "react";
+
 import { useCurrentLang } from "./useCurrentLang";
 import getFetchedData from "../helpers/helperAPI";
 

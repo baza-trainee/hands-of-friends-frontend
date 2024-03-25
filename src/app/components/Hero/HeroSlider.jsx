@@ -1,14 +1,13 @@
 "use client";
 
 import React from "react";
-import { useTranslation } from "@/app/i18n/client";
+
 import UniversalSlider from "../UniversalSlider";
 import HeroItem from "./HeroItem";
 import Container from "../Container";
-import { Payment } from "../Payment/Payment";
+import Payment from "../Payment/Payment";
 
 const HeroSlider = ({ lng }) => {
-  const { t } = useTranslation(lng, "hero");
   return (
     <>
       <div className="HeroSlider max-w-[1440px] mb-6 md:mb-0 relative mx-auto">
@@ -57,8 +56,8 @@ const HeroSlider = ({ lng }) => {
         <Payment
           lng={lng}
           className="block m-auto mt-6 w-full p-4 text-xl 
-		  sm:mt-8
-		  md:hidden"
+          sm:mt-8
+          md:hidden"
         />
       </Container>
     </>

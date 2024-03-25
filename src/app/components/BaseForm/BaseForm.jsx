@@ -1,15 +1,18 @@
 "use client";
 
 import React, { useState } from "react";
-import { HiPlus } from "react-icons/hi2";
-import { ProgressBar } from "react-loader-spinner";
-import { useFormik } from "formik";
-import { useTranslation } from "@/app/i18n/client";
+
 import InputField from "./Input/InputField";
 import Action from "../Action";
 import SuccessModal from "../SuccessModal/SuccessModal";
 
-export const BaseForm = ({
+import { useFormik } from "formik";
+import { useTranslation } from "@/app/i18n/client";
+
+import { HiPlus } from "react-icons/hi2";
+import { ProgressBar } from "react-loader-spinner";
+
+const BaseForm = ({
   initialValues,
   validationSchema,
   onSubmit,
@@ -19,10 +22,9 @@ export const BaseForm = ({
   title,
   formType,
 }) => {
+  const { t } = useTranslation(lng, "form_feedback");
   const [isVissible, setIsVissible] = useState(false);
   const handleClose = () => setIsVissible(false);
-
-  const { t } = useTranslation(lng, "form_feedback");
 
   const formik = useFormik({
     initialValues,
@@ -48,13 +50,12 @@ export const BaseForm = ({
           md:justify-self-end md:w-[334px] 
           xl:p-6 xl:w-[503px]
           2xl:p-9 2xl:w-[527px]
-          ${
-            formType === "partners" ||
-            formType === "donors" ||
-            formType === "volunteers"
+          ${formType === "partners" ||
+              formType === "donors" ||
+              formType === "volunteers"
               ? "xs:mt-[0] sm:mt-[0] md:mt-[0] xl:mt-[0]"
               : "mt-[180px] sm:mt-[233px] md:mt-20"
-          }`}
+            }`}
           action="/submit_form"
           method="post"
           onSubmit={formik.handleSubmit}
@@ -193,4 +194,6 @@ export const BaseForm = ({
       )}
     </>
   );
-};
+}
+
+export default BaseForm;

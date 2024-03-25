@@ -1,9 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
-import { useTranslation } from "@/app/i18n/client";
+
 import Action from "../Action";
 import BaseModal from "../BaseModal/BaseModal";
 import { formToggle } from "../BaseForm/helpers/formToggle";
+
+import { useTranslation } from "@/app/i18n/client";
 
 export default function CooperationList({ lng }) {
   const { t } = useTranslation(lng, "cooperation");

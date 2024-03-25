@@ -1,6 +1,8 @@
 import React from "react";
+
+import BaseForm from "../BaseForm/BaseForm";
+
 import { useSubmitForm } from "@/app/hooks/useSubmitForm";
-import { BaseForm } from "../BaseForm/BaseForm";
 import { validationSchema } from "./helpers/validationSchema";
 import { initialValues } from "./helpers/initialValues";
 

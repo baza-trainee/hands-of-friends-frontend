@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+
 import { splitName } from "./helpers";
 
 export default function TeamItem({ data }) {

@@ -1,10 +1,12 @@
 "use client";
+
+import { useState } from "react";
+import { useTranslation } from "@/app/i18n/client";
+
 import Container from "@/app/components/Container";
 import BreadCrumbs from "@/app/components/BreadCrumbs";
 import AboutTabs from "../../components/About/AboutTabs";
 import AboutContent from "../../components/About/AboutContent";
-import { useState } from "react";
-import { useTranslation } from "@/app/i18n/client";
 
 function Page({ lng }) {
   const { t } = useTranslation(lng, "about-page");

@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 
 import Container from "@/app/components/Container";
@@ -5,7 +7,7 @@ import Container from "@/app/components/Container";
 import { useHttp } from "@/app/hooks/useHttp";
 import { ULCLASS } from "@/app/helpers/consts";
 
-import Loader from '../../../../public/img/loader.svg'
+import Loader from '../../../../public/img/loader.svg';
 
 function AboutContent({ activeTab }) {
   const [aboutData, , isLoading] = useHttp("about-us/");

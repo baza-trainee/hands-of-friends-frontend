@@ -12,7 +12,7 @@ function ProjectsData() {
     ? projects.filter((project) => project.is_shown)
     : projects;
 
-    return (
+  return (
     <ProjectsPagination data={shownProjects} isLoading={isLoading} />
   );
 }

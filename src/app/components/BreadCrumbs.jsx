@@ -15,6 +15,7 @@ export default function BreadCrumbs({ href, text, textColor, className }) {
   const handleLeave = () => {
     setIsHovered(false);
   };
+
   return (
     <div className="display: inline-block ">
       <Link href={`/${lang}${href}`}>

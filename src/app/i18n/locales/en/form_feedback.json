@@ -1,26 +1,18 @@
 {
   "organization_name": "Organization name",
   "placeholder_organization_name": "Organization name",
-
   "name": "Name",
   "placeholder_name": "Olha",
-
   "representative_name": "Representative's name",
-
   "city": "Your city",
   "placeholder_city": "Your city",
-
   "email": "Email address",
   "placeholder_email": "example@gmail.com",
-
   "phone": "Phone number",
   "placeholder_phone": "+38 000 000 0000",
-
   "message": "Message",
   "placeholder_message": "Your message...",
-
   "button": "Send",
-
   "company_name_required": "Enter the organization's name",
   "company_name_min": "Organization's name must be at least 2 characters long",
   "company_name_max": "Organization's name must not exceed 50 characters",

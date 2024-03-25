@@ -22,7 +22,6 @@ export default function PartnerItem({ data }) {
         2xl:w-[185px]"
         />
       </div>
-
       <p className="px-[9px] text-black text-xl font-bold text-center leading-7">
         {data.name}
       </p>

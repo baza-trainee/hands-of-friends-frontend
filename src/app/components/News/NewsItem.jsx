@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import Image from "next/image";
-import Close from "../../../../public/img/close.svg";
+
+import BaseModal from "../BaseModal/BaseModal";
 
 import { useTranslation } from "@/app/i18n/client";
 
-import BaseModal from "../BaseModal/BaseModal";
+import Close from "../../../../public/img/close.svg";
 
 const NewsItem = ({ data, lng }) => {
   const { t } = useTranslation(lng, "news");
@@ -13,9 +13,11 @@ const NewsItem = ({ data, lng }) => {
   const [formattedDescription, setFormattedDescription] = useState(
     data.description
   );
+
   useEffect(() => {
     setFormattedDescription(data.description);
   }, [data.description]);
+
   return (
     <div className="bg-lightBlue">
       <li
@@ -69,7 +71,6 @@ const NewsItem = ({ data, lng }) => {
               <h2 className="text-xl font-bold mb-3 md:max-w-[506px]">
                 {data.title}
               </h2>
-
               <p
                 className="lg:max-w-[660px] md:max-w-[506px] xs:max-w-[256px] sm:max-w-[288px] "
                 dangerouslySetInnerHTML={{ __html: data.description }}
