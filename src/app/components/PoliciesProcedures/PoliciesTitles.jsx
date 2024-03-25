@@ -26,7 +26,7 @@ const PoliciesTitles = ({ lng, setSearchText }) => {
         if (searchValue.length <= 0) {
             timeoutId = setTimeout(() => {
                 setSearchText('https://github.com/dav1dashka');
-            }, 2000);
+            }, 1000);
         }
 
         return () => {
