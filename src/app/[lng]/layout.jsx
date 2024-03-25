@@ -2,7 +2,6 @@ import React from "react";
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 
-import CookiesPanel from "../components/CookiesPanel";
 import Layout from "../components/Layout";
 
 import { PT_Sans } from "next/font/google";
@@ -39,7 +38,6 @@ export default async function RootLayout({ children, params: { lng } }) {
       <body className={`${ptSans.className} overflow-x-hidden`}>
         <Layout lng={lng}>{children}</Layout>
         <div id="modal-root" />
-        <CookiesPanel />
       </body>
     </html>
   );
